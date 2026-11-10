@@ -652,7 +652,7 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 
 /* Boost : la maison s'ouvre (le toit se lève, les façades s'effacent sur les quatre chambres). */
 .o3d__piece--toit { transform: translate3d(0, calc((1 - var(--m, 1)) * var(--o3d-chute, -300px) - var(--ouvre, 0) * 105px), 0) rotateY(calc((1 - var(--m, 1)) * var(--o3d-vrille, 0deg))); }
-.o3d__piece--facade .o3d__f { opacity: calc(var(--m, 1) * 3 - var(--ouvre, 0) * 2.65); }
+.o3d__piece--facade .o3d__f { opacity: calc(min(var(--m, 1) * 3, 1) - var(--ouvre, 0) * .65); }
 .o3d__boite--chambre > .o3d__f { box-shadow: inset 0 0 0 1px rgba(43, 35, 32, .3); }
 .o3d__boite--chambre > .o3d__f--av { display: grid; place-items: center; }
 .o3d__boite--chambre > .o3d__f--av span { font-family: var(--police-titres); font-style: italic; font-size: 30px; color: var(--papier); font-variation-settings: 'SOFT' 100, 'WONK' 1; text-shadow: 0 1px 2px rgba(0, 0, 0, .35); }

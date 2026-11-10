@@ -2,7 +2,7 @@
   "nom": "Lo Componaïro",
   "adresse": "https://locomponairo-maquette.vercel.app",
   "siteActuel": "locomponairo.com",
-  "version": 1,
+  "version": 2,
   "langues": ["fr"],
   "navigation": ["accueil", "chambres", "sejour", "alentours", "contact", "reserver"],
   "actionEntete": { "page": "reserver" },

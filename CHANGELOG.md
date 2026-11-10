@@ -1,5 +1,12 @@
 # Lo Componaïro — historique de la maquette
 
+## v1 corrigée (fichiers en version 2) — 10 novembre 2026
+
+Version validée, après l'audit complet.
+
+- Défilement de l'accueil plus fluide (sarment, maison 3D, titre aux axes variables), sans changement visible.
+- Textes : deux détails introuvables sur le site actuel retirés (eau et biscuits, cheminée « de marbre ») ; garage gratuit ou payant signalé à confirmer.
+
 ## v1 — 10 novembre 2026
 
 Première version, direction « Quatre clés, quatre histoires ».

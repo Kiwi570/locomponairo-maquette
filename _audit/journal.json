@@ -105,6 +105,62 @@
       "effetsRetires": [],
       "grilleDispenses": {},
       "notes": "Boosts demandés à l'aperçu : serrure dans l'intro, maison qui s'ouvre, soleil au pointeur. Images Grok reçues à 13 h 39 pendant la construction. Regard neuf et test vrai visiteur faits par deux agents séparés ; corrections reprises : textes répétés, « à compléter » retirés des cartes, garage et motards sur l'accueil, clé qui mène au récapitulatif, photo du garage en double, horloge en double, maison 3D déjà commencée à l'arrivée."
+    },
+    {
+      "version": 2,
+      "skill": "v10.8.2",
+      "perimetre": [
+        "accueil",
+        "chambres",
+        "votre-sejour",
+        "alentours",
+        "contact",
+        "reserver",
+        "404"
+      ],
+      "etapes": [
+        {
+          "etape": "audit complet de la version validée",
+          "budget": 35,
+          "debut": "2026-11-10T15:10:00+01:00",
+          "fin": "2026-11-10T15:39:44+01:00"
+        },
+        {
+          "etape": "corrections (fluidité de l'accueil, faits vérifiés) et audit ciblé",
+          "budget": 20,
+          "debut": "2026-11-10T15:39:44+01:00",
+          "fin": "2026-11-10T16:06:09+01:00"
+        },
+        {
+          "etape": "livraison et ajout à la bibliothèque",
+          "budget": 15,
+          "debut": "2026-11-10T16:06:09+01:00",
+          "fin": ""
+        }
+      ],
+      "attentes": [],
+      "allersRetours": 0,
+      "modules": [
+        "objet-a-faire-tourner",
+        "fil-conducteur",
+        "objet-3d-qui-se-construit",
+        "carrousel-3d",
+        "envol-vers-le-panier",
+        "axes-au-defilement"
+      ],
+      "audit": {
+        "niveau": "complet, puis ciblé (accueil et chambres : fichiers, mesures, fluidité, mouvement)",
+        "echecsPremierPassage": 1,
+        "relances": 1,
+        "corrections": [
+          "fluidité de l'accueil (10 % d'images lentes, 5 à 8 % après) : le sarment ne relit plus la hauteur de page, la position ni la hauteur d'écran à chaque image (recalcul complet du style forcé) ; maison 3D : rotation et chute des pièces en transformation directe, ombres tous les 15 degrés ; axes de police par pas de 4",
+          "faits revérifiés sur le site actuel : eau et biscuits et cheminée « de marbre » retirés (introuvables), garage gratuit ou à 8 € signalé à confirmer",
+          "numéro de version des fichiers passé à 2"
+        ]
+      },
+      "effetsRetires": [],
+      "grilleDispenses": {},
+      "notes": "Version validée par l'utilisateur (« Valider la v1 »). Livraison de la v1 corrigée après l'audit complet, puis ajout à la bibliothèque."
     }
   ]
 }

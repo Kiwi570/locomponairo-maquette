@@ -27,6 +27,7 @@ Partout : intro (les clés tombent sur l'anneau, le trousseau tourne dans une se
 - **Politique de confidentialité** (RGPD) : données recueillies par les formulaires, finalité, durée de conservation, droits.
 - **Tarifs** : prix de la nuit par chambre et par saison (aucun prix n'est affiché sur le site actuel).
 - **Surface de Denise** : le site actuel indique à la fois 17 m² et 24 m².
+- **Garage** : le site actuel le dit à la fois gratuit et à 8 € par jour ; la maquette le dit inclus dans le prix (tarifs tout inclus), à confirmer.
 - **Notes d'avis** Google et TripAdvisor, si la maison veut les afficher (seules les distinctions visibles sur le site actuel sont reprises : Petit Futé 2025 et 2026, Booking Traveller Review Awards 2025 9,5/10, Gîtes de France, Kayak Travel Awards, Team 68°). Année du prix Kayak à préciser.
 - **Distances** des sites des alentours (seules celles du site actuel sont reprises : Clamouse 11 km, Pézenas et Montpellier 25 min, Gignac 7 km, Montpellier 34 km, centre équestre 5 min).
 - **Tables locales** recommandées par la maison.

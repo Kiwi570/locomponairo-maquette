@@ -2,7 +2,7 @@
    le mode calme, les boucles, les mesures et la bibliothèque d'effets posés par attributs dans les pages.
    Chaque effet propre porte data-effet="nom-du-plan" : trousseau, axes, manifeste, maison-coupe, etiquette-plume,
    tampons, cadran-journee, carrousel-sites, sarment, portes, couloir, journee, carte-route, route-acces, cle-envol. */
-import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=1';
+import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=2';
 
 const gsap = window.gsap;
 const ST = () => window.ScrollTrigger;
@@ -100,7 +100,9 @@ function trousseau() {
 /* ---------- Typographie : Fraunces de « sage » à « sauvage » (axes SOFT et WONK, jamais la largeur) ---------- */
 function axes() {
   $$('[data-axes]').forEach((el) => {
-    const poser = (p) => { el.style.setProperty('--axe-soft', (p * 100).toFixed(1)); el.style.setProperty('--axe-wonk', p > 0.55 ? 1 : 0); };
+    /* Par pas de 4 sur l'axe SOFT, écrit seulement quand il change : chaque changement refait la forme du texte (fluidité). */
+    let dernier = '';
+    const poser = (p) => { const v = String(Math.round(p * 25) * 4) + (p > 0.55 ? '/1' : '/0'); if (v === dernier) return; dernier = v; const [soft, wonk] = v.split('/'); el.style.setProperty('--axe-soft', soft); el.style.setProperty('--axe-wonk', wonk); };
     if (calme()) { poser(1); return; }
     poser(0);
     ST().create({ trigger: el, start: 'top 92%', end: 'top 30%', onUpdate: (s) => poser(s.progress), onRefresh: (s) => poser(s.progress) });
@@ -161,26 +163,51 @@ function maisonCoupe() {
   const o = { longueur: 2.8, depart: -34, tour: 360, inclinaison: -20, lumiere: -35, largeur: 760, hauteur: 520, largeurMin: 900, hauteurMin: 600 };
   const scene = $('.o3d__scene', root), objet = $('.o3d__objet', root);
   const pieces = $$('.o3d__piece', root), etapes = $$('.o3d__etapes [data-de]', root);
-  const echelle = () => { const r = scene.getBoundingClientRect(); root.style.setProperty('--o3d-k', Math.min(r.width / o.largeur, r.height / o.hauteur, 1.1).toFixed(3)); };
-  echelle();
-  new ResizeObserver(echelle).observe(scene);
+  /* Fluidité : la rotation va directement sur l'objet (pas de variable héritée par toutes les faces), les ombres
+     des faces ne changent que par pas de 0,02, et chaque valeur ne s'écrit que si elle a changé. */
+  let k = 1;
+  const echelle = () => { const r = scene.getBoundingClientRect(); k = Math.min(r.width / o.largeur, r.height / o.hauteur, 1.1); root.style.setProperty('--o3d-k', k.toFixed(3)); if (root.__ry !== undefined) tourner(root.__ry, true); };
   root.style.setProperty('--o3d-rx', o.inclinaison + 'deg');
   const e = { p: 1, main: 0, v: 0, tenu: false };
   const lisse = (a, b, t) => { const x = Math.min(1, Math.max(0, (t - a) / Math.max(0.001, b - a))); return x * x * (3 - 2 * x); };
-  const ombre = (ry, n) => { const d = ((((ry + n - o.lumiere) % 360) + 360) % 360) * Math.PI / 180; return (0.5 * (1 - Math.max(0, Math.cos(d)))).toFixed(3); };
+  const ombre = (ry, n) => { const d = ((((ry + n - o.lumiere) % 360) + 360) % 360) * Math.PI / 180; return (Math.round(25 * (1 - Math.max(0, Math.cos(d)))) / 50).toFixed(2); };
+  const ecrits = {};
+  const ecrire = (el, nom, v) => { if (ecrits[nom] !== v) { ecrits[nom] = v; el.style.setProperty(nom, v); } };
+  function tourner(ry, force) {
+    const r = ry.toFixed(1);
+    if (!force && r === root.__ryTxt) return;
+    root.__ry = ry; root.__ryTxt = r;
+    objet.style.transform = `scale(${k.toFixed(3)}) rotateX(${o.inclinaison}deg) rotateY(${r}deg)`;
+    /* Les ombres sont héritées par toutes les faces : les changer recalcule toute la maison. Elles ne changent
+       donc que tous les 15 degrés. */
+    const pasOmbre = Math.round(ry / 15) * 15;
+    if (!force && pasOmbre === root.__pasOmbre) return;
+    root.__pasOmbre = pasOmbre;
+    ecrire(objet, '--o3d-o-av', ombre(pasOmbre, 0)); ecrire(objet, '--o3d-o-d', ombre(pasOmbre, 90));
+    ecrire(objet, '--o3d-o-ar', ombre(pasOmbre, 180)); ecrire(objet, '--o3d-o-g', ombre(pasOmbre, 270));
+  }
+  echelle();
+  new ResizeObserver(echelle).observe(scene);
+  let nActive = -2;
   function poser() {
-    const ry = o.depart + e.p * o.tour + e.main;
-    root.style.setProperty('--o3d-ry', ry.toFixed(2) + 'deg');
-    root.style.setProperty('--o3d-o-av', ombre(ry, 0)); root.style.setProperty('--o3d-o-d', ombre(ry, 90));
-    root.style.setProperty('--o3d-o-ar', ombre(ry, 180)); root.style.setProperty('--o3d-o-g', ombre(ry, 270));
+    tourner(o.depart + e.p * o.tour + e.main);
+    /* La chute de chaque pièce s'écrit en transformation directe (rien n'est hérité par ses faces) ; la variable --m,
+       qui ne sert plus qu'au fondu des faces, cesse de changer dès qu'elles sont opaques (m = 1/3). */
+    const ouvre = Math.round(lisse(0.84, 0.97, e.p) * 200) / 200;
     pieces.forEach((pc) => {
-      const m = lisse(parseFloat(pc.dataset.de) || 0, parseFloat(pc.dataset.a) || 1, e.p);
-      if (m !== pc.__m) { pc.__m = m; pc.style.setProperty('--m', m.toFixed(3)); pc.style.visibility = m <= 0.001 ? 'hidden' : ''; }
+      const m = Math.round(lisse(parseFloat(pc.dataset.de) || 0, parseFloat(pc.dataset.a) || 1, e.p) * 400) / 400;
+      const toit = pc.classList.contains('o3d__piece--toit');
+      if (pc.__chute === undefined) pc.__chute = parseFloat(getComputedStyle(pc).getPropertyValue('--o3d-chute')) || -300;
+      const y = ((1 - m) * pc.__chute - (toit ? ouvre * 105 : 0)).toFixed(1);
+      if (y !== pc.__y) { pc.__y = y; pc.style.transform = `translate3d(0, ${y}px, 0)`; }
+      const mo = Math.min(0.34, Math.round(m * 100) / 100);
+      if (mo !== pc.__mo) { pc.__mo = mo; pc.style.setProperty('--m', mo.toFixed(2)); }
+      const cache = m <= 0.001;
+      if (cache !== pc.__cache) { pc.__cache = cache; pc.style.visibility = cache ? 'hidden' : ''; }
     });
-    const ouvre = lisse(0.84, 0.97, e.p);
-    if (ouvre !== root.__ouvre) { root.__ouvre = ouvre; $$('.o3d__piece--toit, .o3d__piece--facade', root).forEach((pc) => pc.style.setProperty('--ouvre', ouvre.toFixed(3))); }
+    if (ouvre !== root.__ouvre) { root.__ouvre = ouvre; $$('.o3d__piece--facade', root).forEach((pc) => pc.style.setProperty('--ouvre', ouvre.toFixed(3))); }
     let n = -1; etapes.forEach((x, i) => { if (e.p + 0.001 >= (parseFloat(x.dataset.de) || 0)) n = i; });
-    etapes.forEach((x, i) => x.classList.toggle('est-active', i === n));
+    if (n !== nActive) { nActive = n; etapes.forEach((x, i) => x.classList.toggle('est-active', i === n)); }
   }
   if (calme()) { poser(); return; }
   root.classList.add('est-actif');
@@ -268,7 +295,7 @@ function sarment() {
   const objet = enCalme ? null : el('g', 'fic__objet', svg);
   if (objet) { const m = $('template[data-fil-objet]', root); if (m) objet.innerHTML = m.innerHTML; }
   root.prepend(svg);
-  let L = 0, pas = 1, table = [], ancres = [], haut = 0;
+  let L = 0, pas = 1, table = [], ancres = [], haut = 0, maxDefil = 0, vh = innerHeight;
   const st8 = { l: 0 };
   const feuille = 'M0 0 C 6 -10, 20 -12, 26 -2 C 22 2, 24 8, 18 10 C 12 12, 6 8, 0 0 Z';
   function construire() {
@@ -277,6 +304,8 @@ function sarment() {
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     const rr = root.getBoundingClientRect();
     haut = rr.top + scrollY;
+    vh = innerHeight;
+    maxDefil = document.documentElement.scrollHeight - vh;
     const tel = innerWidth < o.largeurTelephone;
     const boite = (x) => { const h = x.parentElement?.classList.contains('pin-spacer') ? x.parentElement : x; const r = h.getBoundingClientRect(); return { l: r.left - rr.left, t: r.top - rr.top, r: r.right - rr.left, b: r.bottom - rr.top, w: r.width, h: r.height }; };
     const gouttieres = (x) => { const c = x.matches(o.cadre) ? x : x.querySelector(o.cadre); if (!c) return [16, 16]; const b = boite(c); return [b.l, W - b.r]; };
@@ -355,10 +384,13 @@ function sarment() {
     while (lo < hi) { const m = (lo + hi) >> 1; if (table[m][3] >= y) hi = m; else lo = m + 1; }
     return table[lo][0];
   }
-  function cible() {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    const proche = max > 0 ? borne((scrollY - (max - innerHeight * 0.5)) / (innerHeight * 0.5), 0, 1) : 1;
-    return longueur(scrollY + innerHeight * (o.regard + (1 - o.regard) * proche) - haut);
+  /* Hauteur de page et d'écran relevées à la construction (et à chaque rafraîchissement), position tirée du
+     déclencheur : lire scrollHeight, scrollY ou innerHeight à chaque image forçait un recalcul complet du style
+     pendant le défilement (fluidité). */
+  function cible(y = scrollY) {
+    const max = maxDefil;
+    const proche = max > 0 ? borne((y - (max - vh * 0.5)) / (vh * 0.5), 0, 1) : 1;
+    return longueur(y + vh * (o.regard + (1 - o.regard) * proche) - haut);
   }
   function peindre() {
     if (!L) return;
@@ -367,9 +399,10 @@ function sarment() {
     if (objet) { const p = table[Math.min(table.length - 1, Math.round(l / pas))]; objet.setAttribute('transform', `translate(${f(p[1])} ${f(p[2])})`); objet.classList.toggle('est-visible', l > 2 && l < L - 2); }
     for (const a of ancres) a.g.classList.toggle('est-atteinte', l >= a.l - 1);
   }
-  function suivre() {
+  function suivre(st) {
     if (enCalme || !L) return;
-    gsap.to(st8, { l: cible(), duration: o.lissage, ease: 'power3.out', overwrite: true, onUpdate: peindre });
+    const y = st && st.end > st.start ? st.start + st.progress * (st.end - st.start) : undefined;
+    gsap.to(st8, { l: cible(y), duration: o.lissage, ease: 'power3.out', overwrite: true, onUpdate: peindre });
   }
   /* Construit après l'ouverture : jamais pendant l'intro (leçon alexandra-grandry). */
   const lancer = () => {

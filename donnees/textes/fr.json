@@ -120,7 +120,7 @@
     "chambres": {
       "sur": "Les chambres",
       "titre": "Aux prénoms de nos grands-mères.",
-      "texte": "Climatisées, avec Wi-Fi, bureau et machine à expresso, une bouteille d’eau fraîche et des biscuits. Chacune a son caractère.",
+      "texte": "Climatisées, avec Wi-Fi, bureau, machine à expresso, douche et toilettes. Chacune a son caractère.",
       "voir": "Voir la chambre",
       "toutes": "Comparer les quatre chambres"
     },
@@ -228,7 +228,7 @@
       "i1": "Climatisation et chauffage individuels",
       "i2": "Wi-Fi gratuit",
       "i3": "Machine à expresso",
-      "i4": "Bouteille d’eau fraîche et biscuits",
+      "i4": "Espace douche et toilettes",
       "i5": "Linge de toilette, sèche-cheveux, kit brosse à dents",
       "i6": "Couettes fabriquées en France, oreillers en plus sur demande",
       "noteEnfant": "Isabelle et Denise peuvent recevoir un lit d’appoint pour enfant (de 7 à 14 ans, 10 €)."

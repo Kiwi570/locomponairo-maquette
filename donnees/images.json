@@ -1086,7 +1086,7 @@
     "nom": "isabelle-4",
     "source": "recu/24m2-9.jpg",
     "role": "galerie",
-    "alt": "Chambre Isabelle : la cheminée de marbre",
+    "alt": "Chambre Isabelle : la cheminée",
     "grok": false,
     "mention": null,
     "empreinte": "18186ba50562ae32",
@@ -1152,7 +1152,7 @@
       "isabelle-4-640.webp": 43758,
       "isabelle-4-960.webp": 83010
     },
-    "media": "c.media({ nom: 'isabelle-4', alt: \"Chambre Isabelle : la cheminée de marbre\", cadrage: '56% 43%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+    "media": "c.media({ nom: 'isabelle-4', alt: \"Chambre Isabelle : la cheminée\", cadrage: '56% 43%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
   },
   "denise-1": {
     "nom": "denise-1",
