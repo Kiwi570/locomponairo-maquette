@@ -1,0 +1,6507 @@
+{
+  "dossier": "/Users/paul/Downloads/locomponairo-recu",
+  "date": "2026-11-10T11:56:49.281Z",
+  "detection": "Vision (macOS) + mesures sharp",
+  "planches": [
+    "planche.jpg",
+    "planche-2.jpg",
+    "planche-3.jpg",
+    "planche-4.jpg",
+    "planche-5.jpg"
+  ],
+  "legende_planche": "cadre jaune : sujet ; croix rouge : cadrage ; fond rose : à vérifier",
+  "doublons": [],
+  "images": [
+    {
+      "fichier": "logo-sombre.jpg",
+      "nom": "logo-sombre",
+      "drapeau": "logo",
+      "largeur": 2000,
+      "hauteur": 1121,
+      "ratio": "16:9",
+      "ratio_valeur": 1.784,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 203178,
+      "transparence": false,
+      "sujet": {
+        "x": 49.1,
+        "y": 0,
+        "l": 34,
+        "h": 99.2,
+        "source": "corps"
+      },
+      "visages": 0,
+      "cadrage": [
+        66,
+        29
+      ],
+      "cadrage_css": "66% 29%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.44,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.16,
+          "ton": "sombre",
+          "recouvre_sujet": 0.33
+        },
+        {
+          "cote": "haut",
+          "score": 0.08,
+          "ton": "sombre",
+          "recouvre_sujet": 0.34
+        },
+        {
+          "cote": "droite",
+          "score": 0.06,
+          "ton": "sombre",
+          "recouvre_sujet": 0.57
+        }
+      ],
+      "qualite": {
+        "nettete": 26.1,
+        "bruit": 0.51,
+        "compression": 1.23,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "7232b2b6b6b2f1e3",
+      "drapeaux": [
+        "logo"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse.jpg",
+      "nom": "chambre-isabelle-terrasse",
+      "drapeau": "lieu",
+      "largeur": 1333,
+      "hauteur": 2000,
+      "ratio": "2:3",
+      "ratio_valeur": 0.667,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 458510,
+      "transparence": false,
+      "sujet": {
+        "x": 37.4,
+        "y": 13.6,
+        "l": 39.5,
+        "h": 62,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        61,
+        39
+      ],
+      "cadrage_css": "61% 39%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.5,
+          "ton": "moyen",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "haut",
+          "score": 0.35,
+          "ton": "moyen",
+          "recouvre_sujet": 0.24
+        },
+        {
+          "cote": "bas",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.12
+        },
+        {
+          "cote": "droite",
+          "score": 0.17,
+          "ton": "moyen",
+          "recouvre_sujet": 0.26
+        }
+      ],
+      "qualite": {
+        "nettete": 24.1,
+        "bruit": 0.69,
+        "compression": 0.91,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "0f89b9b9b96aebf0",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "pouzols-decouvrez-maison-vigneronne.jpg",
+      "nom": "pouzols-decouvrez-maison-vigneronne",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1325,
+      "ratio": "3:2",
+      "ratio_valeur": 1.509,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 183817,
+      "transparence": false,
+      "sujet": {
+        "x": 32.6,
+        "y": 40.1,
+        "l": 67.2,
+        "h": 40.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        57,
+        50
+      ],
+      "cadrage_css": "57% 50%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.72,
+          "ton": "moyen",
+          "recouvre_sujet": 0.3
+        },
+        {
+          "cote": "gauche",
+          "score": 0.69,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        },
+        {
+          "cote": "haut",
+          "score": 0.62,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.53,
+          "ton": "moyen",
+          "recouvre_sujet": 0.4
+        }
+      ],
+      "qualite": {
+        "nettete": 4.3,
+        "bruit": 0.41,
+        "compression": 2.05,
+        "faible": true,
+        "raisons": [
+          "floue",
+          "compression visible"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "8b1b192c0879f8f4",
+      "drapeaux": [
+        "lieu",
+        "floue",
+        "compression visible",
+        "calme bas/gauche"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers.jpg",
+      "nom": "chambre-hotes-herault-vers",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1193100,
+      "transparence": false,
+      "sujet": {
+        "x": 23.5,
+        "y": 27.9,
+        "l": 33.8,
+        "h": 22.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        40,
+        39
+      ],
+      "cadrage_css": "40% 39%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.29,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.24,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "haut",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        }
+      ],
+      "qualite": {
+        "nettete": 125.3,
+        "bruit": 2.75,
+        "compression": 1.08,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "c04040c0c4e1e836",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-2.jpg",
+      "nom": "chambre-hotes-herault-vers-2",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1055222,
+      "transparence": false,
+      "sujet": {
+        "x": 13.2,
+        "y": 32.4,
+        "l": 55.9,
+        "h": 32.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        41,
+        48
+      ],
+      "cadrage_css": "41% 48%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.24,
+          "ton": "sombre",
+          "recouvre_sujet": 0.07
+        },
+        {
+          "cote": "haut",
+          "score": 0.22,
+          "ton": "sombre",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "gauche",
+          "score": 0.15,
+          "ton": "moyen",
+          "recouvre_sujet": 0.22
+        }
+      ],
+      "qualite": {
+        "nettete": 119,
+        "bruit": 2.34,
+        "compression": 1.08,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "8195856bc9a19359",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-3.jpg",
+      "nom": "chambre-hotes-herault-vers-3",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 533755,
+      "transparence": false,
+      "sujet": {
+        "x": 21.3,
+        "y": 19.8,
+        "l": 50.3,
+        "h": 68.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        53
+      ],
+      "cadrage_css": "49% 53%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.34,
+          "ton": "sombre",
+          "recouvre_sujet": 0.2
+        },
+        {
+          "cote": "haut",
+          "score": 0.25,
+          "ton": "sombre",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "bas",
+          "score": 0.18,
+          "ton": "sombre",
+          "recouvre_sujet": 0.33
+        },
+        {
+          "cote": "gauche",
+          "score": 0.15,
+          "ton": "sombre",
+          "recouvre_sujet": 0.32
+        }
+      ],
+      "qualite": {
+        "nettete": 30.3,
+        "bruit": 0.84,
+        "compression": 0.95,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "76cb99e363b13070",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-4.jpg",
+      "nom": "chambre-hotes-herault-vers-4",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1216008,
+      "transparence": false,
+      "sujet": {
+        "x": 39.7,
+        "y": 17.6,
+        "l": 25,
+        "h": 35.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        35
+      ],
+      "cadrage_css": "53% 35%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.26,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "bas",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.12
+        }
+      ],
+      "qualite": {
+        "nettete": 122.8,
+        "bruit": 2.92,
+        "compression": 1.06,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "e9d9f92d3bf9f9f2",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-5.jpg",
+      "nom": "chambre-hotes-herault-vers-5",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1078822,
+      "transparence": false,
+      "sujet": {
+        "x": 25,
+        "y": 28.7,
+        "l": 46.7,
+        "h": 56.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        51
+      ],
+      "cadrage_css": "49% 51%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.17
+        },
+        {
+          "cote": "haut",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "bas",
+          "score": 0.21,
+          "ton": "sombre",
+          "recouvre_sujet": 0.27
+        },
+        {
+          "cote": "gauche",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        }
+      ],
+      "qualite": {
+        "nettete": 95.9,
+        "bruit": 1.92,
+        "compression": 1.07,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "95f571353d3c3470",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-6.webp",
+      "nom": "chambre-hotes-herault-vers-6",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 910,
+      "ratio": "2.2",
+      "ratio_valeur": 2.198,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 663382,
+      "transparence": false,
+      "sujet": {
+        "x": 25,
+        "y": 33.8,
+        "l": 51.5,
+        "h": 54.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        50,
+        62
+      ],
+      "cadrage_css": "50% 62%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.28,
+          "ton": "moyen",
+          "recouvre_sujet": 0.02
+        },
+        {
+          "cote": "gauche",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.2
+        },
+        {
+          "cote": "droite",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "bas",
+          "score": 0.14,
+          "ton": "moyen",
+          "recouvre_sujet": 0.34
+        }
+      ],
+      "qualite": {
+        "nettete": 75.7,
+        "bruit": 2.17,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "0c0424244666cc4c",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2.png",
+      "nom": "24m2",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "png",
+      "poids": 7561888,
+      "transparence": true,
+      "sujet": {
+        "x": 55.1,
+        "y": 21,
+        "l": 25.7,
+        "h": 78.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        65,
+        50
+      ],
+      "cadrage_css": "65% 50%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0.1
+        },
+        {
+          "cote": "bas",
+          "score": 0.11,
+          "ton": "moyen",
+          "recouvre_sujet": 0.26
+        },
+        {
+          "cote": "droite",
+          "score": 0.06,
+          "ton": "moyen",
+          "recouvre_sujet": 0.41
+        }
+      ],
+      "qualite": {
+        "nettete": 35.9,
+        "bruit": 2.3,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "020c583872e292c2",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-7.png",
+      "nom": "chambre-hotes-herault-vers-7",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1488,
+      "ratio": "4:3",
+      "ratio_valeur": 1.344,
+      "orientation": "paysage",
+      "format": "png",
+      "poids": 6756162,
+      "transparence": true,
+      "sujet": {
+        "x": 36.8,
+        "y": 41.2,
+        "l": 30.9,
+        "h": 22.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        53
+      ],
+      "cadrage_css": "53% 53%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.3,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.29,
+          "ton": "moyen",
+          "recouvre_sujet": 0.02
+        },
+        {
+          "cote": "haut",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.04
+        }
+      ],
+      "qualite": {
+        "nettete": 33.4,
+        "bruit": 0.94,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "8c349f9b868692a2",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-8.jpg",
+      "nom": "chambre-hotes-herault-vers-8",
+      "drapeau": "lieu",
+      "largeur": 1499,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 446616,
+      "transparence": false,
+      "sujet": {
+        "x": 46.9,
+        "y": 4.8,
+        "l": 33.6,
+        "h": 95.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        63,
+        66
+      ],
+      "cadrage_css": "63% 66%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.34
+        },
+        {
+          "cote": "haut",
+          "score": 0.1,
+          "ton": "moyen",
+          "recouvre_sujet": 0.29
+        },
+        {
+          "cote": "droite",
+          "score": 0.04,
+          "ton": "moyen",
+          "recouvre_sujet": 0.49
+        }
+      ],
+      "qualite": {
+        "nettete": 23.4,
+        "bruit": 0.55,
+        "compression": 0.96,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "document",
+        "a_verifier": true,
+        "texte": "DOMAINE · MARIE · 2022 · LES CALLADES · ROUSSES · -sous vents et soleil. salate canais",
+        "blocs": 6,
+        "surface": 1.5,
+        "details": [
+          {
+            "texte": "DOMAINE",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "MARIE",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "2022",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "LES CALLADES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "ROUSSES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "-sous vents et soleil. salate canais",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "0606c659e7874343",
+      "drapeaux": [
+        "lieu",
+        "document lisible"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-9.jpg",
+      "nom": "chambre-hotes-herault-vers-9",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1573,
+      "ratio": "5:4",
+      "ratio_valeur": 1.271,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 664024,
+      "transparence": false,
+      "sujet": {
+        "x": 38.2,
+        "y": 27.9,
+        "l": 45.6,
+        "h": 55.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        59,
+        54
+      ],
+      "cadrage_css": "59% 54%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "sombre",
+          "recouvre_sujet": 0.03
+        },
+        {
+          "cote": "haut",
+          "score": 0.23,
+          "ton": "sombre",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "bas",
+          "score": 0.13,
+          "ton": "sombre",
+          "recouvre_sujet": 0.24
+        },
+        {
+          "cote": "droite",
+          "score": 0.12,
+          "ton": "moyen",
+          "recouvre_sujet": 0.33
+        }
+      ],
+      "qualite": {
+        "nettete": 39.9,
+        "bruit": 0.96,
+        "compression": 1.1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "f1e2ced9cdcdcd7d",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-10.jpg",
+      "nom": "chambre-hotes-herault-vers-10",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 2000,
+      "ratio": "1:1",
+      "ratio_valeur": 1,
+      "orientation": "carre",
+      "format": "jpeg",
+      "poids": 93189,
+      "transparence": false,
+      "sujet": {
+        "x": 15.9,
+        "y": 14.1,
+        "l": 66.1,
+        "h": 65.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        51,
+        44
+      ],
+      "cadrage_css": "51% 44%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.49,
+          "ton": "clair",
+          "recouvre_sujet": 0.39
+        },
+        {
+          "cote": "bas",
+          "score": 0.48,
+          "ton": "clair",
+          "recouvre_sujet": 0.27
+        },
+        {
+          "cote": "droite",
+          "score": 0.44,
+          "ton": "clair",
+          "recouvre_sujet": 0.36
+        },
+        {
+          "cote": "gauche",
+          "score": 0.41,
+          "ton": "clair",
+          "recouvre_sujet": 0.39
+        }
+      ],
+      "qualite": {
+        "nettete": 17.3,
+        "bruit": 0.1,
+        "compression": 1.36,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "0017173b3b171e40",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-11.png",
+      "nom": "chambre-hotes-herault-vers-11",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 2000,
+      "ratio": "1:1",
+      "ratio_valeur": 1,
+      "orientation": "carre",
+      "format": "png",
+      "poids": 359028,
+      "transparence": true,
+      "sujet": {
+        "x": 29.4,
+        "y": 26.5,
+        "l": 33.8,
+        "h": 50,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        53
+      ],
+      "cadrage_css": "48% 53%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "gauche",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "haut",
+          "score": 0.17,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "bas",
+          "score": 0.16,
+          "ton": "moyen",
+          "recouvre_sujet": 0.11
+        }
+      ],
+      "qualite": {
+        "nettete": 35.4,
+        "bruit": 0.07,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "MAY · PARTENAIRE · TEAM 68°",
+        "blocs": 3,
+        "surface": 11.7,
+        "details": [
+          {
+            "texte": "MAY",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "PARTENAIRE",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "TEAM 68°",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "0f1769637155330f",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-12.jpg",
+      "nom": "chambre-hotes-herault-vers-12",
+      "drapeau": "lieu",
+      "largeur": 1832,
+      "hauteur": 2000,
+      "ratio": "0.92",
+      "ratio_valeur": 0.916,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 417151,
+      "transparence": false,
+      "sujet": {
+        "x": 0.3,
+        "y": 10.3,
+        "l": 99.4,
+        "h": 81.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        51,
+        44
+      ],
+      "cadrage_css": "51% 44%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.7
+        },
+        {
+          "cote": "droite",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.81
+        },
+        {
+          "cote": "gauche",
+          "score": 0.09,
+          "ton": "moyen",
+          "recouvre_sujet": 0.81
+        },
+        {
+          "cote": "bas",
+          "score": 0.03,
+          "ton": "moyen",
+          "recouvre_sujet": 0.77
+        }
+      ],
+      "qualite": {
+        "nettete": 11.5,
+        "bruit": 0.44,
+        "compression": 0.95,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "VED · tran · TTE · tor · MADE IN FRANCE. LIC. ATO",
+        "blocs": 5,
+        "surface": 0.9,
+        "details": [
+          {
+            "texte": "VED",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "tran",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "TTE",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "tor",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "MADE IN FRANCE. LIC. ATO",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "0c3868ec6c71030e",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-13.jpg",
+      "nom": "chambre-hotes-herault-vers-13",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1950,
+      "ratio": "1.03",
+      "ratio_valeur": 1.026,
+      "orientation": "carre",
+      "format": "jpeg",
+      "poids": 767975,
+      "transparence": false,
+      "sujet": {
+        "x": 1.1,
+        "y": 22,
+        "l": 82.2,
+        "h": 77.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        45,
+        52
+      ],
+      "cadrage_css": "45% 52%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.19,
+          "ton": "sombre",
+          "recouvre_sujet": 0.31
+        },
+        {
+          "cote": "droite",
+          "score": 0.12,
+          "ton": "sombre",
+          "recouvre_sujet": 0.45
+        },
+        {
+          "cote": "bas",
+          "score": 0.07,
+          "ton": "sombre",
+          "recouvre_sujet": 0.81
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.75
+        }
+      ],
+      "qualite": {
+        "nettete": 52.8,
+        "bruit": 1.01,
+        "compression": 1.13,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "414cdbe1c5e11352",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-14.png",
+      "nom": "chambre-hotes-herault-vers-14",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "png",
+      "poids": 8576601,
+      "transparence": true,
+      "sujet": {
+        "x": 19.1,
+        "y": 25,
+        "l": 51.5,
+        "h": 66.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        46,
+        54
+      ],
+      "cadrage_css": "46% 54%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0.39
+        },
+        {
+          "cote": "droite",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "haut",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        },
+        {
+          "cote": "gauche",
+          "score": 0.13,
+          "ton": "moyen",
+          "recouvre_sujet": 0.35
+        }
+      ],
+      "qualite": {
+        "nettete": 111,
+        "bruit": 2.93,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "Petit Dejeuner · et garage · NETSUY",
+        "blocs": 3,
+        "surface": 3.2,
+        "details": [
+          {
+            "texte": "Petit Dejeuner",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "et garage",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "NETSUY",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "b8b9591632961273",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-15.gif",
+      "nom": "chambre-hotes-herault-vers-15",
+      "drapeau": "lieu",
+      "largeur": 2271,
+      "hauteur": 1272,
+      "ratio": "16:9",
+      "ratio_valeur": 1.785,
+      "orientation": "paysage",
+      "format": "gif",
+      "poids": 368178,
+      "transparence": true,
+      "sujet": {
+        "x": 1.9,
+        "y": 30,
+        "l": 54.1,
+        "h": 68.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        29,
+        54
+      ],
+      "cadrage_css": "29% 54%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.2,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.17,
+          "ton": "clair",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "bas",
+          "score": 0.02,
+          "ton": "clair",
+          "recouvre_sujet": 0.52
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.65
+        }
+      ],
+      "qualite": {
+        "nettete": 40.9,
+        "bruit": 0.52,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "DE FRAS · GITES",
+        "blocs": 2,
+        "surface": 24.6,
+        "details": [
+          {
+            "texte": "DE FRAS",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "GITES",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "345acecccc5c7838",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-16.png",
+      "nom": "chambre-hotes-herault-vers-16",
+      "drapeau": "lieu",
+      "largeur": 1080,
+      "hauteur": 1080,
+      "ratio": "1:1",
+      "ratio_valeur": 1,
+      "orientation": "carre",
+      "format": "png",
+      "poids": 80693,
+      "transparence": true,
+      "sujet": {
+        "x": 9.9,
+        "y": 38.4,
+        "l": 84.8,
+        "h": 58.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        54
+      ],
+      "cadrage_css": "48% 54%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.72,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.45,
+          "ton": "clair",
+          "recouvre_sujet": 0.51
+        },
+        {
+          "cote": "bas",
+          "score": 0.33,
+          "ton": "clair",
+          "recouvre_sujet": 0.77
+        },
+        {
+          "cote": "gauche",
+          "score": 0.11,
+          "ton": "clair",
+          "recouvre_sujet": 0.44
+        }
+      ],
+      "qualite": {
+        "nettete": 51.6,
+        "bruit": 0.08,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "1080 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "KAYAK · Travel · Awards · Winner",
+        "blocs": 4,
+        "surface": 15.2,
+        "details": [
+          {
+            "texte": "KAYAK",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Travel",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Awards",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Winner",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "5838585d3d730109",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "texte décoratif",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-17.png",
+      "nom": "chambre-hotes-herault-vers-17",
+      "drapeau": "lieu",
+      "largeur": 1080,
+      "hauteur": 1080,
+      "ratio": "1:1",
+      "ratio_valeur": 1,
+      "orientation": "carre",
+      "format": "png",
+      "poids": 55828,
+      "transparence": true,
+      "sujet": {
+        "x": 8.8,
+        "y": 25,
+        "l": 48.5,
+        "h": 19.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        35,
+        35
+      ],
+      "cadrage_css": "35% 35%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.74,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.52,
+          "ton": "sombre",
+          "recouvre_sujet": 0.14
+        },
+        {
+          "cote": "bas",
+          "score": 0.45,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "sombre",
+          "recouvre_sujet": 0.15
+        }
+      ],
+      "qualite": {
+        "nettete": 52.1,
+        "bruit": 0.05,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "1080 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "marque",
+        "a_verifier": true,
+        "texte": "Awarded to · Chambre d'Hôtes · Lo Componairo · Booking.com · Traveller Review Awards 2025 · out of 10",
+        "blocs": 6,
+        "surface": 13.6,
+        "details": [
+          {
+            "texte": "Awarded to",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Chambre d'Hôtes",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Lo Componairo",
+            "niveau": "marque"
+          },
+          {
+            "texte": "Booking.com",
+            "niveau": "marque"
+          },
+          {
+            "texte": "Traveller Review Awards 2025",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "out of 10",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "30cc90d249368682",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "filigrane ou marque",
+        "calme droite"
+      ]
+    },
+    {
+      "fichier": "maxresdefault.webp",
+      "nom": "maxresdefault",
+      "drapeau": "lieu",
+      "largeur": 1280,
+      "hauteur": 720,
+      "ratio": "16:9",
+      "ratio_valeur": 1.778,
+      "orientation": "paysage",
+      "format": "webp",
+      "poids": 315708,
+      "transparence": false,
+      "sujet": {
+        "x": 35.1,
+        "y": 44.5,
+        "l": 23.5,
+        "h": 40.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        47,
+        57
+      ],
+      "cadrage_css": "47% 57%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "bas",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        }
+      ],
+      "qualite": {
+        "nettete": 109.3,
+        "bruit": 2.53,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "e4302a266662d60f",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-18.jpg",
+      "nom": "chambre-hotes-herault-vers-18",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 478781,
+      "transparence": false,
+      "sujet": {
+        "x": 16.1,
+        "y": 15.8,
+        "l": 79.3,
+        "h": 83.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        53
+      ],
+      "cadrage_css": "52% 53%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.09,
+          "ton": "moyen",
+          "recouvre_sujet": 0.5
+        },
+        {
+          "cote": "haut",
+          "score": 0.09,
+          "ton": "sombre",
+          "recouvre_sujet": 0.44
+        },
+        {
+          "cote": "droite",
+          "score": 0.06,
+          "ton": "sombre",
+          "recouvre_sujet": 0.74
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.77
+        }
+      ],
+      "qualite": {
+        "nettete": 67.7,
+        "bruit": 2.51,
+        "compression": 1.01,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "a5c38bd3610985c7",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-19.jpg",
+      "nom": "chambre-hotes-herault-vers-19",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 202538,
+      "transparence": false,
+      "sujet": {
+        "x": 40.5,
+        "y": 43.1,
+        "l": 51,
+        "h": 45.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        67,
+        62
+      ],
+      "cadrage_css": "67% 62%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.8,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.78,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.47,
+          "ton": "sombre",
+          "recouvre_sujet": 0.34
+        },
+        {
+          "cote": "droite",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0.36
+        }
+      ],
+      "qualite": {
+        "nettete": 16.2,
+        "bruit": 0.94,
+        "compression": 1.12,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "fbf7fbedce8a0f1e",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "calme gauche/haut"
+      ]
+    },
+    {
+      "fichier": "15m2.jpg",
+      "nom": "15m2",
+      "drapeau": "lieu",
+      "largeur": 1182,
+      "hauteur": 665,
+      "ratio": "16:9",
+      "ratio_valeur": 1.777,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 200395,
+      "transparence": false,
+      "sujet": {
+        "x": 24.7,
+        "y": 15.7,
+        "l": 47.2,
+        "h": 39,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        45
+      ],
+      "cadrage_css": "48% 45%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.44,
+          "ton": "moyen",
+          "recouvre_sujet": 0.12
+        },
+        {
+          "cote": "bas",
+          "score": 0.35,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.33,
+          "ton": "moyen",
+          "recouvre_sujet": 0.26
+        },
+        {
+          "cote": "gauche",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        }
+      ],
+      "qualite": {
+        "nettete": 40.6,
+        "bruit": 1.22,
+        "compression": 1.01,
+        "faible": true,
+        "raisons": [
+          "1182 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "Vive l'ara · bistrots · brasseries & restaurants parisiens",
+        "blocs": 3,
+        "surface": 0.9,
+        "details": [
+          {
+            "texte": "Vive l'ara",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "bistrots",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "brasseries & restaurants parisiens",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "d830171cd6d3c715",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-20.jpg",
+      "nom": "chambre-hotes-herault-vers-20",
+      "drapeau": "lieu",
+      "largeur": 848,
+      "hauteur": 926,
+      "ratio": "0.92",
+      "ratio_valeur": 0.916,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 522359,
+      "transparence": false,
+      "sujet": {
+        "x": 21.9,
+        "y": 38.5,
+        "l": 58.4,
+        "h": 42.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        53
+      ],
+      "cadrage_css": "52% 53%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.24,
+          "ton": "moyen",
+          "recouvre_sujet": 0.27
+        },
+        {
+          "cote": "droite",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "gauche",
+          "score": 0.15,
+          "ton": "moyen",
+          "recouvre_sujet": 0.19
+        }
+      ],
+      "qualite": {
+        "nettete": 104.7,
+        "bruit": 2.97,
+        "compression": 0.9,
+        "faible": true,
+        "raisons": [
+          "848 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "aea7e79d8ded6cc0",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-21.jpg",
+      "nom": "chambre-hotes-herault-vers-21",
+      "drapeau": "lieu",
+      "largeur": 675,
+      "hauteur": 900,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 134405,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 22.9,
+        "l": 98.1,
+        "h": 70.6,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        47,
+        54
+      ],
+      "cadrage_css": "47% 54%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.29,
+          "ton": "moyen",
+          "recouvre_sujet": 0.34
+        },
+        {
+          "cote": "droite",
+          "score": 0.08,
+          "ton": "moyen",
+          "recouvre_sujet": 0.67
+        },
+        {
+          "cote": "gauche",
+          "score": 0.04,
+          "ton": "moyen",
+          "recouvre_sujet": 0.71
+        },
+        {
+          "cote": "bas",
+          "score": 0.01,
+          "ton": "moyen",
+          "recouvre_sujet": 0.8
+        }
+      ],
+      "qualite": {
+        "nettete": 14.7,
+        "bruit": 0.67,
+        "compression": 1.15,
+        "faible": true,
+        "raisons": [
+          "675 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "c1869816270ac8f1",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-22.jpg",
+      "nom": "chambre-hotes-herault-vers-22",
+      "drapeau": "lieu",
+      "largeur": 652,
+      "hauteur": 818,
+      "ratio": "4:5",
+      "ratio_valeur": 0.797,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 626906,
+      "transparence": false,
+      "sujet": {
+        "x": 1,
+        "y": 0.2,
+        "l": 95,
+        "h": 85.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        38
+      ],
+      "cadrage_css": "49% 38%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.08,
+          "ton": "moyen",
+          "recouvre_sujet": 0.56
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.83
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.77
+        },
+        {
+          "cote": "haut",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.94
+        }
+      ],
+      "qualite": {
+        "nettete": 36.8,
+        "bruit": 1.36,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "652 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "petit · fute · Etablissement · recommandé · Depuis · 50 ans · toujours a · vos côtés! · 226",
+        "blocs": 9,
+        "surface": 73.9,
+        "details": [
+          {
+            "texte": "petit",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "fute",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Etablissement",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "recommandé",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Depuis",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "50 ans",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "toujours a",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "vos côtés!",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "226",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "1b6f352519191b19",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-23.jpg",
+      "nom": "chambre-hotes-herault-vers-23",
+      "drapeau": "lieu",
+      "largeur": 560,
+      "hauteur": 776,
+      "ratio": "0.72",
+      "ratio_valeur": 0.722,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 456057,
+      "transparence": false,
+      "sujet": {
+        "x": 0.1,
+        "y": 6.5,
+        "l": 96.2,
+        "h": 82.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        42
+      ],
+      "cadrage_css": "49% 42%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.82
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.75
+        },
+        {
+          "cote": "haut",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.78
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.67
+        }
+      ],
+      "qualite": {
+        "nettete": 41.1,
+        "bruit": 1.32,
+        "compression": 0.97,
+        "faible": true,
+        "raisons": [
+          "560 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "petit · futé · Etablissement · recommande · 2025",
+        "blocs": 5,
+        "surface": 92.5,
+        "details": [
+          {
+            "texte": "petit",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "futé",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Etablissement",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "recommande",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "2025",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "3dfdb52519291529",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-hotes-herault-vers-24.png",
+      "nom": "chambre-hotes-herault-vers-24",
+      "drapeau": "lieu",
+      "largeur": 1000,
+      "hauteur": 363,
+      "ratio": "2.75",
+      "ratio_valeur": 2.755,
+      "orientation": "paysage",
+      "format": "png",
+      "poids": 19218,
+      "transparence": true,
+      "sujet": {
+        "x": 45.3,
+        "y": 52.2,
+        "l": 47.5,
+        "h": 35,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        57,
+        65
+      ],
+      "cadrage_css": "57% 65%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.69,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.25,
+          "ton": "clair",
+          "recouvre_sujet": 0.29
+        },
+        {
+          "cote": "gauche",
+          "score": 0.21,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.1,
+          "ton": "clair",
+          "recouvre_sujet": 0.3
+        }
+      ],
+      "qualite": {
+        "nettete": 59.2,
+        "bruit": 0.09,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "1000 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "ancv 1 · CHÈQUE-VACANCES · CONNECT",
+        "blocs": 3,
+        "surface": 17.3,
+        "details": [
+          {
+            "texte": "ancv 1",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "CHÈQUE-VACANCES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "CONNECT",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "4070342007256553",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "texte décoratif",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "pouzols-decouvrez-maison-vigneronne-2.png",
+      "nom": "pouzols-decouvrez-maison-vigneronne-2",
+      "drapeau": "lieu",
+      "largeur": 512,
+      "hauteur": 512,
+      "ratio": "1:1",
+      "ratio_valeur": 1,
+      "orientation": "carre",
+      "format": "png",
+      "poids": 12153,
+      "transparence": true,
+      "sujet": {
+        "x": 1.8,
+        "y": 21.2,
+        "l": 95.5,
+        "h": 76,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        46,
+        53
+      ],
+      "cadrage_css": "46% 53%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0.38
+        },
+        {
+          "cote": "bas",
+          "score": 0.33,
+          "ton": "moyen",
+          "recouvre_sujet": 0.88
+        },
+        {
+          "cote": "droite",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0.71
+        },
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "moyen",
+          "recouvre_sujet": 0.73
+        }
+      ],
+      "qualite": {
+        "nettete": 35.6,
+        "bruit": 0.12,
+        "compression": 1,
+        "faible": true,
+        "raisons": [
+          "512 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "NETFLIX",
+        "blocs": 1,
+        "surface": 16.2,
+        "details": [
+          {
+            "texte": "NETFLIX",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "2b4545150f194523",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols.jpg",
+      "nom": "alentours-pouzols",
+      "drapeau": "autre",
+      "largeur": 1333,
+      "hauteur": 2000,
+      "ratio": "2:3",
+      "ratio_valeur": 0.667,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 763412,
+      "transparence": false,
+      "sujet": {
+        "x": 20.6,
+        "y": 25,
+        "l": 69.1,
+        "h": 42.6,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        45
+      ],
+      "cadrage_css": "52% 45%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.36,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "gauche",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        },
+        {
+          "cote": "haut",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.2
+        },
+        {
+          "cote": "droite",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.32
+        }
+      ],
+      "qualite": {
+        "nettete": 56.4,
+        "bruit": 2.9,
+        "compression": 0.97,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "5de1e4e678d6d3ca",
+      "drapeaux": [
+        "autre"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-2.jpg",
+      "nom": "alentours-pouzols-2",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 1333,
+      "ratio": "3:2",
+      "ratio_valeur": 1.5,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 695703,
+      "transparence": false,
+      "sujet": {
+        "x": 25,
+        "y": 36.8,
+        "l": 38.2,
+        "h": 27.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        44,
+        51
+      ],
+      "cadrage_css": "44% 51%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.65,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.29,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.28,
+          "ton": "moyen",
+          "recouvre_sujet": 0.02
+        },
+        {
+          "cote": "gauche",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.1
+        }
+      ],
+      "qualite": {
+        "nettete": 64.6,
+        "bruit": 1.53,
+        "compression": 1.15,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "b01bc0c98d9243c6",
+      "drapeaux": [
+        "autre",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-3.jpg",
+      "nom": "alentours-pouzols-3",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 540810,
+      "transparence": false,
+      "sujet": {
+        "x": 29.8,
+        "y": 36.5,
+        "l": 15.7,
+        "h": 62.9,
+        "source": "corps"
+      },
+      "visages": 1,
+      "cadrage": [
+        35,
+        53
+      ],
+      "cadrage_css": "35% 53%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.2,
+          "ton": "sombre",
+          "recouvre_sujet": 0.15
+        },
+        {
+          "cote": "gauche",
+          "score": 0.15,
+          "ton": "sombre",
+          "recouvre_sujet": 0.16
+        }
+      ],
+      "qualite": {
+        "nettete": 39.2,
+        "bruit": 0.96,
+        "compression": 1.13,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "MORENA · gardes · TOWS. · seeds · 3: 50",
+        "blocs": 5,
+        "surface": 0.2,
+        "details": [
+          {
+            "texte": "MORENA",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "gardes",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "TOWS.",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "seeds",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "3: 50",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "ece7a7cdad6c699a",
+      "drapeaux": [
+        "autre",
+        "visage",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-4.jpg",
+      "nom": "alentours-pouzols-4",
+      "drapeau": "autre",
+      "largeur": 1571,
+      "hauteur": 2000,
+      "ratio": "4:5",
+      "ratio_valeur": 0.786,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 881645,
+      "transparence": false,
+      "sujet": {
+        "x": 4.9,
+        "y": 48.1,
+        "l": 36.7,
+        "h": 29.7,
+        "source": "visage"
+      },
+      "visages": 2,
+      "cadrage": [
+        23,
+        61
+      ],
+      "cadrage_css": "23% 61%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.24,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "haut",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.12,
+          "ton": "moyen",
+          "recouvre_sujet": 0.26
+        }
+      ],
+      "qualite": {
+        "nettete": 73.1,
+        "bruit": 1.68,
+        "compression": 0.98,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "f1e1f19f9b99d993",
+      "drapeaux": [
+        "autre",
+        "2 visages"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-5.jpg",
+      "nom": "alentours-pouzols-5",
+      "drapeau": "autre",
+      "largeur": 1474,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.737,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 753008,
+      "transparence": false,
+      "sujet": {
+        "x": 18.1,
+        "y": 44.3,
+        "l": 41.7,
+        "h": 55.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        42,
+        59
+      ],
+      "cadrage_css": "42% 59%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.29,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.16,
+          "ton": "moyen",
+          "recouvre_sujet": 0.3
+        },
+        {
+          "cote": "bas",
+          "score": 0.13,
+          "ton": "moyen",
+          "recouvre_sujet": 0.41
+        }
+      ],
+      "qualite": {
+        "nettete": 48.4,
+        "bruit": 1.44,
+        "compression": 0.99,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "6f63c30f3f19392e",
+      "drapeaux": [
+        "autre"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-6.png",
+      "nom": "alentours-pouzols-6",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "png",
+      "poids": 6336019,
+      "transparence": true,
+      "sujet": {
+        "x": 88.6,
+        "y": 34.4,
+        "l": 11.4,
+        "h": 22,
+        "source": "visage"
+      },
+      "visages": 1,
+      "cadrage": [
+        95,
+        44
+      ],
+      "cadrage_css": "95% 44%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.65,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0.06
+        },
+        {
+          "cote": "bas",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        }
+      ],
+      "qualite": {
+        "nettete": 78.6,
+        "bruit": 1.51,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "12 NOTAIRES · eleom · LES · PLUS · BELLES · HISTOIRES · CUMMENCENT · mont · INDEPENDENC",
+        "blocs": 9,
+        "surface": 3.2,
+        "details": [
+          {
+            "texte": "12 NOTAIRES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "eleom",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "LES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "PLUS",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "BELLES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "HISTOIRES",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "CUMMENCENT",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "mont",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "INDEPENDENC",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "09092d0404c4d2fb",
+      "drapeaux": [
+        "autre",
+        "visage",
+        "texte décoratif",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-7.jpg",
+      "nom": "alentours-pouzols-7",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 976,
+      "ratio": "2:1",
+      "ratio_valeur": 2.049,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 755805,
+      "transparence": false,
+      "sujet": {
+        "x": 31.7,
+        "y": 24.8,
+        "l": 18.4,
+        "h": 75.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        42,
+        55
+      ],
+      "cadrage_css": "42% 55%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "bas",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "gauche",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.16
+        }
+      ],
+      "qualite": {
+        "nettete": 96.4,
+        "bruit": 2.58,
+        "compression": 1.1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "9c1e1776767256d2",
+      "drapeaux": [
+        "autre"
+      ]
+    },
+    {
+      "fichier": "pont-canet.jpg",
+      "nom": "pont-canet",
+      "drapeau": "autre",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 660522,
+      "transparence": false,
+      "sujet": {
+        "x": 16.2,
+        "y": 13.2,
+        "l": 60.3,
+        "h": 42.6,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        46,
+        35
+      ],
+      "cadrage_css": "46% 35%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.51,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.34,
+          "ton": "moyen",
+          "recouvre_sujet": 0.38
+        },
+        {
+          "cote": "droite",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "gauche",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.25
+        }
+      ],
+      "qualite": {
+        "nettete": 82.9,
+        "bruit": 1.07,
+        "compression": 1.19,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "966c70191c796f7c",
+      "drapeaux": [
+        "autre"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-8.jpg",
+      "nom": "alentours-pouzols-8",
+      "drapeau": "autre",
+      "largeur": 1600,
+      "hauteur": 1067,
+      "ratio": "3:2",
+      "ratio_valeur": 1.5,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1474006,
+      "transparence": false,
+      "sujet": {
+        "x": 63.9,
+        "y": 44.1,
+        "l": 16.1,
+        "h": 37.7,
+        "source": "corps"
+      },
+      "visages": 0,
+      "cadrage": [
+        72,
+        55
+      ],
+      "cadrage_css": "72% 55%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.49,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.33,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.3,
+          "ton": "sombre",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "droite",
+          "score": 0.16,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        }
+      ],
+      "qualite": {
+        "nettete": 70,
+        "bruit": 1.87,
+        "compression": 1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "e3e4e6909272f2f0",
+      "drapeaux": [
+        "autre"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-9.jpg",
+      "nom": "alentours-pouzols-9",
+      "drapeau": "autre",
+      "largeur": 1000,
+      "hauteur": 750,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 676512,
+      "transparence": false,
+      "sujet": {
+        "x": 32.4,
+        "y": 13.2,
+        "l": 44.1,
+        "h": 60.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        38
+      ],
+      "cadrage_css": "53% 38%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "moyen",
+          "recouvre_sujet": 0.11
+        },
+        {
+          "cote": "bas",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.11
+        },
+        {
+          "cote": "haut",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.27
+        },
+        {
+          "cote": "droite",
+          "score": 0.16,
+          "ton": "moyen",
+          "recouvre_sujet": 0.25
+        }
+      ],
+      "qualite": {
+        "nettete": 79.9,
+        "bruit": 3.75,
+        "compression": 0.99,
+        "faible": true,
+        "raisons": [
+          "1000 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "83a0e4c56cb8dcd8",
+      "drapeaux": [
+        "autre",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "alentours-pouzols-10.jpg",
+      "nom": "alentours-pouzols-10",
+      "drapeau": "autre",
+      "largeur": 1000,
+      "hauteur": 437,
+      "ratio": "21:9",
+      "ratio_valeur": 2.288,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 189256,
+      "transparence": false,
+      "sujet": {
+        "x": 59.1,
+        "y": 0.7,
+        "l": 22.9,
+        "h": 83.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        69,
+        39
+      ],
+      "cadrage_css": "69% 39%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "bas",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "droite",
+          "score": 0.12,
+          "ton": "sombre",
+          "recouvre_sujet": 0.46
+        }
+      ],
+      "qualite": {
+        "nettete": 36.2,
+        "bruit": 0.96,
+        "compression": 1.04,
+        "faible": true,
+        "raisons": [
+          "1000 px de large"
+        ]
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "AdOs · Adobe · dobel · Add · Adob · ock",
+        "blocs": 6,
+        "surface": 6.8,
+        "details": [
+          {
+            "texte": "AdOs",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Adobe",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "dobel",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Add",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Adob",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "ock",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "caeac8e8ebc3c2e0",
+      "drapeaux": [
+        "autre",
+        "petite",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "16m2.jpg",
+      "nom": "16m2",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 466742,
+      "transparence": false,
+      "sujet": {
+        "x": 12.7,
+        "y": 50.9,
+        "l": 44.3,
+        "h": 29.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        36,
+        58
+      ],
+      "cadrage_css": "36% 58%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.35,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.29,
+          "ton": "sombre",
+          "recouvre_sujet": 0.2
+        },
+        {
+          "cote": "droite",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.15,
+          "ton": "moyen",
+          "recouvre_sujet": 0.2
+        }
+      ],
+      "qualite": {
+        "nettete": 61.1,
+        "bruit": 0.87,
+        "compression": 1.17,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "c7bcf66eeee6da93",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-hote-lo-componairo.jpg",
+      "nom": "chambre-hote-lo-componairo",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 613401,
+      "transparence": false,
+      "sujet": {
+        "x": 17.6,
+        "y": 13.2,
+        "l": 54.4,
+        "h": 36.8,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        46,
+        34
+      ],
+      "cadrage_css": "46% 34%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.29,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.11
+        },
+        {
+          "cote": "gauche",
+          "score": 0.17,
+          "ton": "sombre",
+          "recouvre_sujet": 0.21
+        },
+        {
+          "cote": "haut",
+          "score": 0.13,
+          "ton": "moyen",
+          "recouvre_sujet": 0.34
+        }
+      ],
+      "qualite": {
+        "nettete": 39.7,
+        "bruit": 1.12,
+        "compression": 1.22,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "6f6d6d6d6fece7e6",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2-2.jpg",
+      "nom": "24m2-2",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 414778,
+      "transparence": false,
+      "sujet": {
+        "x": 6.2,
+        "y": 6.9,
+        "l": 88.5,
+        "h": 42.8,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        45,
+        29
+      ],
+      "cadrage_css": "45% 29%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.22,
+          "ton": "sombre",
+          "recouvre_sujet": 0.71
+        },
+        {
+          "cote": "gauche",
+          "score": 0.15,
+          "ton": "sombre",
+          "recouvre_sujet": 0.36
+        },
+        {
+          "cote": "droite",
+          "score": 0.13,
+          "ton": "sombre",
+          "recouvre_sujet": 0.37
+        }
+      ],
+      "qualite": {
+        "nettete": 15,
+        "bruit": 0.47,
+        "compression": 1.01,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "9c3c2c29b9e9ece6",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2-3.jpg",
+      "nom": "24m2-3",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 460293,
+      "transparence": false,
+      "sujet": {
+        "x": 20.3,
+        "y": 12.3,
+        "l": 58.8,
+        "h": 57.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        40
+      ],
+      "cadrage_css": "52% 40%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.41,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "gauche",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0.28
+        },
+        {
+          "cote": "droite",
+          "score": 0.3,
+          "ton": "moyen",
+          "recouvre_sujet": 0.27
+        },
+        {
+          "cote": "haut",
+          "score": 0.28,
+          "ton": "moyen",
+          "recouvre_sujet": 0.38
+        }
+      ],
+      "qualite": {
+        "nettete": 38.7,
+        "bruit": 1.22,
+        "compression": 1.23,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "NORDI -",
+        "blocs": 1,
+        "surface": 0,
+        "details": [
+          {
+            "texte": "NORDI -",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "e3d3b3931b5d8ddd",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "24m2-4.jpg",
+      "nom": "24m2-4",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 879957,
+      "transparence": false,
+      "sujet": {
+        "x": 32.4,
+        "y": 42.6,
+        "l": 51.5,
+        "h": 22.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        54
+      ],
+      "cadrage_css": "54% 54%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.43,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.31,
+          "ton": "moyen",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "haut",
+          "score": 0.29,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        }
+      ],
+      "qualite": {
+        "nettete": 93.2,
+        "bruit": 2.05,
+        "compression": 1.13,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "dc4d4d3c323a48d0",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2-5.jpg",
+      "nom": "24m2-5",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1042938,
+      "transparence": false,
+      "sujet": {
+        "x": 32.4,
+        "y": 20.6,
+        "l": 42.6,
+        "h": 32.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        55,
+        37
+      ],
+      "cadrage_css": "55% 37%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "bas",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0.12
+        },
+        {
+          "cote": "gauche",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.06
+        }
+      ],
+      "qualite": {
+        "nettete": 101.6,
+        "bruit": 2.58,
+        "compression": 1.09,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "04d4d24a6cbc9d1f",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-2.jpg",
+      "nom": "chambre-isabelle-terrasse-2",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 436187,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 6.4,
+        "l": 83.6,
+        "h": 93.6,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        48
+      ],
+      "cadrage_css": "48% 48%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.14,
+          "ton": "moyen",
+          "recouvre_sujet": 0.94
+        },
+        {
+          "cote": "droite",
+          "score": 0.14,
+          "ton": "sombre",
+          "recouvre_sujet": 0.55
+        },
+        {
+          "cote": "haut",
+          "score": 0.12,
+          "ton": "moyen",
+          "recouvre_sujet": 0.68
+        },
+        {
+          "cote": "bas",
+          "score": 0.12,
+          "ton": "moyen",
+          "recouvre_sujet": 0.84
+        }
+      ],
+      "qualite": {
+        "nettete": 22,
+        "bruit": 0.77,
+        "compression": 0.94,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "8087613333372138",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-3.jpg",
+      "nom": "chambre-isabelle-terrasse-3",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 563059,
+      "transparence": false,
+      "sujet": {
+        "x": 13.9,
+        "y": 54.7,
+        "l": 37.2,
+        "h": 24.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        39,
+        61
+      ],
+      "cadrage_css": "39% 61%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.5,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.44,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.17,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        },
+        {
+          "cote": "gauche",
+          "score": 0.14,
+          "ton": "moyen",
+          "recouvre_sujet": 0.16
+        }
+      ],
+      "qualite": {
+        "nettete": 54.8,
+        "bruit": 1.34,
+        "compression": 1.13,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "3034383814103014",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-4.jpg",
+      "nom": "chambre-isabelle-terrasse-4",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 519110,
+      "transparence": false,
+      "sujet": {
+        "x": 13.2,
+        "y": 14.7,
+        "l": 69.1,
+        "h": 39.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        39
+      ],
+      "cadrage_css": "54% 39%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0.4
+        },
+        {
+          "cote": "droite",
+          "score": 0.39,
+          "ton": "sombre",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "bas",
+          "score": 0.34,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0.27
+        }
+      ],
+      "qualite": {
+        "nettete": 35.8,
+        "bruit": 0.87,
+        "compression": 1.19,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "f090adedc102c1c8",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-5.jpg",
+      "nom": "chambre-isabelle-terrasse-5",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 398920,
+      "transparence": false,
+      "sujet": {
+        "x": 19.6,
+        "y": 21,
+        "l": 72.1,
+        "h": 65.8,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        53
+      ],
+      "cadrage_css": "48% 53%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.56,
+          "ton": "moyen",
+          "recouvre_sujet": 0.29
+        },
+        {
+          "cote": "gauche",
+          "score": 0.49,
+          "ton": "sombre",
+          "recouvre_sujet": 0.34
+        },
+        {
+          "cote": "bas",
+          "score": 0.19,
+          "ton": "sombre",
+          "recouvre_sujet": 0.45
+        },
+        {
+          "cote": "droite",
+          "score": 0.18,
+          "ton": "sombre",
+          "recouvre_sujet": 0.52
+        }
+      ],
+      "qualite": {
+        "nettete": 22.2,
+        "bruit": 0.67,
+        "compression": 1.53,
+        "faible": true,
+        "raisons": [
+          "compression visible"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "7d74624a51595dc9",
+      "drapeaux": [
+        "lieu",
+        "compression visible"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-6.jpg",
+      "nom": "chambre-isabelle-terrasse-6",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 521898,
+      "transparence": false,
+      "sujet": {
+        "x": 32.4,
+        "y": 30.9,
+        "l": 47.1,
+        "h": 26.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        44
+      ],
+      "cadrage_css": "54% 44%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.46,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.41,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "haut",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0.06
+        },
+        {
+          "cote": "droite",
+          "score": 0.36,
+          "ton": "sombre",
+          "recouvre_sujet": 0.13
+        }
+      ],
+      "qualite": {
+        "nettete": 54.8,
+        "bruit": 1,
+        "compression": 0.97,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "c3f0b1b1b1b0e6e7",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-7.jpg",
+      "nom": "chambre-isabelle-terrasse-7",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 413089,
+      "transparence": false,
+      "sujet": {
+        "x": 33.6,
+        "y": 46.7,
+        "l": 25.8,
+        "h": 32.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        51,
+        61
+      ],
+      "cadrage_css": "51% 61%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.5,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.48,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.42,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "bas",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0.1
+        }
+      ],
+      "qualite": {
+        "nettete": 45.2,
+        "bruit": 0.83,
+        "compression": 1.1,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "4c72332303232341",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-8.jpg",
+      "nom": "chambre-isabelle-terrasse-8",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 587454,
+      "transparence": false,
+      "sujet": {
+        "x": 29.4,
+        "y": 22.1,
+        "l": 36.8,
+        "h": 35.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        39
+      ],
+      "cadrage_css": "48% 39%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.38,
+          "ton": "moyen",
+          "recouvre_sujet": 0.14
+        },
+        {
+          "cote": "bas",
+          "score": 0.27,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "droite",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        }
+      ],
+      "qualite": {
+        "nettete": 47.5,
+        "bruit": 0.88,
+        "compression": 1.19,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "a7d6dad3e7e0435b",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-9.jpg",
+      "nom": "chambre-isabelle-terrasse-9",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 497774,
+      "transparence": false,
+      "sujet": {
+        "x": 26,
+        "y": 57.8,
+        "l": 41.7,
+        "h": 34.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        66
+      ],
+      "cadrage_css": "54% 66%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.46,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.44,
+          "ton": "sombre",
+          "recouvre_sujet": 0.12
+        },
+        {
+          "cote": "droite",
+          "score": 0.43,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        },
+        {
+          "cote": "bas",
+          "score": 0.36,
+          "ton": "sombre",
+          "recouvre_sujet": 0.32
+        }
+      ],
+      "qualite": {
+        "nettete": 34.4,
+        "bruit": 0.71,
+        "compression": 0.96,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "L'ANNUAIRE · Les OISEAUXdu JARDIN",
+        "blocs": 2,
+        "surface": 0.1,
+        "details": [
+          {
+            "texte": "L'ANNUAIRE",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Les OISEAUXdu JARDIN",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "6e7878786e667a2e",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-10.jpg",
+      "nom": "chambre-isabelle-terrasse-10",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 447596,
+      "transparence": false,
+      "sujet": {
+        "x": 39.7,
+        "y": 32.4,
+        "l": 19.1,
+        "h": 22.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        44
+      ],
+      "cadrage_css": "49% 44%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.59,
+          "ton": "moyen",
+          "recouvre_sujet": 0.01
+        },
+        {
+          "cote": "gauche",
+          "score": 0.47,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.43,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.38,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        }
+      ],
+      "qualite": {
+        "nettete": 26.2,
+        "bruit": 0.59,
+        "compression": 0.99,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "a5a972b2c20a2ee6",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "tv-climatisation-acces-terrasse.jpg",
+      "nom": "tv-climatisation-acces-terrasse",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 446534,
+      "transparence": false,
+      "sujet": {
+        "x": 41.2,
+        "y": 17.6,
+        "l": 41.2,
+        "h": 64.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        62,
+        49
+      ],
+      "cadrage_css": "62% 49%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.72,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.31,
+          "ton": "moyen",
+          "recouvre_sujet": 0.2
+        },
+        {
+          "cote": "bas",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.2
+        },
+        {
+          "cote": "droite",
+          "score": 0.07,
+          "ton": "moyen",
+          "recouvre_sujet": 0.36
+        }
+      ],
+      "qualite": {
+        "nettete": 48.9,
+        "bruit": 0.74,
+        "compression": 0.93,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "59490d19f1f1c087",
+      "drapeaux": [
+        "lieu",
+        "calme gauche"
+      ]
+    },
+    {
+      "fichier": "15m2-2.jpg",
+      "nom": "15m2-2",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 511573,
+      "transparence": false,
+      "sujet": {
+        "x": 23.5,
+        "y": 27.9,
+        "l": 36.8,
+        "h": 23.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        42,
+        40
+      ],
+      "cadrage_css": "42% 40%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.62,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.41,
+          "ton": "moyen",
+          "recouvre_sujet": 0.1
+        },
+        {
+          "cote": "haut",
+          "score": 0.39,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        },
+        {
+          "cote": "droite",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        }
+      ],
+      "qualite": {
+        "nettete": 39.2,
+        "bruit": 1.57,
+        "compression": 0.96,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "be64642c1c793c1e",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "15m2-3.jpg",
+      "nom": "15m2-3",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 555155,
+      "transparence": false,
+      "sujet": {
+        "x": 28.6,
+        "y": 46.3,
+        "l": 44.7,
+        "h": 26,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        53
+      ],
+      "cadrage_css": "49% 53%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.48,
+          "ton": "moyen",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "haut",
+          "score": 0.45,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.43,
+          "ton": "moyen",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "gauche",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        }
+      ],
+      "qualite": {
+        "nettete": 51.9,
+        "bruit": 1.23,
+        "compression": 0.95,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "marque",
+        "a_verifier": true,
+        "texte": "SAUTAON",
+        "blocs": 1,
+        "surface": 0,
+        "details": [
+          {
+            "texte": "SAUTAON",
+            "niveau": "marque"
+          }
+        ]
+      },
+      "empreinte": "6c0c3c2c39c16131",
+      "drapeaux": [
+        "lieu",
+        "filigrane ou marque"
+      ]
+    },
+    {
+      "fichier": "15m2-4.jpg",
+      "nom": "15m2-4",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 558199,
+      "transparence": false,
+      "sujet": {
+        "x": 27.9,
+        "y": 33.8,
+        "l": 44.1,
+        "h": 44.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        47,
+        52
+      ],
+      "cadrage_css": "47% 52%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.45,
+          "ton": "moyen",
+          "recouvre_sujet": 0.02
+        },
+        {
+          "cote": "gauche",
+          "score": 0.38,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "droite",
+          "score": 0.37,
+          "ton": "sombre",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "bas",
+          "score": 0.36,
+          "ton": "moyen",
+          "recouvre_sujet": 0.16
+        }
+      ],
+      "qualite": {
+        "nettete": 51.1,
+        "bruit": 1.08,
+        "compression": 1.19,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "c066e626363072e3",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "15m2-5.jpg",
+      "nom": "15m2-5",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 448572,
+      "transparence": false,
+      "sujet": {
+        "x": 20.6,
+        "y": 30.9,
+        "l": 42.6,
+        "h": 26.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        41,
+        44
+      ],
+      "cadrage_css": "41% 44%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.61,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.36,
+          "ton": "moyen",
+          "recouvre_sujet": 0.02
+        },
+        {
+          "cote": "gauche",
+          "score": 0.35,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "haut",
+          "score": 0.34,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        }
+      ],
+      "qualite": {
+        "nettete": 38.2,
+        "bruit": 1.44,
+        "compression": 1.19,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "3cc84848291d3938",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "15m2-6.jpg",
+      "nom": "15m2-6",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 500990,
+      "transparence": false,
+      "sujet": {
+        "x": 19.3,
+        "y": 52.5,
+        "l": 35.5,
+        "h": 34.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        45,
+        61
+      ],
+      "cadrage_css": "45% 61%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.41,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "droite",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.22,
+          "ton": "sombre",
+          "recouvre_sujet": 0.23
+        }
+      ],
+      "qualite": {
+        "nettete": 49.1,
+        "bruit": 0.91,
+        "compression": 0.96,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "20c8f0603abc9c3b",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "15m2-7.jpg",
+      "nom": "15m2-7",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 494535,
+      "transparence": false,
+      "sujet": {
+        "x": 21.1,
+        "y": 39.6,
+        "l": 77.3,
+        "h": 45.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        59,
+        55
+      ],
+      "cadrage_css": "59% 55%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "haut",
+          "score": 0.5,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.35,
+          "ton": "moyen",
+          "recouvre_sujet": 0.45
+        },
+        {
+          "cote": "droite",
+          "score": 0.05,
+          "ton": "moyen",
+          "recouvre_sujet": 0.44
+        }
+      ],
+      "qualite": {
+        "nettete": 39.3,
+        "bruit": 1.09,
+        "compression": 0.95,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "Componairo · Fiche d'enregistrezent",
+        "blocs": 2,
+        "surface": 0.8,
+        "details": [
+          {
+            "texte": "Componairo",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Fiche d'enregistrezent",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "d6b4f1989c31f1c0",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "16m2-2.jpg",
+      "nom": "16m2-2",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 551485,
+      "transparence": false,
+      "sujet": {
+        "x": 12.6,
+        "y": 49.3,
+        "l": 44.1,
+        "h": 35.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        42,
+        58
+      ],
+      "cadrage_css": "42% 58%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.31,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.15,
+          "ton": "clair",
+          "recouvre_sujet": 0.24
+        },
+        {
+          "cote": "bas",
+          "score": 0.14,
+          "ton": "moyen",
+          "recouvre_sujet": 0.25
+        }
+      ],
+      "qualite": {
+        "nettete": 49.1,
+        "bruit": 0.91,
+        "compression": 0.95,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "268c99338d89a181",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "16m2-3.jpg",
+      "nom": "16m2-3",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 495760,
+      "transparence": false,
+      "sujet": {
+        "x": 48.3,
+        "y": 41.3,
+        "l": 40.1,
+        "h": 35.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        63,
+        50
+      ],
+      "cadrage_css": "63% 50%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.56,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.36,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.35,
+          "ton": "moyen",
+          "recouvre_sujet": 0.25
+        },
+        {
+          "cote": "bas",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        }
+      ],
+      "qualite": {
+        "nettete": 36.7,
+        "bruit": 0.91,
+        "compression": 1.33,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "marque",
+        "a_verifier": true,
+        "texte": "coffee · Wifi · freeboxlocomponairo · Code: BIENVENUS",
+        "blocs": 4,
+        "surface": 0.3,
+        "details": [
+          {
+            "texte": "coffee",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Wifi",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "freeboxlocomponairo",
+            "niveau": "marque"
+          },
+          {
+            "texte": "Code: BIENVENUS",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "392d3d367337fb73",
+      "drapeaux": [
+        "lieu",
+        "filigrane ou marque"
+      ]
+    },
+    {
+      "fichier": "16m2-4.jpg",
+      "nom": "16m2-4",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 619134,
+      "transparence": false,
+      "sujet": {
+        "x": 40.6,
+        "y": 12.1,
+        "l": 32,
+        "h": 44.4,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        39
+      ],
+      "cadrage_css": "52% 39%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.49,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.47,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.44,
+          "ton": "sombre",
+          "recouvre_sujet": 0.21
+        },
+        {
+          "cote": "droite",
+          "score": 0.38,
+          "ton": "moyen",
+          "recouvre_sujet": 0.14
+        }
+      ],
+      "qualite": {
+        "nettete": 59,
+        "bruit": 1.6,
+        "compression": 1.14,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "c5319393b470eecd",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "16m2-5.jpg",
+      "nom": "16m2-5",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 410505,
+      "transparence": false,
+      "sujet": {
+        "x": 27.4,
+        "y": 34.4,
+        "l": 43.1,
+        "h": 25,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        43,
+        48
+      ],
+      "cadrage_css": "43% 48%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.49,
+          "ton": "sombre",
+          "recouvre_sujet": 0.01
+        },
+        {
+          "cote": "gauche",
+          "score": 0.44,
+          "ton": "sombre",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "bas",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.3,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        }
+      ],
+      "qualite": {
+        "nettete": 28.3,
+        "bruit": 0.49,
+        "compression": 1.34,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "f8c89b9b9bdbe7e6",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "16m2-6.jpg",
+      "nom": "16m2-6",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 330082,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 40,
+        "l": 95.7,
+        "h": 56,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        51,
+        59
+      ],
+      "cadrage_css": "51% 59%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.69,
+          "ton": "clair",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.28,
+          "ton": "moyen",
+          "recouvre_sujet": 0.5
+        },
+        {
+          "cote": "gauche",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0.56
+        },
+        {
+          "cote": "bas",
+          "score": 0.13,
+          "ton": "moyen",
+          "recouvre_sujet": 0.85
+        }
+      ],
+      "qualite": {
+        "nettete": 23.7,
+        "bruit": 0.67,
+        "compression": 1.44,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "RENSEIGNEMENTS · RÉCLAMATIONS · TÉLÉGRAPHE · POLICE- · SECOURS · POMPIERS · INTER ET · REGIONAL · (VOIR ANNUAIRE) · 864 · 621831",
+        "blocs": 11,
+        "surface": 1.6,
+        "details": [
+          {
+            "texte": "RENSEIGNEMENTS",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "RÉCLAMATIONS",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "TÉLÉGRAPHE",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "POLICE-",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "SECOURS",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "POMPIERS",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "INTER ET",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "REGIONAL",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "(VOIR ANNUAIRE)",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "864",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "621831",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "3a39c93163ef3d9a",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "16m2-7.jpg",
+      "nom": "16m2-7",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 362120,
+      "transparence": false,
+      "sujet": {
+        "x": 33.8,
+        "y": 27.9,
+        "l": 47.1,
+        "h": 30.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        44
+      ],
+      "cadrage_css": "52% 44%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.68,
+          "ton": "clair",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "haut",
+          "score": 0.46,
+          "ton": "moyen",
+          "recouvre_sujet": 0.1
+        },
+        {
+          "cote": "droite",
+          "score": 0.41,
+          "ton": "sombre",
+          "recouvre_sujet": 0.16
+        },
+        {
+          "cote": "bas",
+          "score": 0.41,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        }
+      ],
+      "qualite": {
+        "nettete": 32.9,
+        "bruit": 0.52,
+        "compression": 1.19,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "300 0001 · C0 0 0001",
+        "blocs": 2,
+        "surface": 0.2,
+        "details": [
+          {
+            "texte": "300 0001",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "C0 0 0001",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "0707c6c64ecfc999",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif",
+        "calme gauche"
+      ]
+    },
+    {
+      "fichier": "16m2-8.jpg",
+      "nom": "16m2-8",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 390838,
+      "transparence": false,
+      "sujet": {
+        "x": 27.1,
+        "y": 58.5,
+        "l": 40.6,
+        "h": 39.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        43,
+        68
+      ],
+      "cadrage_css": "43% 68%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.62,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.56,
+          "ton": "sombre",
+          "recouvre_sujet": 0.39
+        },
+        {
+          "cote": "droite",
+          "score": 0.55,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "gauche",
+          "score": 0.5,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        }
+      ],
+      "qualite": {
+        "nettete": 36.3,
+        "bruit": 0.75,
+        "compression": 0.91,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "EAU · EXTINCTEUR · ADPH · Mathilde",
+        "blocs": 4,
+        "surface": 0.5,
+        "details": [
+          {
+            "texte": "EAU",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "EXTINCTEUR",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "ADPH",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Mathilde",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "f3d8c9c9c969632e",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "16m2-9.jpg",
+      "nom": "16m2-9",
+      "drapeau": "lieu",
+      "largeur": 1500,
+      "hauteur": 2000,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 1156265,
+      "transparence": false,
+      "sujet": {
+        "x": 29.4,
+        "y": 22.1,
+        "l": 27.9,
+        "h": 25,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        43,
+        35
+      ],
+      "cadrage_css": "43% 35%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "moyen",
+          "recouvre_sujet": 0.07
+        },
+        {
+          "cote": "haut",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.1
+        }
+      ],
+      "qualite": {
+        "nettete": 114.2,
+        "bruit": 2.67,
+        "compression": 0.97,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "db4c66e66d6678e9",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "16m2-10.jpg",
+      "nom": "16m2-10",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1500,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 1124605,
+      "transparence": false,
+      "sujet": {
+        "x": 69.8,
+        "y": 29.5,
+        "l": 29.8,
+        "h": 53,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        77,
+        53
+      ],
+      "cadrage_css": "77% 53%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.17,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        },
+        {
+          "cote": "droite",
+          "score": 0.09,
+          "ton": "moyen",
+          "recouvre_sujet": 0.39
+        }
+      ],
+      "qualite": {
+        "nettete": 108.3,
+        "bruit": 3.18,
+        "compression": 1.06,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "cd8f9bdbece8ecdc",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2-6.jpg",
+      "nom": "24m2-6",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1554,
+      "ratio": "1.29",
+      "ratio_valeur": 1.287,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 393266,
+      "transparence": false,
+      "sujet": {
+        "x": 52.9,
+        "y": 36.8,
+        "l": 25,
+        "h": 39.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        66,
+        57
+      ],
+      "cadrage_css": "66% 57%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.58,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.41,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "gauche",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        }
+      ],
+      "qualite": {
+        "nettete": 50.3,
+        "bruit": 0.75,
+        "compression": 1.29,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "fef7939b9f9bcecf",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2-7.jpg",
+      "nom": "24m2-7",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1125,
+      "ratio": "16:9",
+      "ratio_valeur": 1.778,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 388030,
+      "transparence": false,
+      "sujet": {
+        "x": 26.5,
+        "y": 35.3,
+        "l": 30.9,
+        "h": 50,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        41,
+        59
+      ],
+      "cadrage_css": "41% 59%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.39,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "gauche",
+          "score": 0.19,
+          "ton": "sombre",
+          "recouvre_sujet": 0.17
+        }
+      ],
+      "qualite": {
+        "nettete": 57.6,
+        "bruit": 1.01,
+        "compression": 1.15,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": false,
+      "empreinte": "bf37b7676dec85f5",
+      "drapeaux": [
+        "lieu"
+      ]
+    },
+    {
+      "fichier": "24m2-8.jpg",
+      "nom": "24m2-8",
+      "drapeau": "lieu",
+      "largeur": 2000,
+      "hauteur": 1125,
+      "ratio": "16:9",
+      "ratio_valeur": 1.778,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 264167,
+      "transparence": false,
+      "sujet": {
+        "x": 14.1,
+        "y": 7.8,
+        "l": 65.9,
+        "h": 87.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        43
+      ],
+      "cadrage_css": "53% 43%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.4,
+          "ton": "moyen",
+          "recouvre_sujet": 0.51
+        },
+        {
+          "cote": "droite",
+          "score": 0.31,
+          "ton": "moyen",
+          "recouvre_sujet": 0.44
+        },
+        {
+          "cote": "gauche",
+          "score": 0.29,
+          "ton": "moyen",
+          "recouvre_sujet": 0.57
+        },
+        {
+          "cote": "bas",
+          "score": 0.2,
+          "ton": "sombre",
+          "recouvre_sujet": 0.58
+        }
+      ],
+      "qualite": {
+        "nettete": 34,
+        "bruit": 0.75,
+        "compression": 1.27,
+        "faible": false,
+        "raisons": []
+      },
+      "lisible": {
+        "niveau": "decoratif",
+        "a_verifier": false,
+        "texte": "102 · HOME · Découvrir S'inspirer Ralentir Selancer · Refuges d'hiver · L'esprit",
+        "blocs": 5,
+        "surface": 2.4,
+        "details": [
+          {
+            "texte": "102",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "HOME",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Découvrir S'inspirer Ralentir Selancer",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "Refuges d'hiver",
+            "niveau": "decoratif"
+          },
+          {
+            "texte": "L'esprit",
+            "niveau": "decoratif"
+          }
+        ]
+      },
+      "empreinte": "a79632f3c3e5e5c2",
+      "drapeaux": [
+        "lieu",
+        "texte décoratif"
+      ]
+    },
+    {
+      "fichier": "24m2-9.jpg",
+      "nom": "24m2-9",
+      "drapeau": "lieu",
+      "largeur": 1024,
+      "hauteur": 768,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 303822,
+      "transparence": false,
+      "sujet": {
+        "x": 38.2,
+        "y": 23.5,
+        "l": 42.6,
+        "h": 39.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        56,
+        43
+      ],
+      "cadrage_css": "56% 43%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.27,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0.02
+        },
+        {
+          "cote": "haut",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.14
+        },
+        {
+          "cote": "droite",
+          "score": 0.19,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        }
+      ],
+      "qualite": {
+        "nettete": 61,
+        "bruit": 1.67,
+        "compression": 0.95,
+        "faible": true,
+        "raisons": [
+          "1024 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "5199296d2bad2c7f",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "24m2-10.jpg",
+      "nom": "24m2-10",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 246006,
+      "transparence": false,
+      "sujet": {
+        "x": 4,
+        "y": 46.2,
+        "l": 45.4,
+        "h": 25.2,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        33,
+        56
+      ],
+      "cadrage_css": "33% 56%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.51,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.5,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.37,
+          "ton": "sombre",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "gauche",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0.23
+        }
+      ],
+      "qualite": {
+        "nettete": 23.1,
+        "bruit": 1.76,
+        "compression": 1.09,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "e9e9ab2bc3d9d85c",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "24m2-11.jpg",
+      "nom": "24m2-11",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 200817,
+      "transparence": false,
+      "sujet": {
+        "x": 47.1,
+        "y": 52.4,
+        "l": 44.1,
+        "h": 26.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        58,
+        59
+      ],
+      "cadrage_css": "58% 59%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.67,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "haut",
+          "score": 0.61,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.53,
+          "ton": "sombre",
+          "recouvre_sujet": 0.18
+        },
+        {
+          "cote": "droite",
+          "score": 0.34,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        }
+      ],
+      "qualite": {
+        "nettete": 22.8,
+        "bruit": 1.05,
+        "compression": 1.14,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "9a93860d82c18cf1",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "calme gauche"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-11.jpg",
+      "nom": "chambre-isabelle-terrasse-11",
+      "drapeau": "lieu",
+      "largeur": 1024,
+      "hauteur": 768,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 312085,
+      "transparence": false,
+      "sujet": {
+        "x": 23.5,
+        "y": 19.1,
+        "l": 47.1,
+        "h": 35.3,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        46,
+        36
+      ],
+      "cadrage_css": "46% 36%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.34,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.3,
+          "ton": "moyen",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "gauche",
+          "score": 0.23,
+          "ton": "moyen",
+          "recouvre_sujet": 0.15
+        },
+        {
+          "cote": "haut",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        }
+      ],
+      "qualite": {
+        "nettete": 54.1,
+        "bruit": 1.68,
+        "compression": 1.12,
+        "faible": true,
+        "raisons": [
+          "1024 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "bc8dc8c4a5b11e06",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-12.jpg",
+      "nom": "chambre-isabelle-terrasse-12",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 233463,
+      "transparence": false,
+      "sujet": {
+        "x": 18.8,
+        "y": 44.7,
+        "l": 41.7,
+        "h": 41.7,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        39,
+        56
+      ],
+      "cadrage_css": "39% 56%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.49,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.34,
+          "ton": "moyen",
+          "recouvre_sujet": 0.22
+        },
+        {
+          "cote": "bas",
+          "score": 0.31,
+          "ton": "sombre",
+          "recouvre_sujet": 0.25
+        },
+        {
+          "cote": "droite",
+          "score": 0.28,
+          "ton": "moyen",
+          "recouvre_sujet": 0.01
+        }
+      ],
+      "qualite": {
+        "nettete": 28.5,
+        "bruit": 1.34,
+        "compression": 1.09,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "7332b2b4e5ddbd3f",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-13.jpg",
+      "nom": "chambre-isabelle-terrasse-13",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 252334,
+      "transparence": false,
+      "sujet": {
+        "x": 56.2,
+        "y": 50.9,
+        "l": 38.2,
+        "h": 20.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        73,
+        56
+      ],
+      "cadrage_css": "73% 56%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.34,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.29,
+          "ton": "sombre",
+          "recouvre_sujet": 0.07
+        },
+        {
+          "cote": "gauche",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.22,
+          "ton": "moyen",
+          "recouvre_sujet": 0.18
+        }
+      ],
+      "qualite": {
+        "nettete": 29.3,
+        "bruit": 1.53,
+        "compression": 1.09,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "cb494b4b6c66e181",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-14.jpg",
+      "nom": "chambre-isabelle-terrasse-14",
+      "drapeau": "lieu",
+      "largeur": 1024,
+      "hauteur": 768,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 264295,
+      "transparence": false,
+      "sujet": {
+        "x": 35.3,
+        "y": 10.3,
+        "l": 51.5,
+        "h": 69.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        58,
+        45
+      ],
+      "cadrage_css": "58% 45%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.45,
+          "ton": "sombre",
+          "recouvre_sujet": 0.36
+        },
+        {
+          "cote": "gauche",
+          "score": 0.44,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        },
+        {
+          "cote": "bas",
+          "score": 0.32,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        },
+        {
+          "cote": "droite",
+          "score": 0.27,
+          "ton": "sombre",
+          "recouvre_sujet": 0.46
+        }
+      ],
+      "qualite": {
+        "nettete": 32.3,
+        "bruit": 1.63,
+        "compression": 1.14,
+        "faible": true,
+        "raisons": [
+          "1024 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "f04cb42616d4d086",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "chambre-isabelle-terrasse-15.jpg",
+      "nom": "chambre-isabelle-terrasse-15",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 354680,
+      "transparence": false,
+      "sujet": {
+        "x": 30.9,
+        "y": 35.3,
+        "l": 51.5,
+        "h": 22.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        58,
+        46
+      ],
+      "cadrage_css": "58% 46%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.59,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.57,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.43,
+          "ton": "sombre",
+          "recouvre_sujet": 0.05
+        },
+        {
+          "cote": "droite",
+          "score": 0.43,
+          "ton": "moyen",
+          "recouvre_sujet": 0.12
+        }
+      ],
+      "qualite": {
+        "nettete": 107.2,
+        "bruit": 1.84,
+        "compression": 0.92,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "170ed8dc7bf8f4f4",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "15m2-8.jpg",
+      "nom": "15m2-8",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 230684,
+      "transparence": false,
+      "sujet": {
+        "x": 44.1,
+        "y": 44.1,
+        "l": 30.9,
+        "h": 30.9,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        60,
+        60
+      ],
+      "cadrage_css": "60% 60%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.53,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0.12
+        },
+        {
+          "cote": "gauche",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.33,
+          "ton": "moyen",
+          "recouvre_sujet": 0.09
+        }
+      ],
+      "qualite": {
+        "nettete": 36.2,
+        "bruit": 1.37,
+        "compression": 1.03,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "3e1a9b9b9bbe8ec9",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "15m2-9.jpg",
+      "nom": "15m2-9",
+      "drapeau": "lieu",
+      "largeur": 1024,
+      "hauteur": 768,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 412885,
+      "transparence": false,
+      "sujet": {
+        "x": 29.4,
+        "y": 30.9,
+        "l": 36.8,
+        "h": 50,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        54
+      ],
+      "cadrage_css": "49% 54%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.37,
+          "ton": "moyen",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "bas",
+          "score": 0.32,
+          "ton": "sombre",
+          "recouvre_sujet": 0.17
+        },
+        {
+          "cote": "gauche",
+          "score": 0.29,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "droite",
+          "score": 0.2,
+          "ton": "moyen",
+          "recouvre_sujet": 0.08
+        }
+      ],
+      "qualite": {
+        "nettete": 99.7,
+        "bruit": 2.29,
+        "compression": 0.99,
+        "faible": true,
+        "raisons": [
+          "1024 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "ffd9898492971d19",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "16m2-11.jpg",
+      "nom": "16m2-11",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 224529,
+      "transparence": false,
+      "sujet": {
+        "x": 11.8,
+        "y": 30.9,
+        "l": 48.5,
+        "h": 61.8,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        35,
+        61
+      ],
+      "cadrage_css": "35% 61%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.54,
+          "ton": "moyen",
+          "recouvre_sujet": 0.06
+        },
+        {
+          "cote": "droite",
+          "score": 0.48,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.3,
+          "ton": "moyen",
+          "recouvre_sujet": 0.44
+        },
+        {
+          "cote": "bas",
+          "score": 0.27,
+          "ton": "moyen",
+          "recouvre_sujet": 0.38
+        }
+      ],
+      "qualite": {
+        "nettete": 30.3,
+        "bruit": 1.25,
+        "compression": 1.13,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "9c531b6b5b99c8cc",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    },
+    {
+      "fichier": "16m2-12.jpg",
+      "nom": "16m2-12",
+      "drapeau": "lieu",
+      "largeur": 768,
+      "hauteur": 1024,
+      "ratio": "3:4",
+      "ratio_valeur": 0.75,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 222468,
+      "transparence": false,
+      "sujet": {
+        "x": 39.7,
+        "y": 47.1,
+        "l": 26.5,
+        "h": 23.5,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        59
+      ],
+      "cadrage_css": "52% 59%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.7,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.58,
+          "ton": "sombre",
+          "recouvre_sujet": 0.04
+        },
+        {
+          "cote": "haut",
+          "score": 0.52,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.5,
+          "ton": "sombre",
+          "recouvre_sujet": 0.04
+        }
+      ],
+      "qualite": {
+        "nettete": 20,
+        "bruit": 2.09,
+        "compression": 1.06,
+        "faible": true,
+        "raisons": [
+          "768 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "e47078787971f1f1",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "calme gauche"
+      ]
+    },
+    {
+      "fichier": "24m2-12.jpg",
+      "nom": "24m2-12",
+      "drapeau": "lieu",
+      "largeur": 474,
+      "hauteur": 842,
+      "ratio": "9:16",
+      "ratio_valeur": 0.563,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 38100,
+      "transparence": false,
+      "sujet": {
+        "x": 19.6,
+        "y": 49.5,
+        "l": 54.3,
+        "h": 25.6,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        50,
+        59
+      ],
+      "cadrage_css": "50% 59%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.65,
+          "ton": "sombre",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "bas",
+          "score": 0.63,
+          "ton": "sombre",
+          "recouvre_sujet": 0.16
+        },
+        {
+          "cote": "droite",
+          "score": 0.62,
+          "ton": "sombre",
+          "recouvre_sujet": 0.09
+        },
+        {
+          "cote": "gauche",
+          "score": 0.52,
+          "ton": "sombre",
+          "recouvre_sujet": 0.13
+        }
+      ],
+      "qualite": {
+        "nettete": 23.3,
+        "bruit": 0.55,
+        "compression": 1.54,
+        "faible": true,
+        "raisons": [
+          "474 px de large",
+          "compression visible"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "040098981e061833",
+      "drapeaux": [
+        "lieu",
+        "petite",
+        "compression visible",
+        "calme haut"
+      ]
+    },
+    {
+      "fichier": "24m2-13.jpg",
+      "nom": "24m2-13",
+      "drapeau": "lieu",
+      "largeur": 480,
+      "hauteur": 360,
+      "ratio": "4:3",
+      "ratio_valeur": 1.333,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 82555,
+      "transparence": false,
+      "sujet": {
+        "x": 41.5,
+        "y": 44.6,
+        "l": 37.4,
+        "h": 44.1,
+        "source": "saillance"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        56
+      ],
+      "cadrage_css": "53% 56%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.45,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "gauche",
+          "score": 0.25,
+          "ton": "moyen",
+          "recouvre_sujet": 0
+        },
+        {
+          "cote": "droite",
+          "score": 0.18,
+          "ton": "moyen",
+          "recouvre_sujet": 0.21
+        },
+        {
+          "cote": "bas",
+          "score": 0.16,
+          "ton": "sombre",
+          "recouvre_sujet": 0.25
+        }
+      ],
+      "qualite": {
+        "nettete": 47.1,
+        "bruit": 1.37,
+        "compression": 1.05,
+        "faible": true,
+        "raisons": [
+          "480 px de large"
+        ]
+      },
+      "lisible": false,
+      "empreinte": "f9b4b496865296f2",
+      "drapeaux": [
+        "lieu",
+        "petite"
+      ]
+    }
+  ]
+}

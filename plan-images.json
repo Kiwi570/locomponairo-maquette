@@ -1,0 +1,276 @@
+[
+ {
+  "source": "recu/chambre-hotes-herault-vers-5.jpg",
+  "nom": "maison-facade",
+  "role": "ouverture",
+  "alt": "Façade de la maison vigneronne de 1850 à Pouzols : balcon, porte du garage et jardin",
+  "mobile": true,
+  "zone_texte": "gauche"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-4.jpg",
+  "nom": "maison-allee",
+  "role": "section-fond",
+  "alt": "Allée de gravier bordée de céanothes en fleurs jusqu'à la maison",
+  "ratio": "3:2"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-2.jpg",
+  "nom": "maison-cour",
+  "role": "section-fond",
+  "alt": "Cour plantée devant la maison, pots rouges et bananier",
+  "ratio": "3:2"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-3.jpg",
+  "nom": "maison-porte",
+  "role": "carte-service",
+  "alt": "Porte d'entrée en bois dans le mur de pierre",
+  "ratio": "3:4"
+ },
+ {
+  "source": "recu/chambre-isabelle-terrasse.jpg",
+  "nom": "escalier",
+  "role": "carte-service",
+  "alt": "Escalier aux murs rouges et aux carreaux de ciment qui monte aux chambres",
+  "ratio": "2:3"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-6.webp",
+  "nom": "petit-dejeuner-terrasse",
+  "role": "ouverture",
+  "alt": "Petit-déjeuner servi sur la terrasse, vue sur les arbres du village",
+  "mobile": true,
+  "zone_texte": "haut"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-13.jpg",
+  "nom": "petit-dejeuner-table",
+  "role": "carte-service",
+  "alt": "Table du petit-déjeuner vue d'en haut, nappe fleurie et coussins verts",
+  "ratio": "4:5"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-7.png",
+  "nom": "garage",
+  "role": "carte-service",
+  "alt": "Garage voûté et fermé de la maison",
+  "ratio": "4:5"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-12.jpg",
+  "nom": "horloge",
+  "role": "carte-service",
+  "alt": "Horloge ancienne en laiton de la maison",
+  "ratio": "4:5"
+ },
+ {
+  "source": "recu/chambre-hotes-herault-vers-9.jpg",
+  "nom": "jardin-lauriers",
+  "role": "section-fond",
+  "alt": "Lauriers-roses en fleurs dans le jardin",
+  "ratio": "3:2"
+ },
+ {
+  "source": "recu/logo-sombre.jpg",
+  "nom": "cavaliere",
+  "role": "galerie",
+  "alt": "Cavalière de dos dans une écurie",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/24m2-4.jpg",
+  "nom": "terrasse-etage",
+  "role": "ouverture",
+  "alt": "Terrasse d'une chambre du premier étage : canapé, table et chaises au soleil",
+  "mobile": true,
+  "zone_texte": "bas"
+ },
+ {
+  "source": "recu/chambre-hote-lo-componairo.jpg",
+  "nom": "isabelle-1",
+  "role": "galerie",
+  "alt": "Chambre Isabelle : lit en fer forgé, murs jaunes et porte-fenêtre",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/24m2-7.jpg",
+  "nom": "isabelle-2",
+  "role": "galerie",
+  "alt": "Chambre Isabelle : lit et coussins bleus",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/24m2-2.jpg",
+  "nom": "isabelle-3",
+  "role": "galerie",
+  "alt": "Chambre Isabelle : bureau bleu et carreaux de ciment",
+  "ratio": "3:4"
+ },
+ {
+  "source": "recu/24m2-9.jpg",
+  "nom": "isabelle-4",
+  "role": "galerie",
+  "alt": "Chambre Isabelle : la cheminée de marbre",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/chambre-isabelle-terrasse-4.jpg",
+  "nom": "denise-1",
+  "role": "galerie",
+  "alt": "Chambre Denise : lit double, murs orangés et lampes de chevet",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/chambre-isabelle-terrasse-3.jpg",
+  "nom": "denise-2",
+  "role": "galerie",
+  "alt": "Chambre Denise en deux lits simples",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/chambre-isabelle-terrasse-6.jpg",
+  "nom": "denise-3",
+  "role": "galerie",
+  "alt": "Chambre Denise : porte-fenêtre ouverte sur la terrasse",
+  "ratio": "3:4"
+ },
+ {
+  "source": "recu/chambre-isabelle-terrasse-2.jpg",
+  "nom": "denise-4",
+  "role": "galerie",
+  "alt": "Chambre Denise : tête de lit en rotin",
+  "ratio": "3:4"
+ },
+ {
+  "source": "recu/16m2.jpg",
+  "nom": "mathilde-1",
+  "role": "galerie",
+  "alt": "Chambre Mathilde : murs rouges et poutre apparente",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/16m2-4.jpg",
+  "nom": "mathilde-2",
+  "role": "galerie",
+  "alt": "Chambre Mathilde : lit et lampes de chevet",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/16m2-6.jpg",
+  "nom": "mathilde-3",
+  "role": "galerie",
+  "alt": "Chambre Mathilde : téléphone ancien et coupelle",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/16m2-9.jpg",
+  "nom": "mathilde-4",
+  "role": "galerie",
+  "alt": "Vue sur le jardin depuis la chambre Mathilde",
+  "ratio": "3:4"
+ },
+ {
+  "source": "recu/15m2-5.jpg",
+  "nom": "suzanne-1",
+  "role": "galerie",
+  "alt": "Chambre Suzanne : lit sous la fenêtre",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/15m2-2.jpg",
+  "nom": "suzanne-2",
+  "role": "galerie",
+  "alt": "Chambre Suzanne : lit gris et poutre",
+  "ratio": "3:4"
+ },
+ {
+  "source": "recu/15m2-4.jpg",
+  "nom": "suzanne-3",
+  "role": "galerie",
+  "alt": "Chambre Suzanne : bureau devant la fenêtre",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/15m2.jpg",
+  "nom": "suzanne-4",
+  "role": "galerie",
+  "alt": "Chambre Suzanne : étagère d'appareils photo anciens",
+  "ratio": "4:3"
+ },
+ {
+  "source": "recu/grok/g-vignes.jpg",
+  "source_mobile": "recu/grok/g-vignes-portrait.jpg",
+  "nom": "grok/g-vignes",
+  "role": "ouverture",
+  "mobile": true,
+  "zone_texte": "gauche",
+  "alt": "Vignes en terrasses et garrigue dans la lumière du soir",
+  "page": "Accueil",
+  "emplacement": "fond de « Une maison vigneronne de 1850 » et image de partage",
+  "priorite": "Indispensable",
+  "gabarit": "lieu",
+  "consigne_scene": "Wide view of terraced vineyards at golden hour: rows of old gnarled goblet vines on stony red-brown soil, garrigue hills and a few olive trees behind, a soft haze in the distance, no buildings, no roads, no vehicles, an atmospheric mood image"
+ },
+ {
+  "source": "recu/grok/g-pierre.jpg",
+  "nom": "grok/g-pierre",
+  "role": "section-fond",
+  "ratio": "3:2",
+  "alt": "Mur de pierre calcaire blonde et ombre d'une feuille de vigne",
+  "page": "Accueil",
+  "emplacement": "fond de la maison en coupe",
+  "priorite": "Conseillée",
+  "gabarit": "texture",
+  "scene": "close-up of an old pale limestone wall with soft lime mortar joints, the shadow of a single vine leaf crossing it, lots of calm empty space"
+ },
+ {
+  "source": "recu/grok/g-sentier.jpg",
+  "source_mobile": "recu/grok/g-sentier-portrait.jpg",
+  "nom": "grok/g-sentier",
+  "role": "ouverture",
+  "mobile": true,
+  "zone_texte": "bas",
+  "alt": "Sentier de pierre dans la garrigue, chênes verts et collines au loin",
+  "page": "Alentours",
+  "emplacement": "image plein écran « Prêt pour votre randonnée ? »",
+  "priorite": "Indispensable",
+  "gabarit": "lieu",
+  "consigne_scene": "A stony hiking path winding through garrigue scrubland at golden hour, holm oaks, wild thyme and pale limestone outcrops, rounded hills in the distance, no buildings, no roads, no vehicles, an atmospheric mood image"
+ },
+ {
+  "source": "recu/grok/g-riviere.jpg",
+  "nom": "grok/g-riviere",
+  "role": "galerie",
+  "ratio": "3:2",
+  "alt": "Rivière turquoise entre des falaises calcaires",
+  "page": "Alentours",
+  "emplacement": "« Rivières et gorges »",
+  "priorite": "Conseillée",
+  "gabarit": "lieu",
+  "consigne_scene": "A calm turquoise river flowing between pale limestone cliffs with green oaks clinging to the rocks, late afternoon sun, no buildings, no bridge, no boats, no people, an atmospheric mood image"
+ },
+ {
+  "source": "recu/grok/g-marche.jpg",
+  "nom": "grok/g-marche",
+  "role": "galerie",
+  "ratio": "3:2",
+  "alt": "Étal de marché au matin : abricots, melons, olives et thym",
+  "page": "Alentours",
+  "emplacement": "« De nombreux marchés locaux »",
+  "priorite": "Conseillée",
+  "gabarit": "scene-metier",
+  "consigne_scene": "A village market stall in the morning: wooden crates of apricots, melons, olives and bunches of thyme under a striped canvas awning, nobody in the frame, no signs, no price tags"
+ },
+ {
+  "source": "recu/grok/g-404.jpg",
+  "nom": "grok/g-404",
+  "role": "404",
+  "alt": "Une clé ancienne posée seule sur une couverture pliée",
+  "page": "Page 404",
+  "emplacement": "image d'en-tête",
+  "priorite": "Indispensable",
+  "gabarit": "404",
+  "consigne_scene": "a neatly made bed with a folded natural linen blanket, a single old wrought-iron key left alone on it, warm side light, calm, a gentle touch of humour, nobody"
+ }
+]

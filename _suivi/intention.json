@@ -1,0 +1,87 @@
+{
+  "client": "Lo Componaïro",
+  "site_actuel": "https://www.locomponairo.com/",
+  "activite": "chambre d'hôtes, maison vigneronne de 1850 à Pouzols (Hérault)",
+  "constat": "Le site actuel range quatre belles chambres et une maison de 1850 dans des blocs Wix sans hiérarchie : aucune chambre n'est vraiment montrée, les infos pratiques (arrivée 17 h – 20 h 30, garage fermé, petit-déjeuner inclus, annulation gratuite à 7 jours) sont enfouies dans une FAQ, et les alentours sont illustrés par des photos de banque d'images. La promesse « meilleur prix en direct » n'est jamais mise en scène au moment de réserver.",
+  "directions": [
+    {
+      "nom": "Quatre clés, quatre histoires (recommandée)",
+      "idee": "On visite la maison comme on y arrive : on prend la clé, on monte l'escalier de 1850, on pousse la porte d'Isabelle, Denise, Mathilde ou Suzanne. Pierre calcaire blonde, tomettes, volets vert-de-gris, poutres ; la lie-de-vin de la maison vigneronne réservée à l'action « Réserver ».",
+      "palette": ["#F1E9DA", "#2B2320", "#A9532E", "#4E6A5C", "#6B2737"],
+      "polices": ["Fraunces (variable, sage vers sauvage)", "Instrument Sans"],
+      "grille": {
+        "objet": "trousseau de quatre clés anciennes à faire tourner sur son anneau, à la main avec élan : la clé qui s'arrête en bas ouvre sa chambre (photo, m², lit, vue, étage)",
+        "fil": "sarment de vigne qui pousse dans la marge de toutes les pages, une feuille s'ouvre à chaque section, une grappe au bout",
+        "voile": "trou de serrure qui part du clic et s'ouvre sur l'objet d'ouverture de la page suivante",
+        "modernes": [
+          "la maison de 1850 en coupe 3D qui se monte étage par étage au défilement (cave, salle du petit-déjeuner, 1er étage à terrasses, 2e sous les poutres) et pivote à la main",
+          "prénoms géants ISABELLE · DENISE · MATHILDE · SUZANNE en bandeaux qui filent en sens opposés et s'inclinent selon la vitesse",
+          "la terrasse fleurie de la suite familiale qui s'ouvre d'une vignette au plein écran",
+          "titres lettre à lettre, Fraunces qui passe de sage à sauvage au défilement"
+        ]
+      },
+      "sections": [
+        { "role": "ouverture", "reprend": "madebymelody-maquette/disque", "plus": "le disque devient le trousseau des quatre chambres, posé sur la vraie façade de 1850 ; l'intro finit sur l'anneau des clés" },
+        { "role": "scène du métier", "reprend": "agence-ae-maquette/maquette", "plus": "la maison vigneronne en coupe, de la cave voûtée au 2e étage, chaque chambre à son vrai étage avec ses vraies surfaces" },
+        { "role": "offre (les chambres)", "reprend": "willowcamp-maquette/facons", "plus": "une planche par chambre avec son étiquette de clé écrite à la main, et la suite familiale Isabelle + Denise et sa terrasse fleurie" },
+        { "role": "action principale", "reprend": "hanamizuki-maquette/sejour-calcul", "plus": "dates, chambre, voyageurs, garage et petit-déjeuner inclus : la clé file vers le récapitulatif, puis lien direct vers la vraie réservation" }
+      ],
+      "invente": [
+        "trousseau des quatre chambres",
+        "voile en trou de serrure",
+        "sarment qui pousse dans la marge",
+        "maison de 1850 en coupe",
+        "« Arrivée ce soir » : l'heure d'accueil 17 h – 20 h 30 calculée à l'heure de Pouzols",
+        "la 2 CV de la maison qui traverse la page Alentours"
+      ]
+    },
+    {
+      "nom": "Le trousseau brodé",
+      "idee": "Les quatre grands-mères racontées par leur linge : draps de lin, initiales brodées au point de croix rouge, album de famille qu'on feuillette. Une direction douce et intime, très « maison de famille ».",
+      "palette": ["#F4EFE4", "#1F2A36", "#B0262C", "#7D8B6A", "#D9C7A7"],
+      "polices": ["Young Serif", "Figtree"],
+      "grille": {
+        "objet": "l'album des grands-mères qu'on feuillette à la main avec élan, une double page par chambre",
+        "fil": "fil rouge brodé au point de croix qui coud les sections entre elles, l'aiguille au bout",
+        "voile": "rideau de dentelle qui se tire depuis le clic",
+        "modernes": [
+          "initiales I, D, M, S brodées en direct au point de croix",
+          "l'armoire à linge : les quatre chambres empilées comme des draps pliés (planches 3D)",
+          "carrousel 3D des alentours, à la main et au défilement",
+          "la façade qui s'ouvre d'une vignette au plein écran"
+        ]
+      },
+      "sections": [
+        { "role": "ouverture", "reprend": "qd2a-maquette/debut", "plus": "l'album de famille au lieu du tapuscrit, avec les vraies photos des chambres" },
+        { "role": "titre fabriqué", "reprend": "madebymelody-maquette/sur-mesure-debut", "plus": "les prénoms des grands-mères brodés au point de croix sur du lin" },
+        { "role": "offre (les chambres)", "reprend": "lydiacourtois-maquette/accompagnements", "plus": "draps pliés qui s'empilent dans l'armoire, une chambre par drap" },
+        { "role": "action principale", "reprend": "coupdefood-maquette/contact", "plus": "la demande se brode d'un « reçu » au fil rouge" }
+      ],
+      "invente": ["album des grands-mères", "rideau de dentelle", "armoire à linge", "point de croix en direct"]
+    },
+    {
+      "nom": "La route des Grands Sites en 2 CV",
+      "idee": "La maison comme camp de base : la 2 CV du garage part chaque matin vers Saint-Guilhem, le Salagou, Navacelles, Pézenas. Carte routière des années 60, terre rouge des ruffes, bleu du lac, jaune de la 2 CV.",
+      "palette": ["#F3ECDA", "#22313A", "#B5482B", "#2E7391", "#E3B23C"],
+      "polices": ["Bricolage Grotesque (variable)", "DM Mono"],
+      "grille": {
+        "objet": "le volant de la 2 CV qu'on fait tourner : la carte pivote et choisit la destination (temps de trajet réels quand le site les donne)",
+        "fil": "la départementale dans la marge, la 2 CV au bout, une borne kilométrique par section",
+        "voile": "deux phares qui s'allument depuis le clic et ouvrent la page suivante",
+        "modernes": [
+          "noms des sites en géant qui filent selon la vitesse du défilement",
+          "carrousel 3D des alentours",
+          "carte épinglée où la route se trace étape par étape",
+          "la maison qui s'ouvre d'une vignette au plein écran"
+        ]
+      },
+      "sections": [
+        { "role": "ouverture", "reprend": "nolanis-maquette/debut", "plus": "le repère de calage devient le volant de la 2 CV" },
+        { "role": "carte", "reprend": "tiki-cassis-maquette/parcours", "plus": "la route des Grands Sites depuis Pouzols, étape par étape" },
+        { "role": "galerie", "reprend": "agence-ae-maquette/realisations-tour", "plus": "les alentours sur un cylindre qu'on fait tourner" },
+        { "role": "action principale", "reprend": "goodlife-maquette/reserver", "plus": "la 2 CV rentre au garage quand la demande part" }
+      ],
+      "invente": ["volant de la 2 CV", "phares de transition", "départementale-fil conducteur", "bornes kilométriques"]
+    }
+  ]
+}

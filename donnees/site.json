@@ -1,0 +1,28 @@
+{
+  "nom": "Lo Componaïro",
+  "adresse": "https://locomponairo-maquette.vercel.app",
+  "siteActuel": "locomponairo.com",
+  "version": 1,
+  "langues": ["fr"],
+  "navigation": ["accueil", "chambres", "sejour", "alentours", "contact", "reserver"],
+  "actionEntete": { "page": "reserver" },
+  "couleurs": { "fond": "#f1e9da", "texte": "#2b2320", "voile": "#4a1c26", "theme": "#f1e9da", "ouverture": "#2b2320", "menu": "#2b2320" },
+  "formeVoile": "serrure",
+  "contact": {
+    "telephone": "06 88 71 26 01",
+    "telephoneLien": "+33688712601",
+    "email": "locomponairo34@gmail.com",
+    "adresse": "15 rue des Jardins, 34230 Pouzols"
+  },
+  "liens": {
+    "reservation": "https://via.eviivo.com/LoComponairo34230",
+    "cadeaux": "https://www.capcadeau.com/lo-componairo-chambre-dhotes",
+    "instagram": "https://www.instagram.com/lo.componairo/",
+    "facebook": "https://www.facebook.com/profile.php?id=61580359389188",
+    "tripadvisor": "https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html",
+    "tourisme": "https://www.herault-tourisme.com/"
+  },
+  "polices": ["/assets/polices/fraunces.woff2", "/assets/polices/instrument-sans.woff2"],
+  "imagePartage": "maison-facade-1280.webp",
+  "curseur": false
+}

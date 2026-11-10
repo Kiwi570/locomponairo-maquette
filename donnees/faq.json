@@ -1,0 +1,42 @@
+[
+  {
+    "q": "À quelle heure puis-je arriver ?",
+    "r": "De 17 h à 20 h 30. Une arrivée plus tôt ou plus tard est possible sur demande ; hors de ces horaires, l’accueil n’est pas garanti sans accord préalable. Une arrivée dès 14 h 30 (jusqu’à 16 h 30) est proposée en option à 10 €."
+  },
+  {
+    "q": "Et si j’arrive en retard ?",
+    "r": "Prévenez au 06 88 71 26 01. Sans nouvelles, le séjour est annulé et facturé. Les clés peuvent être remises le soir jusqu’à 22 h."
+  },
+  {
+    "q": "À quelle heure part-on ?",
+    "r": "Le départ se fait à 11 h. Un séjour écourté n’est pas remboursé."
+  },
+  {
+    "q": "Le petit-déjeuner est-il compris ?",
+    "r": "Oui, il est inclus dans le prix et servi de 8 h 30 à 10 h, plus tôt sur demande."
+  },
+  {
+    "q": "Peut-on annuler ?",
+    "r": "L’annulation et la modification sont gratuites jusqu’à 7 jours avant l’arrivée."
+  },
+  {
+    "q": "Où garer la voiture ou la moto ?",
+    "r": "Dans le garage fermé et gratuit, accessible jusqu’à 23 h, avec une prise Green’Up pour recharger. Il est inclus dans le prix."
+  },
+  {
+    "q": "Les enfants sont-ils bienvenus ?",
+    "r": "La maison a des escaliers et ne convient pas aux moins de 5 ans. Pour les 7 à 14 ans, un lit pliant 90 × 180 est proposé à 10 €, avec kit de toilette, linge et petit-déjeuner."
+  },
+  {
+    "q": "Les animaux sont-ils acceptés ?",
+    "r": "Non, les animaux de compagnie ne sont plus acceptés."
+  },
+  {
+    "q": "La maison est-elle accessible en fauteuil ?",
+    "r": "Non : les chambres sont à l’étage, elles ne sont pas accessibles aux personnes à mobilité réduite."
+  },
+  {
+    "q": "Comment payer ?",
+    "r": "Par carte bancaire (à distance ou sur place), en espèces ou en chèques-vacances ANCV. La taxe de séjour, 1,08 € par jour et par adulte, s’ajoute au prix."
+  }
+]

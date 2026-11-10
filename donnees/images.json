@@ -1,0 +1,2450 @@
+{
+  "maison-facade": {
+    "nom": "maison-facade",
+    "source": "recu/chambre-hotes-herault-vers-5.jpg",
+    "role": "ouverture",
+    "alt": "Façade de la maison vigneronne de 1850 à Pouzols : balcon, porte du garage et jardin",
+    "grok": false,
+    "mention": null,
+    "empreinte": "19977ffb7a2b40dd",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "50% 51%"
+    },
+    "cadrage": "49% 50%",
+    "sujet": {
+      "x": 25,
+      "y": 20.2,
+      "l": 46.7,
+      "h": 75.9
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.22,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.22,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.21,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.18,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 203,
+      "width": 2000,
+      "height": 1125,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "maison-facade-640.webp",
+      "maison-facade-1280.webp",
+      "maison-facade-1920.webp",
+      "maison-facade-mobile-640.webp",
+      "maison-facade-mobile-1080.webp"
+    ],
+    "poids": {
+      "maison-facade-640.webp": 73248,
+      "maison-facade-1280.webp": 280752,
+      "maison-facade-1920.webp": 388048,
+      "maison-facade-mobile-640.webp": 178240,
+      "maison-facade-mobile-1080.webp": 288502
+    },
+    "media": "c.media({ nom: 'maison-facade', alt: \"Façade de la maison vigneronne de 1850 à Pouzols : balcon, porte du garage et jardin\", cadrage: '49% 50%', cadrageMobile: '50% 51%', sizes: '100vw', priorite: true })"
+  },
+  "maison-allee": {
+    "nom": "maison-allee",
+    "source": "recu/chambre-hotes-herault-vers-4.jpg",
+    "role": "section-fond",
+    "alt": "Allée de gravier bordée de céanothes en fleurs jusqu'à la maison",
+    "grok": false,
+    "mention": null,
+    "empreinte": "1f5fc8dbaa29378c",
+    "ratio": "3:2",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": null,
+    "cadrage": "53% 39%",
+    "sujet": {
+      "x": 39.7,
+      "y": 19.8,
+      "l": 25,
+      "h": 39.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.26,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.26,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.26,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.21,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1333,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "maison-allee-640.webp",
+      "maison-allee-1280.webp",
+      "maison-allee-1920.webp"
+    ],
+    "poids": {
+      "maison-allee-640.webp": 98144,
+      "maison-allee-1280.webp": 306264,
+      "maison-allee-1920.webp": 543642
+    },
+    "media": "c.media({ nom: 'maison-allee', alt: \"Allée de gravier bordée de céanothes en fleurs jusqu'à la maison\", cadrage: '53% 39%', sizes: '100vw' })"
+  },
+  "maison-cour": {
+    "nom": "maison-cour",
+    "source": "recu/chambre-hotes-herault-vers-2.jpg",
+    "role": "section-fond",
+    "alt": "Cour plantée devant la maison, pots rouges et bananier",
+    "grok": false,
+    "mention": null,
+    "empreinte": "22223dd361885601",
+    "ratio": "3:2",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": null,
+    "cadrage": "41% 50%",
+    "sujet": {
+      "x": 13.2,
+      "y": 32.4,
+      "l": 55.9,
+      "h": 36.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.25,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.24,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.22,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.15,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 54,
+      "width": 2000,
+      "height": 1333,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "maison-cour-640.webp",
+      "maison-cour-1280.webp",
+      "maison-cour-1920.webp"
+    ],
+    "poids": {
+      "maison-cour-640.webp": 84964,
+      "maison-cour-1280.webp": 267368,
+      "maison-cour-1920.webp": 431950
+    },
+    "media": "c.media({ nom: 'maison-cour', alt: \"Cour plantée devant la maison, pots rouges et bananier\", cadrage: '41% 50%', sizes: '100vw' })"
+  },
+  "maison-porte": {
+    "nom": "maison-porte",
+    "source": "recu/chambre-hotes-herault-vers-3.jpg",
+    "role": "carte-service",
+    "alt": "Porte d'entrée en bois dans le mur de pierre",
+    "grok": false,
+    "mention": null,
+    "empreinte": "bfb411436c2bab81",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "49% 53%",
+    "sujet": {
+      "x": 21.3,
+      "y": 19.8,
+      "l": 50.3,
+      "h": 68.2
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.34,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.25,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.18,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.15,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1500,
+      "height": 2000,
+      "source": [
+        1500,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "maison-porte-480.webp",
+      "maison-porte-640.webp",
+      "maison-porte-784.webp"
+    ],
+    "poids": {
+      "maison-porte-480.webp": 41598,
+      "maison-porte-640.webp": 65590,
+      "maison-porte-784.webp": 87210
+    },
+    "media": "c.media({ nom: 'maison-porte', alt: \"Porte d'entrée en bois dans le mur de pierre\", cadrage: '49% 53%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '3 / 4' })"
+  },
+  "escalier": {
+    "nom": "escalier",
+    "source": "recu/chambre-isabelle-terrasse.jpg",
+    "role": "carte-service",
+    "alt": "Escalier aux murs rouges et aux carreaux de ciment qui monte aux chambres",
+    "grok": false,
+    "mention": null,
+    "empreinte": "47ed6d212f6f098a",
+    "ratio": "2:3",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "61% 39%",
+    "sujet": {
+      "x": 37.4,
+      "y": 13.6,
+      "l": 39.5,
+      "h": 62
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.5,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.35,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.23,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.17,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1333,
+      "height": 2000,
+      "source": [
+        1333,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "escalier-480.webp",
+      "escalier-640.webp",
+      "escalier-784.webp"
+    ],
+    "poids": {
+      "escalier-480.webp": 38892,
+      "escalier-640.webp": 58916,
+      "escalier-784.webp": 78758
+    },
+    "media": "c.media({ nom: 'escalier', alt: \"Escalier aux murs rouges et aux carreaux de ciment qui monte aux chambres\", cadrage: '61% 39%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '2 / 3' })"
+  },
+  "petit-dejeuner-terrasse": {
+    "nom": "petit-dejeuner-terrasse",
+    "source": "recu/chambre-hotes-herault-vers-6.webp",
+    "role": "ouverture",
+    "alt": "Petit-déjeuner servi sur la terrasse, vue sur les arbres du village",
+    "grok": false,
+    "mention": null,
+    "empreinte": "17ee209ec59ef036",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 62%"
+    },
+    "cadrage": "50% 62%",
+    "sujet": {
+      "x": 19.1,
+      "y": 33.8,
+      "l": 63.7,
+      "h": 54.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.28,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.21,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.19,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.14,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "haut",
+    "recadrage": {
+      "left": 191,
+      "top": 0,
+      "width": 1618,
+      "height": 910,
+      "source": [
+        2000,
+        910
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,19 fois (source de 1618 px après recadrage)"
+    ],
+    "fichiers": [
+      "petit-dejeuner-terrasse-640.webp",
+      "petit-dejeuner-terrasse-1280.webp",
+      "petit-dejeuner-terrasse-1920.webp",
+      "petit-dejeuner-terrasse-mobile-640.webp"
+    ],
+    "poids": {
+      "petit-dejeuner-terrasse-640.webp": 75758,
+      "petit-dejeuner-terrasse-1280.webp": 257774,
+      "petit-dejeuner-terrasse-1920.webp": 307976,
+      "petit-dejeuner-terrasse-mobile-640.webp": 181350
+    },
+    "media": "c.media({ nom: 'petit-dejeuner-terrasse', alt: \"Petit-déjeuner servi sur la terrasse, vue sur les arbres du village\", cadrage: '50% 62%', cadrageMobile: '50% 62%', sizes: '100vw', priorite: true })"
+  },
+  "petit-dejeuner-table": {
+    "nom": "petit-dejeuner-table",
+    "source": "recu/chambre-hotes-herault-vers-13.jpg",
+    "role": "carte-service",
+    "alt": "Table du petit-déjeuner vue d'en haut, nappe fleurie et coussins verts",
+    "grok": false,
+    "mention": null,
+    "empreinte": "bfa861505881cf79",
+    "ratio": "4:5",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "50% 52%",
+    "sujet": {
+      "x": 0,
+      "y": 22,
+      "l": 99.1,
+      "h": 77.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.19,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.12,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.07,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 120,
+      "top": 0,
+      "width": 1560,
+      "height": 1950,
+      "source": [
+        2000,
+        1950
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "petit-dejeuner-table-480.webp",
+      "petit-dejeuner-table-640.webp",
+      "petit-dejeuner-table-784.webp"
+    ],
+    "poids": {
+      "petit-dejeuner-table-480.webp": 68616,
+      "petit-dejeuner-table-640.webp": 107522,
+      "petit-dejeuner-table-784.webp": 144236
+    },
+    "media": "c.media({ nom: 'petit-dejeuner-table', alt: \"Table du petit-déjeuner vue d'en haut, nappe fleurie et coussins verts\", cadrage: '50% 52%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '4 / 5' })"
+  },
+  "garage": {
+    "nom": "garage",
+    "source": "recu/chambre-hotes-herault-vers-7.png",
+    "role": "carte-service",
+    "alt": "Garage voûté et fermé de la maison",
+    "grok": false,
+    "mention": null,
+    "empreinte": "dfffb8d288a16fe0",
+    "ratio": "4:5",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "50% 53%",
+    "sujet": {
+      "x": 22.8,
+      "y": 41.2,
+      "l": 51.9,
+      "h": 22.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.3,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.29,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.23,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.19,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 465,
+      "top": 0,
+      "width": 1190,
+      "height": 1488,
+      "source": [
+        2000,
+        1488
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "garage-480.webp",
+      "garage-640.webp",
+      "garage-784.webp"
+    ],
+    "poids": {
+      "garage-480.webp": 44682,
+      "garage-640.webp": 68834,
+      "garage-784.webp": 93974
+    },
+    "media": "c.media({ nom: 'garage', alt: \"Garage voûté et fermé de la maison\", cadrage: '50% 53%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '4 / 5' })"
+  },
+  "horloge": {
+    "nom": "horloge",
+    "source": "recu/chambre-hotes-herault-vers-12.jpg",
+    "role": "carte-service",
+    "alt": "Horloge ancienne en laiton de la maison",
+    "grok": false,
+    "mention": null,
+    "empreinte": "8cf20171fd695918",
+    "ratio": "4:5",
+    "largeurs": [
+      480,
+      640,
+      784
+    ],
+    "mobile": null,
+    "cadrage": "50% 44%",
+    "sujet": {
+      "x": 0,
+      "y": 10.3,
+      "l": 100,
+      "h": 81.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.23,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.18,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.09,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.03,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 134,
+      "top": 0,
+      "width": 1600,
+      "height": 2000,
+      "source": [
+        1832,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "horloge-480.webp",
+      "horloge-640.webp",
+      "horloge-784.webp"
+    ],
+    "poids": {
+      "horloge-480.webp": 22686,
+      "horloge-640.webp": 32962,
+      "horloge-784.webp": 42702
+    },
+    "media": "c.media({ nom: 'horloge', alt: \"Horloge ancienne en laiton de la maison\", cadrage: '50% 44%', sizes: '(max-width: 760px) 100vw, 33vw', ratio: '4 / 5' })"
+  },
+  "jardin-lauriers": {
+    "nom": "jardin-lauriers",
+    "source": "recu/chambre-hotes-herault-vers-9.jpg",
+    "role": "section-fond",
+    "alt": "Lauriers-roses en fleurs dans le jardin",
+    "grok": false,
+    "mention": null,
+    "empreinte": "d25129a52e809dbb",
+    "ratio": "3:2",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": null,
+    "cadrage": "59% 50%",
+    "sujet": {
+      "x": 38.2,
+      "y": 19.2,
+      "l": 45.6,
+      "h": 66
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.24,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.23,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.13,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.12,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 183,
+      "width": 2000,
+      "height": 1333,
+      "source": [
+        2000,
+        1573
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "jardin-lauriers-640.webp",
+      "jardin-lauriers-1280.webp",
+      "jardin-lauriers-1920.webp"
+    ],
+    "poids": {
+      "jardin-lauriers-640.webp": 89504,
+      "jardin-lauriers-1280.webp": 217380,
+      "jardin-lauriers-1920.webp": 277668
+    },
+    "media": "c.media({ nom: 'jardin-lauriers', alt: \"Lauriers-roses en fleurs dans le jardin\", cadrage: '59% 50%', sizes: '100vw' })"
+  },
+  "cavaliere": {
+    "nom": "cavaliere",
+    "source": "recu/logo-sombre.jpg",
+    "role": "galerie",
+    "alt": "Cavalière de dos dans une écurie",
+    "grok": false,
+    "mention": null,
+    "empreinte": "0c3a6ab8e2ebeec6",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "55% 29%",
+    "sujet": {
+      "x": 31.9,
+      "y": 0,
+      "l": 45.5,
+      "h": 99.2
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.44,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.16,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.08,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.06,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 505,
+      "top": 0,
+      "width": 1495,
+      "height": 1121,
+      "source": [
+        2000,
+        1121
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "cavaliere-480.webp",
+      "cavaliere-640.webp",
+      "cavaliere-960.webp"
+    ],
+    "poids": {
+      "cavaliere-480.webp": 15564,
+      "cavaliere-640.webp": 22150,
+      "cavaliere-960.webp": 36978
+    },
+    "media": "c.media({ nom: 'cavaliere', alt: \"Cavalière de dos dans une écurie\", cadrage: '55% 29%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "terrasse-etage": {
+    "nom": "terrasse-etage",
+    "source": "recu/24m2-4.jpg",
+    "role": "ouverture",
+    "alt": "Terrasse d'une chambre du premier étage : canapé, table et chaises au soleil",
+    "grok": false,
+    "mention": null,
+    "empreinte": "91d1ec11ab12f8a2",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280,
+      1920
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640,
+        1080
+      ],
+      "cadrage": "50% 54%"
+    },
+    "cadrage": "54% 39%",
+    "sujet": {
+      "x": 32.4,
+      "y": 23.5,
+      "l": 51.5,
+      "h": 29.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.43,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.31,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.29,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.18,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "bas",
+    "recadrage": {
+      "left": 0,
+      "top": 375,
+      "width": 2000,
+      "height": 1125,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "terrasse-etage-640.webp",
+      "terrasse-etage-1280.webp",
+      "terrasse-etage-1920.webp",
+      "terrasse-etage-mobile-640.webp",
+      "terrasse-etage-mobile-1080.webp"
+    ],
+    "poids": {
+      "terrasse-etage-640.webp": 57294,
+      "terrasse-etage-1280.webp": 238284,
+      "terrasse-etage-1920.webp": 337410,
+      "terrasse-etage-mobile-640.webp": 173914,
+      "terrasse-etage-mobile-1080.webp": 286626
+    },
+    "media": "c.media({ nom: 'terrasse-etage', alt: \"Terrasse d'une chambre du premier étage : canapé, table et chaises au soleil\", cadrage: '54% 39%', cadrageMobile: '50% 54%', sizes: '100vw', priorite: true })"
+  },
+  "isabelle-1": {
+    "nom": "isabelle-1",
+    "source": "recu/chambre-hote-lo-componairo.jpg",
+    "role": "galerie",
+    "alt": "Chambre Isabelle : lit en fer forgé, murs jaunes et porte-fenêtre",
+    "grok": false,
+    "mention": null,
+    "empreinte": "c2ad6c18069d4421",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "46% 34%",
+    "sujet": {
+      "x": 17.6,
+      "y": 13.2,
+      "l": 54.4,
+      "h": 36.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.29,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.23,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.17,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.13,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "isabelle-1-480.webp",
+      "isabelle-1-640.webp",
+      "isabelle-1-960.webp"
+    ],
+    "poids": {
+      "isabelle-1-480.webp": 33334,
+      "isabelle-1-640.webp": 52604,
+      "isabelle-1-960.webp": 98744
+    },
+    "media": "c.media({ nom: 'isabelle-1', alt: \"Chambre Isabelle : lit en fer forgé, murs jaunes et porte-fenêtre\", cadrage: '46% 34%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "isabelle-2": {
+    "nom": "isabelle-2",
+    "source": "recu/24m2-7.jpg",
+    "role": "galerie",
+    "alt": "Chambre Isabelle : lit et coussins bleus",
+    "grok": false,
+    "mention": null,
+    "empreinte": "c9f54e5114cc192a",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "50% 59%",
+    "sujet": {
+      "x": 30.7,
+      "y": 35.3,
+      "l": 41.2,
+      "h": 50
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.39,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.37,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.2,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.19,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 70,
+      "top": 0,
+      "width": 1500,
+      "height": 1125,
+      "source": [
+        2000,
+        1125
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "isabelle-2-480.webp",
+      "isabelle-2-640.webp",
+      "isabelle-2-960.webp"
+    ],
+    "poids": {
+      "isabelle-2-480.webp": 28192,
+      "isabelle-2-640.webp": 45676,
+      "isabelle-2-960.webp": 89866
+    },
+    "media": "c.media({ nom: 'isabelle-2', alt: \"Chambre Isabelle : lit et coussins bleus\", cadrage: '50% 59%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "isabelle-3": {
+    "nom": "isabelle-3",
+    "source": "recu/24m2-2.jpg",
+    "role": "galerie",
+    "alt": "Chambre Isabelle : bureau bleu et carreaux de ciment",
+    "grok": false,
+    "mention": null,
+    "empreinte": "c7bc4890ed00f0e3",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "45% 29%",
+    "sujet": {
+      "x": 6.2,
+      "y": 6.9,
+      "l": 88.5,
+      "h": 42.8
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.27,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.22,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.15,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.13,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1500,
+      "height": 2000,
+      "source": [
+        1500,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "isabelle-3-480.webp",
+      "isabelle-3-640.webp",
+      "isabelle-3-960.webp"
+    ],
+    "poids": {
+      "isabelle-3-480.webp": 36804,
+      "isabelle-3-640.webp": 54126,
+      "isabelle-3-960.webp": 92662
+    },
+    "media": "c.media({ nom: 'isabelle-3', alt: \"Chambre Isabelle : bureau bleu et carreaux de ciment\", cadrage: '45% 29%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 4' })"
+  },
+  "isabelle-4": {
+    "nom": "isabelle-4",
+    "source": "recu/24m2-9.jpg",
+    "role": "galerie",
+    "alt": "Chambre Isabelle : la cheminée de marbre",
+    "grok": false,
+    "mention": null,
+    "empreinte": "18186ba50562ae32",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "56% 43%",
+    "sujet": {
+      "x": 38.2,
+      "y": 23.5,
+      "l": 42.6,
+      "h": 39.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.27,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.26,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.21,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.19,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1024,
+      "height": 768,
+      "source": [
+        1024,
+        768
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1024 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "isabelle-4-480.webp",
+      "isabelle-4-640.webp",
+      "isabelle-4-960.webp"
+    ],
+    "poids": {
+      "isabelle-4-480.webp": 27574,
+      "isabelle-4-640.webp": 43758,
+      "isabelle-4-960.webp": 83010
+    },
+    "media": "c.media({ nom: 'isabelle-4', alt: \"Chambre Isabelle : la cheminée de marbre\", cadrage: '56% 43%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "denise-1": {
+    "nom": "denise-1",
+    "source": "recu/chambre-isabelle-terrasse-4.jpg",
+    "role": "galerie",
+    "alt": "Chambre Denise : lit double, murs orangés et lampes de chevet",
+    "grok": false,
+    "mention": null,
+    "empreinte": "ad27ee9e99099fb8",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "54% 39%",
+    "sujet": {
+      "x": 13.2,
+      "y": 14.7,
+      "l": 69.1,
+      "h": 39.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.52,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.39,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.34,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.32,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "denise-1-480.webp",
+      "denise-1-640.webp",
+      "denise-1-960.webp"
+    ],
+    "poids": {
+      "denise-1-480.webp": 25652,
+      "denise-1-640.webp": 42450,
+      "denise-1-960.webp": 83398
+    },
+    "media": "c.media({ nom: 'denise-1', alt: \"Chambre Denise : lit double, murs orangés et lampes de chevet\", cadrage: '54% 39%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "denise-2": {
+    "nom": "denise-2",
+    "source": "recu/chambre-isabelle-terrasse-3.jpg",
+    "role": "galerie",
+    "alt": "Chambre Denise en deux lits simples",
+    "grok": false,
+    "mention": null,
+    "empreinte": "ccf6330f19c20507",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "39% 61%",
+    "sujet": {
+      "x": 13.9,
+      "y": 54.7,
+      "l": 37.2,
+      "h": 24.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.5,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.44,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.17,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.14,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "denise-2-480.webp",
+      "denise-2-640.webp",
+      "denise-2-960.webp"
+    ],
+    "poids": {
+      "denise-2-480.webp": 26768,
+      "denise-2-640.webp": 45582,
+      "denise-2-960.webp": 95558
+    },
+    "media": "c.media({ nom: 'denise-2', alt: \"Chambre Denise en deux lits simples\", cadrage: '39% 61%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "denise-3": {
+    "nom": "denise-3",
+    "source": "recu/chambre-isabelle-terrasse-6.jpg",
+    "role": "galerie",
+    "alt": "Chambre Denise : porte-fenêtre ouverte sur la terrasse",
+    "grok": false,
+    "mention": null,
+    "empreinte": "7af94fb063dab079",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "54% 44%",
+    "sujet": {
+      "x": 32.4,
+      "y": 30.9,
+      "l": 47.1,
+      "h": 26.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.46,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.41,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.37,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.36,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1500,
+      "height": 2000,
+      "source": [
+        1500,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "denise-3-480.webp",
+      "denise-3-640.webp",
+      "denise-3-960.webp"
+    ],
+    "poids": {
+      "denise-3-480.webp": 37392,
+      "denise-3-640.webp": 61862,
+      "denise-3-960.webp": 129988
+    },
+    "media": "c.media({ nom: 'denise-3', alt: \"Chambre Denise : porte-fenêtre ouverte sur la terrasse\", cadrage: '54% 44%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 4' })"
+  },
+  "denise-4": {
+    "nom": "denise-4",
+    "source": "recu/chambre-isabelle-terrasse-2.jpg",
+    "role": "galerie",
+    "alt": "Chambre Denise : tête de lit en rotin",
+    "grok": false,
+    "mention": null,
+    "empreinte": "f065ad260278183f",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "48% 48%",
+    "sujet": {
+      "x": 0,
+      "y": 6.4,
+      "l": 83.6,
+      "h": 93.6
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.14,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.14,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0.12,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.12,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1500,
+      "height": 2000,
+      "source": [
+        1500,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "denise-4-480.webp",
+      "denise-4-640.webp",
+      "denise-4-960.webp"
+    ],
+    "poids": {
+      "denise-4-480.webp": 26278,
+      "denise-4-640.webp": 41420,
+      "denise-4-960.webp": 81826
+    },
+    "media": "c.media({ nom: 'denise-4', alt: \"Chambre Denise : tête de lit en rotin\", cadrage: '48% 48%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 4' })"
+  },
+  "mathilde-1": {
+    "nom": "mathilde-1",
+    "source": "recu/16m2.jpg",
+    "role": "galerie",
+    "alt": "Chambre Mathilde : murs rouges et poutre apparente",
+    "grok": false,
+    "mention": null,
+    "empreinte": "02436c41b05ddc33",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "36% 58%",
+    "sujet": {
+      "x": 12.7,
+      "y": 50.9,
+      "l": 44.3,
+      "h": 29.7
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.35,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.29,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.2,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.15,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "mathilde-1-480.webp",
+      "mathilde-1-640.webp",
+      "mathilde-1-960.webp"
+    ],
+    "poids": {
+      "mathilde-1-480.webp": 25766,
+      "mathilde-1-640.webp": 42744,
+      "mathilde-1-960.webp": 84552
+    },
+    "media": "c.media({ nom: 'mathilde-1', alt: \"Chambre Mathilde : murs rouges et poutre apparente\", cadrage: '36% 58%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "mathilde-2": {
+    "nom": "mathilde-2",
+    "source": "recu/16m2-4.jpg",
+    "role": "galerie",
+    "alt": "Chambre Mathilde : lit et lampes de chevet",
+    "grok": false,
+    "mention": null,
+    "empreinte": "ef1add16d11aa090",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "52% 39%",
+    "sujet": {
+      "x": 40.6,
+      "y": 12.1,
+      "l": 32,
+      "h": 44.4
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0.49,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.47,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.44,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.38,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "mathilde-2-480.webp",
+      "mathilde-2-640.webp",
+      "mathilde-2-960.webp"
+    ],
+    "poids": {
+      "mathilde-2-480.webp": 24608,
+      "mathilde-2-640.webp": 42480,
+      "mathilde-2-960.webp": 91198
+    },
+    "media": "c.media({ nom: 'mathilde-2', alt: \"Chambre Mathilde : lit et lampes de chevet\", cadrage: '52% 39%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "mathilde-3": {
+    "nom": "mathilde-3",
+    "source": "recu/16m2-6.jpg",
+    "role": "galerie",
+    "alt": "Chambre Mathilde : téléphone ancien et coupelle",
+    "grok": false,
+    "mention": null,
+    "empreinte": "bf085abe76c79e02",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "51% 59%",
+    "sujet": {
+      "x": 0,
+      "y": 40,
+      "l": 95.7,
+      "h": 56
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.69,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0.28,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.27,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.13,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "mathilde-3-480.webp",
+      "mathilde-3-640.webp",
+      "mathilde-3-960.webp"
+    ],
+    "poids": {
+      "mathilde-3-480.webp": 11966,
+      "mathilde-3-640.webp": 17946,
+      "mathilde-3-960.webp": 32090
+    },
+    "media": "c.media({ nom: 'mathilde-3', alt: \"Chambre Mathilde : téléphone ancien et coupelle\", cadrage: '51% 59%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "mathilde-4": {
+    "nom": "mathilde-4",
+    "source": "recu/16m2-9.jpg",
+    "role": "galerie",
+    "alt": "Vue sur le jardin depuis la chambre Mathilde",
+    "grok": false,
+    "mention": null,
+    "empreinte": "f2995a1a7eb4a433",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "43% 35%",
+    "sujet": {
+      "x": 29.4,
+      "y": 22.1,
+      "l": 27.9,
+      "h": 25
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.26,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.26,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.24,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.23,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1500,
+      "height": 2000,
+      "source": [
+        1500,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "mathilde-4-480.webp",
+      "mathilde-4-640.webp",
+      "mathilde-4-960.webp"
+    ],
+    "poids": {
+      "mathilde-4-480.webp": 113282,
+      "mathilde-4-640.webp": 201664,
+      "mathilde-4-960.webp": 317684
+    },
+    "media": "c.media({ nom: 'mathilde-4', alt: \"Vue sur le jardin depuis la chambre Mathilde\", cadrage: '43% 35%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 4' })"
+  },
+  "suzanne-1": {
+    "nom": "suzanne-1",
+    "source": "recu/15m2-5.jpg",
+    "role": "galerie",
+    "alt": "Chambre Suzanne : lit sous la fenêtre",
+    "grok": false,
+    "mention": null,
+    "empreinte": "2b06dc441e4ec36d",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "41% 44%",
+    "sujet": {
+      "x": 20.6,
+      "y": 30.9,
+      "l": 42.6,
+      "h": 26.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.61,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.36,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.35,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.34,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "suzanne-1-480.webp",
+      "suzanne-1-640.webp",
+      "suzanne-1-960.webp"
+    ],
+    "poids": {
+      "suzanne-1-480.webp": 18506,
+      "suzanne-1-640.webp": 30298,
+      "suzanne-1-960.webp": 64904
+    },
+    "media": "c.media({ nom: 'suzanne-1', alt: \"Chambre Suzanne : lit sous la fenêtre\", cadrage: '41% 44%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "suzanne-2": {
+    "nom": "suzanne-2",
+    "source": "recu/15m2-2.jpg",
+    "role": "galerie",
+    "alt": "Chambre Suzanne : lit gris et poutre",
+    "grok": false,
+    "mention": null,
+    "empreinte": "8e276a29d34c8904",
+    "ratio": "3:4",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "42% 40%",
+    "sujet": {
+      "x": 23.5,
+      "y": 27.9,
+      "l": 36.8,
+      "h": 23.5
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.62,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.41,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.39,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.32,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1500,
+      "height": 2000,
+      "source": [
+        1500,
+        2000
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "suzanne-2-480.webp",
+      "suzanne-2-640.webp",
+      "suzanne-2-960.webp"
+    ],
+    "poids": {
+      "suzanne-2-480.webp": 33618,
+      "suzanne-2-640.webp": 58022,
+      "suzanne-2-960.webp": 122948
+    },
+    "media": "c.media({ nom: 'suzanne-2', alt: \"Chambre Suzanne : lit gris et poutre\", cadrage: '42% 40%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 4' })"
+  },
+  "suzanne-3": {
+    "nom": "suzanne-3",
+    "source": "recu/15m2-4.jpg",
+    "role": "galerie",
+    "alt": "Chambre Suzanne : bureau devant la fenêtre",
+    "grok": false,
+    "mention": null,
+    "empreinte": "44692e30671fdf35",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "47% 52%",
+    "sujet": {
+      "x": 27.9,
+      "y": 33.8,
+      "l": 44.1,
+      "h": 44.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.45,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.38,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0.37,
+        "ton": "sombre"
+      },
+      {
+        "cote": "bas",
+        "score": 0.36,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 2000,
+      "height": 1500,
+      "source": [
+        2000,
+        1500
+      ]
+    },
+    "faible": false,
+    "raisons_faible": [],
+    "avertissements": [],
+    "fichiers": [
+      "suzanne-3-480.webp",
+      "suzanne-3-640.webp",
+      "suzanne-3-960.webp"
+    ],
+    "poids": {
+      "suzanne-3-480.webp": 30058,
+      "suzanne-3-640.webp": 48780,
+      "suzanne-3-960.webp": 94432
+    },
+    "media": "c.media({ nom: 'suzanne-3', alt: \"Chambre Suzanne : bureau devant la fenêtre\", cadrage: '47% 52%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "suzanne-4": {
+    "nom": "suzanne-4",
+    "source": "recu/15m2.jpg",
+    "role": "galerie",
+    "alt": "Chambre Suzanne : étagère d'appareils photo anciens",
+    "grok": false,
+    "mention": null,
+    "empreinte": "a9b244e515a25f3e",
+    "ratio": "4:3",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "50% 45%",
+    "sujet": {
+      "x": 18.9,
+      "y": 15.7,
+      "l": 62.9,
+      "h": 39
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.44,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0.35,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.33,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.32,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 124,
+      "top": 0,
+      "width": 887,
+      "height": 665,
+      "source": [
+        1182,
+        665
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1182 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,08 fois (source de 887 px après recadrage)"
+    ],
+    "fichiers": [
+      "suzanne-4-480.webp",
+      "suzanne-4-640.webp",
+      "suzanne-4-960.webp"
+    ],
+    "poids": {
+      "suzanne-4-480.webp": 20078,
+      "suzanne-4-640.webp": 32600,
+      "suzanne-4-960.webp": 57256
+    },
+    "media": "c.media({ nom: 'suzanne-4', alt: \"Chambre Suzanne : étagère d'appareils photo anciens\", cadrage: '50% 45%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '4 / 3' })"
+  },
+  "grok/g-vignes": {
+    "nom": "grok/g-vignes",
+    "source": "recu/grok/g-vignes.jpg",
+    "role": "ouverture",
+    "alt": "Vignes en terrasses et garrigue dans la lumière du soir",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "dec464e29c3de046",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 48%"
+    },
+    "cadrage": "53% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.43,
+        "ton": "clair"
+      },
+      {
+        "cote": "bas",
+        "score": 0.02,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": "gauche",
+    "recadrage": {
+      "left": 0,
+      "top": 32,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/g-vignes-640.webp",
+      "grok/g-vignes-1280.webp",
+      "grok/g-vignes-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/g-vignes-640.webp": 48696,
+      "grok/g-vignes-1280.webp": 129542,
+      "grok/g-vignes-mobile-640.webp": 140870
+    },
+    "media": "c.media({ nom: 'grok/g-vignes', alt: \"Vignes en terrasses et garrigue dans la lumière du soir\", cadrage: '53% 50%', cadrageMobile: '50% 48%', sizes: '100vw', priorite: true })"
+  },
+  "grok/g-pierre": {
+    "nom": "grok/g-pierre",
+    "source": "recu/grok/g-pierre.jpg",
+    "role": "section-fond",
+    "alt": "Mur de pierre calcaire blonde et ombre d'une feuille de vigne",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "b88ede90bb9fa1a8",
+    "ratio": "3:2",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": null,
+    "cadrage": "66% 64%",
+    "sujet": {
+      "x": 9.4,
+      "y": 13,
+      "l": 90.6,
+      "h": 82.3
+    },
+    "zones_calmes": [
+      {
+        "cote": "haut",
+        "score": 0.14,
+        "ton": "clair"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.1,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 5,
+      "width": 1168,
+      "height": 779,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/g-pierre-640.webp",
+      "grok/g-pierre-1280.webp"
+    ],
+    "poids": {
+      "grok/g-pierre-640.webp": 80932,
+      "grok/g-pierre-1280.webp": 226536
+    },
+    "media": "c.media({ nom: 'grok/g-pierre', alt: \"Mur de pierre calcaire blonde et ombre d'une feuille de vigne\", cadrage: '66% 64%', sizes: '100vw' })"
+  },
+  "grok/g-sentier": {
+    "nom": "grok/g-sentier",
+    "source": "recu/grok/g-sentier.jpg",
+    "role": "ouverture",
+    "alt": "Sentier de pierre dans la garrigue, chênes verts et collines au loin",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "e0b0e4c1d06acd47",
+    "ratio": "16:9",
+    "largeurs": [
+      640,
+      1280
+    ],
+    "mobile": {
+      "ratio": "9:16",
+      "largeurs": [
+        640
+      ],
+      "cadrage": "50% 46%"
+    },
+    "cadrage": "43% 36%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 96.9,
+      "h": 100
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.3,
+        "ton": "sombre"
+      },
+      {
+        "cote": "gauche",
+        "score": 0.1,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.04,
+        "ton": "clair"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": "bas",
+    "recadrage": {
+      "left": 0,
+      "top": 46,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "largeurs retirées (source trop petite) : 1920",
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "version téléphone sans 1080 px (source trop petite)",
+      "agrandie 1,1 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/g-sentier-640.webp",
+      "grok/g-sentier-1280.webp",
+      "grok/g-sentier-mobile-640.webp"
+    ],
+    "poids": {
+      "grok/g-sentier-640.webp": 53960,
+      "grok/g-sentier-1280.webp": 154714,
+      "grok/g-sentier-mobile-640.webp": 130226
+    },
+    "media": "c.media({ nom: 'grok/g-sentier', alt: \"Sentier de pierre dans la garrigue, chênes verts et collines au loin\", cadrage: '43% 36%', cadrageMobile: '50% 46%', sizes: '100vw', priorite: true })"
+  },
+  "grok/g-riviere": {
+    "nom": "grok/g-riviere",
+    "source": "recu/grok/g-riviere.jpg",
+    "role": "galerie",
+    "alt": "Rivière turquoise entre des falaises calcaires",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "b5c4e4fc95027202",
+    "ratio": "3:2",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "58% 38%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 96.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "bas",
+        "score": 0.11,
+        "ton": "sombre"
+      },
+      {
+        "cote": "droite",
+        "score": 0.03,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1168,
+      "height": 779,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/g-riviere-480.webp",
+      "grok/g-riviere-640.webp",
+      "grok/g-riviere-960.webp"
+    ],
+    "poids": {
+      "grok/g-riviere-480.webp": 38034,
+      "grok/g-riviere-640.webp": 66066,
+      "grok/g-riviere-960.webp": 134364
+    },
+    "media": "c.media({ nom: 'grok/g-riviere', alt: \"Rivière turquoise entre des falaises calcaires\", cadrage: '58% 38%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 2' })"
+  },
+  "grok/g-marche": {
+    "nom": "grok/g-marche",
+    "source": "recu/grok/g-marche.jpg",
+    "role": "galerie",
+    "alt": "Étal de marché au matin : abricots, melons, olives et thym",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "ab4c4547ffb0e1bf",
+    "ratio": "3:2",
+    "largeurs": [
+      480,
+      640,
+      960
+    ],
+    "mobile": null,
+    "cadrage": "49% 46%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 96.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "droite",
+        "score": 0,
+        "ton": "sombre"
+      },
+      {
+        "cote": "haut",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "sombre"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 0,
+      "width": 1168,
+      "height": 779,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [],
+    "fichiers": [
+      "grok/g-marche-480.webp",
+      "grok/g-marche-640.webp",
+      "grok/g-marche-960.webp"
+    ],
+    "poids": {
+      "grok/g-marche-480.webp": 40040,
+      "grok/g-marche-640.webp": 65332,
+      "grok/g-marche-960.webp": 120724
+    },
+    "media": "c.media({ nom: 'grok/g-marche', alt: \"Étal de marché au matin : abricots, melons, olives et thym\", cadrage: '49% 46%', sizes: '(max-width: 760px) 100vw, 50vw', ratio: '3 / 2' })"
+  },
+  "grok/g-404": {
+    "nom": "grok/g-404",
+    "source": "recu/grok/g-404.jpg",
+    "role": "404",
+    "alt": "Une clé ancienne posée seule sur une couverture pliée",
+    "grok": true,
+    "mention": "Illustration générée",
+    "empreinte": "467956258bd07311",
+    "ratio": "16:9",
+    "largeurs": [
+      800,
+      1600
+    ],
+    "mobile": null,
+    "cadrage": "40% 50%",
+    "sujet": {
+      "x": 0,
+      "y": 0,
+      "l": 100,
+      "h": 97.1
+    },
+    "zones_calmes": [
+      {
+        "cote": "droite",
+        "score": 0.21,
+        "ton": "moyen"
+      },
+      {
+        "cote": "haut",
+        "score": 0.21,
+        "ton": "moyen"
+      },
+      {
+        "cote": "gauche",
+        "score": 0,
+        "ton": "moyen"
+      },
+      {
+        "cote": "bas",
+        "score": 0,
+        "ton": "moyen"
+      }
+    ],
+    "zone_texte": null,
+    "recadrage": {
+      "left": 0,
+      "top": 111,
+      "width": 1168,
+      "height": 657,
+      "source": [
+        1168,
+        784
+      ]
+    },
+    "faible": true,
+    "raisons_faible": [
+      "1168 px de large"
+    ],
+    "avertissements": [
+      "agrandie 1,37 fois (source de 1168 px après recadrage)"
+    ],
+    "fichiers": [
+      "grok/g-404-800.webp",
+      "grok/g-404-1600.webp"
+    ],
+    "poids": {
+      "grok/g-404-800.webp": 36946,
+      "grok/g-404-1600.webp": 99568
+    },
+    "media": "c.media({ nom: 'grok/g-404', alt: \"Une clé ancienne posée seule sur une couverture pliée\", cadrage: '40% 50%', sizes: '100vw', ratio: '16 / 9' })"
+  }
+}

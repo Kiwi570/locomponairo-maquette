@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="fr" data-v="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Les alentours de Pouzols : Saint-Guilhem, Salagou, Navacelles. Lo Componaïro</title>
+<meta name="description" content="Saint-Guilhem-le-Désert, le pont du Diable, le lac du Salagou, Navacelles, Pézenas, Montpellier : que faire autour de la maison.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://locomponairo-maquette.vercel.app/alentours">
+<style>:root{--fond:#f1e9da;--texte:#2b2320;--voile-fond:#4a1c26;--ouverture-fond:#2b2320;--menu-fond:#2b2320}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f1e9da">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lo Componaïro">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Les alentours de Pouzols : Saint-Guilhem, Salagou, Navacelles. Lo Componaïro">
+<meta property="og:description" content="Saint-Guilhem-le-Désert, le pont du Diable, le lac du Salagou, Navacelles, Pézenas, Montpellier : que faire autour de la maison.">
+<meta property="og:url" content="https://locomponairo-maquette.vercel.app/alentours">
+<meta property="og:image" content="https://locomponairo-maquette.vercel.app/assets/partage/alentours-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carte des alentours de Pouzols">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BedAndBreakfast","name":"Lo Componaïro","url":"https://locomponairo-maquette.vercel.app/","telephone":"+33688712601","email":"locomponairo34@gmail.com","address":{"@type":"PostalAddress","streetAddress":"15 rue des Jardins","postalCode":"34230","addressLocality":"Pouzols","addressRegion":"Hérault","addressCountry":"FR"},"checkinTime":"17:00","checkoutTime":"11:00","numberOfRooms":4,"petsAllowed":false,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Petit-déjeuner inclus","value":true},{"@type":"LocationFeatureSpecification","name":"Garage fermé","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Climatisation","value":true}],"description":"Chambre d'hôtes dans une maison vigneronne de 1850 à Pouzols (Hérault) : quatre chambres, terrasses, garage fermé, petit-déjeuner inclus."}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="serrure" aria-hidden="true"><div class="voile-contenu"><svg class="voile-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><span data-voile-libelle>Alentours</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <svg class="ouverture-serrure" viewBox="-60 -60 120 160" aria-hidden="true"><path d="M-24.8 26 A 50 50 0 1 1 24.8 26 L 34 92 L -34 92 Z"/></svg>
+  <div class="ouverture-objet" data-ouverture-objet><svg class="trousseau-svg trousseau-intro" viewBox="0 0 400 400" aria-hidden="true" focusable="false" data-audit-ignorer>
+  <circle class="trousseau-ombre" cx="204" cy="206" r="44"/>
+  <g class="trousseau-cle" style="--i:0" transform="translate(200 200) rotate(0)">
+    <g class="cle" data-cle="isabelle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Isabelle</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:1" transform="translate(200 200) rotate(90)">
+    <g class="cle" data-cle="denise">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Denise</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:2" transform="translate(200 200) rotate(180)">
+    <g class="cle" data-cle="mathilde">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Mathilde</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:3" transform="translate(200 200) rotate(270)">
+    <g class="cle" data-cle="suzanne">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Suzanne</text>
+  </g>
+</g></g>
+  <circle class="trousseau-anneau" cx="200" cy="200" r="44" fill="none" stroke-width="8"/>
+  <circle class="trousseau-reflet" cx="200" cy="200" r="44" fill="none" stroke-width="2"/>
+</svg></div>
+  <p class="ouverture-nom">Lo Componaïro</p>
+  <span class="ouverture-trait"></span>
+  <p class="ouverture-ligne">Maison vigneronne · 1850</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <svg class="entete-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><span>Lo Componaïro</span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours" aria-current="page">Alentours</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton bouton--action entete-action" href="/reserver" data-libelle="Réserver">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/chambres" class="menu-lien" data-libelle="Les chambres">Les chambres</a></li><li style="--i:2"><a href="/votre-sejour" class="menu-lien" data-libelle="Votre séjour">Votre séjour</a></li><li style="--i:3"><a href="/alentours" class="menu-lien" data-libelle="Alentours" aria-current="page">Alentours</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li><li style="--i:5"><a href="/reserver" class="menu-lien" data-libelle="Réserver">Réserver</a></li></ul>
+  <p><a class="bouton" href="tel:+33688712601">Appeler 06 88 71 26 01</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil" data-sarment>
+<section class="tete-carte" id="debut">
+  <div class="conteneur tete-carte-grille">
+    <div class="tete-carte-texte">
+      <p class="surtitre" data-anime="gsap" data-tete-anime>Alentours</p>
+      <h1 class="tete-carte-titre" data-anime="gsap" data-tete-anime>Partir de Pouzols.</h1>
+      <p class="masque-ecran-bas" data-anime="gsap" data-tete-anime>Gorges, cirques, lac de terre rouge et villages de pierre : la maison est un camp de base au cœur de l’Hérault, à 7 km de Gignac.</p>
+      <p data-anime="gsap" data-tete-anime><a href="/reserver" class="bouton bouton--action" data-libelle="Réserver" data-action-principale>Réserver</a></p>
+      <p class="tete-carte-info" data-info-cle data-anime="gsap" data-tete-anime>Montpellier à 25 min · Pézenas à 25 min</p>
+    </div>
+    <div class="tete-carte-objet">
+      <svg class="carte-svg" viewBox="0 0 600 520" role="img" aria-label="Carte gravée des alentours de Pouzols">
+  <rect class="carte-fond" x="0" y="0" width="600" height="520" rx="18"/>
+  <g class="carte-relief"><path d="M40 62 l14 -20 l14 20 M48 62 l8 -10"/><path d="M80 78 l14 -20 l14 20 M88 78 l8 -10"/><path d="M120 62 l14 -20 l14 20 M128 62 l8 -10"/><path d="M160 78 l14 -20 l14 20 M168 78 l8 -10"/><path d="M200 62 l14 -20 l14 20 M208 62 l8 -10"/><path d="M240 78 l14 -20 l14 20 M248 78 l8 -10"/><path d="M280 62 l14 -20 l14 20 M288 62 l8 -10"/><path d="M320 78 l14 -20 l14 20 M328 78 l8 -10"/><path d="M360 62 l14 -20 l14 20 M368 62 l8 -10"/><path d="M400 78 l14 -20 l14 20 M408 78 l8 -10"/><path d="M440 62 l14 -20 l14 20 M448 62 l8 -10"/><path d="M480 78 l14 -20 l14 20 M488 78 l8 -10"/><path d="M520 62 l14 -20 l14 20 M528 62 l8 -10"/><path d="M40 148 l14 -20 l14 20 M48 148 l8 -10"/><path d="M80 132 l14 -20 l14 20 M88 132 l8 -10"/><path d="M120 148 l14 -20 l14 20 M128 148 l8 -10"/><path d="M160 132 l14 -20 l14 20 M168 132 l8 -10"/><path d="M200 148 l14 -20 l14 20 M208 148 l8 -10"/><path d="M240 132 l14 -20 l14 20 M248 132 l8 -10"/><path d="M280 148 l14 -20 l14 20 M288 148 l8 -10"/><path d="M320 132 l14 -20 l14 20 M328 132 l8 -10"/><path d="M360 148 l14 -20 l14 20 M368 148 l8 -10"/><path d="M400 132 l14 -20 l14 20 M408 132 l8 -10"/><path d="M440 148 l14 -20 l14 20 M448 148 l8 -10"/><path d="M480 132 l14 -20 l14 20 M488 132 l8 -10"/><path d="M520 148 l14 -20 l14 20 M528 148 l8 -10"/></g>
+  <path class="carte-eau" d="M372 0 C 360 80, 380 140, 352 200 S 330 300, 300 380 S 250 470, 230 520"/>
+  <path class="carte-lac" d="M150 196 C 170 180, 210 186, 214 206 C 220 228, 180 236, 160 226 C 140 218, 136 206, 150 196 Z"/>
+  <path class="carte-cote" d="M330 520 C 390 480, 430 470, 470 455 S 560 430, 600 418"/>
+  <path class="carte-lac" d="M396 480 C 420 462, 470 458, 486 470 C 470 486, 420 492, 396 480 Z"/>
+  <g class="carte-routes" data-fx="trace" data-effet="carte-route"><path class="carte-route" d="M330 260 Q 315 201 342 146"/><path class="carte-route" d="M330 260 Q 357 221 402 208"/><path class="carte-route" d="M330 260 Q 341 206 384 172"/><path class="carte-route" d="M330 260 Q 246 261 180 208"/><path class="carte-route" d="M330 260 Q 260 168 264 52"/><path class="carte-route" d="M330 260 Q 252 297 168 276"/><path class="carte-route" d="M330 260 Q 309 362 228 426"/><path class="carte-route" d="M330 260 Q 436 245 528 302"/><path class="carte-route" d="M330 260 Q 430 341 456 468"/><path class="carte-route" d="M330 260 Q 279 316 204 328"/><path class="carte-route" d="M330 260 Q 204 182 156 42"/><path class="carte-route" d="M330 260 Q 259 203 240 114"/></g>
+  <g class="carte-site" style="--i:0"><circle cx="342" cy="146" r="5"/><text x="352" y="150" text-anchor="start">Saint-Guilhem-le-Désert</text></g><g class="carte-site" style="--i:1"><circle cx="402" cy="208" r="5"/><text x="412" y="212" text-anchor="start">Pont du Diable</text></g><g class="carte-site" style="--i:2"><circle cx="384" cy="172" r="5"/><text x="394" y="176" text-anchor="start">Clamouse</text></g><g class="carte-site" style="--i:3"><circle cx="180" cy="208" r="5"/><text x="170" y="212" text-anchor="end">Lac du Salagou</text></g><g class="carte-site" style="--i:4"><circle cx="264" cy="52" r="5"/><text x="274" y="56" text-anchor="start">Cirque de Navacelles</text></g><g class="carte-site" style="--i:5"><circle cx="168" cy="276" r="5"/><text x="158" y="280" text-anchor="end">Cirque de Mourèze</text></g><g class="carte-site" style="--i:6"><circle cx="228" cy="426" r="5"/><text x="238" y="430" text-anchor="start">Pézenas</text></g><g class="carte-site" style="--i:7"><circle cx="528" cy="302" r="5"/><text x="518" y="306" text-anchor="end">Montpellier</text></g><g class="carte-site" style="--i:8"><circle cx="456" cy="468" r="5"/><text x="466" y="472" text-anchor="start">Sète et l’étang de Thau</text></g><g class="carte-site" style="--i:9"><circle cx="204" cy="328" r="5"/><text x="194" y="332" text-anchor="end">Villeneuvette</text></g><g class="carte-site" style="--i:10"><circle cx="156" cy="42" r="5"/><text x="166" y="46" text-anchor="start">La Couvertoirade</text></g><g class="carte-site" style="--i:11"><circle cx="240" cy="114" r="5"/><text x="250" y="118" text-anchor="start">Lerab Ling</text></g>
+  <g class="carte-maison"><circle cx="330" cy="260" r="11"/><path d="M324 263 V258 L330 253 L336 258 V263 Z"/></g>
+  <text class="carte-pouzols" x="314" y="296" text-anchor="end" data-plume data-effet="etiquette-plume" data-grille="typo">Pouzols</text>
+</svg>
+      <div class="medaillon" data-iris-centre="disque" role="img" aria-label="La 2 CV de la maison, « unique et indémodable »"><svg class="deuxcv" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><circle cx="100" cy="100" r="96" class="deuxcv-fond"/>
+<path class="deuxcv-caisse" d="M34 128 C 36 102, 52 92, 66 90 C 74 70, 92 60, 116 60 C 140 60, 150 74, 156 92 C 168 94, 172 108, 170 128 Z"/>
+<path class="deuxcv-vitre" d="M76 90 C 82 74, 96 68, 112 68 L112 90 Z M118 68 C 134 68, 142 76, 148 90 L118 90 Z"/>
+<circle class="deuxcv-roue" cx="66" cy="130" r="17"/><circle class="deuxcv-roue" cx="142" cy="130" r="17"/>
+<circle class="deuxcv-jante" cx="66" cy="130" r="6"/><circle class="deuxcv-jante" cx="142" cy="130" r="6"/>
+<path class="deuxcv-route" d="M14 150 H186"/></svg></div>
+      <p class="schema-mention">Carte illustrative, échelle non respectée</p>
+    </div>
+  </div>
+</section>
+<section class="ronde ronde--page" id="sites" data-fil="gauche">
+  <div class="conteneur sites-tete">
+    <div>
+      <p class="surtitre" data-anime>Les sites</p>
+      <h2 data-anime="lettres">La ronde des sites.</h2>
+      <p data-anime>Les sites cités par la maison. Les durées sont celles qu’elle indique ; les autres sont à compléter.</p>
+    </div>
+    <figure class="media sites-photo" data-grok data-fx="parallaxe" data-fx-force="10" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/g-riviere-960.webp" srcset="/assets/images/grok/g-riviere-480.webp 480w, /assets/images/grok/g-riviere-640.webp 640w, /assets/images/grok/g-riviere-960.webp 960w" sizes="(max-width: 760px) 92vw, 40vw" alt="Rivière turquoise entre des falaises calcaires" width="960" height="640" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  </div>
+  <div class="carrousel" data-carrousel data-visuel data-effet="carrousel-sites" tabindex="0" role="region" aria-label="Carrousel des sites autour de la maison : flèches gauche et droite pour le faire tourner">
+    <div class="carrousel-scene">
+      <ul class="carrousel-anneau" data-galerie style="--n:12">
+        <li class="carrousel-carte" style="--i:0">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 92V52l20-16 20 16v40M50 36V18M44 24h12M40 92V70a10 10 0 0 1 20 0v22M10 92h80M14 92V64l16-10M86 92V64L70 54"/></g></svg>
+            <p class="carte-site-type">Village</p>
+            <h3>Saint-Guilhem-le-Désert</h3>
+            <p class="carte-site-texte">Présenté par la maison comme l’un des plus beaux villages de France.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 92V52l20-16 20 16v40M50 36V18M44 24h12M40 92V70a10 10 0 0 1 20 0v22M10 92h80M14 92V64l16-10M86 92V64L70 54"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:1">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 70h88M10 70c8-30 32-30 40 0M50 70c8-30 32-30 40 0M30 70v22M70 70v22M6 92c20-6 30 4 44-2s30 6 44 0"/></g></svg>
+            <p class="carte-site-type">Site classé</p>
+            <h3>Pont du Diable</h3>
+            <p class="carte-site-texte">Cité par la maison, avec les gorges de l’Hérault.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 70h88M10 70c8-30 32-30 40 0M50 70c8-30 32-30 40 0M30 70v22M70 70v22M6 92c20-6 30 4 44-2s30 6 44 0"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:2">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 92c4-40 20-64 42-64s38 24 42 64M30 40l3 14 3-12 3 16 3-10M58 38l3 12 3-14 3 16M40 92l4-14 4 14M60 92l3-10 3 10"/></g></svg>
+            <p class="carte-site-type">Grotte et Spéléopark</p>
+            <h3>Grotte de Clamouse</h3>
+            <p class="carte-site-texte">Visite de 2 à 3 h, avec le Spéléopark.</p>
+            <p class="carte-site-distance">Depuis la maison : <strong>11 km</strong></p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 92c4-40 20-64 42-64s38 24 42 64M30 40l3 14 3-12 3 16 3-10M58 38l3 12 3-14 3 16M40 92l4-14 4 14M60 92l3-10 3 10"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:3">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 60c12-14 22-22 34-18s20 10 30 2 20-8 28 4M6 74c14 4 26-4 44 0s28 4 44-2M12 86c14 2 30-4 46 0s22 2 30 0"/><circle cx="74" cy="24" r="8"/></g></svg>
+            <p class="carte-site-type">Grand Site de France</p>
+            <h3>Lac du Salagou</h3>
+            <p class="carte-site-texte">Labellisé Grand Site de France en juin 2024.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 60c12-14 22-22 34-18s20 10 30 2 20-8 28 4M6 74c14 4 26-4 44 0s28 4 44-2M12 86c14 2 30-4 46 0s22 2 30 0"/><circle cx="74" cy="24" r="8"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:4">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30c12 50 76 50 88 0M18 34c10 34 54 34 64 0M30 40c8 18 32 18 40 0M44 52c4 6 8 6 12 0M50 58v20"/></g></svg>
+            <p class="carte-site-type">Grand paysage</p>
+            <h3>Cirque de Navacelles</h3>
+            <p class="carte-site-texte">Cité par la maison parmi les grands sites des alentours.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30c12 50 76 50 88 0M18 34c10 34 54 34 64 0M30 40c8 18 32 18 40 0M44 52c4 6 8 6 12 0M50 58v20"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:5">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 92V60c0-10 10-14 10-24s10-10 12 0 0 20 6 26v30M44 92V48c0-8 8-12 10-4s6 14 4 22v26M66 92V66c0-8 10-10 12-2s4 12 4 28M4 92h92"/></g></svg>
+            <p class="carte-site-type">Balade</p>
+            <h3>Cirque de Mourèze</h3>
+            <p class="carte-site-texte">Cité par la maison parmi les balades des alentours.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 92V60c0-10 10-14 10-24s10-10 12 0 0 20 6 26v30M44 92V48c0-8 8-12 10-4s6 14 4 22v26M66 92V66c0-8 10-10 12-2s4 12 4 28M4 92h92"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:6">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24c12-6 44-6 56 0 0 34-10 56-28 56S22 58 22 24zM34 42c4-4 10-4 14 0M52 42c4-4 10-4 14 0M38 62c8 6 16 6 24 0"/></g></svg>
+            <p class="carte-site-type">Ville de Molière</p>
+            <h3>Pézenas</h3>
+            <p class="carte-site-texte">Ville classée, ville de Molière, et ses antiquaires.</p>
+            <p class="carte-site-distance">Depuis la maison : <strong>25 min</strong></p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24c12-6 44-6 56 0 0 34-10 56-28 56S22 58 22 24zM34 42c4-4 10-4 14 0M52 42c4-4 10-4 14 0M38 62c8 6 16 6 24 0"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:7">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 92h60M28 92V80h44v12M50 80V44M36 56c4-10 24-10 28 0M42 44c2-8 14-8 16 0M50 30a6 6 0 1 0 0-12 6 6 0 0 0 0 12M38 80c-6-10-14-12-20-10M62 80c6-10 14-12 20-10"/></g></svg>
+            <p class="carte-site-type">Place de la Comédie</p>
+            <h3>Montpellier</h3>
+            <p class="carte-site-texte">25 min en voiture, ou 20 min de tramway selon la maison.</p>
+            <p class="carte-site-distance">Depuis la maison : <strong>25 min</strong></p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 92h60M28 92V80h44v12M50 80V44M36 56c4-10 24-10 28 0M42 44c2-8 14-8 16 0M50 30a6 6 0 1 0 0-12 6 6 0 0 0 0 12M38 80c-6-10-14-12-20-10M62 80c6-10 14-12 20-10"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:8">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M40 92l4-56h12l4 56M38 36h24M44 36v-10h12v10M50 26V18M30 22l-14-6M70 22l14-6M6 92c14-6 26 4 44-2s28 6 44 0"/></g></svg>
+            <p class="carte-site-type">Ville historique</p>
+            <h3>Sète et l’étang de Thau</h3>
+            <p class="carte-site-texte">Ville historique, et l’étang de Thau, cités par la maison.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M40 92l4-56h12l4 56M38 36h24M44 36v-10h12v10M50 26V18M30 22l-14-6M70 22l14-6M6 92c14-6 26 4 44-2s28 6 44 0"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:9">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 92V36h64v56M34 92V60a16 16 0 0 1 32 0v32M18 36l32-18 32 18M44 48h12"/></g></svg>
+            <p class="carte-site-type">Village</p>
+            <h3>Villeneuvette</h3>
+            <p class="carte-site-texte">Cité par la maison parmi les sites à voir.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 92V36h64v56M34 92V60a16 16 0 0 1 32 0v32M18 36l32-18 32 18M44 48h12"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:10">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 92V44h12v-8h8v8h10v-8h8v8h12v-8h8v8h10v-8h8v8h12v48M40 92V72a10 10 0 0 1 20 0v20M6 92h88"/></g></svg>
+            <p class="carte-site-type">Cité fortifiée</p>
+            <h3>La Couvertoirade</h3>
+            <p class="carte-site-texte">Cité par la maison parmi les sites à voir.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 92V44h12v-8h8v8h10v-8h8v8h12v-8h8v8h10v-8h8v8h12v48M40 92V72a10 10 0 0 1 20 0v20M6 92h88"/></g></svg></div>
+        </li><li class="carrousel-carte" style="--i:11">
+          <div class="carte-site">
+            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 92h72M24 92V70h52v22M30 70l20-22 20 22M40 48h20M50 48V30M44 36h12M50 30c-2-6 2-10 0-14"/></g></svg>
+            <p class="carte-site-type">Temple bouddhiste</p>
+            <h3>Lerab Ling</h3>
+            <p class="carte-site-texte">Temple bouddhiste cité par la maison.</p>
+          </div>
+          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 92h72M24 92V70h52v22M30 70l20-22 20 22M40 48h20M50 48V30M44 36h12M50 30c-2-6 2-10 0-14"/></g></svg></div>
+        </li>
+      </ul>
+    </div>
+    <div class="carrousel-fleches">
+      <button type="button" class="bouton-rond" data-carrousel-prec aria-label="Site précédent">←</button>
+      <button type="button" class="bouton-rond" data-carrousel-suiv aria-label="Site suivant">→</button>
+    </div>
+  </div>
+</section>
+<section class="rando" id="randonnee" data-fx="plein-ecran" style="--fx-longueur:220svh">
+  <div data-collant>
+    <figure class="media rando-photo" data-grok style="--cadrage:50% 50%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/g-sentier-mobile-640.webp 640w" sizes="100vw">
+    <img src="/assets/images/grok/g-sentier-1280.webp" srcset="/assets/images/grok/g-sentier-640.webp 640w, /assets/images/grok/g-sentier-1280.webp 1280w" sizes="100vw" alt="Sentier de pierre dans la garrigue, chênes verts et collines au loin" width="1280" height="720" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div class="suite-mots" aria-hidden="true" data-superpose data-audit-ignorer><span data-fx-ecarte="g">Garrigue</span><span data-fx-ecarte="d">et cirques</span></div>
+    <div class="suite-texte conteneur"><div data-fx-apres>
+      <h2>Prêt pour votre randonnée ?</h2>
+      <p>Sentiers de garrigue, cirques et gorges : partez le matin, le petit-déjeuner est servi dès 8 h 30.</p>
+    </div></div>
+  </div>
+</section>
+<section class="proches" id="tout-pres" data-fil="droite">
+  <div class="conteneur">
+    <p class="surtitre" data-anime>Tout près</p>
+    <h2 data-anime="lignes">Sans reprendre la route bien loin.</h2>
+    <ul class="proches-liste" data-anime="cascade">
+      <li class="proche"><figure class="media proche-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/cavaliere-960.webp" srcset="/assets/images/cavaliere-480.webp 480w, /assets/images/cavaliere-640.webp 640w, /assets/images/cavaliere-960.webp 960w" sizes="(max-width: 760px) 92vw, 23vw" alt="Cavalière de dos dans une écurie" width="960" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure><h3>Centre équestre des 3 Fontaines</h3><p>À 5 min de la maison.</p></li>
+      <li class="proche"><figure class="media proche-photo" data-grok style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/g-marche-960.webp" srcset="/assets/images/grok/g-marche-480.webp 480w, /assets/images/grok/g-marche-640.webp 640w, /assets/images/grok/g-marche-960.webp 960w" sizes="(max-width: 760px) 92vw, 23vw" alt="Étal de marché au matin : abricots, melons, olives et thym" width="960" height="640" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure><h3>Marchés locaux</h3><p>De nombreux marchés dans les villages alentour.</p></li>
+      <li class="proche"><div class="proche-photo proche-dessin" data-visuel><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24c12-6 44-6 56 0 0 34-10 56-28 56S22 58 22 24zM34 42c4-4 10-4 14 0M52 42c4-4 10-4 14 0M38 62c8 6 16 6 24 0"/></g></svg></div><h3>Les Estivales</h3><p>À Lattes, les mardis et jeudis soir l’été : vins et tapas.</p></li>
+    </ul>
+    <p class="centre" data-anime><a class="bouton bouton--contour" href="https://www.herault-tourisme.com/" target="_blank" rel="noopener" aria-label="Découvrir l’Hérault sur le site du tourisme (nouvel onglet)">Découvrir l’Hérault sur le site du tourisme</a></p>
+  </div>
+</section>
+<section class="fin" id="fin" data-fil="gauche">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-photo" data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/jardin-lauriers-1280.webp" srcset="/assets/images/jardin-lauriers-640.webp 640w, /assets/images/jardin-lauriers-1280.webp 1280w, /assets/images/jardin-lauriers-1920.webp 1920w" sizes="(max-width: 760px) 70vw, 30vw" alt="Lauriers-roses en fleurs dans le jardin" width="1280" height="853" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <div class="fin-texte">
+      <h2 data-anime="lettres">Le soir, on rentre à la maison.</h2>
+      <p data-anime>Garage fermé jusqu’à 23 h, terrasse, et petit-déjeuner le lendemain.</p>
+      <p data-anime><a href="/reserver" class="bouton bouton--action" data-libelle="Réserver">Réserver en direct</a></p>
+    </div>
+  </div>
+</section>
+<template data-fil-objet><g class="grappe"><circle cx="0" cy="0" r="5.5"/><circle cx="-6" cy="-7" r="5"/><circle cx="6" cy="-7" r="5"/><circle cx="0" cy="-14" r="5"/><circle cx="-11" cy="-15" r="4.5"/><circle cx="11" cy="-15" r="4.5"/><circle cx="-5" cy="-22" r="4.5"/><circle cx="5" cy="-22" r="4.5"/><path class="grappe-tige" d="M0 -26 C 2 -32, 6 -35, 12 -36"/><path class="grappe-feuille" d="M6 -30 C 14 -42, 30 -40, 32 -30 C 24 -26, 14 -24, 6 -30 Z"/></g></template>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div class="pied-maison">
+      <p class="pied-nom"><svg class="pied-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><strong>Lo Componaïro</strong></p>
+      <p>15 rue des Jardins, 34230 Pouzols<br><a href="tel:+33688712601">06 88 71 26 01</a><br><a href="mailto:locomponairo34@gmail.com">locomponairo34@gmail.com</a></p>
+      <p class="pied-ouvert">Maison ouverte toute l’année</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours" aria-current="page">Alentours</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/reserver" data-libelle="Réserver">Réserver</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Suivre la maison</strong></p>
+      <ul>
+        <li><a href="https://www.instagram.com/lo.componairo/" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61580359389188" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></li>
+        <li><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" aria-label="TripAdvisor (nouvel onglet)">TripAdvisor</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par la maison.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>SAS Lo Componairo · SIRET 887 800 688 00012</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33688712601">Appeler</a>
+  <a class="bouton" href="/reserver" data-libelle="Réserver">Réserver</a>
+</div>
+</body>
+</html>

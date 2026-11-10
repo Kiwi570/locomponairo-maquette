@@ -1,0 +1,125 @@
+[
+  {
+    "cle": "saint-guilhem",
+    "nom": "Saint-Guilhem-le-Désert",
+    "type": "Village",
+    "distance": "",
+    "texte": "Présenté par la maison comme l’un des plus beaux villages de France.",
+    "gravure": "abbaye",
+    "x": 57,
+    "y": 28
+  },
+  {
+    "cle": "pont-du-diable",
+    "nom": "Pont du Diable",
+    "type": "Site classé",
+    "distance": "",
+    "texte": "Cité par la maison, avec les gorges de l’Hérault.",
+    "gravure": "pont",
+    "x": 67,
+    "y": 40
+  },
+  {
+    "cle": "clamouse",
+    "nom": "Grotte de Clamouse",
+    "type": "Grotte et Spéléopark",
+    "distance": "11 km",
+    "texte": "Visite de 2 à 3 h, avec le Spéléopark.",
+    "gravure": "grotte",
+    "x": 64,
+    "y": 33
+  },
+  {
+    "cle": "salagou",
+    "nom": "Lac du Salagou",
+    "type": "Grand Site de France",
+    "distance": "",
+    "texte": "Labellisé Grand Site de France en juin 2024.",
+    "gravure": "lac",
+    "x": 30,
+    "y": 40,
+    "gauche": true
+  },
+  {
+    "cle": "navacelles",
+    "nom": "Cirque de Navacelles",
+    "type": "Grand paysage",
+    "distance": "",
+    "texte": "Cité par la maison parmi les grands sites des alentours.",
+    "gravure": "cirque",
+    "x": 44,
+    "y": 10
+  },
+  {
+    "cle": "moureze",
+    "nom": "Cirque de Mourèze",
+    "type": "Balade",
+    "distance": "",
+    "texte": "Cité par la maison parmi les balades des alentours.",
+    "gravure": "rochers",
+    "x": 28,
+    "y": 53,
+    "gauche": true
+  },
+  {
+    "cle": "pezenas",
+    "nom": "Pézenas",
+    "type": "Ville de Molière",
+    "distance": "25 min",
+    "texte": "Ville classée, ville de Molière, et ses antiquaires.",
+    "gravure": "masque",
+    "x": 38,
+    "y": 82
+  },
+  {
+    "cle": "montpellier",
+    "nom": "Montpellier",
+    "type": "Place de la Comédie",
+    "distance": "25 min",
+    "texte": "25 min en voiture, ou 20 min de tramway selon la maison.",
+    "gravure": "fontaine",
+    "x": 88,
+    "y": 58
+  },
+  {
+    "cle": "sete",
+    "nom": "Sète et l’étang de Thau",
+    "type": "Ville historique",
+    "distance": "",
+    "texte": "Ville historique, et l’étang de Thau, cités par la maison.",
+    "gravure": "phare",
+    "x": 76,
+    "y": 90
+  },
+  {
+    "cle": "villeneuvette",
+    "nom": "Villeneuvette",
+    "type": "Village",
+    "distance": "",
+    "texte": "Cité par la maison parmi les sites à voir.",
+    "gravure": "porche",
+    "x": 34,
+    "y": 63,
+    "gauche": true
+  },
+  {
+    "cle": "couvertoirade",
+    "nom": "La Couvertoirade",
+    "type": "Cité fortifiée",
+    "distance": "",
+    "texte": "Cité par la maison parmi les sites à voir.",
+    "gravure": "remparts",
+    "x": 26,
+    "y": 8
+  },
+  {
+    "cle": "lerab-ling",
+    "nom": "Lerab Ling",
+    "type": "Temple bouddhiste",
+    "distance": "",
+    "texte": "Temple bouddhiste cité par la maison.",
+    "gravure": "temple",
+    "x": 40,
+    "y": 22
+  }
+]

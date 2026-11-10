@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fr" data-v="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page introuvable : Lo Componaïro</title>
+<meta name="description" content="Cette page n’existe pas ou plus.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://locomponairo-maquette.vercel.app/404">
+<style>:root{--fond:#f1e9da;--texte:#2b2320;--voile-fond:#4a1c26;--ouverture-fond:#2b2320;--menu-fond:#2b2320}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f1e9da">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lo Componaïro">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Page introuvable : Lo Componaïro">
+<meta property="og:description" content="Cette page n’existe pas ou plus.">
+<meta property="og:url" content="https://locomponairo-maquette.vercel.app/404">
+<meta property="og:image" content="https://locomponairo-maquette.vercel.app/assets/partage/accueil-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Façade de la maison vigneronne Lo Componaïro à Pouzols">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BedAndBreakfast","name":"Lo Componaïro","url":"https://locomponairo-maquette.vercel.app/","telephone":"+33688712601","email":"locomponairo34@gmail.com","address":{"@type":"PostalAddress","streetAddress":"15 rue des Jardins","postalCode":"34230","addressLocality":"Pouzols","addressRegion":"Hérault","addressCountry":"FR"},"checkinTime":"17:00","checkoutTime":"11:00","numberOfRooms":4,"petsAllowed":false,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Petit-déjeuner inclus","value":true},{"@type":"LocationFeatureSpecification","name":"Garage fermé","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Climatisation","value":true}],"description":"Chambre d'hôtes dans une maison vigneronne de 1850 à Pouzols (Hérault) : quatre chambres, terrasses, garage fermé, petit-déjeuner inclus."}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="serrure" aria-hidden="true"><div class="voile-contenu"><svg class="voile-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><span data-voile-libelle>Page introuvable</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <svg class="ouverture-serrure" viewBox="-60 -60 120 160" aria-hidden="true"><path d="M-24.8 26 A 50 50 0 1 1 24.8 26 L 34 92 L -34 92 Z"/></svg>
+  <div class="ouverture-objet" data-ouverture-objet><svg class="trousseau-svg trousseau-intro" viewBox="0 0 400 400" aria-hidden="true" focusable="false" data-audit-ignorer>
+  <circle class="trousseau-ombre" cx="204" cy="206" r="44"/>
+  <g class="trousseau-cle" style="--i:0" transform="translate(200 200) rotate(0)">
+    <g class="cle" data-cle="isabelle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Isabelle</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:1" transform="translate(200 200) rotate(90)">
+    <g class="cle" data-cle="denise">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Denise</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:2" transform="translate(200 200) rotate(180)">
+    <g class="cle" data-cle="mathilde">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Mathilde</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:3" transform="translate(200 200) rotate(270)">
+    <g class="cle" data-cle="suzanne">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Suzanne</text>
+  </g>
+</g></g>
+  <circle class="trousseau-anneau" cx="200" cy="200" r="44" fill="none" stroke-width="8"/>
+  <circle class="trousseau-reflet" cx="200" cy="200" r="44" fill="none" stroke-width="2"/>
+</svg></div>
+  <p class="ouverture-nom">Lo Componaïro</p>
+  <span class="ouverture-trait"></span>
+  <p class="ouverture-ligne">Maison vigneronne · 1850</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <svg class="entete-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><span>Lo Componaïro</span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours">Alentours</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton bouton--action entete-action" href="/reserver" data-libelle="Réserver">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/chambres" class="menu-lien" data-libelle="Les chambres">Les chambres</a></li><li style="--i:2"><a href="/votre-sejour" class="menu-lien" data-libelle="Votre séjour">Votre séjour</a></li><li style="--i:3"><a href="/alentours" class="menu-lien" data-libelle="Alentours">Alentours</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li><li style="--i:5"><a href="/reserver" class="menu-lien" data-libelle="Réserver">Réserver</a></li></ul>
+  <p><a class="bouton" href="tel:+33688712601">Appeler 06 88 71 26 01</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<section class="introuvable" id="debut">
+  <div class="conteneur introuvable-grille">
+    <figure class="media introuvable-photo" data-grok data-iris-centre data-fx="zoom" data-effet="cle-seule" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/g-404-1600.webp" srcset="/assets/images/grok/g-404-800.webp 800w, /assets/images/grok/g-404-1600.webp 1600w" sizes="(max-width: 760px) 92vw, 50vw" alt="Une clé posée seule sur une couverture pliée" width="1600" height="900" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div>
+      <h1 data-anime="lettres">Cette clé n’ouvre aucune porte.</h1>
+      <p data-anime>La page que vous cherchez n’existe pas ou plus. Les quatre chambres, elles, sont toujours là.</p>
+      <p class="introuvable-actions" data-anime><a href="/" class="bouton bouton--action" data-libelle="Accueil" data-action-principale>Revenir à l’accueil</a> <a href="/chambres" class="bouton bouton--contour" data-libelle="Les chambres">Voir les chambres</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div class="pied-maison">
+      <p class="pied-nom"><svg class="pied-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><strong>Lo Componaïro</strong></p>
+      <p>15 rue des Jardins, 34230 Pouzols<br><a href="tel:+33688712601">06 88 71 26 01</a><br><a href="mailto:locomponairo34@gmail.com">locomponairo34@gmail.com</a></p>
+      <p class="pied-ouvert">Maison ouverte toute l’année</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours">Alentours</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/reserver" data-libelle="Réserver">Réserver</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Suivre la maison</strong></p>
+      <ul>
+        <li><a href="https://www.instagram.com/lo.componairo/" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61580359389188" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></li>
+        <li><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" aria-label="TripAdvisor (nouvel onglet)">TripAdvisor</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par la maison.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>SAS Lo Componairo · SIRET 887 800 688 00012</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33688712601">Appeler</a>
+  <a class="bouton" href="/reserver" data-libelle="Réserver">Réserver</a>
+</div>
+</body>
+</html>

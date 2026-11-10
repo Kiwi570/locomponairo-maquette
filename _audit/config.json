@@ -1,0 +1,6 @@
+{
+  "siteActuel": "locomponairo.com",
+  "pagesTypes": ["/", "/chambres", "/votre-sejour", "/alentours", "/contact", "/reserver"],
+  "effets": ["trousseau", "soleil", "axes", "manifeste", "maison-coupe", "etiquette-plume", "tampons", "cadran-journee", "carrousel-sites", "portes", "couloir", "journee", "carte-route", "route-acces", "numero", "tableau-cles"],
+  "grille": { "dispenses": {} }
+}

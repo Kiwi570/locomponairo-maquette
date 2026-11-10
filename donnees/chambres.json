@@ -1,0 +1,109 @@
+[
+  {
+    "cle": "isabelle",
+    "nom": "Isabelle",
+    "initiale": "I",
+    "etage": "1er étage",
+    "n": 1,
+    "surface": "24 m²",
+    "lit": "Lit double 160 × 200",
+    "vue": "Vue village",
+    "terrasse": true,
+    "dit": "Murs jaunes, lit en fer forgé et cheminée de marbre, avec sa terrasse.",
+    "equipements": [
+      "Terrasse",
+      "Cheminée",
+      "TV",
+      "Machine à expresso",
+      "Bureau",
+      "Climatisation",
+      "Wi-Fi"
+    ],
+    "enfant": "Lit d’appoint enfant en option",
+    "photos": [
+      "isabelle-1",
+      "isabelle-2",
+      "isabelle-3",
+      "isabelle-4"
+    ]
+  },
+  {
+    "cle": "denise",
+    "nom": "Denise",
+    "initiale": "D",
+    "etage": "1er étage",
+    "n": 1,
+    "surface": "17 ou 24 m² (à confirmer)",
+    "lit": "Lit double 180 × 200 ou deux lits 90 × 200",
+    "vue": "Vue village",
+    "terrasse": true,
+    "dit": "Murs orangés et têtes de lit en rotin, en lit double ou en deux lits, avec sa terrasse.",
+    "equipements": [
+      "Terrasse",
+      "TV",
+      "Machine à expresso",
+      "Bureau",
+      "Climatisation",
+      "Wi-Fi"
+    ],
+    "enfant": "Lit d’appoint enfant en option",
+    "photos": [
+      "denise-1",
+      "denise-2",
+      "denise-3",
+      "denise-4"
+    ]
+  },
+  {
+    "cle": "mathilde",
+    "nom": "Mathilde",
+    "initiale": "M",
+    "etage": "2e étage",
+    "n": 2,
+    "surface": "16 m²",
+    "lit": "Lit double 160 × 200",
+    "vue": "Vue jardin",
+    "terrasse": false,
+    "dit": "Murs rouges, parquet et poutres apparentes, côté jardin.",
+    "equipements": [
+      "Parquet et poutres",
+      "Machine à expresso",
+      "Bureau",
+      "Climatisation",
+      "Wi-Fi"
+    ],
+    "enfant": "",
+    "photos": [
+      "mathilde-1",
+      "mathilde-2",
+      "mathilde-3",
+      "mathilde-4"
+    ]
+  },
+  {
+    "cle": "suzanne",
+    "nom": "Suzanne",
+    "initiale": "S",
+    "etage": "2e étage",
+    "n": 2,
+    "surface": "15 m²",
+    "lit": "Lit double 160 × 200",
+    "vue": "Vue jardin",
+    "terrasse": false,
+    "dit": "Parquet, poutres et bureau devant la fenêtre, côté jardin.",
+    "equipements": [
+      "Parquet et poutres",
+      "Machine à expresso",
+      "Bureau",
+      "Climatisation",
+      "Wi-Fi"
+    ],
+    "enfant": "",
+    "photos": [
+      "suzanne-1",
+      "suzanne-2",
+      "suzanne-3",
+      "suzanne-4"
+    ]
+  }
+]

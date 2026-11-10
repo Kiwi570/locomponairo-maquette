@@ -1,0 +1,937 @@
+{
+  "dossier": "/home/claude/locomponairo-maquette/recu/grok",
+  "date": "2026-11-10T12:39:54.178Z",
+  "detection": "mesures sharp seulement",
+  "planches": [
+    "planche.jpg"
+  ],
+  "legende_planche": "cadre jaune : sujet ; croix rouge : cadrage ; fond rose : à vérifier",
+  "doublons": [],
+  "images": [
+    {
+      "fichier": "g-404.jpg",
+      "nom": "g-404",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 321088,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 100,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        40,
+        56
+      ],
+      "cadrage_css": "40% 56%",
+      "zones_calmes": [
+        {
+          "cote": "droite",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "haut",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.87
+        }
+      ],
+      "qualite": {
+        "nettete": 27.1,
+        "bruit": 1.21,
+        "compression": 1.11,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "6121212130e8cb80",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-garage.jpg",
+      "nom": "g-garage",
+      "drapeau": null,
+      "largeur": 784,
+      "hauteur": 1168,
+      "ratio": "2:3",
+      "ratio_valeur": 0.671,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 397785,
+      "transparence": false,
+      "sujet": {
+        "x": 4.5,
+        "y": 3.1,
+        "l": 90.9,
+        "h": 93.8,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        62,
+        60
+      ],
+      "cadrage_css": "62% 60%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.24,
+          "ton": "sombre",
+          "recouvre_sujet": 0.83
+        },
+        {
+          "cote": "haut",
+          "score": 0.18,
+          "ton": "sombre",
+          "recouvre_sujet": 0.83
+        },
+        {
+          "cote": "bas",
+          "score": 0.1,
+          "ton": "sombre",
+          "recouvre_sujet": 0.83
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.83
+        }
+      ],
+      "qualite": {
+        "nettete": 34.6,
+        "bruit": 1.74,
+        "compression": 1.03,
+        "faible": true,
+        "raisons": [
+          "784 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "c0ccde5acd9c4276",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-linge.jpg",
+      "nom": "g-linge",
+      "drapeau": null,
+      "largeur": 784,
+      "hauteur": 1168,
+      "ratio": "2:3",
+      "ratio_valeur": 0.671,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 371017,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 3.1,
+        "l": 95.5,
+        "h": 93.8,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        49
+      ],
+      "cadrage_css": "54% 49%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.21,
+          "ton": "moyen",
+          "recouvre_sujet": 0.87
+        },
+        {
+          "cote": "droite",
+          "score": 0.13,
+          "ton": "sombre",
+          "recouvre_sujet": 0.83
+        },
+        {
+          "cote": "gauche",
+          "score": 0.09,
+          "ton": "clair",
+          "recouvre_sujet": 0.94
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.87
+        }
+      ],
+      "qualite": {
+        "nettete": 31.4,
+        "bruit": 1.59,
+        "compression": 1.04,
+        "faible": true,
+        "raisons": [
+          "784 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "c081008081818580",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-marche.jpg",
+      "nom": "g-marche",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 438371,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 100,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        46
+      ],
+      "cadrage_css": "49% 46%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "sombre",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "haut",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "sombre",
+          "recouvre_sujet": 0.87
+        }
+      ],
+      "qualite": {
+        "nettete": 47.6,
+        "bruit": 1.73,
+        "compression": 1.04,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "810170c6c0c09c8e",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-matin-portrait.jpg",
+      "nom": "g-matin-portrait",
+      "drapeau": null,
+      "largeur": 784,
+      "hauteur": 1168,
+      "ratio": "2:3",
+      "ratio_valeur": 0.671,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 324121,
+      "transparence": false,
+      "sujet": {
+        "x": 9.1,
+        "y": 25,
+        "l": 86.4,
+        "h": 62.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        54
+      ],
+      "cadrage_css": "54% 54%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.61,
+          "ton": "moyen",
+          "recouvre_sujet": 0.25
+        },
+        {
+          "cote": "gauche",
+          "score": 0.39,
+          "ton": "moyen",
+          "recouvre_sujet": 0.48
+        },
+        {
+          "cote": "droite",
+          "score": 0.26,
+          "ton": "moyen",
+          "recouvre_sujet": 0.55
+        },
+        {
+          "cote": "bas",
+          "score": 0.17,
+          "ton": "moyen",
+          "recouvre_sujet": 0.56
+        }
+      ],
+      "qualite": {
+        "nettete": 33,
+        "bruit": 1.34,
+        "compression": 1.13,
+        "faible": true,
+        "raisons": [
+          "784 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "b1a9b5b53430b0b8",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-matin.jpg",
+      "nom": "g-matin",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 313676,
+      "transparence": false,
+      "sujet": {
+        "x": 34.4,
+        "y": 0,
+        "l": 65.6,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        70,
+        43
+      ],
+      "cadrage_css": "70% 43%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.71,
+          "ton": "moyen",
+          "recouvre_sujet": 0.13
+        },
+        {
+          "cote": "bas",
+          "score": 0.31,
+          "ton": "moyen",
+          "recouvre_sujet": 0.57
+        },
+        {
+          "cote": "haut",
+          "score": 0.3,
+          "ton": "moyen",
+          "recouvre_sujet": 0.66
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        }
+      ],
+      "qualite": {
+        "nettete": 24,
+        "bruit": 1.26,
+        "compression": 1.06,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "ccccccdede8e9cfc",
+      "drapeaux": [
+        "petite",
+        "calme gauche"
+      ]
+    },
+    {
+      "fichier": "g-petit-dejeuner.jpg",
+      "nom": "g-petit-dejeuner",
+      "drapeau": null,
+      "largeur": 784,
+      "hauteur": 1168,
+      "ratio": "2:3",
+      "ratio_valeur": 0.671,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 371387,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 95.5,
+        "h": 100,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        52,
+        44
+      ],
+      "cadrage_css": "52% 44%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.89
+        },
+        {
+          "cote": "haut",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        }
+      ],
+      "qualite": {
+        "nettete": 44.1,
+        "bruit": 1.28,
+        "compression": 1.05,
+        "faible": true,
+        "raisons": [
+          "784 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "f8d852c014b1797c",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-pierre.jpg",
+      "nom": "g-pierre",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 532849,
+      "transparence": false,
+      "sujet": {
+        "x": 9.4,
+        "y": 13.6,
+        "l": 90.6,
+        "h": 81.8,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        66,
+        64
+      ],
+      "cadrage_css": "66% 64%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.14,
+          "ton": "clair",
+          "recouvre_sujet": 0.55
+        },
+        {
+          "cote": "gauche",
+          "score": 0.1,
+          "ton": "clair",
+          "recouvre_sujet": 0.63
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.82
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.79
+        }
+      ],
+      "qualite": {
+        "nettete": 45.4,
+        "bruit": 2.62,
+        "compression": 1.01,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "f0c436b490c3c4e4",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-riviere.jpg",
+      "nom": "g-riviere",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 469846,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 100,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        58,
+        38
+      ],
+      "cadrage_css": "58% 38%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.11,
+          "ton": "sombre",
+          "recouvre_sujet": 0.87
+        },
+        {
+          "cote": "droite",
+          "score": 0.03,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "haut",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        }
+      ],
+      "qualite": {
+        "nettete": 46.7,
+        "bruit": 2.22,
+        "compression": 1.04,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "f67868e0a098b8f8",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-sentier-portrait.jpg",
+      "nom": "g-sentier-portrait",
+      "drapeau": null,
+      "largeur": 784,
+      "hauteur": 1168,
+      "ratio": "2:3",
+      "ratio_valeur": 0.671,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 441602,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 95.5,
+        "h": 100,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        48,
+        46
+      ],
+      "cadrage_css": "48% 46%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.12,
+          "ton": "clair",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "droite",
+          "score": 0.07,
+          "ton": "moyen",
+          "recouvre_sujet": 0.89
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "sombre",
+          "recouvre_sujet": 0.96
+        }
+      ],
+      "qualite": {
+        "nettete": 64.3,
+        "bruit": 1.99,
+        "compression": 1.01,
+        "faible": true,
+        "raisons": [
+          "784 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "80e0e0d0a46461f2",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-sentier.jpg",
+      "nom": "g-sentier",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 429420,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 96.9,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        43,
+        36
+      ],
+      "cadrage_css": "43% 36%",
+      "zones_calmes": [
+        {
+          "cote": "bas",
+          "score": 0.3,
+          "ton": "sombre",
+          "recouvre_sujet": 0.84
+        },
+        {
+          "cote": "gauche",
+          "score": 0.1,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "haut",
+          "score": 0.04,
+          "ton": "clair",
+          "recouvre_sujet": 0.97
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "sombre",
+          "recouvre_sujet": 0.88
+        }
+      ],
+      "qualite": {
+        "nettete": 52.4,
+        "bruit": 1.91,
+        "compression": 1.04,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "0008008cd4b06164",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-terrasse-soir.jpg",
+      "nom": "g-terrasse-soir",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 456904,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 100,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        54,
+        48
+      ],
+      "cadrage_css": "54% 48%",
+      "zones_calmes": [
+        {
+          "cote": "gauche",
+          "score": 0.08,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "haut",
+          "score": 0.03,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "sombre",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.87
+        }
+      ],
+      "qualite": {
+        "nettete": 52.6,
+        "bruit": 1.93,
+        "compression": 1.03,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "022400d8d8ccc0f0",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-vignes-portrait.jpg",
+      "nom": "g-vignes-portrait",
+      "drapeau": null,
+      "largeur": 784,
+      "hauteur": 1168,
+      "ratio": "2:3",
+      "ratio_valeur": 0.671,
+      "orientation": "portrait",
+      "format": "jpeg",
+      "poids": 469471,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 95.5,
+        "h": 100,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        49,
+        48
+      ],
+      "cadrage_css": "49% 48%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.46,
+          "ton": "clair",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.89
+        },
+        {
+          "cote": "bas",
+          "score": 0,
+          "ton": "sombre",
+          "recouvre_sujet": 0.96
+        }
+      ],
+      "qualite": {
+        "nettete": 60.1,
+        "bruit": 2.14,
+        "compression": 1.03,
+        "faible": true,
+        "raisons": [
+          "784 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "f7fffdfca00c4454",
+      "drapeaux": [
+        "petite"
+      ]
+    },
+    {
+      "fichier": "g-vignes.jpg",
+      "nom": "g-vignes",
+      "drapeau": null,
+      "largeur": 1168,
+      "hauteur": 784,
+      "ratio": "3:2",
+      "ratio_valeur": 1.49,
+      "orientation": "paysage",
+      "format": "jpeg",
+      "poids": 428759,
+      "transparence": false,
+      "sujet": {
+        "x": 0,
+        "y": 0,
+        "l": 100,
+        "h": 95.5,
+        "source": "contrastes"
+      },
+      "visages": 0,
+      "cadrage": [
+        53,
+        46
+      ],
+      "cadrage_css": "53% 46%",
+      "zones_calmes": [
+        {
+          "cote": "haut",
+          "score": 0.43,
+          "ton": "clair",
+          "recouvre_sujet": 1
+        },
+        {
+          "cote": "bas",
+          "score": 0.02,
+          "ton": "sombre",
+          "recouvre_sujet": 0.87
+        },
+        {
+          "cote": "gauche",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        },
+        {
+          "cote": "droite",
+          "score": 0,
+          "ton": "moyen",
+          "recouvre_sujet": 0.96
+        }
+      ],
+      "qualite": {
+        "nettete": 44.9,
+        "bruit": 1.83,
+        "compression": 1.05,
+        "faible": true,
+        "raisons": [
+          "1168 px de large"
+        ]
+      },
+      "lisible": null,
+      "empreinte": "40704080683888c2",
+      "drapeaux": [
+        "petite"
+      ]
+    }
+  ]
+}

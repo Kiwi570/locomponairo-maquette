@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr" data-v="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact et accès : Lo Componaïro, Pouzols</title>
+<meta name="description" content="15 rue des Jardins, 34230 Pouzols, à 7 km de Gignac par l’A750. Téléphone 06 88 71 26 01.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://locomponairo-maquette.vercel.app/contact">
+<style>:root{--fond:#f1e9da;--texte:#2b2320;--voile-fond:#4a1c26;--ouverture-fond:#2b2320;--menu-fond:#2b2320}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/polices/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f1e9da">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lo Componaïro">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Contact et accès : Lo Componaïro, Pouzols">
+<meta property="og:description" content="15 rue des Jardins, 34230 Pouzols, à 7 km de Gignac par l’A750. Téléphone 06 88 71 26 01.">
+<meta property="og:url" content="https://locomponairo-maquette.vercel.app/contact">
+<meta property="og:image" content="https://locomponairo-maquette.vercel.app/assets/partage/contact-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Contact et accès à Lo Componaïro">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BedAndBreakfast","name":"Lo Componaïro","url":"https://locomponairo-maquette.vercel.app/","telephone":"+33688712601","email":"locomponairo34@gmail.com","address":{"@type":"PostalAddress","streetAddress":"15 rue des Jardins","postalCode":"34230","addressLocality":"Pouzols","addressRegion":"Hérault","addressCountry":"FR"},"checkinTime":"17:00","checkoutTime":"11:00","numberOfRooms":4,"petsAllowed":false,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Petit-déjeuner inclus","value":true},{"@type":"LocationFeatureSpecification","name":"Garage fermé","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Climatisation","value":true}],"description":"Chambre d'hôtes dans une maison vigneronne de 1850 à Pouzols (Hérault) : quatre chambres, terrasses, garage fermé, petit-déjeuner inclus."}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="serrure" aria-hidden="true"><div class="voile-contenu"><svg class="voile-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><span data-voile-libelle>Contact</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <svg class="ouverture-serrure" viewBox="-60 -60 120 160" aria-hidden="true"><path d="M-24.8 26 A 50 50 0 1 1 24.8 26 L 34 92 L -34 92 Z"/></svg>
+  <div class="ouverture-objet" data-ouverture-objet><svg class="trousseau-svg trousseau-intro" viewBox="0 0 400 400" aria-hidden="true" focusable="false" data-audit-ignorer>
+  <circle class="trousseau-ombre" cx="204" cy="206" r="44"/>
+  <g class="trousseau-cle" style="--i:0" transform="translate(200 200) rotate(0)">
+    <g class="cle" data-cle="isabelle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Isabelle</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:1" transform="translate(200 200) rotate(90)">
+    <g class="cle" data-cle="denise">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Denise</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:2" transform="translate(200 200) rotate(180)">
+    <g class="cle" data-cle="mathilde">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Mathilde</text>
+  </g>
+</g></g><g class="trousseau-cle" style="--i:3" transform="translate(200 200) rotate(270)">
+    <g class="cle" data-cle="suzanne">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g><g class="etiquette" transform="translate(16 54)">
+  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
+  <g transform="translate(44 30) rotate(-14)">
+    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
+    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
+    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Suzanne</text>
+  </g>
+</g></g>
+  <circle class="trousseau-anneau" cx="200" cy="200" r="44" fill="none" stroke-width="8"/>
+  <circle class="trousseau-reflet" cx="200" cy="200" r="44" fill="none" stroke-width="2"/>
+</svg></div>
+  <p class="ouverture-nom">Lo Componaïro</p>
+  <span class="ouverture-trait"></span>
+  <p class="ouverture-ligne">Maison vigneronne · 1850</p>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <svg class="entete-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><span>Lo Componaïro</span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours">Alentours</a></li><li><a href="/contact" data-libelle="Contact" aria-current="page">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton bouton--action entete-action" href="/reserver" data-libelle="Réserver">Réserver</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/chambres" class="menu-lien" data-libelle="Les chambres">Les chambres</a></li><li style="--i:2"><a href="/votre-sejour" class="menu-lien" data-libelle="Votre séjour">Votre séjour</a></li><li style="--i:3"><a href="/alentours" class="menu-lien" data-libelle="Alentours">Alentours</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact" aria-current="page">Contact</a></li><li style="--i:5"><a href="/reserver" class="menu-lien" data-libelle="Réserver">Réserver</a></li></ul>
+  <p><a class="bouton" href="tel:+33688712601">Appeler 06 88 71 26 01</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1" data-grille="fil" data-sarment>
+<section class="tete-numero" id="debut">
+  <div class="conteneur tete-numero-grille">
+    <p class="surtitre" data-anime="gsap" data-tete-anime>Contact et accès</p>
+    <h1 class="tete-numero-titre" data-anime="gsap" data-tete-anime>Un appel suffit.</h1>
+    <a class="numero-geant" href="tel:+33688712601" data-action-principale data-iris-centre data-grille="typo" data-effet="numero" aria-label="Appeler 06 88 71 26 01"><span class="numero-paire">06</span><span class="numero-paire">88</span><span class="numero-paire">71</span><span class="numero-paire">26</span><span class="numero-paire">01</span></a>
+    <p class="tete-numero-texte masque-ecran-bas" data-anime="gsap" data-tete-anime>Pour une question, une arrivée tardive ou une demande particulière, appelez ou écrivez à la maison.</p>
+    <p class="tete-numero-coord" data-anime="gsap" data-tete-anime><span data-info-cle>15 rue des Jardins, 34230 Pouzols · arrivée 17 h – 20 h 30</span><a href="mailto:locomponairo34@gmail.com">locomponairo34@gmail.com</a></p>
+  </div>
+  <figure class="media tete-numero-bandeau" data-fx="parallaxe" data-fx-force="12" style="--cadrage:53% 45%">
+  <picture>
+    <img src="/assets/images/maison-allee-1280.webp" srcset="/assets/images/maison-allee-640.webp 640w, /assets/images/maison-allee-1280.webp 1280w, /assets/images/maison-allee-1920.webp 1920w" sizes="100vw" alt="Allée bordée de céanothes jusqu’à la maison" width="1280" height="853" fetchpriority="high" loading="eager" decoding="async">
+  </picture>
+</figure>
+</section>
+<section class="acces" id="acces" data-fil="gauche">
+  <div class="conteneur acces-grille">
+    <div class="acces-carte" data-fx="trace" data-effet="route-acces" role="img" aria-label="Plan d’accès : de l’A750, sortie Gignac, à la maison de Pouzols"><svg class="acces-svg" viewBox="0 0 600 420" aria-hidden="true" focusable="false">
+  <rect class="carte-fond" x="0" y="0" width="600" height="420" rx="18"/>
+  <path class="acces-autoroute" d="M560 330 C 470 300, 420 250, 360 214 S 250 150, 196 150"/>
+  <path class="acces-route" data-fx-trait d="M560 330 C 470 300, 420 250, 360 214 S 250 150, 196 150 C 170 160, 150 190, 132 226"/>
+  <g class="acces-etape"><circle cx="560" cy="330" r="9"/><text x="548" y="362" text-anchor="end">Montpellier</text></g>
+  <g class="acces-etape"><rect x="184" y="138" width="24" height="24" rx="4"/><text x="196" y="126" text-anchor="middle">A750 · sortie Gignac</text></g>
+  <g class="acces-maison"><circle cx="132" cy="236" r="14"/><path d="M124 240 V233 L132 226 L140 233 V240 Z"/><text x="150" y="276">Pouzols</text></g>
+  <text class="acces-km" x="590" y="32" text-anchor="end">Montpellier → Pouzols&#160;: 34&#160;km</text><text class="acces-km" x="120" y="190">7 km</text>
+</svg></div>
+    <div>
+      <p class="surtitre" data-anime>Venir</p>
+      <h2 data-anime="lignes">Par l’A750, sortie Gignac.</h2>
+      <p data-anime>La maison est à 7 km de la sortie Gignac de l’A750, et à 34 km de Montpellier. Le garage fermé vous attend au bout de la route.</p>
+      <ol class="acces-etapes" data-anime="cascade">
+        <li><strong>Montpellier</strong><span>34 km</span></li><li><strong>A750, sortie Gignac</strong><span>7 km</span></li><li><strong>Pouzols</strong><span>15 rue des Jardins</span></li>
+      </ol>
+      <p data-anime><a class="bouton bouton--contour" href="https://www.google.com/maps/dir/?api=1&amp;destination=15%20rue%20des%20Jardins%2C%2034230%20Pouzols" target="_blank" rel="noopener" aria-label="Ouvrir l’itinéraire (nouvel onglet)">Ouvrir l’itinéraire</a></p>
+    </div>
+  </div>
+</section>
+<section class="ecrire" id="ecrire" data-fil="droite">
+  <div class="conteneur ecrire-grille">
+    <div>
+      <p class="surtitre" data-anime>Écrire</p>
+      <h2 data-anime="lignes">Une question avant de venir ?</h2>
+      <p data-anime>Formulaire simulé : rien n’est envoyé dans cette maquette.</p>
+      <figure class="media ecrire-photo" data-grok data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/g-pierre-1280.webp" srcset="/assets/images/grok/g-pierre-640.webp 640w, /assets/images/grok/g-pierre-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 34vw" alt="Mur de pierre calcaire et ombre d’une feuille de vigne" width="1280" height="854" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    </div>
+    <form class="formulaire carte-papier" data-formulaire action="#" novalidate data-tampon-recu>
+      <div class="champ"><label for="f-nom">Nom</label><input id="f-nom" name="nom" autocomplete="name" required></div>
+      <div class="champ"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="champ"><label for="f-tel">Téléphone</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+      <div class="champ"><label for="f-sujet">Sujet</label>
+        <select id="f-sujet" name="sujet">
+          <option value="question" selected>Une question</option>
+          <option value="retard">Arrivée tardive</option>
+          <option value="groupe">Suite familiale ou groupe</option>
+          <option value="autre">Autre demande</option>
+        </select></div>
+      <div class="champ"><label for="f-message">Message</label><textarea id="f-message" name="message" rows="5" required></textarea></div>
+      <p class="mention-donnees">Vos données servent seulement à vous répondre. Politique de confidentialité : à compléter.</p>
+      <button type="submit" class="bouton bouton--action">Envoyer</button>
+      <p data-message-envoi role="status" tabindex="-1" hidden></p>
+      <span class="tampon-recu" aria-hidden="true" data-superpose>Reçu</span>
+    </form>
+  </div>
+</section>
+<section class="reseaux" id="reseaux" data-fil="gauche">
+  <div class="conteneur">
+    <p class="surtitre" data-anime>Suivre</p>
+    <h2 data-anime="lettres">La maison en photos et en avis.</h2>
+    <ul class="reseaux-liste" data-anime="cascade">
+      <li><a href="https://www.instagram.com/lo.componairo/" target="_blank" rel="noopener" class="reseau" aria-label="Instagram (nouvel onglet)"><figure class="media reseau-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/maison-cour-1280.webp" srcset="/assets/images/maison-cour-640.webp 640w, /assets/images/maison-cour-1280.webp 1280w, /assets/images/maison-cour-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 30vw" alt="" width="1280" height="853" loading="lazy" decoding="async">
+  </picture>
+</figure><span class="reseau-nom">Instagram →</span></a></li><li><a href="https://www.facebook.com/profile.php?id=61580359389188" target="_blank" rel="noopener" class="reseau" aria-label="Facebook (nouvel onglet)"><figure class="media reseau-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/jardin-lauriers-1280.webp" srcset="/assets/images/jardin-lauriers-640.webp 640w, /assets/images/jardin-lauriers-1280.webp 1280w, /assets/images/jardin-lauriers-1920.webp 1920w" sizes="(max-width: 760px) 92vw, 30vw" alt="" width="1280" height="853" loading="lazy" decoding="async">
+  </picture>
+</figure><span class="reseau-nom">Facebook →</span></a></li><li><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" class="reseau" aria-label="TripAdvisor (nouvel onglet)"><figure class="media reseau-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/petit-dejeuner-table-784.webp" srcset="/assets/images/petit-dejeuner-table-480.webp 480w, /assets/images/petit-dejeuner-table-640.webp 640w, /assets/images/petit-dejeuner-table-784.webp 784w" sizes="(max-width: 760px) 92vw, 30vw" alt="" width="784" height="980" loading="lazy" decoding="async">
+  </picture>
+</figure><span class="reseau-nom">TripAdvisor →</span></a></li>
+    </ul>
+  </div>
+</section>
+<template data-fil-objet><g class="grappe"><circle cx="0" cy="0" r="5.5"/><circle cx="-6" cy="-7" r="5"/><circle cx="6" cy="-7" r="5"/><circle cx="0" cy="-14" r="5"/><circle cx="-11" cy="-15" r="4.5"/><circle cx="11" cy="-15" r="4.5"/><circle cx="-5" cy="-22" r="4.5"/><circle cx="5" cy="-22" r="4.5"/><path class="grappe-tige" d="M0 -26 C 2 -32, 6 -35, 12 -36"/><path class="grappe-feuille" d="M6 -30 C 14 -42, 30 -40, 32 -30 C 24 -26, 14 -24, 6 -30 Z"/></g></template>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div class="pied-maison">
+      <p class="pied-nom"><svg class="pied-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
+  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
+  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+</g></svg><strong>Lo Componaïro</strong></p>
+      <p>15 rue des Jardins, 34230 Pouzols<br><a href="tel:+33688712601">06 88 71 26 01</a><br><a href="mailto:locomponairo34@gmail.com">locomponairo34@gmail.com</a></p>
+      <p class="pied-ouvert">Maison ouverte toute l’année</p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours">Alentours</a></li><li><a href="/contact" data-libelle="Contact" aria-current="page">Contact</a></li><li><a href="/reserver" data-libelle="Réserver">Réserver</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Suivre la maison</strong></p>
+      <ul>
+        <li><a href="https://www.instagram.com/lo.componairo/" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)">Instagram</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61580359389188" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></li>
+        <li><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" aria-label="TripAdvisor (nouvel onglet)">TripAdvisor</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par la maison.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>SAS Lo Componairo · SIRET 887 800 688 00012</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="tel:+33688712601">Appeler</a>
+  <a class="bouton" href="/reserver" data-libelle="Réserver">Réserver</a>
+</div>
+</body>
+</html>

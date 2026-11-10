@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-10T12:39:43.218Z",
+  "plan": "/home/claude/locomponairo-maquette/plan-images.json",
+  "attendus": 8,
+  "recus": 14,
+  "planches": [
+    "planche.jpg"
+  ],
+  "inconnus": [
+    "g-garage.jpg",
+    "g-linge.jpg",
+    "g-matin-portrait.jpg",
+    "g-matin.jpg",
+    "g-petit-dejeuner.jpg",
+    "g-terrasse-soir.jpg"
+  ],
+  "manquants": [],
+  "a_regenerer": [],
+  "images": [
+    {
+      "nom": "g-vignes",
+      "attendu": "g-vignes.jpg",
+      "fichier": "g-vignes.jpg",
+      "priorite": "Indispensable",
+      "problemes": [],
+      "indications": [
+        "mains : 0, doigts reconnus - (indicatif, à regarder)"
+      ],
+      "largeur": 1168,
+      "hauteur": 784,
+      "boites": [],
+      "mains": {
+        "annoncees": true,
+        "vues": 0,
+        "doigts": []
+      }
+    },
+    {
+      "nom": "g-vignes",
+      "mobile": true,
+      "attendu": "g-vignes-portrait.jpg",
+      "fichier": "g-vignes-portrait.jpg",
+      "priorite": "Indispensable",
+      "problemes": [],
+      "indications": [
+        "mains : 0, doigts reconnus - (indicatif, à regarder)"
+      ],
+      "largeur": 784,
+      "hauteur": 1168,
+      "boites": [],
+      "mains": {
+        "annoncees": true,
+        "vues": 0,
+        "doigts": []
+      }
+    },
+    {
+      "nom": "g-pierre",
+      "attendu": "g-pierre.jpg",
+      "fichier": "g-pierre.jpg",
+      "priorite": "Conseillée",
+      "problemes": [],
+      "indications": [],
+      "largeur": 1168,
+      "hauteur": 784,
+      "boites": []
+    },
+    {
+      "nom": "g-sentier",
+      "attendu": "g-sentier.jpg",
+      "fichier": "g-sentier.jpg",
+      "priorite": "Indispensable",
+      "problemes": [],
+      "indications": [
+        "mains : 0, doigts reconnus - (indicatif, à regarder)"
+      ],
+      "largeur": 1168,
+      "hauteur": 784,
+      "boites": [],
+      "mains": {
+        "annoncees": true,
+        "vues": 0,
+        "doigts": []
+      }
+    },
+    {
+      "nom": "g-sentier",
+      "mobile": true,
+      "attendu": "g-sentier-portrait.jpg",
+      "fichier": "g-sentier-portrait.jpg",
+      "priorite": "Indispensable",
+      "problemes": [],
+      "indications": [
+        "mains : 0, doigts reconnus - (indicatif, à regarder)"
+      ],
+      "largeur": 784,
+      "hauteur": 1168,
+      "boites": [],
+      "mains": {
+        "annoncees": true,
+        "vues": 0,
+        "doigts": []
+      }
+    },
+    {
+      "nom": "g-riviere",
+      "attendu": "g-riviere.jpg",
+      "fichier": "g-riviere.jpg",
+      "priorite": "Conseillée",
+      "problemes": [],
+      "indications": [],
+      "largeur": 1168,
+      "hauteur": 784,
+      "boites": []
+    },
+    {
+      "nom": "g-marche",
+      "attendu": "g-marche.jpg",
+      "fichier": "g-marche.jpg",
+      "priorite": "Conseillée",
+      "problemes": [],
+      "indications": [],
+      "largeur": 1168,
+      "hauteur": 784,
+      "boites": []
+    },
+    {
+      "nom": "g-404",
+      "attendu": "g-404.jpg",
+      "fichier": "g-404.jpg",
+      "priorite": "Indispensable",
+      "problemes": [],
+      "indications": [
+        "mains : 0, doigts reconnus - (indicatif, à regarder)"
+      ],
+      "largeur": 1168,
+      "hauteur": 784,
+      "boites": [],
+      "mains": {
+        "annoncees": true,
+        "vues": 0,
+        "doigts": []
+      }
+    }
+  ]
+}

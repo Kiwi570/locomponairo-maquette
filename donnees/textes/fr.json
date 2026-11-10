@@ -1,0 +1,448 @@
+{
+  "commun": {
+    "navigation": "Navigation principale",
+    "menu": "Menu",
+    "fermer": "Fermer",
+    "langueAutre": "English version",
+    "actionEntete": "Réserver",
+    "appeler": "Appeler",
+    "calmeReduire": "Réduire les animations",
+    "calmeRetablir": "Rétablir les animations",
+    "calmeSysteme": "Animations réduites par le réglage de votre appareil",
+    "sommaire": "Sommaire",
+    "confort": "Confort de lecture",
+    "retourHaut": "Retour en haut",
+    "maquette": "Maquette : les informations marquées « à compléter » seront fournies par la maison.",
+    "evitement": "Aller au contenu",
+    "mentionIa": "Illustration générée",
+    "pause": "Pause",
+    "lecture": "Lecture",
+    "introLigne": "Maison vigneronne · 1850",
+    "introNom": "Lo Componaïro",
+    "ouvert": "Maison ouverte toute l’année",
+    "mentions": "Mentions légales : à compléter",
+    "confidentialite": "Politique de confidentialité : à compléter",
+    "societe": "SAS Lo Componairo · SIRET 887 800 688 00012",
+    "suivre": "Suivre la maison",
+    "nouvelOnglet": "(nouvel onglet)",
+    "schema": "Schéma illustratif",
+    "reserverDirect": "Réserver en direct",
+    "tenter": "Attrapez le trousseau"
+  },
+  "pages": {
+    "accueil": {
+      "titre": "Lo Componaïro : chambre d’hôtes à Pouzols, maison vigneronne de 1850",
+      "description": "Quatre chambres aux prénoms des grands-mères dans une maison vigneronne de 1850 à Pouzols (Hérault) : terrasses, garage fermé, petit-déjeuner compris en réservation directe.",
+      "nav": "Accueil",
+      "partageAlt": "Façade de la maison vigneronne Lo Componaïro à Pouzols",
+      "accroche": "Quatre chambres, quatre histoires"
+    },
+    "chambres": {
+      "titre": "Les quatre chambres : Lo Componaïro, Pouzols",
+      "description": "Isabelle, Denise, Mathilde et Suzanne : surfaces, lits, vues et équipements des quatre chambres de la maison.",
+      "nav": "Les chambres",
+      "partageAlt": "Les quatre chambres de Lo Componaïro",
+      "accroche": "Isabelle, Denise, Mathilde, Suzanne"
+    },
+    "sejour": {
+      "titre": "Votre séjour : arrivée, petit-déjeuner, garage. Lo Componaïro",
+      "description": "Arrivée de 17 h à 20 h 30, petit-déjeuner de 8 h 30 à 10 h, départ à 11 h, garage fermé, annulation gratuite à 7 jours : tout ce qu’il faut savoir avant de venir.",
+      "nav": "Votre séjour",
+      "partageAlt": "Une journée à Lo Componaïro, heure par heure",
+      "accroche": "La maison, heure par heure"
+    },
+    "alentours": {
+      "titre": "Les alentours de Pouzols : Saint-Guilhem, Salagou, Navacelles. Lo Componaïro",
+      "description": "Saint-Guilhem-le-Désert, le pont du Diable, le lac du Salagou, Navacelles, Pézenas, Montpellier : que faire autour de la maison.",
+      "nav": "Alentours",
+      "partageAlt": "Carte des alentours de Pouzols",
+      "accroche": "Partir de Pouzols"
+    },
+    "contact": {
+      "titre": "Contact et accès : Lo Componaïro, Pouzols",
+      "description": "15 rue des Jardins, 34230 Pouzols, à 7 km de Gignac par l’A750. Téléphone 06 88 71 26 01.",
+      "nav": "Contact",
+      "partageAlt": "Contact et accès à Lo Componaïro",
+      "accroche": "Un appel suffit"
+    },
+    "reserver": {
+      "titre": "Réserver en direct : Lo Componaïro",
+      "description": "Réservez votre chambre en direct : petit-déjeuner, garage et TVA compris, annulation gratuite jusqu’à 7 jours avant l’arrivée.",
+      "nav": "Réserver",
+      "partageAlt": "Réserver une chambre à Lo Componaïro",
+      "accroche": "Réservez en direct, tout est compris"
+    },
+    "404": {
+      "titre": "Page introuvable : Lo Componaïro",
+      "description": "Cette page n’existe pas ou plus.",
+      "nav": "Page introuvable",
+      "partageAlt": "Page introuvable",
+      "accroche": "Page introuvable"
+    }
+  },
+  "accueil": {
+    "hero": {
+      "sur": "Chambre d’hôtes · Pouzols, Hérault",
+      "titre1": "Quatre chambres,",
+      "titre2": "quatre histoires.",
+      "texte": "Une maison vigneronne de 1850 où chaque chambre porte le prénom d’une de nos grands-mères. Terrasses, garage fermé et petit-déjeuner compris en réservation directe.",
+      "action": "Réserver en direct",
+      "secondaire": "Voir les chambres",
+      "infoTitre": "Arrivée",
+      "info": "de 17 h à 20 h 30 · garage fermé jusqu’à 23 h",
+      "objet": "Trousseau des quatre chambres : faites-le tourner pour voir chaque chambre",
+      "indice": "Faites tourner",
+      "cle": "Clé de la chambre"
+    },
+    "maison": {
+      "sur": "La maison",
+      "titre": "Une maison de vigneron, depuis 1850.",
+      "manifeste": "À Pouzols, entre vignes et garrigue, le passé rencontre le présent : murs de pierre, carreaux de ciment, poutres, et quatre chambres pour quatre grands-mères.",
+      "texte": "Lo Componaïro est une SAS fondée en 2019 par deux passionnés de l’Hérault. La maison est ouverte toute l’année."
+    },
+    "coupe": {
+      "sur": "Du garage au toit",
+      "titre": "La maison, étage par étage.",
+      "intro": "Faites défiler : la maison se monte, le toit se lève sur les chambres, puis attrapez-la pour la faire tourner.",
+      "region": "Maquette de la maison en 3D : flèches gauche et droite pour la faire tourner",
+      "indice": "Attrapez la maison",
+      "e1": "Rez-de-chaussée",
+      "e1t": "Arrivée de 17 h à 20 h 30, garage fermé jusqu’à 23 h",
+      "e2": "1er étage",
+      "e2t": "Isabelle et Denise, chacune avec sa terrasse",
+      "e3": "2e étage",
+      "e3t": "Mathilde et Suzanne, sous les poutres, côté jardin",
+      "e4": "Le toit",
+      "e4t": "Une maison de pierre de 1850",
+      "e5": "Les quatre chambres",
+      "e5t": "Le toit se lève : Isabelle et Denise au 1er, Mathilde et Suzanne au 2e"
+    },
+    "chambres": {
+      "sur": "Les chambres",
+      "titre": "Aux prénoms de nos grands-mères.",
+      "texte": "Climatisées, avec Wi-Fi, bureau et machine à expresso, une bouteille d’eau fraîche et des biscuits. Chacune a son caractère.",
+      "voir": "Voir la chambre",
+      "toutes": "Comparer les quatre chambres"
+    },
+    "suite": {
+      "sur": "Suite familiale",
+      "gauche": "Isabelle",
+      "droite": "+ Denise",
+      "titre": "Deux chambres voisines, une terrasse fleurie.",
+      "texte": "En réservant ensemble Isabelle et Denise, les deux chambres contiguës du 1er étage, vous avez la terrasse fleurie et son mobilier pour vous.",
+      "action": "Réserver la suite familiale"
+    },
+    "inclus": {
+      "sur": "Meilleur prix garanti",
+      "titre": "En direct, tout est compris.",
+      "texte": "Des tarifs sans intermédiaire ni frais cachés : la nuit, le garage, le petit-déjeuner et la TVA. Seule la taxe de séjour s’ajoute (1,08 € par jour et par adulte).",
+      "t1": "Petit-déjeuner",
+      "d1": "servi de 8 h 30 à 10 h",
+      "t2": "Garage fermé",
+      "d2": "jusqu’à 23 h, prise de recharge, vestiaire motards et cavaliers",
+      "t3": "Annulation gratuite",
+      "d3": "jusqu’à 7 jours avant",
+      "t4": "Climatisation et Wi-Fi",
+      "d4": "dans les quatre chambres",
+      "tampon": "Inclus"
+    },
+    "soir": {
+      "sur": "Arriver ce soir",
+      "titre": "On vous attend de 17 h à 20 h 30.",
+      "texte": "Les clés peuvent être remises jusqu’à 22 h, et le garage reste ouvert jusqu’à 23 h. En retard ? Prévenez la maison.",
+      "attente": "Heure de Pouzols",
+      "ouvert": "L’accueil est ouvert : vous pouvez arriver jusqu’à 20 h 30.",
+      "avant": "L’accueil ouvre à 17 h aujourd’hui.",
+      "apres": "L’accueil est fermé pour ce soir : il rouvre demain à 17 h.",
+      "appeler": "Prévenir de mon arrivée"
+    },
+    "distinctions": {
+      "titre": "Ce qu’en disent les guides et les voyageurs",
+      "p1": "Petit Futé",
+      "p1t": "Établissement recommandé 2025 et 2026",
+      "p2": "Booking.com",
+      "p2t": "Traveller Review Awards 2025 : 9,5 / 10",
+      "p3": "Gîtes de France",
+      "p3t": "Label affiché par la maison",
+      "p4": "Kayak",
+      "p4t": "Travel Awards : lauréat",
+      "p5": "Team 68°",
+      "p5t": "Partenaire des motards",
+      "avis": "Lire les avis sur TripAdvisor",
+      "note": "Notes Google et TripAdvisor : à compléter"
+    },
+    "alentours": {
+      "sur": "Autour de Pouzols",
+      "titre": "Saint-Guilhem, le Salagou, Navacelles…",
+      "texte": "Faites tourner la ronde des sites, à la main, aux flèches ou en défilant.",
+      "region": "Carrousel des sites autour de la maison : flèches gauche et droite pour le faire tourner",
+      "prec": "Site précédent",
+      "suiv": "Site suivant",
+      "tous": "Tous les alentours"
+    },
+    "fin": {
+      "titre": "Votre clé vous attend.",
+      "texte": "Réservez en direct : meilleur prix, petit-déjeuner et garage compris, annulation gratuite jusqu’à 7 jours.",
+      "action": "Réserver en direct",
+      "appel": "Appeler la maison"
+    }
+  },
+  "chambres": {
+    "tete": {
+      "sur": "Les chambres",
+      "titre": "Quatre portes, quatre grands-mères.",
+      "texte": "Isabelle et Denise au 1er étage avec leurs terrasses, Mathilde et Suzanne au 2e sous les poutres. Poussez une porte.",
+      "action": "Réserver une chambre",
+      "info": "Petit-déjeuner et garage compris en direct",
+      "objet": "Les quatre portes des chambres"
+    },
+    "couloir": {
+      "sur": "Le couloir",
+      "titre": "Chaque porte s’ouvre sur sa chambre.",
+      "texte": "Faites défiler : les portes s’ouvrent l’une après l’autre.",
+      "reserver": "Réserver {nom}",
+      "porte": "Chambre",
+      "vue": "Voir les photos"
+    },
+    "comparer": {
+      "sur": "D’un coup d’œil",
+      "titre": "Les quatre chambres côte à côte.",
+      "filtre": "Afficher",
+      "fTout": "Toutes",
+      "fTerrasse": "Avec terrasse",
+      "fJardin": "Côté jardin",
+      "fJumeaux": "Deux lits possibles",
+      "chambre": "Chambre",
+      "etage": "Étage",
+      "surface": "Surface",
+      "lit": "Couchage",
+      "vue": "Vue",
+      "terrasse": "Terrasse",
+      "oui": "Oui",
+      "non": "Non",
+      "aucune": "Aucune chambre ne correspond : essayez un autre filtre."
+    },
+    "partout": {
+      "sur": "Dans chaque chambre",
+      "titre": "Ce que vous trouvez en ouvrant la porte.",
+      "i1": "Climatisation et chauffage individuels",
+      "i2": "Wi-Fi gratuit",
+      "i3": "Machine à expresso",
+      "i4": "Bouteille d’eau fraîche et biscuits",
+      "i5": "Linge de toilette, sèche-cheveux, kit brosse à dents",
+      "i6": "Couettes fabriquées en France, oreillers en plus sur demande",
+      "noteEnfant": "Isabelle et Denise peuvent recevoir un lit d’appoint pour enfant (de 7 à 14 ans, 10 €)."
+    },
+    "fin": {
+      "titre": "Laquelle sera la vôtre ?",
+      "texte": "Réservez en direct : l’accueil commence à 17 h.",
+      "action": "Réserver en direct"
+    }
+  },
+  "sejour": {
+    "tete": {
+      "sur": "Votre séjour",
+      "titre": "La maison, heure par heure.",
+      "texte": "Arrivée, clés, petit-déjeuner, garage, départ : tout ce qu’il faut savoir avant de venir, sur un seul cadran.",
+      "action": "Réserver",
+      "info": "Arrivée 17 h – 20 h 30 · départ 11 h",
+      "cadran": "Cadran des horaires de la maison, aiguille sur l’heure de Pouzols",
+      "maintenant": "Il est {heure} à Pouzols"
+    },
+    "journee": {
+      "sur": "Une journée",
+      "titre": "De 8 h 30 à 23 h.",
+      "h1": "8 h 30",
+      "t1": "Petit-déjeuner",
+      "d1": "Servi jusqu’à 10 h, plus tôt sur demande. Inclus dans le prix.",
+      "h2": "11 h",
+      "t2": "Départ",
+      "d2": "On rend la clé. Un séjour écourté reste dû en totalité.",
+      "h3": "14 h 30",
+      "t3": "Arrivée anticipée",
+      "d3": "De 14 h 30 à 16 h 30, en option à 10 €.",
+      "h4": "17 h",
+      "t4": "Arrivée",
+      "d4": "Accueil de 17 h à 20 h 30. Plus tôt ou plus tard sur demande.",
+      "h5": "22 h",
+      "t5": "Dernières clés",
+      "d5": "Remise des clés possible le soir jusqu’à 22 h, en prévenant.",
+      "h6": "23 h",
+      "t6": "Garage",
+      "d6": "Le garage fermé reste accessible jusqu’à 23 h."
+    },
+    "garage": {
+      "sur": "Motards et cavaliers",
+      "titre": "Un garage fermé, et de quoi poser casque et bottes.",
+      "texte": "Le garage est fermé, gratuit et inclus, avec une prise Green’Up pour recharger une voiture électrique. Un vestiaire accueille casques, blousons et bottes, et des chaussons vous sont prêtés.",
+      "partenaire": "Partenaire Team 68°"
+    },
+    "conditions": {
+      "sur": "Bon à savoir",
+      "titre": "Les conditions, sans petites lignes.",
+      "c1": "Annulation et modification gratuites jusqu’à 7 jours avant l’arrivée.",
+      "c2": "Prévenez en cas de retard : sans nouvelles, le séjour est annulé et facturé.",
+      "c3": "La maison a des escaliers : elle ne convient pas aux moins de 5 ans, ni aux personnes à mobilité réduite.",
+      "c4": "Lit pliant 90 × 180 pour les 7 à 14 ans : 10 €, avec linge, kit de toilette et petit-déjeuner.",
+      "c5": "Les animaux ne sont plus acceptés. Toute la maison est non-fumeur.",
+      "c6": "Carte bancaire, espèces, chèques-vacances ANCV. Taxe de séjour : 1,08 € par jour et par adulte."
+    },
+    "faq": {
+      "sur": "Questions",
+      "titre": "Vos questions, nos réponses."
+    },
+    "fin": {
+      "titre": "Tout est clair ? Il ne reste qu’à choisir sa chambre.",
+      "action": "Réserver en direct"
+    }
+  },
+  "alentours": {
+    "tete": {
+      "sur": "Alentours",
+      "titre": "Partir de Pouzols.",
+      "texte": "Gorges, cirques, lac de terre rouge et villages de pierre : la maison est un camp de base au cœur de l’Hérault, à 7 km de Gignac.",
+      "action": "Réserver",
+      "info": "Montpellier à 25 min · Pézenas à 25 min",
+      "carte": "Carte gravée des alentours de Pouzols",
+      "maison": "La maison",
+      "voiture": "La 2 CV de la maison, « unique et indémodable »"
+    },
+    "sites": {
+      "sur": "Les sites",
+      "titre": "La ronde des sites.",
+      "texte": "Les sites cités par la maison. Les durées sont celles qu’elle indique ; les autres sont à compléter.",
+      "distance": "Depuis la maison : ",
+      "acompleter": "Durée à compléter"
+    },
+    "rando": {
+      "titre": "Prêt pour votre randonnée ?",
+      "texte": "Sentiers de garrigue, cirques et gorges : partez le matin, le petit-déjeuner est servi dès 8 h 30.",
+      "gauche": "Garrigue",
+      "droite": "et cirques"
+    },
+    "proches": {
+      "sur": "Tout près",
+      "titre": "Sans reprendre la route bien loin.",
+      "p1": "Centre équestre des 3 Fontaines",
+      "p1t": "À 5 min de la maison.",
+      "p2": "Marchés locaux",
+      "p2t": "De nombreux marchés dans les villages alentour.",
+      "p3": "Les Estivales",
+      "p3t": "À Lattes, les mardis et jeudis soir l’été : vins et tapas.",
+      "p4": "Tables locales",
+      "p4t": "Adresses à compléter par la maison.",
+      "plus": "Découvrir l’Hérault sur le site du tourisme"
+    },
+    "fin": {
+      "titre": "Le soir, on rentre à la maison.",
+      "texte": "Garage fermé jusqu’à 23 h, terrasse, et petit-déjeuner le lendemain.",
+      "action": "Réserver en direct"
+    }
+  },
+  "contact": {
+    "tete": {
+      "sur": "Contact et accès",
+      "titre": "Un appel suffit.",
+      "texte": "Pour une question, une arrivée tardive ou une demande particulière, appelez ou écrivez à la maison.",
+      "info": "15 rue des Jardins, 34230 Pouzols · arrivée 17 h – 20 h 30",
+      "alt": "Porte d’entrée de la maison"
+    },
+    "acces": {
+      "sur": "Venir",
+      "titre": "Par l’A750, sortie Gignac.",
+      "texte": "La maison est à 7 km de la sortie Gignac de l’A750, et à 34 km de Montpellier. Le garage fermé vous attend au bout de la route.",
+      "carte": "Plan d’accès : de l’A750, sortie Gignac, à la maison de Pouzols",
+      "e1": "Montpellier",
+      "e1t": "34 km",
+      "e2": "A750, sortie Gignac",
+      "e2t": "7 km",
+      "e3": "Pouzols",
+      "e3t": "15 rue des Jardins",
+      "itineraire": "Ouvrir l’itinéraire"
+    },
+    "ecrire": {
+      "sur": "Écrire",
+      "titre": "Une question avant de venir ?",
+      "texte": "Formulaire simulé : rien n’est envoyé dans cette maquette.",
+      "nom": "Nom",
+      "email": "E-mail",
+      "tel": "Téléphone",
+      "sujet": "Sujet",
+      "sQuestion": "Une question",
+      "sRetard": "Arrivée tardive",
+      "sGroupe": "Suite familiale ou groupe",
+      "sAutre": "Autre demande",
+      "message": "Message",
+      "envoyer": "Envoyer",
+      "donnees": "Vos données servent seulement à vous répondre. Politique de confidentialité : à compléter.",
+      "tampon": "Reçu"
+    },
+    "reseaux": {
+      "sur": "Suivre",
+      "titre": "La maison en photos et en avis.",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tripadvisor": "TripAdvisor"
+    }
+  },
+  "reserver": {
+    "tete": {
+      "sur": "Réserver en direct",
+      "titre": "Choisissez votre clé.",
+      "texte": "Meilleur prix garanti en direct : petit-déjeuner, garage et TVA compris. Prenez la clé de votre chambre, choisissez vos dates, la demande part vers la réservation sécurisée.",
+      "info": "Annulation gratuite jusqu’à 7 jours avant",
+      "tableau": "Tableau des clés de la réception"
+    },
+    "form": {
+      "titre": "Votre demande",
+      "simule": "Réservation simulée : rien n’est réservé ni envoyé dans cette maquette. La vraie réservation se fait sur la page sécurisée de la maison.",
+      "etapes": "Trois étapes : la chambre, les dates, les voyageurs.",
+      "e1": "La chambre",
+      "e2": "Les dates",
+      "e3": "Les voyageurs",
+      "suite": "Suite familiale (Isabelle + Denise)",
+      "arrivee": "Arrivée",
+      "depart": "Départ",
+      "adultes": "Adultes",
+      "enfants": "Enfants de 7 à 14 ans (lit pliant, 10 €)",
+      "anticipee": "Arrivée anticipée de 14 h 30 à 16 h 30 (10 €)",
+      "suivant": "Suivant",
+      "precedent": "Précédent",
+      "envoyer": "Préparer ma demande",
+      "erreurChambre": "Choisissez une chambre.",
+      "erreurDates": "Choisissez une date d’arrivée et une date de départ après l’arrivée.",
+      "erreurPassee": "La date d’arrivée est déjà passée.",
+      "erreurAdultes": "Indiquez au moins un adulte.",
+      "recap": "Récapitulatif",
+      "rChambre": "Chambre",
+      "rDates": "Dates",
+      "rNuits": "Nuits",
+      "rVoyageurs": "Voyageurs",
+      "rInclus": "Inclus",
+      "rInclusT": "Petit-déjeuner, garage fermé, TVA",
+      "rOptions": "Options",
+      "rTaxe": "Taxe de séjour",
+      "rPrix": "Prix de la nuit",
+      "rPrixT": "affiché sur la réservation sécurisée de la maison",
+      "aucune": "Aucune",
+      "vide": "Prenez une clé au tableau",
+      "pret": "Demande prête",
+      "pretTexte": "Votre demande est prête. Dans le vrai site, elle s’ouvrirait sur la réservation sécurisée de la maison avec ces choix.",
+      "continuer": "Continuer sur la réservation sécurisée",
+      "recommencer": "Modifier ma demande"
+    },
+    "cadeau": {
+      "sur": "Offrir",
+      "titre": "Une nuit à offrir ?",
+      "texte": "Les cartes cadeaux de la maison se commandent sur sa boutique en ligne.",
+      "action": "Voir les cartes cadeaux"
+    }
+  },
+  "introuvable": {
+    "titre": "Cette clé n’ouvre aucune porte.",
+    "texte": "La page que vous cherchez n’existe pas ou plus. Les quatre chambres, elles, sont toujours là.",
+    "retour": "Revenir à l’accueil",
+    "chambres": "Voir les chambres",
+    "alt": "Une clé posée seule sur une couverture pliée"
+  }
+}
