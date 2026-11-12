@@ -15,7 +15,7 @@ Polices : Fraunces (variable : axes SOFT et WONK animés) et Instrument Sans, h�
 | Votre séjour (`/votre-sejour`) | Cadran 24 h à l'heure de Pouzols | La journée heure par heure, de 8 h 30 à 23 h |
 | Alentours (`/alentours`) | Carte gravée, routes qui partent de Pouzols, 2 CV en médaillon | Ronde des sites en 3D, « Prêt pour votre randonnée ? » en plein écran |
 | Contact (`/contact`) | Numéro de téléphone en très grand | Itinéraire A750 → Pouzols qui se trace, formulaire tamponné « Reçu » |
-| Réserver (`/reserver`) | Tableau à clés de la réception | Demande en trois étapes, la clé file jusqu'au récapitulatif, tampon « Demande prête », lien vers la vraie réservation eviivo (`?chambre=isabelle`, `?chambre=suite`) |
+| Réserver (`/reserver`) | Tableau à clés de la réception | Demande en trois étapes, la clé file jusqu'au récapitulatif, dates au calendrier maison (deux mois, plage et nuits, clavier) ; à l'envoi, fiche de réception : la clé gravée au prénom de la chambre, les nuits en très grand, tampon « Demande prête », bouton vers la vraie réservation eviivo (`?chambre=isabelle`, `?chambre=suite`) |
 | 404 | La vraie porte vert olive, fermée | — |
 
 Partout : intro (une clé de laiton tourne dans la serrure puis rejoint l'objet de la page), voile de transition en trou de serrure, fil de laiton qui se trace dans la marge, une petite clé au bout. Pas de mode calme (choix du client, 12 novembre 2026) : les animations se jouent pour tous les visiteurs.

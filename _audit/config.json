@@ -24,7 +24,8 @@
     "carte-route",
     "route-acces",
     "numero",
-    "tableau-cles"
+    "tableau-cles",
+    "fiche-reception"
   ],
   "grille": {
     "dispenses": {}

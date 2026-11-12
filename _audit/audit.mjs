@@ -294,7 +294,8 @@ async function mesurerUne(p, taille, mode) {
       noter(await limite(page.evaluate(mesurerRecouvrements, 60), 60000, 'recouvrements'), p, taille, mode);
     }
     if (mode === 'normal' && ['390×844', '1366×768'].includes(taille.nom)) await limite(contrastesSurImages(page, p, taille), 90000, 'contrastes sur image');
-    if (axeSource && mode === 'calme' && ['390×844', '1366×768'].includes(taille.nom)) {
+    /* Sans mode calme (config.sansModeCalme), axe passe en mode normal : sinon il ne tournait plus du tout. */
+    if (axeSource && (mode === 'calme' || (config.sansModeCalme && mode === 'normal')) && ['390×844', '1366×768'].includes(taille.nom)) {
       await page.addScriptTag({ content: axeSource });
       const v = await page.evaluate(async () => (await window.axe.run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa'], resultTypes: ['violations'] })).violations
         .map((x) => ({ id: x.id, aide: x.help, impact: x.impact, noeuds: x.nodes.slice(0, 3).map((n) => n.target.join(' ')) })));

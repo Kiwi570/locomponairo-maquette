@@ -806,6 +806,98 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 .recap-pret { position: relative; margin-top: 16px; padding-top: 58px; }
 .recap-pret .tampon-recu { position: absolute; top: 0; right: 0; bottom: auto; font-size: 1rem; }
 .cle-volante { position: fixed; left: 0; top: 0; z-index: 870; width: 46px; pointer-events: none; }
+
+/* Calendrier maison : billets d'arrivée et de départ, deux mois (un seul quand la place manque), plage allumée. */
+.calendrier { margin-top: 2px; }
+.cal-billets { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto; align-items: center; gap: 8px 10px; }
+.cal-billet { margin: 0; display: grid; gap: 1px; padding: 9px 14px; border-radius: 12px; border: 1.5px solid var(--pierre-fonce); background: var(--fond); transition: border-color .25s, box-shadow .25s; }
+.cal-billet span { font-size: max(12px, .76rem); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texte-doux); }
+.cal-billet strong { font-family: var(--police-titres); font-size: 1.22rem; font-weight: 560; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.calendrier[data-etape="arrivee"] [data-cal-billet="arrivee"], .calendrier[data-etape="depart"] [data-cal-billet="depart"] { border-color: var(--vin); box-shadow: inset 0 -3px 0 var(--laiton); }
+.calendrier[data-etape="arrivee"] .cal-billet strong, .calendrier[data-etape="depart"] [data-cal-billet="depart"] strong { color: var(--texte-doux); font-style: italic; font-weight: 400; }
+.cal-fleche { color: var(--texte-doux); font-size: 1.3rem; }
+.cal-nuits { margin: 0; padding: 9px 16px; border-radius: 999px; background: var(--vin); color: var(--papier); font-weight: 700; white-space: nowrap; }
+.cal-nuits.est-apercu { background: transparent; color: var(--vin); box-shadow: inset 0 0 0 1.5px var(--vin); }
+.cal-nuits.est-vide { visibility: hidden; }
+@media (max-width: 560px) { .cal-billets { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); } .cal-nuits { grid-column: 1 / -1; justify-self: start; padding-block: 6px; } .cal-billet strong { font-size: 1.1rem; } }
+@media (max-width: 360px) { .cal-billets { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .cal-fleche { display: none; } .cal-billet { padding: 8px 10px; } .cal-billet strong { font-size: 1rem; } }
+.cal-consigne { margin: 12px 0 4px; min-height: 1.5em; color: var(--texte-doux); }
+.calendrier[data-etape="fait"] .cal-consigne { color: var(--texte); font-family: var(--police-titres); font-style: italic; font-size: 1.08rem; }
+.cal-corps { position: relative; }
+.cal-nav { position: absolute; top: 0; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; padding: 0 0 3px; border-radius: 50%; border: 1.5px solid var(--pierre-fonce); background: var(--papier); color: var(--texte); font-size: 1.5rem; line-height: 1; transition: border-color .2s, color .2s; }
+.cal-nav--prec { left: 0; }
+.cal-nav--suiv { right: 0; }
+.cal-nav:hover:not(:disabled) { border-color: var(--vin); color: var(--vin); }
+.cal-nav:disabled { border-color: var(--ligne); border-style: dashed; color: var(--texte-doux); cursor: default; }
+.cal-mois-liste { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.cal-mois-liste[data-nb="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cal-table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+.cal-titre { height: 44px; line-height: 44px; font-family: var(--police-titres); font-size: 1.18rem; font-weight: 560; }
+.cal-titre::first-letter { text-transform: uppercase; }
+.cal-table th { padding: 4px 0 6px; font-size: max(12px, .76rem); font-weight: 600; letter-spacing: .1em; color: var(--texte-doux); }
+.cal-table td { position: relative; padding: 2px 0; text-align: center; }
+.cal-table td::before { content: ""; position: absolute; top: 2px; bottom: 2px; left: 0; right: 0; background: color-mix(in srgb, var(--vin) 13%, var(--papier)); opacity: 0; transition: opacity .2s; }
+.cal-table td.est-dans::before { opacity: 1; }
+.cal-table td.est-debut::before { left: 50%; opacity: 1; }
+.cal-table td.est-fin::before { right: 50%; opacity: 1; }
+.cal-table td.est-apercu::before { background: color-mix(in srgb, var(--vin) 7%, var(--papier)); }
+.cal-jour { position: relative; z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; margin: 0 auto; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--texte); font: 500 1rem/1 var(--police-texte); font-variant-numeric: tabular-nums; cursor: pointer; transition: background-color .2s, color .2s, box-shadow .2s; }
+.cal-jour:hover:not(:disabled):not(.est-choisi) { box-shadow: inset 0 0 0 1.5px var(--vin); }
+.cal-jour.est-aujourdhui::after { content: ""; position: absolute; left: 50%; bottom: 6px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--tomette); }
+.cal-jour.est-choisi { background: var(--vin); color: var(--papier); font-weight: 700; }
+.cal-jour.est-choisi.est-aujourdhui::after { background: var(--papier); }
+.cal-jour:disabled { color: var(--texte-doux); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--texte-doux) 60%, transparent); cursor: default; }
+.cal-pied { margin: 6px 0 0; min-height: 44px; display: flex; align-items: center; }
+.cal-pied .lien { min-height: 44px; color: var(--texte-doux); }
+/* Sur un téléphone étroit, le calendrier prend toute la largeur de l'écran : sept jours d'au moins 44 px. */
+@media (max-width: 420px) {
+  .cal-corps { width: 100vw; margin-left: calc(50% - 50vw); padding: 0 2px; background: var(--papier); border-block: 1px solid var(--ligne); }
+  .cal-nav--prec { left: 6px; }
+  .cal-nav--suiv { right: 6px; }
+}
+
+/* Fiche de réception : la remise de la clé, en grand, sur le vin de la maison. */
+.fiche { position: relative; padding-block: clamp(56px, 8vw, 120px); background: var(--vin-fonce); color: var(--papier); }
+.fiche::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(55% 65% at 28% 42%, rgba(210, 176, 106, .2), rgba(210, 176, 106, 0) 72%); }
+.fiche > .conteneur { position: relative; }
+.fiche-carte { position: relative; display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: clamp(24px, 4vw, 64px); align-items: center; max-width: 1120px; margin-inline: auto; padding: clamp(18px, 2.6vw, 36px); border-radius: 20px; background: var(--papier); color: var(--texte); box-shadow: 0 50px 90px -40px rgba(0, 0, 0, .75); }
+.fiche-visuel { position: relative; align-self: stretch; display: flex; }
+.fiche-photo { flex: 1; min-height: 440px; border-radius: 14px; }
+.fiche-cle { position: absolute; right: -3%; top: -5%; z-index: 2; width: clamp(108px, 11vw, 156px); pointer-events: none; }
+.fiche-cle-svg { display: block; width: 100%; height: auto; transform: rotate(-24deg); transform-origin: 40% 30%; }
+.fiche-olive { fill: url(#laiton-plat); stroke: #5a3e14; stroke-width: .8; }
+.fiche-olive-biseau { fill: none; stroke: rgba(255, 243, 206, .55); stroke-width: 1.3; }
+.fiche-olive-trou { fill: #3b2709; }
+.fiche-gravure { font-family: var(--police-titres); font-style: italic; font-weight: 600; font-size: 19px; letter-spacing: .02em; fill: #573a10; }
+.fiche-gravure--reflet { fill: rgba(255, 244, 210, .75); }
+.fiche-texte .surtitre { color: var(--tomette); }
+.fiche-titre { margin: 0; font-size: clamp(2.2rem, 1.4rem + 2.6vw, 3.8rem); font-weight: 420; line-height: 1.02; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
+.fiche-titre:focus { outline: none; }
+.fiche-titre-sur { color: var(--texte-doux); }
+.fiche-titre [data-f="chambre"] { font-style: italic; color: var(--vin); }
+.fiche-nuits { display: flex; align-items: baseline; gap: .18em; margin: 6px 0 0; line-height: .86; }
+.fiche-nuits strong { font-family: var(--police-titres); font-size: clamp(5.5rem, 2.8rem + 8vw, 10rem); font-weight: 380; letter-spacing: -.05em; color: var(--vin); font-variant-numeric: lining-nums tabular-nums; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
+.fiche-nuits span { font-family: var(--police-titres); font-style: italic; font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.7rem); }
+.fiche-dates { margin: 6px 0 18px; font-family: var(--police-titres); font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); line-height: 1.3; }
+.fiche-liste { margin: 0 0 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+.fiche-liste div { padding: 7px 0 8px; border-top: 1px solid var(--ligne); }
+.fiche-liste dt { font-size: max(12px, .76rem); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--texte-doux); }
+.fiche-liste dd { margin: 2px 0 0; font-weight: 500; line-height: 1.35; }
+.fiche-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; margin: 0; }
+.fiche-actions .lien { min-height: 44px; }
+.bouton--laiton { background: var(--laiton-clair); color: var(--texte); font-weight: 700; box-shadow: inset 0 1px 0 rgba(255, 250, 230, .75), inset 0 -2px 0 rgba(90, 62, 20, .35), 0 14px 24px -14px rgba(90, 62, 20, .9); }
+.bouton--laiton:hover { background: #e0c27f; }
+.fiche .demande-simule { margin-top: 16px; }
+.fiche-tampon { display: block; top: clamp(30px, 4vw, 62px); left: clamp(28px, 3.6vw, 58px); right: auto; bottom: auto; z-index: 3; font-size: 1rem; animation: none; box-shadow: 0 8px 18px -10px rgba(43, 35, 32, .7); }
+@media (max-width: 900px) {
+  .fiche-carte { grid-template-columns: minmax(0, 1fr); }
+  .fiche-visuel { display: block; }
+  .fiche-photo { min-height: 0; aspect-ratio: 4 / 3; max-height: 44svh; width: 100%; }
+  .fiche-cle { right: -1%; top: -7%; width: clamp(88px, 22vw, 124px); }
+  .fiche-texte { padding-top: 4px; }
+}
+@media (max-height: 820px) and (min-width: 901px) { .fiche-nuits strong { font-size: clamp(5rem, 2rem + 7vw, 8rem); } .fiche-titre { font-size: clamp(2rem, 1.2rem + 2.2vw, 3.2rem); } .fiche-dates { margin-bottom: 12px; } .fiche-liste { margin-bottom: 16px; } .fiche-liste div { padding: 5px 0 6px; } .fiche .demande-simule { margin-top: 10px; } }
+@media (max-width: 560px) { .fiche-liste { grid-template-columns: minmax(0, 1fr); } .fiche-actions .bouton { width: 100%; justify-content: center; } }
 .cadeau { padding-block: clamp(60px, 8vw, 110px); background: var(--papier); }
 .cadeau-grille { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 70px); align-items: center; }
 .cadeau-photo { aspect-ratio: 4 / 5; border-radius: 999px 999px 14px 14px; }

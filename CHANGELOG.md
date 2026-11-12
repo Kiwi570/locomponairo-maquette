@@ -1,5 +1,15 @@
 # Lo Componaïro — historique de la maquette
 
+## v3 (fichiers en version 5) — 12 novembre 2026
+
+La réservation devient le moment fort de la maquette.
+
+- **Calendrier maison** à la place des deux champs de date : deux mois côte à côte sur ordinateur, un seul sur téléphone (toute la largeur de l'écran, des jours d'au moins 44 px). On touche l'arrivée puis le départ : la plage s'allume, la pastille donne le nombre de nuits, et à la souris la plage se dessine avant le clic. Jours passés barrés et fermés, « Effacer les dates ». Au clavier : flèches, Origine et Fin (début et fin de semaine), Page précédente et Page suivante (mois). Les champs de date d'origine restent le secours si le script ne charge pas.
+- **Fiche de réception** à l'envoi, sur le lie-de-vin de la maison : la clé de laiton tombe sur la photo de la chambre avec sa pampille gravée au prénom (Isabelle, Denise, Mathilde, Suzanne ou Suite), les nuits en très grand (le chiffre monte), les dates en toutes lettres, l'arrivée de 17 h à 20 h 30 et le départ à 11 h, les voyageurs, l'inclus, les options, la taxe de séjour calculée, l'annulation gratuite jusqu'à 7 jours, le tampon « Demande prête » et le bouton laiton « Continuer sur la réservation sécurisée ». Le prix de la nuit reste celui de la réservation sécurisée (aucun prix inventé).
+- La fiche suit chaque changement de la demande et se referme si les dates sont effacées ; « Modifier ma demande » remonte au formulaire. La barre « Appeler / Réserver » du téléphone se retire devant la fiche.
+- Dates du récapitulatif écrites en français (« sam. 21 nov. »), en heure locale.
+- Audit : nouveau parcours propre au projet (`_audit/parcours.mjs`) qui réserve au doigt (390 et 320 px) et au clavier (1366 × 768) et vérifie dates, nuits, taxe, fiche et focus. La copie d'audit du projet fait de nouveau tourner axe (accessibilité), en mode normal : il ne tournait plus depuis le retrait du mode calme.
+
 ## v2.1 (fichiers en version 4) — 12 novembre 2026
 
 - Chambres : au survol (ou au clavier), chaque porte de l'ouverture s'ouvre en grand sur toute la photo de sa chambre, une étiquette « Voir ↓ » apparaît, et le clic descend jusqu'à la chambre. Sur téléphone, le toucher mène directement à la chambre.

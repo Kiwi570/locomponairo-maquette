@@ -279,7 +279,8 @@ export function mesurer(o) {
     if (!img.complete || img.naturalWidth === 0) ajouter('image non chargée', img.currentSrc || img.src, img);
   });
   document.querySelectorAll('main > section, main section[id], [data-section]').forEach((s) => {
-    if (s.closest('[data-sans-visuel]')) return;
+    /* Une section cachée (fiche montrée seulement après une action) n'est pas jugée tant qu'elle est cachée. */
+    if (s.closest('[data-sans-visuel], [hidden]')) return;
     const visuel = [...s.querySelectorAll('img, picture, video, canvas, svg, [data-visuel]')].some((v) => {
       const r = v.getBoundingClientRect(); return r.width >= 60 && r.height >= 60;
     }) || [s, ...s.querySelectorAll('*')].some((e) => { const bi = getComputedStyle(e).backgroundImage; const r = e.getBoundingClientRect(); return bi && bi !== 'none' && !/gradient/.test(bi) && r.width >= 120 && r.height >= 80; });

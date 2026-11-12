@@ -1,6 +1,8 @@
 /* Réserver en direct : le tableau à clés de la réception (ouverture), la demande en trois étapes avec
-   son récapitulatif ; la clé choisie quitte son crochet et file jusqu'au récapitulatif (retour physique),
-   l'étiquette se tamponne « Demande prête », puis lien vers la vraie réservation sécurisée. */
+   son récapitulatif ; la clé choisie quitte son crochet et file jusqu'au récapitulatif (retour physique) ;
+   les dates au calendrier maison (les champs de date d'origine restent le secours sans script) ;
+   à l'envoi, la fiche de réception : la clé remise avec sa pampille gravée, la photo de la chambre,
+   les nuits en très grand, le tampon « Demande prête », puis le lien vers la vraie réservation sécurisée. */
 import { html, brut } from '../../outils/gabarit.mjs';
 import { cle } from '../gabarits/objets.mjs';
 
@@ -9,6 +11,21 @@ export const page = { cle: 'reserver', fichier: 'reserver', imagePartage: 'jardi
 /* Une vignette par choix : la chambre (la suite : la porte-fenêtre de Denise sur la terrasse). */
 const VIGNETTES = { isabelle: 'isabelle-1', denise: 'denise-1', mathilde: 'mathilde-2', suzanne: 'suzanne-3', suite: 'denise-3' };
 const cleSvg = () => brut(`<svg class="crochet-cle cle-laiton" viewBox="-34 34 68 150" aria-hidden="true" focusable="false">${cle()}</svg>`);
+/* Fiche de réception : une grande photo par choix (une seule montrée), et la clé remise avec sa pampille de laiton
+   gravée au prénom de la chambre (le prénom est écrit par le script). */
+const FICHE = { isabelle: 'isabelle-1', denise: 'denise-1', mathilde: 'mathilde-2', suzanne: 'suzanne-1', suite: 'denise-3' };
+const DROP = 'M0 0 C 16 2 28 36 28 76 C 28 110 16 130 0 130 C -16 130 -28 110 -28 76 C -28 36 -16 2 0 0 Z';
+const cleFiche = () => brut(`<div class="fiche-cle" data-fiche-cle data-superpose aria-hidden="true"><svg class="cle-laiton fiche-cle-svg" viewBox="-30 32 116 186" focusable="false">
+  <g class="fiche-pampille" transform="translate(10 72) rotate(-20)">
+    <path class="fiche-olive" d="${DROP}" transform="translate(0 6)"/>
+    <path class="fiche-olive-biseau" d="${DROP}" transform="translate(0 16) scale(.8)"/>
+    <circle class="fiche-olive-trou" cx="0" cy="14" r="3.4"/>
+    <text class="fiche-gravure fiche-gravure--reflet" transform="translate(.9 84) rotate(90)" text-anchor="middle" dominant-baseline="central" data-f="gravure"></text>
+    <text class="fiche-gravure" transform="translate(0 84) rotate(90)" text-anchor="middle" dominant-baseline="central" data-f="gravure"></text>
+    <circle class="cle-anneau fiche-maillon" cx="0" cy="6" r="8" fill="none" stroke-width="3"/>
+  </g>
+  ${cle()}
+</svg></div>`);
 
 export default (c) => {
   const ch = c.donnees.chambres;
@@ -46,7 +63,23 @@ export default (c) => {
       </fieldset>
       <fieldset class="demande-bloc" data-anime>
         <legend>2 · ${c.t('reserver.form.e2')}</legend>
-        <div class="demande-dates">
+        <div class="calendrier" data-calendrier hidden>
+          <div class="cal-billets">
+            <p class="cal-billet" data-cal-billet="arrivee"><span>${c.t('reserver.form.arrivee')}</span><strong data-cal-val="arrivee">${c.t('reserver.form.calAChoisir')}</strong></p>
+            <span class="cal-fleche" aria-hidden="true">→</span>
+            <p class="cal-billet" data-cal-billet="depart"><span>${c.t('reserver.form.depart')}</span><strong data-cal-val="depart">${c.t('reserver.form.calAChoisir')}</strong></p>
+            <p class="cal-nuits est-vide" data-cal-nuits></p>
+          </div>
+          <p class="cal-consigne" data-cal-consigne data-a="${c.s('reserver.form.calConsigneA')}" data-d="${c.s('reserver.form.calConsigneD')}">${c.t('reserver.form.calConsigneA')}</p>
+          <div class="cal-corps" role="group" aria-label="${c.s('reserver.form.calGroupe')}" aria-describedby="err-dates">
+            <button type="button" class="cal-nav cal-nav--prec" data-cal-prec aria-label="${c.s('reserver.form.calPrec')}">‹</button>
+            <div class="cal-mois-liste" data-cal-mois></div>
+            <button type="button" class="cal-nav cal-nav--suiv" data-cal-suiv aria-label="${c.s('reserver.form.calSuiv')}">›</button>
+          </div>
+          <p class="cal-pied"><button type="button" class="lien" data-cal-effacer>${c.t('reserver.form.calEffacer')}</button></p>
+          <p class="visuellement-cache" aria-live="polite" data-cal-annonce></p>
+        </div>
+        <div class="demande-dates" data-dates-natives>
           <div class="champ"><label for="r-arrivee">${c.t('reserver.form.arrivee')}</label><input id="r-arrivee" name="arrivee" type="date" required aria-describedby="err-dates"></div>
           <div class="champ"><label for="r-depart">${c.t('reserver.form.depart')}</label><input id="r-depart" name="depart" type="date" required aria-describedby="err-dates"></div>
         </div>
@@ -76,13 +109,40 @@ export default (c) => {
         <div><dt>${c.t('reserver.form.rTaxe')}</dt><dd data-r="taxe" data-prix>—</dd></div>
         <div><dt>${c.t('reserver.form.rPrix')}</dt><dd class="a-completer">${c.t('reserver.form.rPrixT')}</dd></div>
       </dl>
-      <div class="recap-pret" data-recap-pret hidden>
-        <span class="tampon-recu tampon-recu--pret" aria-hidden="true" data-superpose>${c.t('reserver.form.pret')}</span>
-        <p>${c.t('reserver.form.pretTexte')}</p>
-        <p><a class="bouton bouton--action" href="${c.site.liens.reservation}" target="_blank" rel="noopener" aria-label="${c.s('reserver.form.continuer')} ${c.s('commun.nouvelOnglet')}">${c.t('reserver.form.continuer')}</a></p>
-        <p><button type="button" class="lien" data-recommencer>${c.t('reserver.form.recommencer')}</button></p>
-      </div>
     </aside>
+  </div>
+</section>
+
+<section class="fiche" id="fiche" data-fiche data-fil="droite" data-masque-barre hidden aria-labelledby="fiche-titre">
+  <div class="conteneur">
+    <article class="fiche-carte" data-effet="fiche-reception">
+      <div class="fiche-visuel">
+        ${Object.entries(FICHE).map(([k, nom]) => c.media({ nom, alt: k === 'suite' ? 'La suite : la porte-fenêtre de Denise sur la terrasse' : `La chambre ${k[0].toUpperCase() + k.slice(1)}`, classe: 'fiche-photo', sizes: '(max-width: 900px) 92vw, 42vw', attrs: `data-fiche-photo="${k}" hidden` }))}
+        ${cleFiche()}
+      </div>
+      <div class="fiche-texte">
+        <p class="surtitre">${c.t('reserver.fiche.sur')} · Lo Componaïro</p>
+        <h2 class="fiche-titre" id="fiche-titre" tabindex="-1"><span class="fiche-titre-sur">${c.t('reserver.fiche.titre')}</span> <span data-f="chambre">—</span></h2>
+        <p class="fiche-nuits"><strong data-f="nuits">0</strong> <span data-f="nuitsMot">nuits</span></p>
+        <p class="fiche-dates" data-f="dates">—</p>
+        <dl class="fiche-liste">
+          <div><dt>${c.t('reserver.fiche.arrivee')}</dt><dd><span data-f="arrivee">—</span>, ${c.t('reserver.fiche.arriveeH')}</dd></div>
+          <div><dt>${c.t('reserver.fiche.depart')}</dt><dd><span data-f="depart">—</span>, ${c.t('reserver.fiche.departH')}</dd></div>
+          <div><dt>${c.t('reserver.fiche.voyageurs')}</dt><dd data-f="voyageurs">—</dd></div>
+          <div><dt>${c.t('reserver.fiche.inclus')}</dt><dd>${c.t('reserver.fiche.inclusT')}</dd></div>
+          <div><dt>${c.t('reserver.fiche.options')}</dt><dd data-f="options">—</dd></div>
+          <div><dt>${c.t('reserver.fiche.taxe')}</dt><dd data-f="taxe" data-prix>—</dd></div>
+          <div><dt>${c.t('reserver.fiche.annulation')}</dt><dd>${c.t('reserver.fiche.annulationT')}</dd></div>
+          <div><dt>${c.t('reserver.fiche.prix')}</dt><dd class="a-completer">${c.t('reserver.fiche.prixT')}</dd></div>
+        </dl>
+        <p class="fiche-actions">
+          <a class="bouton bouton--laiton" href="${c.site.liens.reservation}" target="_blank" rel="noopener" data-fiche-continuer aria-label="${c.s('reserver.fiche.continuer')} ${c.s('commun.nouvelOnglet')}">${c.t('reserver.fiche.continuer')}</a>
+          <button type="button" class="lien" data-recommencer>${c.t('reserver.fiche.modifier')}</button>
+        </p>
+        <p class="demande-simule">${c.t('reserver.fiche.texte')}</p>
+      </div>
+      <span class="tampon-recu fiche-tampon" aria-hidden="true" data-superpose>${c.t('reserver.fiche.pret')}</span>
+    </article>
   </div>
 </section>
 

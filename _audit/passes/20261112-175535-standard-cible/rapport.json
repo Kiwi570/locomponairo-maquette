@@ -1,0 +1,168 @@
+{
+  "echecs": [
+    {
+      "niveau": "echec",
+      "controle": "contraste insuffisant",
+      "detail": "3.24:1 (minimum 4.5:1)",
+      "etape": "mesures",
+      "page": "/reserver",
+      "taille": "768×1024",
+      "mode": "normal",
+      "selecteur": "fieldset.demande-bloc:nth-of-type(2) > div.calendrier:nth-of-type(1) > div.cal-billets:nth-of-type(1) > span.cal-fleche « → »",
+      "lieux": [
+        "768×1024 normal",
+        "390×844 normal",
+        "844×390 normal",
+        "1366×768 normal",
+        "1920×1080 normal",
+        "390×844 sansWebgl",
+        "1366×768 sansWebgl"
+      ]
+    },
+    {
+      "niveau": "echec",
+      "controle": "contraste insuffisant",
+      "detail": "1.76:1 (minimum 3:1)",
+      "etape": "mesures",
+      "page": "/reserver",
+      "taille": "768×1024",
+      "mode": "normal",
+      "selecteur": "fieldset.demande-bloc:nth-of-type(2) > div.calendrier:nth-of-type(1) > div.cal-corps:nth-of-type(2) > button.cal-nav.cal-nav--prec:nth-of-type(1) « ‹ »",
+      "lieux": [
+        "768×1024 normal",
+        "390×844 normal",
+        "320×568 normal",
+        "844×390 normal",
+        "1366×768 normal",
+        "1920×1080 normal",
+        "390×844 sansWebgl",
+        "1366×768 sansWebgl"
+      ]
+    },
+    {
+      "niveau": "echec",
+      "controle": "section sans visuel",
+      "detail": "",
+      "etape": "mesures",
+      "page": "/reserver",
+      "taille": "768×1024",
+      "mode": "normal",
+      "selecteur": "section#fiche « Fiche de réception · Lo Componaïro Chambre — 0 nui »",
+      "lieux": [
+        "768×1024 normal",
+        "390×844 normal",
+        "320×568 normal",
+        "844×390 normal",
+        "1366×768 normal",
+        "390×844 sansJs",
+        "1920×1080 normal",
+        "390×844 sansWebgl",
+        "1366×768 sansJs",
+        "1366×768 sansWebgl",
+        "320×568 sansJs"
+      ]
+    }
+  ],
+  "aRegarder": [
+    {
+      "niveau": "regarder",
+      "controle": "journal du projet",
+      "detail": "aucune entrée pour la version 5 de donnees/site.json",
+      "etape": "fichiers",
+      "lieux": [
+        ""
+      ]
+    }
+  ],
+  "nonLances": [
+    {
+      "controle": "Safari (WebKit)",
+      "raison": "WebKit ne peut pas s’installer ici : vérification à faire dans Safari sur le Mac (liste dans le rapport)",
+      "etape": "safari"
+    }
+  ],
+  "oks": {
+    "vercel.json": 1,
+    ".vercelignore": 1,
+    "robots.txt": 1,
+    "numéro de version": 1,
+    "langues": 1,
+    "grille wouahou": 7,
+    "mesures": 11,
+    "balayage": 1,
+    "films d’ouverture": 2,
+    "films de transition": 2,
+    "bords de l’écran": 2,
+    "intro accélérable et passable": 7,
+    "menu": 1,
+    "clavier": 1,
+    "liens et boutons": 1,
+    "liens vers la page en cours": 1,
+    "changements de hauteur": 1,
+    "parcours du projet": 1,
+    "fluidité": 2,
+    "défilement selon l’appareil": 5,
+    "mouvement": 2,
+    "effets du plan": 17,
+    "vitesse": 1,
+    "captures": 1
+  },
+  "infos": [
+    "Numéro de version des fichiers : ?v=5",
+    "Audit standard : étapes lourdes sur /reserver.",
+    "Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés.",
+    "Ouverture /reserver (1366×768) : 2866 ms depuis le premier octet",
+    "Ouverture /reserver (390×844) : 2870 ms depuis le premier octet",
+    "Bords de l’écran : 86 images d’intro, 3 de voile et 49 de menu jugées (panneau immobile couvrant tout l’écran), barre de défilement classique de 15 px.",
+    "Aucun lien profond vers une section d’une autre page.",
+    "Mode calme dispensé : Mode calme retiré à la demande du client (12 novembre 2026) : le site joue toujours ses animations, même si l'appareil demande de les réduire.",
+    "Tient dans l'écran /reserver : aucune section épinglée ou plein écran.",
+    "Fluidité /reserver 1366×768 (molette) : 0 % d'images lentes sur 184, tâche la plus longue 0 ms",
+    "Fluidité /reserver 390×844 (doigt) : 0 % d'images lentes sur 1342, tâche la plus longue 0 ms",
+    "Vitesse /reserver : 0.53 s de calcul au chargement (téléphone ralenti)."
+  ],
+  "grille": [
+    {
+      "cle": "manipuler",
+      "nom": "1. L’effet signature se manipule",
+      "statut": "présent",
+      "detail": "accueil"
+    },
+    {
+      "cle": "intro",
+      "nom": "2. L’intro devient la page",
+      "statut": "présent",
+      "detail": "objet d’ouverture sur 6 page(s), versObjet dans l’intro"
+    },
+    {
+      "cle": "voile",
+      "nom": "3. La transition reprend le motif",
+      "statut": "présent",
+      "detail": "voile en serrure"
+    },
+    {
+      "cle": "fil",
+      "nom": "4. Quelque chose relie les sections et les pages",
+      "statut": "présent",
+      "detail": "sur les 6 page(s)"
+    },
+    {
+      "cle": "typo",
+      "nom": "5. Un titre fait l’événement sur chaque page",
+      "statut": "présent",
+      "detail": "sur les 6 page(s)"
+    },
+    {
+      "cle": "scene",
+      "nom": "6. La scène est un geste du métier",
+      "statut": "présent",
+      "detail": "geste du métier sur /chambres, /, /votre-sejour"
+    },
+    {
+      "cle": "retour",
+      "nom": "7. L’action principale a un retour physique",
+      "statut": "présent",
+      "detail": "sur /reserver"
+    }
+  ]
+}

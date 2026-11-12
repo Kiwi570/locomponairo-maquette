@@ -1,8 +1,9 @@
 /* Lo Componaïro : effets propres au projet. Le socle gère l'ouverture, le voile (serrure), l'en-tête, le menu,
    le mode calme, les boucles, les mesures et la bibliothèque d'effets posés par attributs dans les pages.
    Chaque effet propre porte data-effet="nom-du-plan" : porte-entree, axes, manifeste, facade-etages, duo, compris, etiquette-plume,
-   tampons, cadran-journee, carrousel-sites, sarment, portes, couloir, journee, carte-route, route-acces, cle-envol. */
-import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=4';
+   tampons, cadran-journee, carrousel-sites, sarment, portes, couloir, journee, carte-route, route-acces, cle-envol,
+   fiche-reception (et le calendrier maison de la réservation, sans mouvement au défilement). */
+import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=5';
 
 const gsap = window.gsap;
 const ST = () => window.ScrollTrigger;
@@ -472,18 +473,156 @@ function contact() {
   });
 }
 
-/* ---------- Réserver : tableau à clés, demande en trois étapes, clé qui file au récapitulatif ---------- */
+/* ---------- Dates en français (jour local, sans dépendre de la langue du navigateur) ---------- */
+const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+const MOIS_COURT = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+const JOURS = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+const isoLocal = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const dateDe = (s) => { const [y, m, j] = s.split('-').map(Number); return new Date(y, m - 1, j, 12); };
+const plusJours = (s, n) => { const d = dateDe(s); d.setDate(d.getDate() + n); return isoLocal(d); };
+const plusMois = (s, n) => { const d = dateDe(s), j = d.getDate(); const t = new Date(d.getFullYear(), d.getMonth() + n, 1, 12); t.setDate(Math.min(j, new Date(t.getFullYear(), t.getMonth() + 1, 0).getDate())); return isoLocal(t); };
+const moisPlus = (ym, n) => plusMois(`${ym}-01`, n).slice(0, 7);
+const nbNuits = (a, d) => Math.round((dateDe(d) - dateDe(a)) / 864e5);
+const quantieme = (d) => (d.getDate() === 1 ? '1er' : String(d.getDate()));
+const jourLong = (s, annee = false) => { const d = dateDe(s); return `${JOURS[d.getDay()]} ${quantieme(d)} ${MOIS[d.getMonth()]}${annee ? ' ' + d.getFullYear() : ''}`; };
+const jourCourt = (s) => { const d = dateDe(s); return `${JOURS[d.getDay()].slice(0, 3)}. ${quantieme(d)} ${MOIS_COURT[d.getMonth()]}`; };
+/* « du vendredi 18 au lundi 21 décembre 2026 », le mois et l'année répétés seulement s'ils changent. */
+const enLettres = (a, d) => {
+  const A = dateDe(a), D = dateDe(d), j = (x) => `${JOURS[x.getDay()]} ${quantieme(x)}`;
+  const fin = `${j(D)} ${MOIS[D.getMonth()]} ${D.getFullYear()}`;
+  if (A.getFullYear() !== D.getFullYear()) return `du ${j(A)} ${MOIS[A.getMonth()]} ${A.getFullYear()} au ${fin}`;
+  return A.getMonth() === D.getMonth() ? `du ${j(A)} au ${fin}` : `du ${j(A)} ${MOIS[A.getMonth()]} au ${fin}`;
+};
+const majuscule = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+
+/* ---------- Calendrier maison : deux mois côte à côte (un seul quand la place manque), l'arrivée puis le départ,
+   la plage s'allume avec le nombre de nuits ; jours passés fermés ; clavier : flèches, début et fin de semaine,
+   mois précédent et suivant. Les deux champs de date d'origine restent la source des valeurs (et le secours sans script). ---------- */
+function calendrier(racine, { arr, dep, auChangement }) {
+  const liste = $('[data-cal-mois]', racine), prec = $('[data-cal-prec]', racine), suiv = $('[data-cal-suiv]', racine);
+  const annonce = $('[data-cal-annonce]', racine), consigne = $('[data-cal-consigne]', racine), nuitsEl = $('[data-cal-nuits]', racine);
+  const valA = $('[data-cal-val="arrivee"]', racine), valD = $('[data-cal-val="depart"]', racine), effacer = $('[data-cal-effacer]', racine);
+  const aChoisir = valA.textContent.trim();
+  const auj = isoLocal(new Date()), max = plusJours(auj, 548);
+  const moisMin = auj.slice(0, 7), moisMax = max.slice(0, 7);
+  let a = arr.value && arr.value >= auj ? arr.value : null;
+  let d = a && dep.value > a ? dep.value : null;
+  let survol = null, nb = 0, vue = (a || auj).slice(0, 7), focusJour = a || auj;
+  const ENTETES = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+  const enVue = (s) => s.slice(0, 7) >= vue && s.slice(0, 7) <= moisPlus(vue, nb - 1);
+  function dessiner() {
+    let h = '';
+    for (let k = 0; k < nb; k++) {
+      const ym = moisPlus(vue, k), [y, m] = ym.split('-').map(Number);
+      const decal = (new Date(y, m - 1, 1, 12).getDay() + 6) % 7, n = new Date(y, m, 0).getDate();
+      h += `<div class="cal-mois"><table class="cal-table"><caption class="cal-titre">${MOIS[m - 1]} ${y}</caption><thead><tr>${ENTETES.map((j) => `<th scope="col"><span aria-hidden="true">${j[0].toUpperCase()}</span><span class="visuellement-cache">${j}</span></th>`).join('')}</tr></thead><tbody><tr>`;
+      let c = 0;
+      for (; c < decal; c++) h += '<td></td>';
+      for (let j = 1; j <= n; j++, c++) {
+        if (c && c % 7 === 0) h += '</tr><tr>';
+        const s = `${ym}-${String(j).padStart(2, '0')}`;
+        h += `<td><button type="button" class="cal-jour" data-jour="${s}" tabindex="-1"${s < auj || s > max ? ' disabled' : ''}>${j}</button></td>`;
+      }
+      for (; c % 7; c++) h += '<td></td>';
+      h += '</tr></tbody></table></div>';
+    }
+    liste.innerHTML = h;
+    liste.dataset.nb = String(nb);
+    prec.disabled = vue <= moisMin;
+    suiv.disabled = moisPlus(vue, nb - 1) >= moisMax;
+    marquer();
+  }
+  function marquer() {
+    const fin = d || (a && survol && survol > a ? survol : null);
+    for (const b of liste.querySelectorAll('.cal-jour')) {
+      const s = b.dataset.jour, td = b.parentElement;
+      td.classList.toggle('est-debut', !!fin && s === a);
+      td.classList.toggle('est-fin', !!fin && s === fin);
+      td.classList.toggle('est-dans', !!fin && s > a && s < fin);
+      td.classList.toggle('est-apercu', !!fin && !d);
+      b.classList.toggle('est-choisi', s === a || s === d);
+      b.classList.toggle('est-aujourdhui', s === auj);
+      b.setAttribute('aria-pressed', String(s === a || s === d));
+      b.setAttribute('aria-label', jourLong(s, true) + (s === a ? ', arrivée' : '') + (s === d ? ', départ' : '') + (s === auj ? ', aujourd’hui' : ''));
+      b.tabIndex = s === focusJour && !b.disabled ? 0 : -1;
+    }
+    if (!liste.querySelector('.cal-jour[tabindex="0"]')) { const b = liste.querySelector('.cal-jour:not([disabled])'); if (b) b.tabIndex = 0; }
+    valA.textContent = a ? jourCourt(a) : aChoisir;
+    valD.textContent = d ? jourCourt(d) : aChoisir;
+    racine.dataset.etape = !a ? 'arrivee' : !d ? 'depart' : 'fait';
+    const n = a && fin ? nbNuits(a, fin) : 0;
+    /* La pastille garde sa place, vide ou pleine : rien ne bouge sous le doigt ou la souris. */
+    nuitsEl.classList.toggle('est-vide', !n);
+    nuitsEl.textContent = n ? `${n} nuit${n > 1 ? 's' : ''}` : '0 nuit';
+    nuitsEl.classList.toggle('est-apercu', !d);
+    consigne.textContent = !a ? consigne.dataset.a : !d ? consigne.dataset.d : majuscule(enLettres(a, d)) + '.';
+    effacer.style.visibility = a ? '' : 'hidden';
+  }
+  function choisirJour(s) {
+    if (!a || d || s <= a) { a = s; d = null; } else d = s;
+    focusJour = s; survol = null;
+    arr.value = a || ''; dep.value = d || '';
+    marquer();
+    annonce.textContent = d ? `Départ le ${jourLong(d)} : ${nbNuits(a, d)} nuit${nbNuits(a, d) > 1 ? 's' : ''}.` : `Arrivée le ${jourLong(a)}. Choisissez maintenant le jour de départ.`;
+    auChangement(!!d);
+  }
+  const focus = (opts) => liste.querySelector('.cal-jour[tabindex="0"]')?.focus(opts);
+  liste.addEventListener('click', (e) => { const b = e.target.closest('.cal-jour'); if (b && !b.disabled) choisirJour(b.dataset.jour); });
+  /* Aperçu de la plage sous la souris, entre l'arrivée choisie et le jour survolé. */
+  liste.addEventListener('pointerover', (e) => {
+    if (e.pointerType !== 'mouse' || !a || d) return;
+    const b = e.target.closest('.cal-jour');
+    const s = b && !b.disabled ? b.dataset.jour : null;
+    if (s !== survol) { survol = s; marquer(); }
+  });
+  liste.addEventListener('pointerleave', () => { if (survol) { survol = null; marquer(); } });
+  liste.addEventListener('keydown', (e) => {
+    const b = e.target.closest('.cal-jour');
+    if (!b) return;
+    const s = b.dataset.jour, rang = (dateDe(s).getDay() + 6) % 7;
+    const pas = { ArrowLeft: () => plusJours(s, -1), ArrowRight: () => plusJours(s, 1), ArrowUp: () => plusJours(s, -7), ArrowDown: () => plusJours(s, 7),
+      Home: () => plusJours(s, -rang), End: () => plusJours(s, 6 - rang), PageUp: () => plusMois(s, -1), PageDown: () => plusMois(s, 1) }[e.key];
+    if (!pas) return;
+    e.preventDefault();
+    let t = pas();
+    if (t < auj) t = auj;
+    if (t > max) t = max;
+    focusJour = t;
+    survol = a && !d && t > a ? t : null;
+    if (!enVue(t)) { vue = t.slice(0, 7) < vue ? t.slice(0, 7) : moisPlus(t.slice(0, 7), 1 - nb); if (vue < moisMin) vue = moisMin; dessiner(); } else marquer();
+    focus();
+  });
+  liste.addEventListener('focusout', (e) => { if (survol && !liste.contains(e.relatedTarget)) { survol = null; marquer(); } });
+  prec.addEventListener('click', () => { vue = moisPlus(vue, -1); if (vue < moisMin) vue = moisMin; dessiner(); if (prec.disabled) suiv.focus(); });
+  suiv.addEventListener('click', () => { vue = moisPlus(vue, 1); dessiner(); if (suiv.disabled) prec.focus(); });
+  effacer.addEventListener('click', () => { a = d = survol = null; arr.value = dep.value = ''; focusJour = vue < moisMin ? auj : `${vue}-01` < auj ? auj : `${vue}-01`; marquer(); annonce.textContent = 'Dates effacées.'; auChangement(false); focus(); });
+  /* Deux mois si chacun garde des jours d'au moins 44 px au doigt (38 px à la souris), sinon un seul. */
+  const tactile = () => matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+  const mesurer = () => {
+    const w = liste.clientWidth;
+    if (!w) return;
+    const n = w >= 14 * (tactile() ? 44 : 38) + 32 ? 2 : 1;
+    if (n !== nb) { const f = liste.contains(document.activeElement); nb = n; if (!enVue(focusJour)) vue = focusJour.slice(0, 7); dessiner(); if (f) focus({ preventScroll: true }); }
+  };
+  racine.hidden = false;
+  $('[data-dates-natives]', racine.closest('form')).hidden = true;
+  mesurer();
+  new ResizeObserver(mesurer).observe(racine);
+  return { focus, effacer: () => effacer.click() };
+}
+
+/* ---------- Réserver : tableau à clés, demande en trois étapes, clé qui file au récapitulatif, fiche de réception ---------- */
 function reservation() {
   const form = $('[data-reservation]');
   if (!form) return;
-  const recap = $('[data-recap]'), place = $('[data-recap-cle]'), pret = $('[data-recap-pret]');
+  const recap = $('[data-recap]'), place = $('[data-recap-cle]'), fiche = $('[data-fiche]');
   const R = (k) => $(`[data-r="${k}"]`, recap);
   const radios = $$('input[name="chambre"]', form), crochets = $$('[data-cle-choix]');
   const arr = $('#r-arrivee'), dep = $('#r-depart'), adu = $('#r-adultes'), enf = $('#r-enfants'), ant = $('input[name="anticipee"]', form);
   const champEnfants = $('[data-champ-enfants]', form);
-  const auj = new Date(); const iso = (d) => d.toISOString().slice(0, 10);
+  const auj = new Date(); const iso = isoLocal;
   arr.min = iso(auj); dep.min = iso(new Date(auj.getTime() + 864e5));
-  const fmt = (v) => v ? new Date(v + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }) : '—';
+  const fmt = (v) => (v ? jourCourt(v) : '—');
   const euros = (x) => x.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).replace(/ /g, ' ') + ' €';
   const choisie = () => radios.find((r) => r.checked);
   const nuits = () => { if (!arr.value || !dep.value) return 0; return Math.round((new Date(dep.value) - new Date(arr.value)) / 864e5); };
@@ -531,18 +670,75 @@ function reservation() {
     const visible = r.top >= 0 && r.top < innerHeight * 0.6;
     if (!visible) {
       cible.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'start' });
-      setTimeout(() => { choisir(b.dataset.cleChoix, innerWidth >= 901); arr.focus({ preventScroll: true }); }, calme() ? 0 : 650);
-    } else { choisir(b.dataset.cleChoix); arr.focus({ preventScroll: true }); }
+      setTimeout(() => { choisir(b.dataset.cleChoix, innerWidth >= 901); versDates(); }, calme() ? 0 : 650);
+    } else { choisir(b.dataset.cleChoix); versDates(); }
   }));
   radios.forEach((r) => r.addEventListener('change', () => { maj(); envol(r.value); }));
   [arr, dep, adu, enf, ant].forEach((x) => x.addEventListener('change', () => { if (x === arr && arr.value) dep.min = iso(new Date(new Date(arr.value).getTime() + 864e5)); maj(); }));
   /* Les deux dates choisies : le bouton d'envoi vient à l'écran s'il est dessous (un geste de moins). */
-  dep.addEventListener('change', () => { const b = $('button[type="submit"]', form), r = b.getBoundingClientRect(); if (arr.value && dep.value && r.bottom > innerHeight - 16) b.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'center' }); });
+  const versEnvoi = () => { const b = $('button[type="submit"]', form), r = b.getBoundingClientRect(); if (arr.value && dep.value && r.bottom > innerHeight - 16) b.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'center' }); };
+  dep.addEventListener('change', versEnvoi);
+  /* Le calendrier maison remplace les deux champs de date ; la plage reste allumée un instant avant que la page descende. */
+  const racineCal = $('[data-calendrier]', form);
+  const cal = racineCal ? calendrier(racineCal, { arr, dep, auChangement: (complet) => { maj(); if (complet) setTimeout(versEnvoi, calme() ? 0 : 420); } }) : null;
+  function versDates() { if (cal) cal.focus({ preventScroll: true }); else arr.focus({ preventScroll: true }); }
   const erreur = (k, on) => { const e = $(`[data-erreur="${k}"]`, form); if (e) e.hidden = !on; };
+
+  /* Fiche de réception : la clé remise avec sa pampille gravée, la photo de la chambre, les nuits en très grand,
+     les dates en toutes lettres, puis le bouton vers la vraie réservation sécurisée. */
+  const F = (k) => $$(`[data-f="${k}"]`, fiche);
+  const ecrire = (k, v) => F(k).forEach((x) => { x.textContent = v; });
   let envoye = false;
+  function remplirFiche() {
+    const ch = choisie(), n = nuits(), suite = ch.value === 'suite';
+    $('.fiche-titre-sur', fiche).textContent = suite ? 'Suite' : 'Chambre';
+    ecrire('chambre', suite ? 'Isabelle + Denise' : ch.dataset.nom);
+    ecrire('gravure', ch.dataset.nom);
+    ecrire('nuits', String(n));
+    ecrire('nuitsMot', n > 1 ? 'nuits' : 'nuit');
+    ecrire('dates', majuscule(enLettres(arr.value, dep.value)));
+    ecrire('arrivee', majuscule(jourLong(arr.value)));
+    ecrire('depart', majuscule(jourLong(dep.value)));
+    ['voyageurs', 'options', 'taxe'].forEach((k) => ecrire(k, R(k).textContent));
+    $$('[data-fiche-photo]', fiche).forEach((f) => { f.hidden = f.dataset.fichePhoto !== ch.value; });
+  }
+  function montrerFiche() {
+    remplirFiche();
+    const deja = !fiche.hidden;
+    fiche.hidden = false;
+    $('#fiche-titre', fiche).focus({ preventScroll: true });
+    /* La page grandit : le recalcul (fil de laiton, déclencheurs) passe d'abord, puis la page descend vers une cible
+       relue à chaque image (le défilement doux du navigateur s'arrêtait à mi-chemin quand un recalcul tombait pendant). */
+    let parti = false;
+    const descendre = () => {
+      if (parti) return;
+      parti = true;
+      /* La carte juste sous l'en-tête : la clé, le titre, les nuits et le bouton tiennent dans l'écran de l'ordinateur. */
+      const carte = $('.fiche-carte', fiche), marge = (parseFloat(getComputedStyle(fiche).scrollMarginTop) || 0) + 16;
+      const but = () => Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, carte.getBoundingClientRect().top + scrollY - marge));
+      if (calme() || !gsap) { window.scrollTo({ top: but(), behavior: 'instant' }); return; }
+      const y0 = scrollY, o = { t: 0 };
+      gsap.to(o, { t: 1, duration: 1, ease: 'power2.inOut', onUpdate: () => window.scrollTo({ top: y0 + (but() - y0) * o.t, behavior: 'instant' }) });
+    };
+    window.addEventListener('socle:rafraichi', descendre, { once: true });
+    setTimeout(descendre, 450);
+    rafraichir();
+    if (calme() || !gsap) return;
+    const carte = $('.fiche-carte', fiche), num = $('[data-f="nuits"]', fiche), n = nuits(), o = { v: deja ? n : 0 };
+    gsap.timeline({ delay: deja ? 0.15 : 0.35 })
+      .fromTo(carte, { y: deja ? 0 : 70, opacity: deja ? 1 : 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }, 0)
+      .fromTo($$('.fiche-photo:not([hidden]) img', fiche), { scale: 1.12 }, { scale: 1, duration: 1.5, ease: 'power2.out' }, 0)
+      /* La clé tombe sur la fiche et rebondit à peine, comme posée sur le comptoir. */
+      .fromTo('[data-fiche-cle]', { y: -260, rotation: -70, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.95, ease: 'back.out(1.25)' }, 0.3)
+      .fromTo(o, { v: deja ? n : 0 }, { v: n, duration: 0.9, ease: 'power2.out', onUpdate: () => { num.textContent = String(Math.round(o.v)); } }, 0.45)
+      .fromTo('.fiche-tampon', { scale: 2.6, opacity: 0, rotation: -10 }, { scale: 1, opacity: 1, rotation: -10, duration: 0.45, ease: 'back.out(2.2)' }, 1.1);
+  }
+  const cacherFiche = () => { if (fiche.hidden) return; fiche.hidden = true; envoye = false; rafraichir(); };
+  /* Une fois la fiche ouverte, elle suit chaque changement de la demande (ou se referme si la demande n'est plus complète). */
+  form.addEventListener('change', () => { if (!envoye) return; if (choisie() && nuits() > 0) remplirFiche(); else cacherFiche(); });
+  racineCal?.addEventListener('click', () => { if (envoye && !(choisie() && nuits() > 0)) cacherFiche(); else if (envoye) remplirFiche(); });
   form.addEventListener('submit', (ev) => {
     ev.preventDefault();
-    if (envoye) return;
     const ch = choisie(), n = nuits();
     erreur('chambre', !ch);
     const passee = arr.value && arr.value < iso(auj);
@@ -550,17 +746,14 @@ function reservation() {
     erreur('dates', !datesOk);
     arr.setAttribute('aria-invalid', String(!datesOk)); dep.setAttribute('aria-invalid', String(!datesOk));
     if (!ch) { radios[0].focus(); return; }
-    if (!datesOk) { arr.focus(); return; }
+    if (!datesOk) { versDates(); return; }
     envoye = true;
-    const bouton = $('button[type="submit"]', form); bouton.disabled = true;
-    pret.hidden = false;
-    recap.classList.add('recu');
-    if (!calme() && gsap) gsap.fromTo($('.tampon-recu', pret), { scale: 2.6, rotation: -10, opacity: 0 }, { scale: 1, rotation: -10, opacity: 1, duration: 0.5, ease: 'back.out(2.2)' });
-    pret.querySelector('a').focus({ preventScroll: true });
-    /* Le tampon « Demande prête » et le lien vers la réservation sécurisée, en entier dans l'écran. */
-    pret.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'center' });
+    montrerFiche();
   });
-  $('[data-recommencer]')?.addEventListener('click', () => { envoye = false; pret.hidden = true; recap.classList.remove('recu'); $('button[type="submit"]', form).disabled = false; radios[0].focus(); });
+  $('[data-recommencer]', fiche)?.addEventListener('click', () => {
+    $('#demande').scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'start' });
+    (choisie() || radios[0]).focus({ preventScroll: true });
+  });
   /* Les clés se balancent sur leurs crochets selon la vitesse du défilement, puis s'immobilisent. */
   if (!calme()) {
     const cles = $$('.crochet-cle');
