@@ -197,7 +197,13 @@
      "etape": "corrections (audit, visiteur, mode calme retiré), audits ciblés et standard, second regard du directeur artistique",
      "budget": 35,
      "debut": "2026-11-12T16:52:00+01:00",
-     "fin": ""
+     "fin": "2026-11-12T17:45:00+01:00"
+    },
+    {
+     "etape": "livraison, mise à jour de la bibliothèque",
+     "budget": 20,
+     "debut": "2026-11-12T17:45:00+01:00",
+     "fin": "2026-11-12T18:05:00+01:00"
     }
    ],
    "attentes": [
@@ -241,6 +247,33 @@
    ],
    "grilleDispenses": {},
    "notes": "Demande de l'utilisateur : audit complet et analyse approfondie de tout le site, puis version optimale. Regard du directeur artistique (grille v10.10) : REFAIRE à 2,25/5 ; l'utilisateur a choisi la refonte réaliste de l'accueil. Mode calme retiré à la demande du client (16 h 27)."
+  },
+  {
+   "version": 4,
+   "skill": "v10.10",
+   "perimetre": [
+    "chambres"
+   ],
+   "etapes": [
+    {
+     "etape": "portes de la page Chambres : ouverture en grand au survol, « Voir », clic vers la chambre",
+     "budget": 15,
+     "debut": "2026-11-12T17:49:00+01:00",
+     "fin": "2026-11-12T18:00:00+01:00"
+    }
+   ],
+   "attentes": [],
+   "allersRetours": 1,
+   "modules": [],
+   "audit": {
+    "niveau": "ciblé sur /chambres (toutes les étapes)",
+    "echecsPremierPassage": 0,
+    "relances": 0,
+    "corrections": []
+   },
+   "effetsRetires": [],
+   "grilleDispenses": {},
+   "notes": "Demande de l'utilisateur sur la capture des quatre portes."
   }
  ]
 }

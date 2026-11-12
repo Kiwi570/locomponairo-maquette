@@ -216,7 +216,8 @@
       "texte": "Isabelle et Denise au 1er étage avec leurs terrasses, Mathilde et Suzanne au 2e sous les poutres. Poussez une porte.",
       "action": "Réserver une chambre",
       "info": "Petit-déjeuner et garage compris en direct",
-      "objet": "Les quatre portes des chambres"
+      "objet": "Les quatre portes des chambres",
+      "voir": "Voir ↓"
     },
     "couloir": {
       "sur": "Le couloir",

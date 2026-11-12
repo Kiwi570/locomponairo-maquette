@@ -2,7 +2,7 @@
    le mode calme, les boucles, les mesures et la bibliothèque d'effets posés par attributs dans les pages.
    Chaque effet propre porte data-effet="nom-du-plan" : porte-entree, axes, manifeste, facade-etages, duo, compris, etiquette-plume,
    tampons, cadran-journee, carrousel-sites, sarment, portes, couloir, journee, carte-route, route-acces, cle-envol. */
-import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=3';
+import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=4';
 
 const gsap = window.gsap;
 const ST = () => window.ScrollTrigger;
@@ -359,7 +359,22 @@ function portes() {
     const battants = $$('.porte-battant', ul);
     battants.forEach((b, i) => gsap.set(b, { '--ouv': '0deg' }));
     window.__pageArrivee = (tl, a) => battants.forEach((b, i) => tl.fromTo(b, { '--ouv': '0deg' }, { '--ouv': '-38deg', duration: 1.1, ease: 'power2.out' }, a + 0.2 + i * 0.12));
-    ST().create({ trigger: ul, start: 'top 60%', end: 'bottom top', scrub: 0.5, onUpdate: (s) => battants.forEach((b, i) => b.style.setProperty('--ouv', `${-38 - s.progress * (60 + i * 6)}deg`)) });
+    /* Au survol (ou au clavier), la porte s'ouvre en grand sur la photo de sa chambre et « Voir » apparaît ;
+       le défilement ne la referme pas tant qu'elle est survolée. */
+    const survol = new Set();
+    const auDefil = (i, p) => -38 - p * (60 + i * 6);
+    let p0 = 0;
+    ST().create({ trigger: ul, start: 'top 60%', end: 'bottom top', scrub: 0.5, onUpdate: (s) => { p0 = s.progress; battants.forEach((b, i) => { if (!survol.has(b)) b.style.setProperty('--ouv', `${auDefil(i, p0)}deg`); }); } });
+    $$('.porte', ul).forEach((a, i) => {
+      const b = battants[i];
+      if (!b) return;
+      const ouvrir = () => { survol.add(b); a.classList.add('est-ouverte'); gsap.to(b, { '--ouv': '-118deg', duration: 0.75, ease: 'power3.out', overwrite: true }); };
+      const fermer = () => { a.classList.remove('est-ouverte'); gsap.to(b, { '--ouv': `${auDefil(i, p0)}deg`, duration: 0.6, ease: 'power2.inOut', overwrite: true, onComplete: () => survol.delete(b) }); };
+      a.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') ouvrir(); });
+      a.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') fermer(); });
+      a.addEventListener('focus', ouvrir);
+      a.addEventListener('blur', fermer);
+    });
   }
   $$('[data-chambre]').forEach((art) => {
     const b = $('[data-battant]', art);

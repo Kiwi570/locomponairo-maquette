@@ -1,19 +1,21 @@
-<!doctype html><!-- Image de partage alentours (fr), gabarit droite. Pour garder ce fichier tel quel, ajouter data-ajuste sur la balise html. -->
+<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <link rel="stylesheet" href="/assets/css/socle.css"><link rel="stylesheet" href="/assets/css/site.css">
 <style>:root{--fond:#f1e9da;--texte:#2b2320}
 html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:var(--fond);color:var(--texte)}
-.pg-carte{position:relative;width:1200px;height:630px;overflow:hidden}
-.pg-photo{position:absolute;object-fit:cover;object-position:56% 40%}
-.pg-logo{height:64px;width:auto;max-width:280px;object-fit:contain;object-position:left center;display:block}
-.pg-accroche{font-family:var(--police-titres, Georgia, serif);font-size:62px;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.01em}
-.pg-nom{font-size:22px;font-weight:600;margin:0;opacity:.85}
-</style></head><body><div class="pg-carte">
-<div style="position:absolute;inset:0 600px 0 0;display:flex;flex-direction:column;justify-content:space-between;padding:56px 56px 52px 64px">
-  <img class="pg-logo" src="/assets/images/logo.svg" alt="">
-  <p class="pg-accroche">Partir de Pouzols</p>
-  <p class="pg-nom">Lo Componaïro</p>
+.carte{display:grid;grid-template-columns:1fr 1fr;width:1200px;height:630px}
+.carte-texte{display:flex;flex-direction:column;justify-content:space-between;padding:64px}
+.carte-texte img{width:72px;height:72px}
+.carte-titre{font-family:var(--police-titres);font-size:64px;line-height:1.02;margin:0;text-wrap:balance}
+.carte-nom{font-size:24px;font-weight:600;margin:0}
+.carte-image{background:center/cover no-repeat}</style>
+</head><body>
+<div class="carte">
+  <div class="carte-texte">
+    <img src="/assets/images/logo.svg" alt="">
+    <p class="carte-titre">Partir de Pouzols</p>
+    <p class="carte-nom">Lo Componaïro</p>
+  </div>
+  <div class="carte-image" style="background-image:url('/assets/images/maison-allee-1280.webp')"></div>
 </div>
-<img class="pg-photo" src="/assets/images/maison-allee-1280.webp" alt="" data-sujet="39.7,19.8,25,39.7" style="left:600px;top:0;width:600px;height:630px">
-<div class="pg-voile" style="position:absolute;left:600px;top:0;width:90px;height:630px;background:linear-gradient(to right, var(--fond), transparent)"></div>
-</div></body></html>
+</body></html>

@@ -447,7 +447,11 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-cadran] .ca
 .porte-battant::after, .chambre-battant::after { top: 52%; bottom: 9%; }
 .porte-poignee { position: absolute; z-index: 1; right: 8%; top: 52%; width: 9px; height: 26px; border-radius: 6px; background: linear-gradient(90deg, #6a4914, #f3d98b 40%, #c7963f 65%, #5e4214); box-shadow: 0 2px 3px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(90, 62, 20, .55); }
 .chambre-plaque { z-index: 1; }
-.porte-nom { font-family: var(--police-titres); font-style: italic; font-size: clamp(1.2rem, 1rem + 1vw, 1.9rem); font-variation-settings: 'SOFT' 100, 'WONK' 1; }
+/* « Voir » : apparaît quand la porte est ouverte en grand (survol, clavier), le clic mène à la chambre. */
+.porte-voir { position: absolute; z-index: 2; left: 50%; bottom: 12%; translate: -50% 10px; padding: .4em 1em; border-radius: 999px; background: rgba(20, 14, 10, .74); color: var(--papier); font-size: max(14px, .9rem); font-weight: 600; letter-spacing: .02em; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .3s ease .2s, translate .3s ease .2s; }
+.porte.est-ouverte .porte-voir { opacity: 1; translate: -50% 0; }
+.porte.est-ouverte .porte-nom { color: var(--vin); }
+.porte-nom { transition: color .3s; font-family: var(--police-titres); font-style: italic; font-size: clamp(1.2rem, 1rem + 1vw, 1.9rem); font-variation-settings: 'SOFT' 100, 'WONK' 1; }
 .porte-etage { font-size: max(12px, .85rem); color: var(--texte-doux); margin-top: -6px; }
 :is(html.calme, html.secours, html:not(.js)) .porte-battant { transform: rotateY(-100deg); }
 

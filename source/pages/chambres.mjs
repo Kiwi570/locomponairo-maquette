@@ -24,6 +24,7 @@ export default (c) => {
         <span class="porte-cadre">
           ${c.media({ nom: x.photos[0], alt: '', cadrage: '50% 45%', classe: 'porte-photo', sizes: '(max-width: 760px) 24vw, 20vw', priorite: i < 2 })}
           <span class="porte-battant" aria-hidden="true"><span class="porte-poignee"></span></span>
+          <span class="porte-voir" aria-hidden="true">${c.t('chambres.tete.voir')}</span>
         </span>
         <span class="porte-nom">${x.nom}</span>
         <span class="porte-etage">${[x.etage, surface(x)].filter(Boolean).join(' · ')}</span>

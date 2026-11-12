@@ -1,5 +1,10 @@
 # Lo Componaïro — historique de la maquette
 
+## v2.1 (fichiers en version 4) — 12 novembre 2026
+
+- Chambres : au survol (ou au clavier), chaque porte de l'ouverture s'ouvre en grand sur toute la photo de sa chambre, une étiquette « Voir ↓ » apparaît, et le clic descend jusqu'à la chambre. Sur téléphone, le toucher mène directement à la chambre.
+- Audit ciblé sur la page Chambres (toutes les étapes) : 0 échec.
+
 ## v2 (fichiers en version 3) — 12 novembre 2026
 
 Audit complet et regard de deux directeurs artistiques extérieurs (grille de la skill v10.10), puis refonte réaliste de l'accueil et corrections de toutes les pages. Comparaison faite fichier par fichier avec l'archive de la v1 corrigée.

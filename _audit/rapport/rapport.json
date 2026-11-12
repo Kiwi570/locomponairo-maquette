@@ -1,19 +1,141 @@
 {
   "echecs": [],
-  "aRegarder": [],
-  "nonLances": [],
+  "aRegarder": [
+    {
+      "niveau": "regarder",
+      "controle": "journal du projet",
+      "detail": "aucune entrée pour la version 4 de donnees/site.json",
+      "etape": "fichiers",
+      "lieux": [
+        ""
+      ]
+    },
+    {
+      "niveau": "regarder",
+      "controle": "ouverture : changement brusque",
+      "detail": "à 1997 ms (différence 36 %) (films/ouverture-chambres-1366.png)",
+      "etape": "films",
+      "page": "/chambres",
+      "taille": "1366×768",
+      "mode": "film",
+      "lieux": [
+        "1366×768 film"
+      ]
+    },
+    {
+      "niveau": "regarder",
+      "controle": "retour avant : changement brusque",
+      "detail": "à 61 ms (différence 40 %) (films/retour-avant-1366.png)",
+      "etape": "films",
+      "page": "/votre-sejour",
+      "taille": "1366×768",
+      "mode": "retour avant",
+      "lieux": [
+        "1366×768 retour avant"
+      ]
+    },
+    {
+      "niveau": "regarder",
+      "controle": "retour avant : changement brusque",
+      "detail": "à 64 ms (différence 40 %) (films/retour-avant-390.png)",
+      "etape": "films",
+      "page": "/votre-sejour",
+      "taille": "390×844",
+      "mode": "retour avant",
+      "lieux": [
+        "390×844 retour avant"
+      ]
+    }
+  ],
+  "nonLances": [
+    {
+      "controle": "Safari (WebKit)",
+      "raison": "WebKit ne peut pas s’installer ici : vérification à faire dans Safari sur le Mac (liste dans le rapport)",
+      "etape": "safari"
+    }
+  ],
   "oks": {
     "vercel.json": 1,
     ".vercelignore": 1,
     "robots.txt": 1,
     "numéro de version": 1,
-    "langues": 1
+    "langues": 1,
+    "grille wouahou": 7,
+    "mesures": 11,
+    "balayage": 1,
+    "films d’ouverture": 2,
+    "films de transition": 2,
+    "bords de l’écran": 2,
+    "intro accélérable et passable": 7,
+    "menu": 1,
+    "clavier": 1,
+    "liens et boutons": 1,
+    "liens vers la page en cours": 1,
+    "changements de hauteur": 1,
+    "fluidité": 2,
+    "défilement selon l’appareil": 5,
+    "mouvement": 2,
+    "effets du plan": 16,
+    "vitesse": 1,
+    "captures": 1
   },
   "infos": [
-    "Numéro de version des fichiers : ?v=3",
-    "Journal v3 : 3 étape(s) notée(s), 90 min de travail pour 150 min de budget, 4 min d’attente de l’utilisateur.",
-    "Audit standard : étapes lourdes sur /, /alentours, /chambres, /contact, /reserver, /votre-sejour.",
-    "Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés."
+    "Numéro de version des fichiers : ?v=4",
+    "Audit standard : étapes lourdes sur /chambres.",
+    "Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés.",
+    "Ouverture /chambres (1366×768) : 2892 ms depuis le premier octet",
+    "Ouverture /chambres (390×844) : 2911 ms depuis le premier octet",
+    "Bords de l’écran : 97 images d’intro, 6 de voile et 47 de menu jugées (panneau immobile couvrant tout l’écran), barre de défilement classique de 15 px.",
+    "Aucun lien profond vers une section d’une autre page.",
+    "Mode calme dispensé : Mode calme retiré à la demande du client (12 novembre 2026) : le site joue toujours ses animations, même si l'appareil demande de les réduire.",
+    "Aucun parcours propre au projet (_audit/parcours.mjs) : filtres, calculateurs, panier, réservation, fenêtres testés seulement par les contrôles généraux.",
+    "Tient dans l'écran /chambres : aucune section épinglée ou plein écran.",
+    "Fluidité /chambres 1366×768 (molette) : 1 % d'images lentes sur 371, tâche la plus longue 0 ms",
+    "Fluidité /chambres 390×844 (doigt) : 0 % d'images lentes sur 1337, tâche la plus longue 0 ms",
+    "Vitesse /chambres : 0.51 s de calcul au chargement (téléphone ralenti)."
   ],
-  "grille": []
+  "grille": [
+    {
+      "cle": "manipuler",
+      "nom": "1. L’effet signature se manipule",
+      "statut": "présent",
+      "detail": "accueil"
+    },
+    {
+      "cle": "intro",
+      "nom": "2. L’intro devient la page",
+      "statut": "présent",
+      "detail": "objet d’ouverture sur 6 page(s), versObjet dans l’intro"
+    },
+    {
+      "cle": "voile",
+      "nom": "3. La transition reprend le motif",
+      "statut": "présent",
+      "detail": "voile en serrure"
+    },
+    {
+      "cle": "fil",
+      "nom": "4. Quelque chose relie les sections et les pages",
+      "statut": "présent",
+      "detail": "sur les 6 page(s)"
+    },
+    {
+      "cle": "typo",
+      "nom": "5. Un titre fait l’événement sur chaque page",
+      "statut": "présent",
+      "detail": "sur les 6 page(s)"
+    },
+    {
+      "cle": "scene",
+      "nom": "6. La scène est un geste du métier",
+      "statut": "présent",
+      "detail": "geste du métier sur /chambres, /, /votre-sejour"
+    },
+    {
+      "cle": "retour",
+      "nom": "7. L’action principale a un retour physique",
+      "statut": "présent",
+      "detail": "sur /reserver"
+    }
+  ]
 }
