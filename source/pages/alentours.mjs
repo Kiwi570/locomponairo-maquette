@@ -47,8 +47,7 @@ const deuxCV = brut(`<svg class="deuxcv" viewBox="0 0 200 200" aria-hidden="true
 export default (c) => {
   const sites = c.donnees.alentours;
   const sentier = existe('grok/g-sentier');
-  const marche = existe('grok/g-marche');
-  return html`
+    return html`
 <section class="tete-carte" id="debut">
   <div class="conteneur tete-carte-grille">
     <div class="tete-carte-texte">
@@ -73,7 +72,7 @@ export default (c) => {
       <h2 data-anime="lettres">${c.t('alentours.sites.titre')}</h2>
       <p data-anime>${c.t('alentours.sites.texte')}</p>
     </div>
-    ${existe('grok/g-riviere') ? c.media({ nom: 'grok/g-riviere', alt: 'Rivière turquoise entre des falaises calcaires', classe: 'sites-photo', sizes: '(max-width: 760px) 92vw, 40vw', attrs: 'data-fx="parallaxe" data-fx-force="10"' }) : ''}
+    ${c.media({ nom: 'site-gorges', alt: 'Les gorges de l’Hérault, eau turquoise entre les falaises', cadrage: '50% 60%', classe: 'sites-photo', sizes: '(max-width: 760px) 92vw, 40vw', attrs: 'data-fx="parallaxe" data-fx-force="10"' })}
   </div>
   <div class="carrousel" data-carrousel data-visuel data-effet="carrousel-sites" tabindex="0" role="region" aria-label="${c.s('accueil.alentours.region')}">
     <div class="carrousel-scene">
@@ -100,7 +99,7 @@ export default (c) => {
 <section class="rando" id="randonnee" data-fx="plein-ecran" style="--fx-longueur:220svh">
   <div data-collant>
     ${sentier
-      ? c.media({ nom: 'grok/g-sentier', alt: 'Sentier de pierre dans la garrigue, chênes verts et collines au loin', classe: 'rando-photo', sizes: '100vw' })
+      ? c.media({ nom: 'rando-vignes', alt: 'Une cycliste devant les vignes et les collines de l’Hérault, au soleil couchant', cadrage: '62% 60%', classe: 'rando-photo', sizes: '100vw' })
       : html`<figure class="media rando-photo rando-dessin" data-visuel>${brut(`<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="1600" height="900" fill="#e9c99a"/><path d="M0 520 C 300 380 520 470 760 400 S 1240 300 1600 380 V900 H0Z" fill="#b98d5f"/><path d="M0 640 C 260 560 600 640 900 580 S 1400 520 1600 600 V900 H0Z" fill="#7d7a4a"/><path d="M0 760 C 300 700 700 780 1000 720 S 1400 700 1600 760 V900 H0Z" fill="#59603a"/><path d="M700 900 C 760 800 860 760 820 700 S 900 620 960 600" fill="none" stroke="#efe0c4" stroke-width="26" stroke-linecap="round"/><circle cx="1180" cy="240" r="70" fill="#f6e3b8"/></svg>`)}</figure>`}
     <div class="suite-mots" aria-hidden="true" data-superpose data-audit-ignorer><span data-fx-ecarte="g">${c.t('alentours.rando.gauche')}</span><span data-fx-ecarte="d">${c.t('alentours.rando.droite')}</span></div>
     <div class="suite-texte conteneur"><div data-fx-apres>
@@ -111,21 +110,22 @@ export default (c) => {
 </section>
 
 <section class="proches" id="tout-pres" data-fil="droite">
-  <div class="conteneur">
-    <p class="surtitre" data-anime>${c.t('alentours.proches.sur')}</p>
-    <h2 data-anime="lignes">${c.t('alentours.proches.titre')}</h2>
-    <ul class="proches-liste" data-anime="cascade">
-      <li class="proche">${c.media({ nom: 'cavaliere', alt: 'Cavalière de dos dans une écurie', classe: 'proche-photo', sizes: '(max-width: 760px) 92vw, 23vw' })}<h3>${c.t('alentours.proches.p1')}</h3><p>${c.t('alentours.proches.p1t')}</p></li>
-      <li class="proche">${marche ? c.media({ nom: 'grok/g-marche', alt: 'Étal de marché au matin : abricots, melons, olives et thym', classe: 'proche-photo', sizes: '(max-width: 760px) 92vw, 23vw' }) : html`<div class="proche-photo proche-dessin" data-visuel>${gravure('fontaine')}</div>`}<h3>${c.t('alentours.proches.p2')}</h3><p>${c.t('alentours.proches.p2t')}</p></li>
-      <li class="proche"><div class="proche-photo proche-dessin" data-visuel>${gravure('masque')}</div><h3>${c.t('alentours.proches.p3')}</h3><p>${c.t('alentours.proches.p3t')}</p></li>
-    </ul>
-    <p class="centre" data-anime><a class="bouton bouton--contour" href="${c.site.liens.tourisme}" target="_blank" rel="noopener" aria-label="${c.s('alentours.proches.plus')} ${c.s('commun.nouvelOnglet')}">${c.t('alentours.proches.plus')}</a></p>
+  <div class="conteneur proches-grille">
+    <div>
+      <p class="surtitre" data-anime>${c.t('alentours.proches.sur')}</p>
+      <h2 data-anime="lignes">${c.t('alentours.proches.titre')}</h2>
+      <ol class="proches-liste" data-direct>
+        ${[1, 2, 3].map((i) => html`<li><span class="proche-nom">${c.t('alentours.proches.p' + i)}</span><span class="proche-texte">${c.t('alentours.proches.p' + i + 't')}</span></li>`)}
+      </ol>
+      <p data-anime><a class="bouton bouton--contour" href="${c.site.liens.tourisme}" target="_blank" rel="noopener" aria-label="${c.s('alentours.proches.plus')} ${c.s('commun.nouvelOnglet')}">${c.t('alentours.proches.plus')}</a></p>
+    </div>
+    ${c.media({ nom: 'pont-canet', alt: 'Pont suspendu rouge au-dessus d’une rivière bordée d’arbres', cadrage: '50% 50%', classe: 'proches-photo', sizes: '(max-width: 760px) 92vw, 42vw', attrs: 'data-fx="parallaxe" data-fx-force="10"' })}
   </div>
 </section>
 
-<section class="fin" id="fin" data-fil="gauche">
+<section class="fin fin--soir" id="fin" data-fil="gauche">
   <div class="conteneur fin-grille">
-    ${c.media({ nom: 'jardin-lauriers', alt: 'Lauriers-roses en fleurs dans le jardin', classe: 'fin-photo', sizes: '(max-width: 760px) 70vw, 30vw', attrs: 'data-anime="rideau"' })}
+    ${c.media({ nom: 'rose-soir', alt: 'Une bouteille de rosé sur la table en mosaïque de la terrasse, au coucher du soleil', cadrage: '60% 50%', classe: 'fin-photo', sizes: '(max-width: 760px) 70vw, 30vw', attrs: 'data-anime="rideau"' })}
     <div class="fin-texte">
       <h2 data-anime="lettres">${c.t('alentours.fin.titre')}</h2>
       <p data-anime>${c.t('alentours.fin.texte')}</p>

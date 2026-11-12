@@ -1,0 +1,227 @@
+{
+ "explication": "Vitrine du projet : des ouvertures de la bibliothèque à dépasser, jamais à imiter (ni leur idée, ni leur mise en page).",
+ "activite": [
+  "hébergement"
+ ],
+ "metier": "chambre d'hôtes",
+ "besoin": [
+  "réserver"
+ ],
+ "ton": [
+  "chaleureux"
+ ],
+ "univers": [],
+ "ambiance": [],
+ "concept": [],
+ "depot": "locomponairo-maquette",
+ "ecartees": [
+  "locomponairo-maquette"
+ ],
+ "ouvertures": [
+  {
+   "rang": 1,
+   "id": "hanamizuki-maquette/hero",
+   "maquette": "hanamizuki-maquette",
+   "client": "maison d'hôtes (minshuku) sur une petite île japonaise au large de Saiki, demi-pension autour du poisson local",
+   "metier": "maison d'hôtes",
+   "activite": [
+    "hébergement",
+    "tourisme"
+   ],
+   "pourquoi": [
+    "même métier",
+    "besoin réserver",
+    "ambiance chaleureux",
+    "clair et sombre alternés (70 % sombre)",
+    "webgl"
+   ],
+   "lumiere": "mixte",
+   "part_sombre": 70,
+   "note_section": 5,
+   "note_maquette": 88,
+   "titre": "Mer et ciel en direct",
+   "description": "Héros sur une mer WebGL dont le ciel, la lumière et la lune suivent la vraie position du soleil sur place (calcul astronomique) ; carte « ciel en direct » avec horloge réglable pour voir l'île à une autre heure, photo cadrée en arche, titre en italique corail. Repli CSS sans WebGL.",
+   "familles": [
+    "webgl"
+   ],
+   "plan": null,
+   "module": "ciel-en-direct",
+   "fiche": "sections/hanamizuki-maquette/hero.json",
+   "capture": "medias/hanamizuki-maquette/hero-p1440.jpg",
+   "video": "medias/hanamizuki-maquette/hero-p720.mp4",
+   "en_ligne": "https://hanamizuki-maquette.vercel.app"
+  },
+  {
+   "rang": 2,
+   "id": "ateliersources-maquette/ouverture",
+   "maquette": "ateliersources-maquette",
+   "client": "lieu de stages et de retraites au bord d'une rivière",
+   "metier": "lieu de stages et de retraites",
+   "activite": [
+    "hébergement",
+    "bien-être"
+   ],
+   "pourquoi": [
+    "même activité",
+    "besoin réserver",
+    "clair et sombre alternés (46 % sombre)",
+    "webgl"
+   ],
+   "lumiere": "mixte",
+   "part_sombre": 46,
+   "note_section": 5,
+   "note_maquette": 88,
+   "titre": "Photo sous l'eau vive",
+   "description": "Héros plein écran dont la photo est rendue en WebGL sous une eau vive qui ondule ; l'eau se clarifie à mesure qu'on défile, le curseur et le toucher y déposent des ronds, puis le titre se révèle ligne par ligne. Sans WebGL ou en mode calme, la photo seule s'affiche, sans second téléchargement.",
+   "familles": [
+    "webgl"
+   ],
+   "plan": null,
+   "module": "eau-qui-refracte",
+   "fiche": "sections/ateliersources-maquette/ouverture.json",
+   "capture": "medias/ateliersources-maquette/ouverture-p1440.jpg",
+   "video": "medias/ateliersources-maquette/ouverture-p720.mp4",
+   "en_ligne": "https://ateliersources-maquette.vercel.app"
+  },
+  {
+   "rang": 3,
+   "id": "talon-libre-maquette/ouverture",
+   "maquette": "talon-libre-maquette",
+   "client": "chalet et appartements de location saisonnière pour skieurs de télémark dans le Grand Massif",
+   "metier": "location saisonnière à la montagne",
+   "activite": [
+    "hébergement",
+    "tourisme"
+   ],
+   "pourquoi": [
+    "même activité",
+    "besoin réserver",
+    "clair et sombre alternés (50 % sombre)",
+    "vitesse",
+    "lumiere-pointeur",
+    "webgl"
+   ],
+   "lumiere": "mixte",
+   "part_sombre": 50,
+   "note_section": 4,
+   "note_maquette": 88,
+   "titre": "Ouverture poudreuse",
+   "description": "Photo de poudreuse à l'aube sous un shader WebGL où la neige s'écarte sous le curseur ; titre en italique « Talon libre, esprit libre. » qui se plie, et départ de la trace rouge de télémark qui suivra toute la page. Repli canvas 2D sans WebGL.",
+   "familles": [
+    "vitesse",
+    "lumiere-pointeur",
+    "webgl",
+    "fil-conducteur"
+   ],
+   "plan": null,
+   "module": "fil-conducteur",
+   "fiche": "sections/talon-libre-maquette/ouverture.json",
+   "capture": "medias/talon-libre-maquette/ouverture-p1440.jpg",
+   "video": "medias/talon-libre-maquette/ouverture-p720.mp4",
+   "en_ligne": "https://talon-libre-maquette.vercel.app"
+  },
+  {
+   "rang": 4,
+   "id": "elka-maquette/debut",
+   "maquette": "elka-maquette",
+   "client": "hypnothérapeute à Bard-lès-Époisses (Côte-d'Or) : séances individuelles, enfants, ateliers d'autohypnose en visio",
+   "metier": "hypnothérapeute",
+   "activite": [
+    "santé",
+    "bien-être"
+   ],
+   "pourquoi": [
+    "activité proche",
+    "besoin réserver",
+    "style clair (9 % sombre)",
+    "webgl",
+    "masque"
+   ],
+   "lumiere": "clair",
+   "part_sombre": 9,
+   "note_section": 5,
+   "note_maquette": 83,
+   "titre": "Libérez votre potentiel grâce à l’hypnose.",
+   "description": "« Libérez votre potentiel grâce à l'hypnose » : arche ouverte sur l'Auxois au lever du soleil (lumière WebGL), statut ouvert ou fermé du cabinet",
+   "familles": [
+    "webgl",
+    "masque"
+   ],
+   "plan": null,
+   "module": null,
+   "fiche": "sections/elka-maquette/debut.json",
+   "capture": "medias/elka-maquette/debut-p1440.jpg",
+   "video": "medias/elka-maquette/debut-p720.mp4",
+   "en_ligne": "https://elka-maquette.vercel.app"
+  },
+  {
+   "rang": 5,
+   "id": "sequoia-studio-maquette/debut",
+   "maquette": "sequoia-studio-maquette",
+   "client": "galerie en ligne d'œuvres d'art mural en éditions limitées (impressions FineArt, caisses américaines, certificats d'authenticité)",
+   "metier": "galerie d'art en ligne",
+   "activite": [
+    "culture",
+    "commerce"
+   ],
+   "pourquoi": [
+    "style sombre (100 % sombre)",
+    "lumiere-pointeur",
+    "masque",
+    "curseur-vivant"
+   ],
+   "lumiere": "sombre",
+   "part_sombre": 100,
+   "note_section": 5,
+   "note_maquette": 87,
+   "titre": "Des œuvres originales prêtes à sublimer vos espaces.",
+   "description": "« Des œuvres originales prêtes à sublimer vos espaces » : une œuvre accrochée dans le noir, éclairée par un projecteur qui suit la souris",
+   "familles": [
+    "lumiere-pointeur",
+    "masque",
+    "curseur-vivant"
+   ],
+   "plan": "recit-lineaire",
+   "module": null,
+   "fiche": "sections/sequoia-studio-maquette/debut.json",
+   "capture": "medias/sequoia-studio-maquette/debut-p1440.jpg",
+   "video": null,
+   "en_ligne": "https://sequoia-studio-maquette.vercel.app"
+  },
+  {
+   "rang": 6,
+   "id": "nolanis-maquette/debut",
+   "maquette": "nolanis-maquette",
+   "client": "Agence de communication visuelle à Strasbourg : print et web, espaces publicitaires, publipostage, photo et vidéo, objets publicitaires, sauvegarde en ligne, formation photo",
+   "metier": "agence de communication visuelle",
+   "activite": [
+    "services-b2b",
+    "média"
+   ],
+   "pourquoi": [
+    "besoin réserver",
+    "style clair (0 % sombre)",
+    "objet-manipulable",
+    "vitesse",
+    "webgl"
+   ],
+   "lumiere": "clair",
+   "part_sombre": 0,
+   "note_section": 5,
+   "note_maquette": 86,
+   "titre": "Votre agence de communication visuelle à Strasbourg",
+   "description": "Épreuve plein cadre de nuanciers et encres ; repère de calage à faire tourner (élan, doigt, clavier) : plus il tourne vite, plus la photo se décale en quatre couleurs, puis tout se cale ; gouttes d'encre quand on le lance fort",
+   "familles": [
+    "objet-manipulable",
+    "vitesse",
+    "webgl"
+   ],
+   "plan": "recit-lineaire",
+   "module": "objet-a-faire-tourner",
+   "fiche": "sections/nolanis-maquette/debut.json",
+   "capture": "medias/nolanis-maquette/debut-p1440.jpg",
+   "video": "medias/nolanis-maquette/debut-p720.mp4",
+   "en_ligne": "https://nolanis-maquette.vercel.app"
+  }
+ ]
+}

@@ -6,11 +6,13 @@ import { cle } from '../gabarits/objets.mjs';
 
 export const page = { cle: 'reserver', fichier: 'reserver', imagePartage: 'jardin-lauriers-1280.webp' };
 
-const cleSvg = () => brut(`<svg class="crochet-cle" viewBox="-34 34 68 150" aria-hidden="true" focusable="false">${cle()}</svg>`);
+/* Une vignette par choix : la chambre (la suite : la porte-fenêtre de Denise sur la terrasse). */
+const VIGNETTES = { isabelle: 'isabelle-1', denise: 'denise-1', mathilde: 'mathilde-2', suzanne: 'suzanne-3', suite: 'denise-3' };
+const cleSvg = () => brut(`<svg class="crochet-cle cle-laiton" viewBox="-34 34 68 150" aria-hidden="true" focusable="false">${cle()}</svg>`);
 
 export default (c) => {
   const ch = c.donnees.chambres;
-  const choix = [...ch.map((x) => ({ cle: x.cle, nom: x.nom, detail: `${x.etage} · ${x.surface} · ${x.lit}`, enfant: !!x.enfant })), { cle: 'suite', nom: 'Suite', detail: c.s('reserver.form.suite'), enfant: true }];
+  const choix = [...ch.map((x) => ({ cle: x.cle, nom: x.nom, detail: [x.etage, /confirmer|compl/.test(x.surface) ? '' : x.surface, x.lit].filter(Boolean).join(' · '), enfant: !!x.enfant })), { cle: 'suite', nom: 'Suite', detail: c.s('reserver.form.suite'), enfant: true }];
   return html`
 <section class="tete-tableau" id="debut">
   <div class="conteneur tete-tableau-grille">
@@ -34,12 +36,11 @@ export default (c) => {
   <div class="conteneur demande-grille">
     <form class="demande-form carte-papier" data-reservation novalidate>
       <h2 data-anime="lignes">${c.t('reserver.form.titre')}</h2>
-      <p class="demande-simule" data-anime>${c.t('reserver.form.simule')}</p>
       <p class="demande-etapes" data-anime>${c.t('reserver.form.etapes')}</p>
       <fieldset class="demande-bloc" data-anime>
         <legend>1 · ${c.t('reserver.form.e1')}</legend>
         <div class="demande-chambres">
-          ${choix.map((x, i) => html`<label class="choix-chambre"><input type="radio" name="chambre" value="${x.cle}" data-nom="${x.nom}" data-enfant="${x.enfant ? 'oui' : 'non'}"><span><strong>${x.cle === 'suite' ? c.t('reserver.form.suite') : x.nom}</strong><small>${x.cle === 'suite' ? 'Isabelle + Denise · terrasse fleurie' : x.detail}</small></span></label>`)}
+          ${choix.map((x, i) => html`<label class="choix-chambre"><input type="radio" name="chambre" value="${x.cle}" data-nom="${x.nom}" data-enfant="${x.enfant ? 'oui' : 'non'}"><span>${c.media({ nom: VIGNETTES[x.cle], alt: '', cadrage: '50% 50%', classe: 'choix-photo', sizes: '72px' })}<strong>${x.cle === 'suite' ? c.t('reserver.form.suite') : x.nom}</strong><small>${x.cle === 'suite' ? 'Isabelle + Denise · terrasse fleurie' : x.detail}</small></span></label>`)}
         </div>
         <p class="champ-erreur" id="err-chambre" data-erreur="chambre" hidden>${c.t('reserver.form.erreurChambre')}</p>
       </fieldset>
@@ -60,6 +61,7 @@ export default (c) => {
         <label class="case"><input type="checkbox" name="anticipee"> ${c.t('reserver.form.anticipee')}</label>
       </fieldset>
       <button type="submit" class="bouton bouton--action" data-grille="retour">${c.t('reserver.form.envoyer')}</button>
+      <p class="demande-simule">${c.t('reserver.form.simule')}</p>
     </form>
     <aside class="recap carte-papier" data-recap aria-live="polite" aria-label="${c.s('reserver.form.recap')}">
       <h3>${c.t('reserver.form.recap')}</h3>

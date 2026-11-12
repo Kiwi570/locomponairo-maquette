@@ -61,6 +61,16 @@ h3 { font-size: clamp(1.3rem, 1.1rem + .6vw, 1.7rem); }
 /* Clés : laiton (trousseau, intro, voile, tableau). */
 .cle-anneau { stroke: var(--laiton); }
 .cle-metal { fill: var(--laiton); }
+.cle-reflet, .cle-anneau-reflet, .cle-orne { display: none; }
+.defs-laiton { position: absolute; width: 0; height: 0; overflow: hidden; }
+/* Clé en vrai laiton : métal en dégradé, arêtes, reflet sur la tige, ombre portée. */
+.cle-laiton { overflow: visible; filter: drop-shadow(0 7px 7px rgba(20, 12, 6, .38)); }
+.cle-laiton .cle-anneau { stroke: url(#laiton-anneau); }
+.cle-laiton .cle-anneau-reflet { display: block; stroke: rgba(255, 244, 205, .55); stroke-dasharray: 26 94; stroke-dashoffset: -8; }
+.cle-laiton .cle-metal { fill: url(#laiton-plat); stroke: #5a3e14; stroke-width: .7; }
+.cle-laiton .cle-tige { fill: url(#laiton-tige); }
+.cle-laiton .cle-orne { display: block; }
+.cle-laiton .cle-reflet { display: block; stroke: rgba(255, 246, 214, .75); stroke-width: 1.1; stroke-linecap: round; fill: none; }
 .trousseau-anneau { stroke: var(--laiton); }
 .trousseau-reflet { stroke: var(--laiton-clair); stroke-dasharray: 40 236; stroke-dashoffset: -20; }
 .trousseau-ombre { fill: none; stroke: rgba(43, 35, 32, .22); stroke-width: 10; filter: blur(3px); }
@@ -71,7 +81,8 @@ h3 { font-size: clamp(1.3rem, 1.1rem + .6vw, 1.7rem); }
 
 /* Intro : le trousseau se pose, les clés tombent sur l'anneau, puis l'anneau rejoint la page. */
 .ouverture-panneau { gap: 14px; padding: var(--gouttiere); color: var(--papier); }
-.ouverture-objet { width: min(46vmin, 300px); aspect-ratio: 1; }
+.ouverture-objet { width: min(18vmin, 112px); aspect-ratio: 68 / 156; perspective: 600px; }
+.cle-intro { display: block; transform-origin: 50% 20%; }
 .ouverture-objet svg { width: 100%; height: 100%; overflow: visible; }
 .trousseau-intro .etiquette-papier { fill: var(--papier); }
 .ouverture-nom { margin: 0; font-family: var(--police-titres); font-size: clamp(2.2rem, min(8vw, 10vh), 5.6rem); line-height: 1.05; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 500; }
@@ -134,8 +145,8 @@ h3 { font-size: clamp(1.3rem, 1.1rem + .6vw, 1.7rem); }
 .maison-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 6vw, 96px); align-items: center; }
 .titre-axes { font-size: clamp(2.3rem, 1.4rem + 3.6vw, 5rem); line-height: 1.06; font-weight: var(--axe-wght, 420); font-variation-settings: 'SOFT' var(--axe-soft, 0), 'WONK' var(--axe-wonk, 0), 'opsz' 144; }
 .manifeste { font-family: var(--police-titres); font-size: clamp(1.25rem, 1.05rem + .8vw, 1.8rem); line-height: 1.45; font-variation-settings: 'SOFT' 50, 'opsz' 36; }
-.manifeste .mot { color: var(--texte-doux); background: linear-gradient(transparent 62%, color-mix(in srgb, var(--laiton-clair) 0%, transparent) 62%); transition: color .35s, background .5s; }
-.manifeste .mot.allume { color: var(--texte); background: linear-gradient(transparent 62%, color-mix(in srgb, var(--laiton-clair) 55%, transparent) 62%); }
+.manifeste .mot { color: var(--texte-doux); transition: color .35s; }
+.manifeste .mot.allume { color: var(--texte); }
 .maison-note { color: var(--texte-doux); }
 .maison-photos { position: relative; display: grid; grid-template-columns: 1fr .55fr; gap: 16px; align-items: end; }
 .maison-allee { aspect-ratio: 4 / 5; }
@@ -318,23 +329,32 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-cadran] .ca
 .fin-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- Sarment : fil conducteur (mécanique du module fil-conducteur) ---------- */
-.fic { position: relative; --fic-epaisseur: 2.4px; }
+.fic { position: relative; --fic-epaisseur: 1.6px; }
 .fic__svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
 :where(.fic > * > *, .fic [data-fil-dessus]) { position: relative; z-index: 2; }
 .fic__rail, .fic__trace { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.fic__rail { stroke: color-mix(in srgb, var(--vigne) 30%, transparent); stroke-width: 1px; stroke-dasharray: 2 7; }
-.fic__trace { stroke: var(--vigne); stroke-width: var(--fic-epaisseur); }
-.fic__feuille { fill: color-mix(in srgb, var(--vigne) 25%, var(--fond)); stroke: var(--vigne); stroke-width: 1.2px; transform-box: fill-box; transform-origin: 0 50%; transform: scale(.25); opacity: .5; transition: transform .6s cubic-bezier(.2, 1.4, .4, 1), opacity .4s, fill .4s; }
-.fic__feuille.est-atteinte { transform: scale(1); opacity: 1; fill: color-mix(in srgb, var(--vigne) 70%, var(--fond)); }
+.fic__rail { stroke: color-mix(in srgb, var(--laiton) 22%, transparent); stroke-width: 1px; stroke-dasharray: 2 7; }
+.fic__trace { stroke: var(--laiton); stroke-width: var(--fic-epaisseur); }
+.fic__pousse { display: none; }
+.fic__pousse > * { transform-box: view-box; transform-origin: 0 0; }
+.fic__pousse :is(.fic__feuille, .fic__nervure, .fic__vrille) { transform: scale(.2); opacity: 0; transition: transform .7s cubic-bezier(.2, 1.4, .4, 1), opacity .4s; }
+.fic__pousse.est-atteinte :is(.fic__feuille, .fic__nervure, .fic__vrille) { transform: scale(1); opacity: 1; }
+.fic__pousse .fic__vrille { transform: rotate(150deg) translate(2px, 0) scale(.2); }
+.fic__pousse.est-atteinte .fic__vrille { transform: rotate(150deg) translate(2px, 0) scale(1); }
+.fic__feuille { fill: color-mix(in srgb, var(--vigne) 78%, var(--fond)); stroke: color-mix(in srgb, var(--vigne) 70%, black); stroke-width: .8px; }
+.fic__nervure, .fic__vrille { fill: none; stroke: color-mix(in srgb, var(--vigne) 55%, black); stroke-width: .9px; stroke-linecap: round; }
+.fic__vrille { stroke: var(--vigne); stroke-width: 1.2px; }
 .fic__objet { opacity: 0; transition: opacity .3s; }
 .fic__objet.est-visible { opacity: 1; }
+.fil-cle .cle-anneau { stroke: url(#laiton-anneau); } .fil-cle .cle-metal { fill: url(#laiton-plat); stroke: #5a3e14; stroke-width: 1.5; }
 .grappe circle { fill: var(--vin); stroke: color-mix(in srgb, var(--vin) 60%, black); stroke-width: .8; }
 .grappe-tige { fill: none; stroke: var(--vigne); stroke-width: 2; }
 .grappe-feuille { fill: var(--vigne); }
 @media (max-width: 699px) { .fic { --fic-epaisseur: 1.8px; } }
 .calme .fic__objet { display: none; }
 .calme .fic__trace { stroke-dashoffset: 0 !important; }
-.calme .fic__feuille { transform: scale(1); opacity: 1; }
+.calme .fic__pousse :is(.fic__feuille, .fic__nervure, .fic__vrille) { transform: scale(1); opacity: 1; }
+.calme .fic__pousse .fic__vrille { transform: rotate(150deg) translate(2px, 0); }
 /* Sections de fond plein : le contenu passe au-dessus du sarment. */
 .fic > :is(.hero, .suite, .soir, .coupe) { position: relative; z-index: 2; }
 
@@ -415,13 +435,18 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-cadran] .ca
 .porte { display: grid; justify-items: center; gap: 6px; text-decoration: none; }
 .porte-cadre { position: relative; display: block; width: 100%; aspect-ratio: 3 / 4.4; max-height: 40svh; border-radius: 999px 999px 4px 4px; overflow: hidden; perspective: 900px; background: #3a2c25; box-shadow: 0 0 0 6px var(--pierre), 0 0 0 7px var(--pierre-fonce), 0 24px 40px -26px rgba(43, 35, 32, .6); }
 .porte-photo { position: absolute !important; inset: 0; border-radius: 0; }
+/* Portes peintes à panneaux moulurés (comme les vraies portes de la maison) : bois peint, panneaux en relief, poignée en laiton. */
 .porte-battant, .chambre-battant { position: absolute; inset: 0; transform-origin: 0 50%; transform: rotateY(var(--ouv, 0deg)); backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  background: linear-gradient(90deg, rgba(0, 0, 0, .18), transparent 12%, transparent 88%, rgba(0, 0, 0, .14)),
-    linear-gradient(var(--volet-clair), var(--volet-clair)) 50% 22% / 62% 26% no-repeat,
-    linear-gradient(var(--volet-clair), var(--volet-clair)) 50% 70% / 62% 36% no-repeat,
-    repeating-linear-gradient(90deg, transparent 0 18px, rgba(0, 0, 0, .06) 18px 19px), var(--volet);
-  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, .18); }
-.porte-poignee { position: absolute; right: 12%; top: 54%; width: 9px; height: 26px; border-radius: 6px; background: var(--laiton-clair); box-shadow: 0 1px 0 rgba(0, 0, 0, .3); }
+  background: linear-gradient(90deg, rgba(0, 0, 0, .24), rgba(255, 255, 255, .05) 16%, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, .18)),
+    repeating-linear-gradient(90deg, transparent 0 7px, rgba(255, 255, 255, .025) 7px 8px, transparent 8px 15px, rgba(0, 0, 0, .045) 15px 16px), var(--volet);
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, .22), inset 0 0 0 5px rgba(255, 255, 255, .05); }
+.porte-battant::before, .porte-battant::after, .chambre-battant::before, .chambre-battant::after { content: ""; position: absolute; left: 17%; right: 17%; border-radius: 3px;
+  background: linear-gradient(155deg, rgba(255, 255, 255, .08), rgba(0, 0, 0, .1)), var(--volet-clair);
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .16), inset -2px -2px 0 rgba(0, 0, 0, .3), 0 0 0 3px var(--volet), 0 0 0 4px rgba(0, 0, 0, .28), 0 0 0 5px rgba(255, 255, 255, .07); }
+.porte-battant::before, .chambre-battant::before { top: 13%; height: 31%; border-radius: 999px 999px 3px 3px; }
+.porte-battant::after, .chambre-battant::after { top: 52%; bottom: 9%; }
+.porte-poignee { position: absolute; z-index: 1; right: 8%; top: 52%; width: 9px; height: 26px; border-radius: 6px; background: linear-gradient(90deg, #6a4914, #f3d98b 40%, #c7963f 65%, #5e4214); box-shadow: 0 2px 3px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(90, 62, 20, .55); }
+.chambre-plaque { z-index: 1; }
 .porte-nom { font-family: var(--police-titres); font-style: italic; font-size: clamp(1.2rem, 1rem + 1vw, 1.9rem); font-variation-settings: 'SOFT' 100, 'WONK' 1; }
 .porte-etage { font-size: max(12px, .85rem); color: var(--texte-doux); margin-top: -6px; }
 :is(html.calme, html.secours, html:not(.js)) .porte-battant { transform: rotateY(-100deg); }
@@ -456,7 +481,8 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-cadran] .ca
 .comparatif { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 .comparatif-ligne { display: grid; grid-template-columns: 1.1fr .8fr .7fr 1.6fr .8fr .6fr; gap: 12px; align-items: center; padding: 14px 18px; border-radius: 12px; background: var(--fond); transition: opacity .35s, filter .35s; }
 .comparatif-ligne small { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--texte-doux); }
-.comparatif-ligne.est-ecartee { opacity: .28; }
+.comparatif-ligne[hidden] { display: none; }
+.filtres-compte { margin: 0 0 0 auto; align-self: center; font-family: var(--police-titres); font-style: italic; color: var(--texte-doux); }
 .comparatif-nom { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-family: var(--police-titres); font-size: 1.35rem; text-decoration: none; }
 .comparatif-initiale { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--vin); color: var(--papier); font-style: italic; }
 .comparatif-vide { margin-top: 12px; }
@@ -501,7 +527,7 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-cadran] .ca
 }
 
 /* Intro : état de départ posé avant le premier affichage (sinon le trousseau complet s'affiche puis disparaît). */
-html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-panneau :is(.trousseau-anneau, .trousseau-reflet, .cle, .etiquette, .trousseau-ombre),
+html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-panneau .cle-intro,
 html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-panneau :is(.ouverture-nom, .ouverture-ligne) { opacity: 0; }
 
 /* ======================= Votre séjour ======================= */
@@ -538,7 +564,9 @@ html.js:not(.calme):not(.secours) .journee { height: calc(var(--n) * 70svh + 100
 
 .garage-section { padding-block: clamp(70px, 10vw, 140px); }
 .garage-grille { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 6vw, 90px); align-items: center; }
-.garage-photo { aspect-ratio: 4 / 5; border-radius: 999px 999px 14px 14px; }
+.garage-photo { aspect-ratio: 4 / 5; max-height: 56svh; width: auto; border-radius: 999px 999px 14px 14px; }
+/* Photo correcte (3/5) : pas en très grand. */
+@media (max-width: 760px) { .garage-photo { aspect-ratio: 4 / 3; max-height: none; width: 100%; border-radius: 14px; } }
 .plaque--ligne { display: inline-grid; min-height: 0; border-radius: 14px; padding: 12px 22px; justify-items: start; text-align: left; }
 .conditions { padding-block: clamp(70px, 10vw, 130px); background: var(--papier); }
 .conditions-liste { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; }
@@ -601,7 +629,7 @@ html.js:not(.calme):not(.secours) .journee { height: calc(var(--n) * 70svh + 100
 .carte-pouzols { font-family: var(--police-titres); font-style: italic; font-size: 30px; font-weight: 500; fill: var(--vin); stroke: var(--vin); stroke-width: .8; font-variation-settings: 'SOFT' 100, 'WONK' 1; }
 html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) text[data-plume]:not(.ecrit) { fill-opacity: 0; stroke-dasharray: 260; stroke-dashoffset: 260; }
 html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) text[data-plume] { transition: stroke-dashoffset 1.6s cubic-bezier(.45, .05, .3, 1), fill-opacity .6s .9s; }
-.medaillon { position: absolute; right: 2%; bottom: 4%; width: clamp(110px, 13vw, 170px); aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 5px var(--papier), 0 18px 30px -16px rgba(43, 35, 32, .6); }
+.medaillon { position: absolute; right: 2%; top: 4%; width: clamp(110px, 13vw, 170px); aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 5px var(--papier), 0 18px 30px -16px rgba(43, 35, 32, .6); }
 .medaillon svg, .medaillon .media { width: 100%; height: 100%; border-radius: 50%; }
 .deuxcv-fond { fill: #8fb3bb; }
 .deuxcv-caisse { fill: #e3b23c; stroke: #2b2320; stroke-width: 3; }
@@ -616,15 +644,16 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) text[data-plume] 
 .rando-dessin svg { width: 100%; height: 100%; }
 .rando-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(31, 24, 21, .78), rgba(31, 24, 21, .05) 60%); pointer-events: none; }
 .proches { padding-block: clamp(70px, 10vw, 140px); }
-.proches-liste { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 2vw, 22px); }
-.proche { display: grid; gap: 6px; align-content: start; }
-.proche h3 { margin: 8px 0 0; font-size: 1.25rem; }
-.proche p { margin: 0; color: var(--texte-doux); }
-.proche-photo { aspect-ratio: 4 / 3; border-radius: 12px; }
-.proche-dessin { display: grid; place-items: center; background: var(--pierre); color: var(--tomette); }
-.proche-dessin--b { background: #dfe3d5; color: var(--volet); }
-.proche-dessin .gravure { width: 40%; }
-@media (max-width: 900px) { .proches-liste { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Tout près : une liste typographique à filets, et une vraie photo. */
+.proches-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(28px, 5vw, 80px); align-items: center; }
+.proches-liste { list-style: none; margin: 22px 0 26px; padding: 0; border-top: 1px solid var(--couleur-ligne); }
+.proches-liste li { position: relative; display: grid; gap: 2px; padding: 14px 0; }
+.proches-liste li::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--tomette); transform: scaleX(0); transform-origin: 0 50%; transition: transform .9s cubic-bezier(.2, .7, .2, 1) calc(var(--i, 0) * .14s); }
+.proches-liste.est-trace li::after, :is(html.calme, html.secours, html:not(.js)) .proches-liste li::after { transform: scaleX(1); }
+.proche-nom { font-family: var(--police-titres); font-style: italic; font-size: clamp(1.35rem, 1.05rem + 1vw, 2rem); font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
+.proche-texte { color: var(--texte-doux); }
+.proches-photo { aspect-ratio: 4 / 5; border-radius: 16px; }
+@media (max-width: 760px) { .proches-grille { grid-template-columns: minmax(0, 1fr); } .proches-photo { aspect-ratio: 4 / 3; } }
 @media (max-width: 760px) {
   .tete-carte { align-items: start; }
   .tete-carte-grille { grid-template-columns: minmax(0, 1fr); gap: 8px; }
@@ -632,9 +661,9 @@ html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) text[data-plume] 
   .carte-svg { max-height: 34svh; }
   .carte-site text { font-size: 15px; }
   .tete-carte-titre { font-size: clamp(2.2rem, 11vw, 3.2rem); }
-  .medaillon { width: 76px; right: 0; bottom: -4px; box-shadow: 0 0 0 3px var(--papier); }
+  .medaillon { width: 76px; right: 0; top: -4px; box-shadow: 0 0 0 3px var(--papier); }
 }
-@media (max-width: 480px) { .proches-liste { grid-template-columns: minmax(0, 1fr); } }
+
 @media (max-height: 820px) and (min-width: 761px) { .tete-carte-titre { font-size: clamp(2.4rem, min(5.6vw, 9.5vh), 5.4rem); } }
 @media (max-height: 500px) and (min-width: 561px) {
   .tete-carte { padding-top: calc(var(--entete-h) + 8px); padding-bottom: 8px; }
@@ -677,7 +706,8 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 /* 404 */
 .introuvable { min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding-top: calc(var(--entete-h) + 24px); padding-bottom: calc(var(--barres-h) + 24px); }
 .introuvable-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 70px); align-items: center; }
-.introuvable-photo { aspect-ratio: 16 / 10; }
+.introuvable-photo { aspect-ratio: 3 / 4; max-height: 74svh; }
+@media (max-width: 760px) { .introuvable-photo { aspect-ratio: 2 / 1 !important; max-height: 22svh; } }
 .introuvable h1 { font-size: clamp(2.2rem, 1.4rem + 3vw, 4.4rem); font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
 .introuvable-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (max-width: 760px) {
@@ -687,15 +717,16 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 }
 
 /* ======================= Contact ======================= */
-.tete-numero { position: relative; display: grid; grid-template-rows: auto auto; padding-top: calc(var(--entete-h) + clamp(24px, 6vh, 64px)); background: var(--fond); }
-.tete-numero-grille { padding-bottom: clamp(20px, 4vh, 40px); }
+.tete-numero { position: relative; display: grid; align-items: center; min-height: 100vh; min-height: 100svh; padding-top: calc(var(--entete-h) + clamp(20px, 4vh, 48px)); padding-bottom: calc(var(--barres-h) + clamp(20px, 4vh, 40px)); background: var(--fond); }
+.tete-numero-grille { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .6fr); gap: clamp(24px, 4vw, 64px); align-items: center; }
+.tete-numero-photo { aspect-ratio: 4 / 5; max-height: calc(100svh - var(--entete-h) - 80px); border-radius: 999px 999px 16px 16px; }
+.tete-numero .numero-geant { font-size: clamp(3rem, min(6.8vw, 13vh), 8.4rem); }
 .tete-numero-titre { font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3.4rem); margin: 0 0 .25em; font-style: italic; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 450; }
 .numero-geant { display: flex; flex-wrap: wrap; gap: 0 .22em; width: fit-content; max-width: 100%; min-height: 64px; align-items: center; padding-block: .12em; margin: .1em 0 .12em; font-family: var(--police-titres); font-size: clamp(3rem, min(11vw, 15vh), 10.5rem); line-height: 1; font-weight: 500; letter-spacing: -.02em; font-variant-numeric: tabular-nums lining-nums; text-decoration: none; color: var(--vin); font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144; }
 .numero-geant:hover { color: var(--tomette); }
 .numero-paire { display: inline-block; }
 .tete-numero-texte { max-width: 38em; color: var(--texte-doux); }
 .tete-numero-coord { font-weight: 600; }
-.tete-numero-bandeau { aspect-ratio: 21 / 6; border-radius: 0; max-height: 36svh; width: 100%; }
 .acces { padding-block: clamp(70px, 10vw, 140px); }
 .acces-grille { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 6vw, 90px); align-items: center; }
 .acces-svg { width: 100%; height: auto; overflow: visible; }
@@ -725,7 +756,9 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 
 /* ======================= Réserver ======================= */
 .tete-tableau { min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding-top: calc(var(--entete-h) + 20px); padding-bottom: calc(var(--barres-h) + 24px);
-  background: linear-gradient(var(--ligne) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, var(--ligne) 1px, transparent 1px) 0 0 / 32px 32px, var(--fond); }
+  position: relative; background: var(--fond); }
+.tete-tableau::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(60% 70% at 74% 48%, rgba(244, 214, 168, .6), rgba(244, 214, 168, 0) 72%); }
+.tete-tableau > * { position: relative; }
 .tete-tableau-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 80px); align-items: center; }
 .tete-tableau-titre { font-size: clamp(2.6rem, min(6.6vw, 11vh), 6.4rem); line-height: 1.02; font-weight: 450; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
 .tete-tableau-info { font-weight: 600; color: var(--volet); }
@@ -742,15 +775,17 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 .crochet-nom { margin-top: 6px; font-family: var(--police-titres); font-style: italic; font-size: clamp(.75rem, 1.5vw, 1rem); }
 .demande { padding-block: clamp(70px, 10vw, 130px); }
 .demande-grille { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(20px, 4vw, 56px); align-items: start; }
-.demande-simule { padding: 10px 14px; border-radius: 10px; background: color-mix(in srgb, var(--laiton-clair) 30%, var(--papier)); font-size: .95rem; }
+.demande-simule { margin: 14px 0 0; color: var(--texte-doux); font-size: max(13px, .88rem); font-style: italic; }
 .demande-etapes { color: var(--texte-doux); }
 .demande-bloc { margin: 0 0 22px; padding: 0; border: 0; }
 .demande-bloc legend { margin-bottom: 10px; font-family: var(--police-titres); font-size: 1.3rem; font-weight: 600; }
-.demande-chambres { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); gap: 8px; }
+.demande-chambres { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 8px; }
 .choix-chambre { position: relative; display: block; cursor: pointer; }
 .choix-chambre input { position: absolute; opacity: 0; inset: 0; }
-.choix-chambre span { display: grid; gap: 2px; min-height: 64px; padding: 10px 14px; border-radius: 12px; border: 1.5px solid var(--pierre-fonce); background: var(--fond); transition: border-color .2s, background-color .2s; }
-.choix-chambre small { color: var(--texte-doux); font-size: .85rem; line-height: 1.35; }
+.choix-chambre span { display: grid; grid-template-columns: 56px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 12px; row-gap: 2px; align-items: start; min-height: 64px; padding: 10px 12px; border-radius: 12px; border: 1.5px solid var(--pierre-fonce); background: var(--fond); transition: border-color .2s, background-color .2s; }
+.choix-chambre small { color: var(--texte-doux); font-size: .85rem; line-height: 1.35; grid-column: 2; }
+.choix-chambre strong { grid-column: 2; }
+.choix-photo { grid-row: 1 / span 2; width: 56px; height: 56px; border-radius: 8px; }
 .choix-chambre input:checked + span { border-color: var(--vin); background: color-mix(in srgb, var(--vin) 8%, var(--papier)); }
 .choix-chambre input:focus-visible + span { outline: 3px solid var(--tomette); outline-offset: 2px; }
 .demande-dates { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
@@ -761,7 +796,7 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 .recap-cle { display: grid; place-items: center; min-height: 92px; margin-bottom: 10px; border-radius: 12px; border: 1.5px dashed var(--pierre-fonce); color: var(--texte-doux); font-size: .92rem; }
 .recap-cle svg { width: 46px; height: auto; }
 .recap-liste { margin: 0; display: grid; gap: 6px; }
-.recap-liste div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--ligne); }
+.recap-liste div { display: flex; justify-content: space-between; gap: 12px; } .recap-liste dt { white-space: nowrap; } .recap-liste div { padding-bottom: 6px; border-bottom: 1px solid var(--ligne); }
 .recap-liste dt { color: var(--texte-doux); }
 .recap-liste dd { margin: 0; text-align: right; font-weight: 600; }
 .recap-pret { position: relative; margin-top: 16px; padding-top: 58px; }
@@ -774,8 +809,10 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
 @media (max-width: 760px) {
   .acces-grille, .ecrire-grille, .tete-tableau-grille, .cadeau-grille { grid-template-columns: minmax(0, 1fr); }
   .reseaux-liste { grid-template-columns: minmax(0, 1fr); }
-  .tete-numero-bandeau { aspect-ratio: 16 / 9; }
-  .numero-geant { font-size: clamp(2.4rem, 13.5vw, 4rem); }
+  .tete-numero { min-height: 0; align-items: start; }
+  .tete-numero-grille { grid-template-columns: minmax(0, 1fr); }
+  .tete-numero-photo { aspect-ratio: 16 / 10; border-radius: 14px; max-height: 30svh; }
+  .tete-numero .numero-geant, .numero-geant { font-size: clamp(2.4rem, 13.5vw, 4rem); }
   .tete-tableau { align-items: start; }
   .tete-tableau-titre { font-size: clamp(2.2rem, 11vw, 3.2rem); }
   .tableau { order: -1; padding: 10px; }
@@ -786,14 +823,16 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
   .demande-dates { grid-template-columns: minmax(0, 1fr); }
   .cadeau-photo { max-width: 60%; }
 }
-@media (max-height: 820px) and (min-width: 761px) { .tete-tableau-titre { font-size: clamp(2.4rem, min(5.6vw, 9.5vh), 5.2rem); } .numero-geant { font-size: clamp(3rem, min(9vw, 13vh), 8rem); } .crochet-cle { max-width: 52px; } }
+@media (max-height: 820px) and (min-width: 761px) { .tete-tableau-titre { font-size: clamp(2.4rem, min(5.6vw, 9.5vh), 5.2rem); } .numero-geant, .tete-numero .numero-geant { font-size: clamp(3rem, min(6.4vw, 12vh), 7.4rem); } .crochet-cle { max-width: 52px; } }
 @media (max-height: 500px) and (min-width: 561px) {
   .tete-tableau, .tete-numero { padding-top: calc(var(--entete-h) + 8px); padding-bottom: 8px; }
   .tete-tableau-titre { font-size: clamp(1.8rem, 9vh, 2.6rem); }
   .tableau-plaque { display: none; }
   .crochet-cle { max-width: 34px; }
   .numero-geant { font-size: clamp(2.2rem, 15vh, 3.6rem); }
-  .tete-numero-bandeau { max-height: 22svh; }
+  .tete-numero { min-height: 0; }
+  .tete-numero .numero-geant { font-size: clamp(2.2rem, 15vh, 3.6rem); }
+  .tete-numero-photo { max-height: calc(100svh - var(--entete-h) - 24px); }
 }
 
 /* Corrections de l'audit : comparatif avec photo, conditions avec photo, petits téléphones. */
@@ -816,7 +855,7 @@ html.js[data-arrivee="intro"]:not(.calme):not(.secours) .ouverture-serrure { opa
   .tete-tableau .crochet-cle { max-width: 24px; }
   .tete-tableau .crochet-nom { font-size: .75rem; }
   .tete-tableau-titre, .tete-carte-titre, .tete-cadran-titre { font-size: clamp(1.9rem, 9.5vw, 2.6rem); }
-  .introuvable-photo { aspect-ratio: 16 / 7; }
+  .introuvable-photo { aspect-ratio: 4 / 3; }
   .introuvable h1 { font-size: 1.9rem; }
 }
 
@@ -859,3 +898,216 @@ h2[data-anime="lettres"] { line-height: 1.25; }
 }
 .tete-numero-coord { align-items: center; }
 .tete-numero-coord a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* ==========================================================================================================
+   Accueil v3 (12 novembre 2026, après le regard du directeur artistique) : des photos du lieu en grand et la
+   typographie, un seul langage. Les règles plus haut pour .hero, .maison, .o3d, .suite, .inclus, .soir,
+   .distinctions et .ronde ne servent plus à l'accueil (la ronde reste sur Alentours).
+   ========================================================================================================== */
+
+/* Entrée : la vraie porte de la maison, qui s'ouvre sur la chambre choisie (au défilement, au clic, au glisser). */
+.entree { display: block; padding: 0; min-height: 100vh; min-height: 100svh; color: var(--texte); background: var(--fond); }
+/* Lumière chaude de la porte sur le mur crème (pseudo-élément : un dégradé en fond de section passait pour une photo). */
+.entree::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(70% 80% at 92% 45%, rgba(244, 214, 168, .55), rgba(244, 214, 168, 0) 70%); }
+.entree-grille { position: relative; z-index: 2; min-height: 100vh; min-height: 100svh; display: grid; align-items: center; padding-top: calc(var(--entete-h) + 24px); padding-bottom: calc(var(--barres-h) + 32px); }
+.entree-texte { max-width: min(45vw, 600px); }
+.entree .hero-sur { color: var(--tomette); }
+.entree .hero-titre { color: var(--texte); }
+.entree .hero-ligne--b { color: var(--vin); }
+.entree .hero-intro { color: var(--texte); max-width: 31em; font-size: clamp(1.08rem, 1rem + .35vw, 1.25rem); }
+.entree .hero-actions .bouton { font-size: 1.05rem; padding: .85em 1.5em; }
+.entree .hero-info { color: var(--texte); }
+.entree .hero-info span { background: var(--volet); color: var(--papier); }
+.hero-preuves { list-style: none; margin: 22px 0 0; padding: 16px 0 0; border-top: 1px solid var(--couleur-ligne); display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: max(14px, .95rem); color: var(--texte); }
+.hero-preuves strong { font-family: var(--police-titres); font-size: 1.25rem; font-weight: 600; color: var(--vin); margin-right: .2em; }
+.hero-preuves li { display: flex; align-items: baseline; }
+.entree-porte { position: absolute; z-index: 3; background: #241a14; top: var(--entete-h); right: 0; bottom: 0; width: min(50vw, 860px); }
+.entree-scene { position: absolute; inset: 0; overflow: hidden; background: #241a14; perspective: 1150px; perspective-origin: 55% 45%; border-top-left-radius: 12px; touch-action: pan-y; cursor: grab; }
+.entree-scene:active { cursor: grabbing; }
+.entree-chambres { position: absolute; inset: 0; transform: scale(1.08); transform-origin: 30% 50%; }
+.entree-chambre { position: absolute; inset: 0; opacity: 0; transition: opacity .7s ease; }
+.entree-chambre.est-visible { opacity: 1; }
+.entree-photo { position: absolute !important; inset: 0; border-radius: 0; }
+.entree-lumiere { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(60% 75% at 30% 55%, rgba(255, 226, 170, .95), rgba(255, 196, 120, .5) 40%, rgba(255, 180, 100, 0) 75%); }
+/* Ombre du battant sur la chambre : elle s'étire depuis les gonds quand la porte s'ouvre. */
+.entree-portee { position: absolute; top: 0; bottom: 0; left: 0; width: 46%; pointer-events: none; transform-origin: 0 50%; transform: scaleX(0); opacity: 0; background: linear-gradient(90deg, rgba(14, 9, 6, .78), rgba(14, 9, 6, .35) 45%, rgba(14, 9, 6, 0)); }
+.entree-battant { position: absolute; inset: 0; transform-origin: 0 50%; backface-visibility: hidden; -webkit-backface-visibility: hidden; will-change: transform; }
+.entree-souffle { position: absolute; inset: 0; transform-origin: 0 50%; box-shadow: inset -10px 0 0 #3a2618, inset -12px 0 22px rgba(0, 0, 0, .45); }
+.entree-souffle::after { content: ""; position: absolute; inset: 0; box-shadow: inset -6px 0 0 rgba(30, 20, 14, .6); pointer-events: none; }
+.entree-ombre { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: linear-gradient(90deg, rgba(20, 13, 9, .15), rgba(20, 13, 9, .85)); }
+.entree.est-attente .entree-souffle { animation: entree-souffle 4.8s ease-in-out infinite; }
+@keyframes entree-souffle { 0%, 100% { transform: rotateY(0deg); } 50% { transform: rotateY(-7deg); } }
+.entree-porte::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 50%; z-index: 2; pointer-events: none; background: linear-gradient(0deg, rgba(20, 14, 10, .9) 0%, rgba(20, 14, 10, .72) 38%, rgba(20, 14, 10, 0)); }
+.entree-choix { position: absolute; z-index: 3; left: clamp(18px, 2.4vw, 36px); right: clamp(18px, 2.4vw, 36px); bottom: calc(var(--barres-h) + clamp(18px, 3vh, 34px)); color: var(--papier); }
+.entree-question { margin: 0 0 10px; font-size: max(12px, .78rem); font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--papier); }
+.entree-boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+.entree-boutons button { min-height: 44px; padding: .35em 1em; border-radius: 999px; border: 1px solid rgba(251, 247, 238, .55); background: rgba(20, 14, 10, .35); color: var(--papier); font-family: var(--police-titres); font-style: italic; font-size: 1.15rem; font-variation-settings: 'SOFT' 100, 'WONK' 1; cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
+.entree-boutons button:hover { border-color: var(--laiton-clair); }
+.entree-boutons button[aria-pressed="true"] { background: var(--papier); color: var(--texte); border-color: var(--papier); }
+.entree-legende { margin: 12px 0 0; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: .5em; row-gap: 0; font-size: max(14px, 1rem); color: var(--papier); }
+.entree-legende strong { font-family: var(--police-titres); font-style: italic; font-size: 1.2rem; font-weight: 500; color: var(--papier); }
+.entree-legende a { display: inline-flex; align-items: center; min-height: 44px; color: var(--laiton-clair); }
+:is(html.calme, html.secours) .entree.est-attente .entree-souffle { animation: none; }
+html:not(.js) .entree-choix, html.secours .entree-choix { display: none; }
+@media (max-width: 899px) {
+  .entree { display: flex; flex-direction: column; align-items: stretch; background: var(--fond); }
+  .entree-scene .entree-battant .media img { object-position: 72% 45%; }
+  .entree-porte { position: relative; order: -1; top: auto; width: auto; height: 30svh; min-height: 220px; margin-top: var(--entete-h); }
+  .entree-scene { border-radius: 0; }
+  .entree-grille { min-height: 0; padding-top: 18px; padding-bottom: calc(var(--barres-h) + 28px); }
+  .entree-texte { max-width: none; }
+  .entree-choix { bottom: 12px; left: 14px; right: 14px; }
+  .entree-question { display: none; }
+  .entree-boutons button { font-size: 1.02rem; padding: .3em .8em; }
+  .entree-legende { display: none; }
+  .hero-preuves { margin-top: 16px; padding-top: 12px; }
+}
+@media (max-width: 760px) {
+  .entree .hero-titre { font-size: clamp(2.2rem, 10.5vw, 3.2rem); }
+  .entree .hero-sur { margin-bottom: .5em; letter-spacing: .14em; }
+  .entree-boutons { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -14px; padding-inline: 14px; }
+  .entree-boutons::-webkit-scrollbar { display: none; }
+  .entree-boutons button { flex: none; }
+}
+@media (max-width: 760px) and (max-height: 700px) {
+  .entree-porte { height: 27svh; min-height: 140px; }
+  .entree .hero-intro, .hero-preuves { display: none; }
+  .entree .hero-titre { font-size: clamp(2rem, 9.6vw, 2.6rem); }
+  .entree-grille { padding-top: 12px; }
+}
+@media (max-height: 820px) and (min-width: 900px) { .entree .hero-titre { font-size: clamp(2.4rem, min(5.4vw, 9.4vh), 5rem); } .hero-preuves { margin-top: 14px; padding-top: 10px; } }
+@media (max-height: 500px) and (min-width: 561px) {
+  .entree { display: block; }
+  .entree-porte { position: absolute; top: var(--entete-h); width: 46vw; height: auto; margin: 0; }
+  .entree-grille { min-height: 100svh; padding-top: calc(var(--entete-h) + 8px); padding-bottom: 12px; }
+  .entree-texte { max-width: 48vw; }
+  .entree .hero-titre { font-size: clamp(1.8rem, 9.5vh, 2.6rem); }
+  .entree-choix { bottom: 8px; }
+  .hero-preuves { display: none; }
+}
+
+/* Téléphone debout : la porte en grand derrière le texte (au moins la moitié de l'écran), le texte sur un dégradé sombre en bas. */
+@media (max-width: 760px) and (orientation: portrait) {
+  .entree { display: block; min-height: 100svh; }
+  .entree-porte { position: absolute; top: var(--entete-h); left: 0; right: 0; bottom: 0; width: auto; height: auto; min-height: 0; margin: 0; }
+  .entree-porte::after { height: 78%; background: linear-gradient(0deg, rgba(18, 12, 8, .95) 0%, rgba(18, 12, 8, .9) 58%, rgba(18, 12, 8, .6) 80%, rgba(18, 12, 8, 0)); }
+  /* La grille commence sous les prénoms (elle ne les recouvre pas), le texte reste en bas. */
+  .entree-grille { position: relative; z-index: 4; min-height: calc(100svh - var(--entete-h) - 68px); margin-top: calc(var(--entete-h) + 68px); align-items: end; padding-top: 12px; padding-bottom: calc(var(--barres-h) + 18px); }
+  .entree-texte { pointer-events: auto; color: var(--papier); }
+  .entree .hero-sur { color: var(--papier); }
+  .entree .hero-titre { color: var(--papier); }
+  .entree .hero-ligne--b { color: var(--laiton-clair); }
+  .entree .hero-intro { color: rgba(251, 247, 238, .9); }
+  .entree .hero-info { color: var(--papier); }
+  .entree .hero-info span { background: rgba(251, 247, 238, .12); color: var(--papier); box-shadow: inset 0 0 0 1px rgba(251, 247, 238, .55); }
+  .entree .bouton--contour { color: var(--papier); }
+  .entree .hero-preuves { display: none; }
+  .entree-choix { top: 12px; bottom: auto; }
+}
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 700px) { .entree .hero-intro { display: none; } }
+/* Sans JavaScript, l'en-tête n'est pas fixe : l'entrée tient dans l'écran sous lui. */
+@media (max-width: 760px) and (orientation: portrait) { html:not(.js) .entree { min-height: calc(100svh - 64px); } html:not(.js) .entree-grille { min-height: calc(100svh - 64px - 68px); margin-top: 68px; } html:not(.js) .entree-porte { top: 0; } }
+
+/* La façade, étage par étage : la vraie photo reste en place, une bande de lumière suit l'étage qu'on lit. */
+.facade { padding-block: clamp(60px, 8vw, 120px) clamp(40px, 6vw, 90px); }
+.facade-grille { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(24px, 4.5vw, 72px); align-items: start; }
+.facade-visuel { position: sticky; top: calc(var(--entete-h) + 16px); height: calc(100svh - var(--entete-h) - var(--barres-h) - 32px); max-height: 860px; overflow: hidden; border-radius: 12px; background: #2a201a; }
+/* Lueur chaude sur l'étage lu (les fenêtres « s'allument »), le reste passe seulement au soir. */
+.facade-lueur { position: absolute; left: 0; right: 0; top: 0; height: 100px; pointer-events: none; z-index: 1; background: linear-gradient(180deg, rgba(255, 196, 120, 0), rgba(255, 196, 120, .26) 28%, rgba(255, 210, 140, .3) 50%, rgba(255, 196, 120, .26) 72%, rgba(255, 196, 120, 0)); opacity: 0; transition: opacity .5s; }
+.facade-lueur.est-allumee { opacity: 1; }
+.facade-photo { position: absolute !important; inset: 0; border-radius: 0; }
+.facade-nuit { position: absolute; left: 0; right: 0; height: 100%; pointer-events: none; will-change: transform; }
+.facade-nuit--haut { top: 0; transform: translateY(-100%); background: linear-gradient(180deg, rgba(48, 30, 18, .5) 0, rgba(48, 30, 18, .5) calc(100% - 46px), rgba(48, 30, 18, 0) 100%); }
+.facade-nuit--bas { top: 0; transform: translateY(100%); background: linear-gradient(0deg, rgba(48, 30, 18, .5) 0, rgba(48, 30, 18, .5) calc(100% - 46px), rgba(48, 30, 18, 0) 100%); }
+.facade-repere { position: absolute; left: 0; top: var(--y); margin: 0; transform: translateY(-50%); display: flex; align-items: center; gap: 10px; pointer-events: none; opacity: .0; transition: opacity .45s; }
+.facade-repere span { padding: 6px 14px 6px 16px; border-radius: 0 999px 999px 0; background: var(--papier); color: var(--texte); font-family: var(--police-titres); font-style: italic; font-size: 1.05rem; box-shadow: 0 6px 18px rgba(0, 0, 0, .25); }
+.facade-repere::after { content: ""; width: clamp(30px, 6vw, 90px); height: 1px; background: var(--laiton-clair); }
+.facade-repere.est-active { opacity: 1; }
+.facade-texte { display: grid; }
+.facade-intro { min-height: 54svh; display: flex; flex-direction: column; justify-content: center; }
+.facade-intro .manifeste { font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); }
+.facade-etage { min-height: 58svh; display: flex; flex-direction: column; justify-content: center; padding-block: 24px; opacity: .38; transition: opacity .5s; }
+.facade-etage.est-active { opacity: 1; }
+.facade-niveau { margin: 0 0 .25em; font-family: var(--police-titres); font-style: italic; font-size: clamp(2rem, 1.4rem + 2.2vw, 3.4rem); line-height: 1.05; color: var(--tomette); font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
+.facade-phrase { margin: 0 0 18px; font-size: clamp(1.02rem, .95rem + .3vw, 1.18rem); max-width: 30em; }
+.facade-chambres { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.facade-chambre { display: grid; gap: 4px; color: inherit; text-decoration: none; }
+.facade-chambre-photo { aspect-ratio: 4 / 3; border-radius: 12px; }
+.facade-vue { aspect-ratio: 16 / 7; border-radius: 12px; margin: 4px 0 16px; }
+.facade-chambre-photo img { transition: transform .6s ease; }
+.facade-chambre:hover .facade-chambre-photo img, .facade-chambre:focus-visible .facade-chambre-photo img { transform: scale(1.05); }
+.facade-chambre-nom { margin-top: 6px; font-family: var(--police-titres); font-size: 1.35rem; font-weight: 560; }
+.facade-chambre-nom::after { content: " →"; color: var(--tomette); }
+.facade-chambre-infos { color: var(--texte-doux); font-size: max(13px, .9rem); }
+
+:is(html.calme, html.secours, html:not(.js)) .facade-etage { opacity: 1; }
+@media (max-height: 820px) and (min-width: 761px) { .facade-chambre-photo { aspect-ratio: 16 / 10; } .facade-etage { min-height: 52svh; } .facade-intro { min-height: 46svh; } }
+@media (max-width: 760px) {
+  .facade-grille { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .facade-visuel { position: relative; top: auto; height: auto; aspect-ratio: 4 / 3; min-height: 0; border-radius: 14px; }
+  .facade-nuit, .facade-repere, .facade-lueur { display: none; }
+  .facade-etage { opacity: 1; }
+  .facade-repere span { font-size: .92rem; padding: 4px 12px; }
+  .facade-intro { min-height: 0; padding-top: 28px; }
+  .facade-etage { min-height: 0; padding-block: 34px 10px; }
+  .facade-chambres { gap: 12px; }
+  .facade-chambre-nom { font-size: 1.15rem; }
+}
+@media (max-height: 500px) and (min-width: 561px) { .facade-visuel { height: calc(100svh - var(--entete-h) - 24px); } .facade-etage, .facade-intro { min-height: 0; padding-block: 24px; } }
+
+/* La suite familiale : les deux chambres voisines se rapprochent au défilement. */
+.duo { padding-block: clamp(70px, 9vw, 130px); overflow: hidden; overflow: clip; }
+.duo-photos { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 22px); width: min(1180px, calc(100% - 2 * var(--gouttiere, 20px))); margin-inline: auto; }
+.duo-photo { aspect-ratio: 4 / 3; border-radius: 12px; will-change: transform; }
+.duo-mots { margin: clamp(10px, 2vw, 24px) 0 0; display: flex; justify-content: center; align-items: baseline; gap: .22em; pointer-events: none; font-family: var(--police-titres); font-style: italic; font-size: clamp(2.6rem, 8vw, 7.6rem); line-height: 1.05; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; color: var(--texte); white-space: nowrap; }
+.duo-plus { color: var(--tomette); }
+.duo-mots span { display: inline-block; will-change: transform; }
+.duo-texte { max-width: 46rem; text-align: center; margin-top: clamp(28px, 4vw, 52px); }
+.duo-texte h2 { margin-top: 0; }
+@media (max-width: 760px) { .duo-photo { aspect-ratio: 3 / 4; } .duo-mots { font-size: clamp(2.1rem, 11vw, 3.4rem); } }
+
+/* En direct, tout est compris : une liste typographique, un trait de laiton qui se trace sous chaque ligne. */
+.direct { padding-block: clamp(70px, 9vw, 130px); background: var(--texte); color: var(--papier); }
+.direct .surtitre { color: var(--laiton-clair); }
+.direct-grille { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(28px, 5vw, 88px); align-items: center; }
+.direct-chapo { color: rgba(251, 247, 238, .78); max-width: 36em; }
+.direct-liste { list-style: none; margin: 26px 0 22px; padding: 0; }
+.direct-liste li { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "mot inclus" "detail inclus"; column-gap: 18px; padding: 12px 0 13px; }
+.direct-liste li::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--laiton-clair); transform: scaleX(0); transform-origin: 0 50%; transition: transform .9s cubic-bezier(.2, .7, .2, 1) calc(var(--i, 0) * .14s); }
+.direct-liste.est-trace li::after, :is(html.calme, html.secours, html:not(.js)) .direct-liste li::after { transform: scaleX(1); }
+.direct-mot { grid-area: mot; font-family: var(--police-titres); font-style: italic; font-size: clamp(1.45rem, 1.05rem + 1.4vw, 2.3rem); line-height: 1.12; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; }
+.direct-detail { grid-area: detail; color: rgba(251, 247, 238, .72); font-size: max(13px, .95rem); }
+.direct-inclus { grid-area: inclus; align-self: center; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--laiton-clair); }
+.direct-arrivee { display: grid; gap: 10px; justify-items: start; }
+.direct-prix { margin: -6px 0 20px; color: rgba(251, 247, 238, .78); font-size: max(13px, .92rem); }
+.direct-horaires { margin: 0; font-weight: 600; }
+.direct .soir-statut { margin: 0; }
+.direct .bouton--contour { color: var(--papier); border-color: rgba(251, 247, 238, .6); }
+.direct-photo { aspect-ratio: 4 / 5; border-radius: 12px; max-height: 78svh; }
+@media (max-width: 760px) { .direct-grille { grid-template-columns: minmax(0, 1fr); } .direct-visuel { order: -1; } .direct-photo { aspect-ratio: 4 / 3; } }
+@media (max-height: 820px) and (min-width: 761px) { .direct-liste li { padding: 8px 0 9px; } .direct-photo { max-height: 70svh; } }
+
+/* Alentours de l'accueil : une seule grande photo en lumière naturelle, puis les vrais trajets du relevé. */
+.horizons { padding-block: clamp(70px, 9vw, 130px) clamp(50px, 7vw, 100px); }
+.horizons-photo { aspect-ratio: 21 / 9; border-radius: 12px; }
+.horizons-photo .media-legende { position: absolute; left: 16px; bottom: 14px; margin: 0; padding: 4px 12px; border-radius: 999px; background: rgba(20, 14, 10, .62); color: var(--papier); font-family: var(--police-titres); font-style: italic; font-size: max(14px, .95rem); }
+.horizons-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(24px, 5vw, 80px); align-items: start; margin-top: clamp(24px, 3.5vw, 48px); }
+.horizons-tete h2 { margin-top: 0; }
+.horizons-trajets { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--couleur-ligne); }
+.horizons-trajets li { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; }
+.horizons-trajets li::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--tomette); transform: scaleX(0); transform-origin: 0 50%; transition: transform .9s cubic-bezier(.2, .7, .2, 1) calc(var(--i, 0) * .14s); }
+.horizons-trajets.est-trace li::after, :is(html.calme, html.secours, html:not(.js)) .horizons-trajets li::after { transform: scaleX(1); }
+.trajet-lieu { font-family: var(--police-titres); font-size: clamp(1.2rem, 1rem + .6vw, 1.55rem); }
+.trajet-temps { font-family: var(--police-titres); font-style: italic; font-size: clamp(1.3rem, 1.05rem + .8vw, 1.9rem); color: var(--tomette); font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; white-space: nowrap; }
+@media (max-width: 760px) { .horizons-photo { aspect-ratio: 4 / 3; } .horizons-grille { grid-template-columns: minmax(0, 1fr); } }
+
+.fin-avis { margin: 18px 0 0; }
+.fin-avis a { display: inline-flex; align-items: center; min-height: 44px; color: var(--texte-doux); }
+
+/* Fin d'Alentours : le soir, sur fond sombre, la vraie table de la terrasse au couchant. */
+.fin--soir { background: var(--texte); color: var(--papier); }
+.fin--soir .fin-photo { border-radius: 18px; }
+.fin--soir .bouton--action { background: var(--laiton-clair); color: var(--texte); }
+.fin--soir .bouton--action:hover { background: var(--papier); }
+/* Pied de page sur téléphone : deux colonnes, moins long. */
+@media (max-width: 760px) { .pied-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; } .pied-grille > :first-child { grid-column: 1 / -1; } }

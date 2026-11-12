@@ -8,13 +8,13 @@
       "langue": "fr",
       "fichier": "assets/partage/accueil-fr.jpg",
       "gabarit": "droite",
-      "image": "maison-facade-1280.webp",
-      "poids": 125486,
+      "image": "porte-soir-1280.webp",
+      "poids": 86713,
       "sujet": {
-        "x": 641,
-        "y": 127,
-        "l": 523,
-        "h": 478
+        "x": 600,
+        "y": 0,
+        "l": 575,
+        "h": 630
       },
       "textes": [
         {
@@ -34,12 +34,6 @@
           "y": 543,
           "l": 480,
           "h": 35
-        },
-        {
-          "x": 600,
-          "y": 0,
-          "l": 30,
-          "h": 630
         }
       ],
       "recouvrement": 0

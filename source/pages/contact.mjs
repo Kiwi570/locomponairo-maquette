@@ -19,13 +19,15 @@ const plan = brut(`<svg class="acces-svg" viewBox="0 0 600 420" aria-hidden="tru
 export default (c) => html`
 <section class="tete-numero" id="debut">
   <div class="conteneur tete-numero-grille">
-    <p class="surtitre" data-anime="gsap" data-tete-anime>${c.t('contact.tete.sur')}</p>
-    <h1 class="tete-numero-titre" data-anime="gsap" data-tete-anime>${c.t('contact.tete.titre')}</h1>
-    <a class="numero-geant" href="tel:${c.site.contact.telephoneLien}" data-action-principale data-iris-centre data-grille="typo" data-effet="numero" aria-label="${c.s('commun.appeler')} ${c.site.contact.telephone}">${c.site.contact.telephone.split(' ').map((g) => html`<span class="numero-paire">${g}</span>`)}</a>
-    <p class="tete-numero-texte masque-ecran-bas" data-anime="gsap" data-tete-anime>${c.t('contact.tete.texte')}</p>
-    <p class="tete-numero-coord" data-anime="gsap" data-tete-anime><span data-info-cle>${c.t('contact.tete.info')}</span><a href="mailto:${c.site.contact.email}">${c.site.contact.email}</a></p>
+    <div class="tete-numero-bloc">
+      <p class="surtitre" data-anime="gsap" data-tete-anime>${c.t('contact.tete.sur')}</p>
+      <h1 class="tete-numero-titre" data-anime="gsap" data-tete-anime>${c.t('contact.tete.titre')}</h1>
+      <a class="numero-geant" href="tel:${c.site.contact.telephoneLien}" data-action-principale data-iris-centre data-grille="typo" data-effet="numero" aria-label="${c.s('commun.appeler')} ${c.site.contact.telephone}">${c.site.contact.telephone.split(' ').map((g) => html`<span class="numero-paire">${g}</span>`)}</a>
+      <p class="tete-numero-texte masque-ecran-bas" data-anime="gsap" data-tete-anime>${c.t('contact.tete.texte')}</p>
+      <p class="tete-numero-coord" data-anime="gsap" data-tete-anime><span data-info-cle>${c.t('contact.tete.info')}</span><a href="mailto:${c.site.contact.email}">${c.site.contact.email}</a></p>
+    </div>
+    ${c.media({ nom: 'maison-allee', alt: 'Allée bordée de céanothes jusqu’à la maison', cadrage: '53% 45%', classe: 'tete-numero-photo', sizes: '(max-width: 760px) 100vw, 34vw', priorite: true, attrs: 'data-fx="parallaxe" data-fx-force="8"' })}
   </div>
-  ${c.media({ nom: 'maison-allee', alt: 'Allée bordée de céanothes jusqu’à la maison', cadrage: '53% 45%', classe: 'tete-numero-bandeau', sizes: '100vw', priorite: true, attrs: 'data-fx="parallaxe" data-fx-force="12"' })}
 </section>
 
 <section class="acces" id="acces" data-fil="gauche">
@@ -49,7 +51,7 @@ export default (c) => html`
       <p class="surtitre" data-anime>${c.t('contact.ecrire.sur')}</p>
       <h2 data-anime="lignes">${c.t('contact.ecrire.titre')}</h2>
       <p data-anime>${c.t('contact.ecrire.texte')}</p>
-      ${c.media({ nom: 'grok/g-pierre', alt: 'Mur de pierre calcaire et ombre d’une feuille de vigne', classe: 'ecrire-photo', sizes: '(max-width: 760px) 92vw, 34vw', attrs: 'data-anime="rideau"' })}
+      ${c.media({ nom: 'porte-chambre-ouverte', alt: 'Porte blanche à panneaux ouverte sur une chambre aux murs rouges', cadrage: '45% 50%', classe: 'ecrire-photo', sizes: '(max-width: 760px) 92vw, 34vw', attrs: 'data-anime="rideau"' })}
     </div>
     <form class="formulaire carte-papier" data-formulaire action="#" novalidate data-tampon-recu>
       <div class="champ"><label for="f-nom">${c.t('contact.ecrire.nom')}</label><input id="f-nom" name="nom" autocomplete="name" required></div>

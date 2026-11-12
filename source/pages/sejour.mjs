@@ -10,7 +10,7 @@ const ETAPES = [
   { n: 2, photo: 'maison-porte', alt: 'Porte d’entrée en bois de la maison', h: 11 },
   { n: 3, photo: 'maison-cour', alt: 'Cour plantée devant la maison', h: 14.5 },
   { n: 4, photo: 'maison-allee', alt: 'Allée bordée de céanothes jusqu’à la maison', h: 17 },
-  { n: 5, photo: 'horloge', alt: 'Horloge ancienne de la maison', h: 22 },
+  { n: 5, photo: 'portail', alt: 'Le portail bleu de la maison sur la rue, sous les lauriers-roses', h: 22 },
   { n: 6, photo: 'maison-facade', alt: 'Façade de la maison et porte du garage', h: 23 },
 ];
 

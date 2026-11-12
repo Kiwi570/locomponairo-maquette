@@ -6,7 +6,7 @@ export const page = { cle: '404', fichier: '404', langues: ['fr'], partage: fals
 export default (c) => html`
 <section class="introuvable" id="debut">
   <div class="conteneur introuvable-grille">
-    ${c.media({ nom: 'grok/g-404', alt: c.s('introuvable.alt'), priorite: true, classe: 'introuvable-photo', sizes: '(max-width: 760px) 92vw, 50vw', attrs: 'data-iris-centre data-fx="zoom" data-effet="cle-seule"' })}
+    ${c.media({ nom: 'porte-verte', alt: c.s('introuvable.alt'), cadrage: '78% 55%', priorite: true, classe: 'introuvable-photo', sizes: '(max-width: 760px) 92vw, 50vw', attrs: 'data-iris-centre data-fx="zoom" data-effet="cle-seule"' })}
     <div>
       <h1 data-anime="lettres">${c.t('introuvable.titre')}</h1>
       <p data-anime>${c.t('introuvable.texte')}</p>

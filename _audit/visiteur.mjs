@@ -11,7 +11,8 @@
      defiler [n]            fait défiler de n écrans (1 par défaut) ; compte n gestes
      remonter [n]           l'inverse
      cliquer <texte>        clique le lien ou le bouton visible dont le texte (ou le nom accessible) contient <texte> ; 1 geste
-     menu                   ouvre le menu (bouton Menu) ; 1 geste
+                            (un élément recouvert ou hors de portée échoue : « inaccessible », comme pour un visiteur)
+     menu                   ouvre le menu (bouton Menu) ; 1 geste, 2 si l'en-tête caché doit d'abord revenir
      remplir <champ>=<val>  remplit le champ dont l'étiquette contient <champ> ; 1 geste
      choisir <champ>=<val>  choisit une option dans une liste ; 1 geste
      retour                 page précédente ; 1 geste
@@ -87,7 +88,11 @@ async function cliquer(texte) {
     return els.find(ok) || null;
   }, t);
   if (!(await cible.evaluate((x) => !!x))) return `introuvable dans l'écran : « ${texte} »`;
-  await cible.asElement().click({ timeout: 5000 }).catch(async () => { await cible.evaluate((x) => x.click()); });
+  /* Pas de clic de secours par le code de la page : un élément que Playwright ne peut pas cliquer (recouvert, hors de portée,
+     désactivé) est aussi inaccessible pour un visiteur. L'ancien repli element.click() faisait réussir des missions qu'un
+     vrai visiteur aurait ratées (audit externe du 10 novembre 2026). */
+  try { await cible.asElement().click({ timeout: 5000 }); }
+  catch (e) { return `inaccessible : « ${texte} » est dans l'écran mais ne se clique pas (recouvert, hors de portée ou désactivé)`; }
   await page.waitForLoadState('load').catch(() => {});
   await attendre(1600);
   await pret().catch(() => {});
@@ -96,12 +101,16 @@ async function cliquer(texte) {
 
 const journal = [];
 const t0 = Date.now();
-let nbGestes = 0, k = 0;
+let nbGestes = 0, k = 0, tempsOutil = 0;
+/* Le temps compté est celui du parcours : le relevé de l'écran et les captures faits par l'outil en sont retirés. */
 const noter = async (geste, resultat = 'ok', capture = false) => {
+  const a = Date.now();
+  const secondes = Math.round((a - t0 - tempsOutil) / 100) / 10;
   const vu = await voir();
-  const e = { k, geste, resultat, gestes: nbGestes, secondes: Math.round((Date.now() - t0) / 100) / 10, ...vu };
+  const e = { k, geste, resultat, gestes: nbGestes, secondes, ...vu };
   if (capture) { e.capture = `etape-${k}.png`; await page.screenshot({ path: join(sortie, e.capture) }); }
   journal.push(e); k++;
+  tempsOutil += Date.now() - a;
 };
 
 try {
@@ -126,7 +135,8 @@ try {
       const b = page.locator('[data-menu-bouton]').first();
       if (!(await b.count())) r = 'aucun bouton Menu';
       else {
-        if (!(await b.isVisible()) || !(await b.evaluate((x) => { const q = x.getBoundingClientRect(); return q.bottom > 0 && q.top < innerHeight; }))) { await page.mouse.wheel(0, -160); await attendre(600); }
+        /* Faire revenir l'en-tête est un geste de plus. */
+        if (!(await b.isVisible()) || !(await b.evaluate((x) => { const q = x.getBoundingClientRect(); return q.bottom > 0 && q.top < innerHeight; }))) { await page.mouse.wheel(0, -160); await attendre(600); nbGestes++; }
         try { await b.click({ timeout: 4000 }); await attendre(700); } catch { r = 'bouton Menu hors de portée (en-tête caché ou bouton masqué)'; }
       }
       nbGestes++;

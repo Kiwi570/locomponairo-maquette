@@ -1,0 +1,136 @@
+# Rapport d’audit
+
+Projet : `locomponairo-maquette` · 12/11/2026 17:00:38 · 21 min · 7 page(s) · audit standard
+
+## Résumé
+
+- Statut : **11 échec(s)**
+- Passe : `20261112-153953-standard` · version ?v=3
+- Échecs : **11**
+- À regarder : **2**
+- Non lancé : **1**
+- Contrôles passés : vercel.json (1), .vercelignore (1), robots.txt (1), numéro de version (1), langues (1), grille wouahou (7), mesures (98), balayage (6), films d’ouverture (12), films de transition (12), bords de l’écran (7), intro accélérable et passable (7), menu (1), clavier (7), liens et boutons (7), liens profonds (8), liens vers la page en cours (6), changements de hauteur (6), tient dans l’écran (5), fluidité (12), défilement selon l’appareil (5), mouvement (12), effets du plan (16), souris immobile (1), vitesse (6), captures (1)
+
+## Grille wouahou
+
+| Point | État | Détail |
+|---|---|---|
+| 1. L’effet signature se manipule | ✓ présent | accueil |
+| 2. L’intro devient la page | ✓ présent | objet d’ouverture sur 6 page(s), versObjet dans l’intro |
+| 3. La transition reprend le motif | ✓ présent | voile en serrure |
+| 4. Quelque chose relie les sections et les pages | ✓ présent | sur les 6 page(s) |
+| 5. Un titre fait l’événement sur chaque page | ✓ présent | sur les 6 page(s) |
+| 6. La scène est un geste du métier | ✓ présent | geste du métier sur /chambres, /, /votre-sejour |
+| 7. L’action principale a un retour physique | ✓ présent | sur /reserver |
+
+Le script vérifie les marques (`data-grille`, `data-iris-centre`, forme du voile, `versObjet`) ; la force et la justesse de chaque point se jugent sur les captures et les films.
+
+## Passes de cette version (?v=3)
+
+Chaque passe garde son rapport dans `_audit/passes/` : une relance ciblée ne fait pas disparaître la preuve d’une passe plus large.
+
+| Passe | Niveau | Pages | Étapes | Échecs | À regarder | Non lancé | Statut |
+|---|---|---|---|---:|---:|---:|---|
+| 20261112-145332-rapide-cible | rapide | / | toutes | 8 | 4 | 1 | échecs |
+| 20261112-150807-complet | complet | toutes | toutes | 5 | 3 | 1 | échecs |
+| 20261112-153656-complet-cible-partiel | complet | /,/404 | fichiers, mesures, films | 0 | 0 | 0 | complet |
+| **20261112-153953-standard** (celle-ci) | standard | toutes | toutes | 11 | 2 | 1 | échecs |
+
+## Échecs
+
+### contenu inaccessible (1)
+
+- **contenu inaccessible** — `/alentours` — div.carrousel:nth-of-type(2) > div.carrousel-scene:nth-of-type(1) > ul.carrousel-anneau > li.carrousel-carte:nth-of-type(3) « GROTTE ET SPÉLÉOPARK Grotte de Clamouse Visite de  » — 6 élément(s) de galerie hors de l'écran, sans défilement possible _(390×844 calme)_
+
+### textes qui se chevauchent (10)
+
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(9) > div.fx-lettre:nth-of-type(2) « h » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(9) > div.fx-lettre:nth-of-type(3) « o » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(9) > div.fx-lettre:nth-of-type(4) « i » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(9) > div.fx-lettre:nth-of-type(5) « s » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(9) > div.fx-lettre:nth-of-type(6) « i » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(9) > div.fx-lettre:nth-of-type(7) « r » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(10) > div.fx-lettre:nth-of-type(1) « s » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(10) > div.fx-lettre:nth-of-type(2) « a » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(11) > div.fx-lettre:nth-of-type(1) « c » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+- **textes qui se chevauchent** — `/votre-sejour` — div.fin-texte > h2 > div.fx-mot-l:nth-of-type(11) > div.fx-lettre:nth-of-type(2) « h » — avec div.conteneur.fin-grille > div.fin-texte > p > a.bouton.bouton--action « Réserver en direct » _(390×844 calme)_
+
+## À regarder
+
+### photo moyenne affichée en très grand (2)
+
+- **photo moyenne affichée en très grand** — `/votre-sejour` — div.conteneur.garage-grille > figure.media.garage-photo > picture > img « Garage voûté et fermé de la maison » — garage (3/5, 63 % de l'écran) : une image notée 4 ou 5 à cette taille _(390×844 normal)_
+- **photo moyenne affichée en très grand** — `/votre-sejour` — div.conteneur.garage-grille > figure.media.garage-photo > picture > img « Garage voûté et fermé de la maison » — garage (3/5, 46 % de l'écran) : une image notée 4 ou 5 à cette taille _(1366×768 normal)_
+
+## Non lancé
+
+- **Safari (WebKit)** : WebKit ne peut pas s’installer ici : vérification à faire dans Safari sur le Mac (liste dans le rapport)
+
+### À vérifier dans Safari sur le Mac (WebKit indisponible ici)
+
+- Ouverture de chaque page : rien qui clignote, intro complète au premier chargement et au rechargement.
+- Changement de page : le voile couvre l’écran, pas de page blanche ; retour arrière sans intro ni voile resté.
+- Défilement : fluide (natif), en-tête qui se cache et revient sans clignoter, sections épinglées entières.
+- Menu sur iPhone (mode Responsive de Safari) : ouverture, fermeture, page bloquée derrière.
+- Polices, images, mention « Illustration générée », formulaires et barre fixe du bas.
+
+## Repères
+
+- Numéro de version des fichiers : ?v=3
+- Journal v3 : 1 étape(s) notée(s), 18 min de travail pour 25 min de budget, 2 min d’attente de l’utilisateur.
+- Audit standard : étapes lourdes sur /, /alentours, /chambres, /contact, /reserver, /votre-sejour.
+- Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés.
+- Ouverture / (1366×768) : 2442 ms depuis le premier octet
+- Ouverture /alentours (1366×768) : 2505 ms depuis le premier octet
+- Ouverture /chambres (1366×768) : 2899 ms depuis le premier octet
+- Ouverture /contact (1366×768) : 2470 ms depuis le premier octet
+- Ouverture /reserver (1366×768) : 2885 ms depuis le premier octet
+- Ouverture /votre-sejour (1366×768) : 2537 ms depuis le premier octet
+- Ouverture / (390×844) : 2451 ms depuis le premier octet
+- Ouverture /alentours (390×844) : 2509 ms depuis le premier octet
+- Ouverture /chambres (390×844) : 2903 ms depuis le premier octet
+- Ouverture /contact (390×844) : 2463 ms depuis le premier octet
+- Ouverture /reserver (390×844) : 2877 ms depuis le premier octet
+- Ouverture /votre-sejour (390×844) : 2519 ms depuis le premier octet
+- Bords de l’écran : 390 images d’intro, 20 de voile et 178 de menu jugées (panneau immobile couvrant tout l’écran), barre de défilement classique de 15 px.
+- Mode calme dispensé : Mode calme retiré à la demande du client (12 novembre 2026) : le site joue toujours ses animations, même si l'appareil demande de les réduire.
+- Aucun parcours propre au projet (_audit/parcours.mjs) : filtres, calculateurs, panier, réservation, fenêtres testés seulement par les contrôles généraux.
+- Tient dans l'écran / : aucune section épinglée ou plein écran.
+- Tient dans l'écran /chambres : aucune section épinglée ou plein écran.
+- Tient dans l'écran /contact : aucune section épinglée ou plein écran.
+- Tient dans l'écran /reserver : aucune section épinglée ou plein écran.
+- Tient dans l'écran /votre-sejour : aucune section épinglée ou plein écran.
+- Fluidité / 1366×768 (molette) : 0 % d'images lentes sur 323, tâche la plus longue 0 ms
+- Fluidité /alentours 1366×768 (molette) : 0 % d'images lentes sur 281, tâche la plus longue 52 ms
+- Fluidité /chambres 1366×768 (molette) : 0 % d'images lentes sur 360, tâche la plus longue 0 ms
+- Fluidité /contact 1366×768 (molette) : 1 % d'images lentes sur 186, tâche la plus longue 52 ms
+- Fluidité /reserver 1366×768 (molette) : 0 % d'images lentes sur 183, tâche la plus longue 0 ms
+- Fluidité /votre-sejour 1366×768 (molette) : 0 % d'images lentes sur 443, tâche la plus longue 0 ms
+- Fluidité / 390×844 (doigt) : 0 % d'images lentes sur 1347, tâche la plus longue 0 ms
+- Fluidité /alentours 390×844 (doigt) : 0 % d'images lentes sur 1346, tâche la plus longue 0 ms
+- Fluidité /chambres 390×844 (doigt) : 0 % d'images lentes sur 1340, tâche la plus longue 0 ms
+- Fluidité /contact 390×844 (doigt) : 0 % d'images lentes sur 1339, tâche la plus longue 0 ms
+- Fluidité /reserver 390×844 (doigt) : 0 % d'images lentes sur 1337, tâche la plus longue 0 ms
+- Fluidité /votre-sejour 390×844 (doigt) : 0 % d'images lentes sur 1345, tâche la plus longue 0 ms
+- Vitesse / : 0.59 s de calcul au chargement (téléphone ralenti).
+- Vitesse /alentours : 0.55 s de calcul au chargement (téléphone ralenti).
+- Vitesse /chambres : 0.58 s de calcul au chargement (téléphone ralenti).
+- Vitesse /contact : 0.42 s de calcul au chargement (téléphone ralenti).
+- Vitesse /reserver : 0.52 s de calcul au chargement (téléphone ralenti).
+- Vitesse /votre-sejour : 0.65 s de calcul au chargement (téléphone ralenti).
+
+## Fichiers
+
+- Captures : `captures/` (téléphone, tablette, ordinateur, écran par écran)
+- Films : `films/` (planches contact de l’ouverture, des transitions, des retours, des ancres et des épinglages ; ⚠ = image signalée)
+- Comparaisons : `comparaisons/`
+- Détail complet : `rapport.json`
+
+
+## Relancer seulement ce qui a échoué
+
+Après correction, si elle ne touche que ces pages (sinon, relancer l’audit standard en entier) :
+
+```
+node _audit/audit.mjs --pages=/,/alentours,/votre-sejour --seulement=fichiers,mesures
+```

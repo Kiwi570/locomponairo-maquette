@@ -85,37 +85,37 @@
       "sur": "Chambre d’hôtes · Pouzols, Hérault",
       "titre1": "Quatre chambres,",
       "titre2": "quatre histoires.",
-      "texte": "Une maison vigneronne de 1850 où chaque chambre porte le prénom d’une de nos grands-mères. Terrasses, garage fermé et petit-déjeuner compris en réservation directe.",
+      "texte": "Une maison vigneronne de 1850 où chaque chambre porte le prénom d’une de nos grands-mères. Petit-déjeuner et garage fermé compris en réservation directe.",
       "action": "Réserver en direct",
       "secondaire": "Voir les chambres",
       "infoTitre": "Arrivée",
       "info": "de 17 h à 20 h 30 · garage fermé jusqu’à 23 h",
-      "objet": "Trousseau des quatre chambres : faites-le tourner pour voir chaque chambre",
-      "indice": "Faites tourner",
-      "cle": "Clé de la chambre"
+      "porteQuestion": "Derrière la porte",
+      "porteRegion": "La porte de la maison : choisissez une chambre pour l’ouvrir, ou faites glisser la porte",
+      "porteAlt": "Porte d’entrée de la maison, bois ciré et lumière chaude derrière les vitres",
+      "preuvesTitre": "Distinctions de la maison",
+      "preuve1": "sur Booking.com (2025)",
+      "preuve2": "Recommandé par le Petit Futé 2025 et 2026",
+      "preuve3": "Label Gîtes de France"
     },
     "maison": {
       "sur": "La maison",
       "titre": "Une maison de vigneron, depuis 1850.",
       "manifeste": "À Pouzols, entre vignes et garrigue, le passé rencontre le présent : murs de pierre, carreaux de ciment, poutres, et quatre chambres pour quatre grands-mères.",
-      "texte": "Lo Componaïro est une SAS fondée en 2019 par deux passionnés de l’Hérault. La maison est ouverte toute l’année."
-    },
-    "coupe": {
-      "sur": "Du garage au toit",
-      "titre": "La maison, étage par étage.",
-      "intro": "Faites défiler : la maison se monte, le toit se lève sur les chambres, puis attrapez-la pour la faire tourner.",
-      "region": "Maquette de la maison en 3D : flèches gauche et droite pour la faire tourner",
-      "indice": "Attrapez la maison",
-      "e1": "Rez-de-chaussée",
-      "e1t": "Arrivée de 17 h à 20 h 30, garage fermé jusqu’à 23 h",
-      "e2": "1er étage",
-      "e2t": "Isabelle et Denise, chacune avec sa terrasse",
-      "e3": "2e étage",
-      "e3t": "Mathilde et Suzanne, sous les poutres, côté jardin",
-      "e4": "Le toit",
-      "e4t": "Une maison de pierre de 1850",
-      "e5": "Les quatre chambres",
-      "e5t": "Le toit se lève : Isabelle et Denise au 1er, Mathilde et Suzanne au 2e"
+      "alt": "Façade de la maison vigneronne : garage au rez-de-chaussée, balcon du 1er étage, fenêtres du 2e",
+      "rdc": "Rez-de-chaussée",
+      "rdcRepere": "Rez-de-chaussée · garage",
+      "rdcTexte": "Le garage fermé, accessible jusqu’à 23 h, avec prise de recharge. On vous accueille de 17 h à 20 h 30.",
+      "e1": "1er étage",
+      "e1Repere": "1er · Isabelle, Denise",
+      "e1Texte": "Isabelle et Denise, chacune avec sa terrasse. Réunies, elles forment la suite familiale.",
+      "e2": "2e étage",
+      "e2Repere": "2e · Mathilde, Suzanne",
+      "e2Texte": "Mathilde et Suzanne, sous les poutres, côté jardin.",
+      "garageAlt": "Garage fermé et voûté de la maison",
+      "rdcVue": "L’allée de gravier et les céanothes bleus jusqu’à la maison",
+      "e1Vue": "Depuis la terrasse du 1er étage : le jardin, les arbres et les toits du village",
+      "e2Vue": "Depuis le 2e étage : le jardin vu d’en haut, les cyprès et le portail"
     },
     "chambres": {
       "sur": "Les chambres",
@@ -127,10 +127,12 @@
     "suite": {
       "sur": "Suite familiale",
       "gauche": "Isabelle",
-      "droite": "+ Denise",
+      "droite": "Denise",
       "titre": "Deux chambres voisines, une terrasse fleurie.",
       "texte": "En réservant ensemble Isabelle et Denise, les deux chambres contiguës du 1er étage, vous avez la terrasse fleurie et son mobilier pour vous.",
-      "action": "Réserver la suite familiale"
+      "action": "Réserver la suite familiale",
+      "altG": "Chambre Isabelle : lit en fer forgé et murs jaunes",
+      "altD": "Chambre Denise : porte-fenêtre ouverte sur la terrasse"
     },
     "inclus": {
       "sur": "Meilleur prix garanti",
@@ -144,7 +146,9 @@
       "d3": "jusqu’à 7 jours avant",
       "t4": "Climatisation et Wi-Fi",
       "d4": "dans les quatre chambres",
-      "tampon": "Inclus"
+      "tampon": "Inclus",
+      "horaires": "Arrivée de 17 h à 20 h 30 · clés jusqu’à 22 h · garage jusqu’à 23 h · départ à 11 h",
+      "prix": "Le prix de la nuit s’affiche avec les disponibilités sur la réservation sécurisée de la maison."
     },
     "soir": {
       "sur": "Arriver ce soir",
@@ -173,12 +177,30 @@
     },
     "alentours": {
       "sur": "Autour de Pouzols",
-      "titre": "Saint-Guilhem, le Salagou, Navacelles…",
-      "texte": "Faites tourner la ronde des sites, à la main, aux flèches ou en défilant.",
+      "titre": "Entre gorges et cirques.",
+      "texte": "Saint-Guilhem-le-Désert, le lac du Salagou, le cirque de Navacelles, les gorges de l’Hérault : la maison est un camp de base au cœur de l’Hérault.",
+      "pont-diable": "Pont du Diable",
+      "pont-diableType": "Site classé",
+      "pont-diableAlt": "Le Pont du Diable au-dessus des eaux vertes de l’Hérault",
+      "navacelles": "Cirque de Navacelles",
+      "navacellesType": "Grand paysage",
+      "navacellesAlt": "Le cirque de Navacelles vu d’en haut, la boucle de la rivière et le village",
+      "gorges": "Gorges de l’Hérault",
+      "gorgesType": "Citées par la maison",
+      "gorgesAlt": "Les gorges de l’Hérault, eau turquoise entre les falaises",
+      "tous": "Tous les alentours",
       "region": "Carrousel des sites autour de la maison : flèches gauche et droite pour le faire tourner",
       "prec": "Site précédent",
       "suiv": "Site suivant",
-      "tous": "Tous les alentours"
+      "legende": "Le Pont du Diable, sur l’Hérault",
+      "t1": "Gignac, sortie de l’A750",
+      "t1d": "7 km",
+      "t2": "Grotte de Clamouse",
+      "t2d": "11 km",
+      "t3": "Pézenas",
+      "t3d": "25 min",
+      "t4": "Montpellier",
+      "t4d": "25 min"
     },
     "fin": {
       "titre": "Votre clé vous attend.",
@@ -227,7 +249,7 @@
       "titre": "Ce que vous trouvez en ouvrant la porte.",
       "i1": "Climatisation et chauffage individuels",
       "i2": "Wi-Fi gratuit",
-      "i3": "Machine à expresso",
+      "i3": "Machine à expresso, une bouteille d’eau fraîche et des biscuits gourmands",
       "i4": "Espace douche et toilettes",
       "i5": "Linge de toilette, sèche-cheveux, kit brosse à dents",
       "i6": "Couettes fabriquées en France, oreillers en plus sur demande",
@@ -274,7 +296,7 @@
     "garage": {
       "sur": "Motards et cavaliers",
       "titre": "Un garage fermé, et de quoi poser casque et bottes.",
-      "texte": "Le garage est fermé, gratuit et inclus, avec une prise Green’Up pour recharger une voiture électrique. Un vestiaire accueille casques, blousons et bottes, et des chaussons vous sont prêtés.",
+      "texte": "Le garage est fermé et compris dans le séjour, avec une prise Green’Up pour recharger une voiture électrique. Un vestiaire accueille casques, blousons et bottes, et des chaussons vous sont prêtés.",
       "partenaire": "Partenaire Team 68°"
     },
     "conditions": {
@@ -310,15 +332,15 @@
     "sites": {
       "sur": "Les sites",
       "titre": "La ronde des sites.",
-      "texte": "Les sites cités par la maison. Les durées sont celles qu’elle indique ; les autres sont à compléter.",
+      "texte": "Les grands sites que la maison conseille, à la main, aux flèches ou en défilant. Les temps de route sont ceux qu’elle indique.",
       "distance": "Depuis la maison : ",
       "acompleter": "Durée à compléter"
     },
     "rando": {
       "titre": "Prêt pour votre randonnée ?",
-      "texte": "Sentiers de garrigue, cirques et gorges : partez le matin, le petit-déjeuner est servi dès 8 h 30.",
-      "gauche": "Garrigue",
-      "droite": "et cirques"
+      "texte": "Vignes, garrigue, cirques et gorges : partez le matin, le petit-déjeuner est servi dès 8 h 30.",
+      "gauche": "Vignes",
+      "droite": "et collines"
     },
     "proches": {
       "sur": "Tout près",
@@ -374,7 +396,7 @@
       "sAutre": "Autre demande",
       "message": "Message",
       "envoyer": "Envoyer",
-      "donnees": "Vos données servent seulement à vous répondre. Politique de confidentialité : à compléter.",
+      "donnees": "Vos données servent seulement à vous répondre.",
       "tampon": "Reçu"
     },
     "reseaux": {
@@ -443,6 +465,6 @@
     "texte": "La page que vous cherchez n’existe pas ou plus. Les quatre chambres, elles, sont toujours là.",
     "retour": "Revenir à l’accueil",
     "chambres": "Voir les chambres",
-    "alt": "Une clé posée seule sur une couverture pliée"
+    "alt": "Porte vert olive fermée dans le couloir de la maison"
   }
 }

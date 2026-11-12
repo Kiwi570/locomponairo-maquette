@@ -8,6 +8,8 @@ const plume = (nom, cls = '') => html`<svg class="etiquette-plume${cls}" viewBox
 
 export default (c) => {
   const ch = c.donnees.chambres;
+  /* Surface ambiguë sur le site actuel (Denise : « 17m2 ou 1er étage 24M2 ») : non affichée tant que la maison n'a pas tranché (README). */
+  const surface = (x) => (/confirmer|compl/.test(x.surface) ? '' : x.surface);
   return html`
 <section class="tete-portes" id="debut">
   <div class="conteneur tete-portes-texte">
@@ -24,7 +26,7 @@ export default (c) => {
           <span class="porte-battant" aria-hidden="true"><span class="porte-poignee"></span></span>
         </span>
         <span class="porte-nom">${x.nom}</span>
-        <span class="porte-etage">${x.etage} · ${x.surface}</span>
+        <span class="porte-etage">${[x.etage, surface(x)].filter(Boolean).join(' · ')}</span>
       </a>
     </li>`)}
   </ul>
@@ -49,7 +51,7 @@ export default (c) => {
       <p class="chambre-dit">${x.dit}</p>
       <dl class="chambre-fiche">
         <div><dt>${c.t('chambres.comparer.etage')}</dt><dd>${x.etage}</dd></div>
-        <div><dt>${c.t('chambres.comparer.surface')}</dt><dd>${x.surface}</dd></div>
+        ${surface(x) ? html`<div><dt>${c.t('chambres.comparer.surface')}</dt><dd>${surface(x)}</dd></div>` : ''}
         <div><dt>${c.t('chambres.comparer.lit')}</dt><dd>${x.lit}</dd></div>
         <div><dt>${c.t('chambres.comparer.vue')}</dt><dd>${x.vue}</dd></div>
       </dl>
@@ -76,12 +78,13 @@ export default (c) => {
       <button type="button" data-filtre="terrasse" aria-pressed="false">${c.t('chambres.comparer.fTerrasse')}</button>
       <button type="button" data-filtre="jardin" aria-pressed="false">${c.t('chambres.comparer.fJardin')}</button>
       <button type="button" data-filtre="jumeaux" aria-pressed="false">${c.t('chambres.comparer.fJumeaux')}</button>
+      <p class="filtres-compte" data-comparatif-compte role="status" aria-live="polite"></p>
     </div>
     <ul class="comparatif" data-anime="cascade" data-comparatif>
       ${ch.map((x) => html`<li class="comparatif-ligne" data-terrasse="${x.terrasse ? 'oui' : 'non'}" data-vue="${x.vue === 'Vue jardin' ? 'jardin' : 'village'}" data-jumeaux="${/deux lits/.test(x.lit) ? 'oui' : 'non'}">
         <a href="#${x.cle}" class="comparatif-nom" data-sans-transition>${c.media({ nom: x.photos[1], alt: '', classe: 'comparatif-photo', sizes: '64px' })}${x.nom}</a>
         <span><small>${c.t('chambres.comparer.etage')}</small>${x.etage}</span>
-        <span><small>${c.t('chambres.comparer.surface')}</small>${x.surface}</span>
+        <span><small>${c.t('chambres.comparer.surface')}</small>${surface(x) || '—'}</span>
         <span><small>${c.t('chambres.comparer.lit')}</small>${x.lit}</span>
         <span><small>${c.t('chambres.comparer.vue')}</small>${x.vue}</span>
         <span><small>${c.t('chambres.comparer.terrasse')}</small>${x.terrasse ? c.t('chambres.comparer.oui') : c.t('chambres.comparer.non')}</span>

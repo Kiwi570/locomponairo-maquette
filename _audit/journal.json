@@ -1,166 +1,246 @@
 {
-  "projet": "locomponairo-maquette",
-  "client": "Lo Componaïro",
-  "siteActuel": "https://www.locomponairo.com/",
-  "versions": [
+ "projet": "locomponairo-maquette",
+ "client": "Lo Componaïro",
+ "siteActuel": "https://www.locomponairo.com/",
+ "versions": [
+  {
+   "version": 1,
+   "skill": "v10.8.2",
+   "perimetre": [
+    "accueil",
+    "chambres",
+    "votre-sejour",
+    "alentours",
+    "contact",
+    "reserver",
+    "404"
+   ],
+   "etapes": [
     {
-      "version": 1,
-      "skill": "v10.8.2",
-      "perimetre": [
-        "accueil",
-        "chambres",
-        "votre-sejour",
-        "alentours",
-        "contact",
-        "reserver",
-        "404"
-      ],
-      "etapes": [
-        {
-          "etape": "analyse, bibliothèque et questions",
-          "budget": 20,
-          "debut": "2026-11-10T12:41:16+01:00",
-          "fin": "2026-11-10T12:46:25+01:00"
-        },
-        {
-          "etape": "plans, images du site et document Grok",
-          "budget": 15,
-          "debut": "2026-11-10T12:49:34+01:00",
-          "fin": "2026-11-10T12:54:50+01:00"
-        },
-        {
-          "etape": "construction : accueil",
-          "budget": 30,
-          "debut": "2026-11-10T13:10:43+01:00",
-          "fin": "2026-11-10T13:30:33+01:00"
-        },
-        {
-          "etape": "aperçu de l'accueil en films (attente de la réponse notée à part)",
-          "budget": 5,
-          "debut": "2026-11-10T13:30:33+01:00",
-          "fin": "2026-11-10T13:33:00+01:00"
-        },
-        {
-          "etape": "construction : pages d'onglet",
-          "budget": 25,
-          "debut": "2026-11-10T13:33:00+01:00",
-          "fin": "2026-11-10T13:41:00+01:00"
-        },
-        {
-          "etape": "construction : contact et page de catégorie",
-          "budget": 10,
-          "debut": "2026-11-10T13:41:00+01:00",
-          "fin": "2026-11-10T13:45:06+01:00"
-        },
-        {
-          "etape": "audit, regard neuf et corrections",
-          "budget": 35,
-          "debut": "2026-11-10T13:45:06+01:00",
-          "fin": "2026-11-10T15:08:00+01:00"
-        },
-        {
-          "etape": "livraison",
-          "budget": 5,
-          "debut": "2026-11-10T15:08:00+01:00",
-          "fin": "2026-11-10T15:09:56+01:00"
-        }
-      ],
-      "attentes": [
-        {
-          "pour": "réponses aux questions",
-          "debut": "2026-11-10T12:46:25+01:00",
-          "fin": "2026-11-10T12:49:34+01:00"
-        },
-        {
-          "pour": "images du site",
-          "debut": "2026-11-10T12:54:50+01:00",
-          "fin": "2026-11-10T13:10:43+01:00"
-        }
-      ],
-      "allersRetours": 1,
-      "modules": [
-        "objet-a-faire-tourner",
-        "fil-conducteur",
-        "objet-3d-qui-se-construit",
-        "carrousel-3d",
-        "envol-vers-le-panier",
-        "axes-au-defilement"
-      ],
-      "audit": {
-        "niveau": "standard + passe des formats (complet sur mesures et écran)",
-        "echecsPremierPassage": 206,
-        "relances": 5,
-        "corrections": [
-          "planche d'intention et fichiers de travail sortis de la racine du site (138 échecs venaient d'elle)",
-          "images de partage fabriquées",
-          "titres en lignes masquées par découpe au lieu d'overflow, interligne des titres lettre à lettre à 1,25",
-          "liens externes : aria-label au lieu de textes visuellement cachés",
-          "contrastes : manifeste, pastille Arrivée, surtitres sur fond vert, surtitre de Réserver",
-          "visuels ajoutés aux sections comparatif, conditions et fins de page",
-          "premiers écrans resserrés sur petit téléphone, informations clés gardées sur téléphone à l'horizontale",
-          "tampons en animation (plus de débordement), carte des alentours sans étiquettes qui se chevauchent",
-          "voile en serrure : queue raccourcie et départ un peu plus bas pour un clic dans la navigation"
-        ]
-      },
-      "effetsRetires": [],
-      "grilleDispenses": {},
-      "notes": "Boosts demandés à l'aperçu : serrure dans l'intro, maison qui s'ouvre, soleil au pointeur. Images Grok reçues à 13 h 39 pendant la construction. Regard neuf et test vrai visiteur faits par deux agents séparés ; corrections reprises : textes répétés, « à compléter » retirés des cartes, garage et motards sur l'accueil, clé qui mène au récapitulatif, photo du garage en double, horloge en double, maison 3D déjà commencée à l'arrivée."
+     "etape": "analyse, bibliothèque et questions",
+     "budget": 20,
+     "debut": "2026-11-10T12:41:16+01:00",
+     "fin": "2026-11-10T12:46:25+01:00"
     },
     {
-      "version": 2,
-      "skill": "v10.8.2",
-      "perimetre": [
-        "accueil",
-        "chambres",
-        "votre-sejour",
-        "alentours",
-        "contact",
-        "reserver",
-        "404"
-      ],
-      "etapes": [
-        {
-          "etape": "audit complet de la version validée",
-          "budget": 35,
-          "debut": "2026-11-10T15:10:00+01:00",
-          "fin": "2026-11-10T15:39:44+01:00"
-        },
-        {
-          "etape": "corrections (fluidité de l'accueil, faits vérifiés) et audit ciblé",
-          "budget": 20,
-          "debut": "2026-11-10T15:39:44+01:00",
-          "fin": "2026-11-10T16:06:09+01:00"
-        },
-        {
-          "etape": "livraison et ajout à la bibliothèque",
-          "budget": 15,
-          "debut": "2026-11-10T16:06:09+01:00",
-          "fin": ""
-        }
-      ],
-      "attentes": [],
-      "allersRetours": 0,
-      "modules": [
-        "objet-a-faire-tourner",
-        "fil-conducteur",
-        "objet-3d-qui-se-construit",
-        "carrousel-3d",
-        "envol-vers-le-panier",
-        "axes-au-defilement"
-      ],
-      "audit": {
-        "niveau": "complet, puis ciblé (accueil et chambres : fichiers, mesures, fluidité, mouvement)",
-        "echecsPremierPassage": 1,
-        "relances": 1,
-        "corrections": [
-          "fluidité de l'accueil (10 % d'images lentes, 5 à 8 % après) : le sarment ne relit plus la hauteur de page, la position ni la hauteur d'écran à chaque image (recalcul complet du style forcé) ; maison 3D : rotation et chute des pièces en transformation directe, ombres tous les 15 degrés ; axes de police par pas de 4",
-          "faits revérifiés sur le site actuel : eau et biscuits et cheminée « de marbre » retirés (introuvables), garage gratuit ou à 8 € signalé à confirmer",
-          "numéro de version des fichiers passé à 2"
-        ]
-      },
-      "effetsRetires": [],
-      "grilleDispenses": {},
-      "notes": "Version validée par l'utilisateur (« Valider la v1 »). Livraison de la v1 corrigée après l'audit complet, puis ajout à la bibliothèque."
+     "etape": "plans, images du site et document Grok",
+     "budget": 15,
+     "debut": "2026-11-10T12:49:34+01:00",
+     "fin": "2026-11-10T12:54:50+01:00"
+    },
+    {
+     "etape": "construction : accueil",
+     "budget": 30,
+     "debut": "2026-11-10T13:10:43+01:00",
+     "fin": "2026-11-10T13:30:33+01:00"
+    },
+    {
+     "etape": "aperçu de l'accueil en films (attente de la réponse notée à part)",
+     "budget": 5,
+     "debut": "2026-11-10T13:30:33+01:00",
+     "fin": "2026-11-10T13:33:00+01:00"
+    },
+    {
+     "etape": "construction : pages d'onglet",
+     "budget": 25,
+     "debut": "2026-11-10T13:33:00+01:00",
+     "fin": "2026-11-10T13:41:00+01:00"
+    },
+    {
+     "etape": "construction : contact et page de catégorie",
+     "budget": 10,
+     "debut": "2026-11-10T13:41:00+01:00",
+     "fin": "2026-11-10T13:45:06+01:00"
+    },
+    {
+     "etape": "audit, regard neuf et corrections",
+     "budget": 35,
+     "debut": "2026-11-10T13:45:06+01:00",
+     "fin": "2026-11-10T15:08:00+01:00"
+    },
+    {
+     "etape": "livraison",
+     "budget": 5,
+     "debut": "2026-11-10T15:08:00+01:00",
+     "fin": "2026-11-10T15:09:56+01:00"
     }
-  ]
+   ],
+   "attentes": [
+    {
+     "pour": "réponses aux questions",
+     "debut": "2026-11-10T12:46:25+01:00",
+     "fin": "2026-11-10T12:49:34+01:00"
+    },
+    {
+     "pour": "images du site",
+     "debut": "2026-11-10T12:54:50+01:00",
+     "fin": "2026-11-10T13:10:43+01:00"
+    }
+   ],
+   "allersRetours": 1,
+   "modules": [
+    "objet-a-faire-tourner",
+    "fil-conducteur",
+    "objet-3d-qui-se-construit",
+    "carrousel-3d",
+    "envol-vers-le-panier",
+    "axes-au-defilement"
+   ],
+   "audit": {
+    "niveau": "standard + passe des formats (complet sur mesures et écran)",
+    "echecsPremierPassage": 206,
+    "relances": 5,
+    "corrections": [
+     "planche d'intention et fichiers de travail sortis de la racine du site (138 échecs venaient d'elle)",
+     "images de partage fabriquées",
+     "titres en lignes masquées par découpe au lieu d'overflow, interligne des titres lettre à lettre à 1,25",
+     "liens externes : aria-label au lieu de textes visuellement cachés",
+     "contrastes : manifeste, pastille Arrivée, surtitres sur fond vert, surtitre de Réserver",
+     "visuels ajoutés aux sections comparatif, conditions et fins de page",
+     "premiers écrans resserrés sur petit téléphone, informations clés gardées sur téléphone à l'horizontale",
+     "tampons en animation (plus de débordement), carte des alentours sans étiquettes qui se chevauchent",
+     "voile en serrure : queue raccourcie et départ un peu plus bas pour un clic dans la navigation"
+    ]
+   },
+   "effetsRetires": [],
+   "grilleDispenses": {},
+   "notes": "Boosts demandés à l'aperçu : serrure dans l'intro, maison qui s'ouvre, soleil au pointeur. Images Grok reçues à 13 h 39 pendant la construction. Regard neuf et test vrai visiteur faits par deux agents séparés ; corrections reprises : textes répétés, « à compléter » retirés des cartes, garage et motards sur l'accueil, clé qui mène au récapitulatif, photo du garage en double, horloge en double, maison 3D déjà commencée à l'arrivée."
+  },
+  {
+   "version": 2,
+   "skill": "v10.8.2",
+   "perimetre": [
+    "accueil",
+    "chambres",
+    "votre-sejour",
+    "alentours",
+    "contact",
+    "reserver",
+    "404"
+   ],
+   "etapes": [
+    {
+     "etape": "audit complet de la version validée",
+     "budget": 35,
+     "debut": "2026-11-10T15:10:00+01:00",
+     "fin": "2026-11-10T15:39:44+01:00"
+    },
+    {
+     "etape": "corrections (fluidité de l'accueil, faits vérifiés) et audit ciblé",
+     "budget": 20,
+     "debut": "2026-11-10T15:39:44+01:00",
+     "fin": "2026-11-10T16:06:09+01:00"
+    },
+    {
+     "etape": "livraison et ajout à la bibliothèque",
+     "budget": 15,
+     "debut": "2026-11-10T16:06:09+01:00",
+     "fin": "2026-11-10T16:40:00+01:00"
+    }
+   ],
+   "attentes": [],
+   "allersRetours": 0,
+   "modules": [
+    "objet-a-faire-tourner",
+    "fil-conducteur",
+    "objet-3d-qui-se-construit",
+    "carrousel-3d",
+    "envol-vers-le-panier",
+    "axes-au-defilement"
+   ],
+   "audit": {
+    "niveau": "complet, puis ciblé (accueil et chambres : fichiers, mesures, fluidité, mouvement)",
+    "echecsPremierPassage": 1,
+    "relances": 1,
+    "corrections": [
+     "fluidité de l'accueil (10 % d'images lentes, 5 à 8 % après) : le sarment ne relit plus la hauteur de page, la position ni la hauteur d'écran à chaque image (recalcul complet du style forcé) ; maison 3D : rotation et chute des pièces en transformation directe, ombres tous les 15 degrés ; axes de police par pas de 4",
+     "faits revérifiés sur le site actuel : eau et biscuits et cheminée « de marbre » retirés (introuvables), garage gratuit ou à 8 € signalé à confirmer",
+     "numéro de version des fichiers passé à 2"
+    ]
+   },
+   "effetsRetires": [],
+   "grilleDispenses": {},
+   "notes": "Version validée par l'utilisateur (« Valider la v1 »). Livraison de la v1 corrigée après l'audit complet, puis ajout à la bibliothèque."
+  },
+  {
+   "version": 3,
+   "skill": "v10.10",
+   "perimetre": [
+    "accueil",
+    "chambres",
+    "votre-sejour",
+    "alentours",
+    "contact",
+    "reserver",
+    "404"
+   ],
+   "etapes": [
+    {
+     "etape": "audit d'analyse : aperçu filmé, captures de toutes les pages, regard du directeur artistique, regard neuf",
+     "budget": 25,
+     "debut": "2026-11-12T15:22:00+01:00",
+     "fin": "2026-11-12T15:40:00+01:00"
+    },
+    {
+     "etape": "refonte réaliste de l'accueil (porte, façade étage par étage, suite, tout compris, alentours en photos, intro de la clé en laiton)",
+     "budget": 75,
+     "debut": "2026-11-12T15:40:00+01:00",
+     "fin": "2026-11-12T16:15:00+01:00"
+    },
+    {
+     "etape": "audit complet de la nouvelle version, test « vrai visiteur » refait",
+     "budget": 50,
+     "debut": "2026-11-12T16:15:00+01:00",
+     "fin": "2026-11-12T16:52:00+01:00"
+    },
+    {
+     "etape": "corrections (audit, visiteur, mode calme retiré), audits ciblés et standard, second regard du directeur artistique",
+     "budget": 35,
+     "debut": "2026-11-12T16:52:00+01:00",
+     "fin": ""
+    }
+   ],
+   "attentes": [
+    {
+     "objet": "choix de la profondeur de la refonte (question à choix multiples)",
+     "debut": "2026-11-12T15:36:00+01:00",
+     "fin": "2026-11-12T15:38:00+01:00"
+    },
+    {
+     "objet": "question sur le mode calme (lien visible ou tout retirer)",
+     "debut": "2026-11-12T16:25:00+01:00",
+     "fin": "2026-11-12T16:27:00+01:00"
+    }
+   ],
+   "allersRetours": 2,
+   "modules": [
+    "fil-conducteur",
+    "carrousel-3d",
+    "envol-vers-le-panier",
+    "axes-au-defilement"
+   ],
+   "audit": {
+    "niveau": "complet (toutes les pages, 13 formats), puis ciblé complet sur l'accueil et la 404, standard sur toutes les pages, ciblés sur l'accueil, Alentours et Séjour",
+    "echecsPremierPassage": 5,
+    "relances": 4,
+    "corrections": [
+     "légende de la porte en flex (chevauchement mesuré) et fond sombre déclaré sous la porte (contraste mesuré sur la crème)",
+     "404 sur téléphone : photo moins haute, bouton dans le premier écran",
+     "ouverture de l'accueil sous 3 s : seule la porte est prioritaire, intro resserrée",
+     "mode calme retiré à la demande du client : contrôles du mode calme dispensés dans la copie d'audit du projet (config.sansModeCalme)",
+     "typographie du statut d'arrivée (espace insécable), photo du garage moins grande",
+     "test vrai visiteur : lieu au premier écran du téléphone, façade non collée sur téléphone, phrase sur le prix, bouton d'envoi et « Demande prête » visibles"
+    ]
+   },
+   "effetsRetires": [
+    "trousseau (disque à faire tourner)",
+    "maison-coupe (maison 3D en boîtes)",
+    "tampons « Inclus »",
+    "cadran de l'accueil (reste sur Séjour)",
+    "ronde des sites de l'accueil (reste sur Alentours)"
+   ],
+   "grilleDispenses": {},
+   "notes": "Demande de l'utilisateur : audit complet et analyse approfondie de tout le site, puis version optimale. Regard du directeur artistique (grille v10.10) : REFAIRE à 2,25/5 ; l'utilisateur a choisi la refonte réaliste de l'accueil. Mode calme retiré à la demande du client (16 h 27)."
+  }
+ ]
 }

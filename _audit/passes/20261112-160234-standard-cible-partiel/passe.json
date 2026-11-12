@@ -1,0 +1,16 @@
+{
+ "id": "20261112-160234-standard-cible-partiel",
+ "date": "2026-11-12T16:03:21.648Z",
+ "niveau": "standard",
+ "pages": "/,/votre-sejour",
+ "etapes": [
+  "fichiers",
+  "mesures"
+ ],
+ "version": "3",
+ "echecs": 0,
+ "aRegarder": 0,
+ "nonLances": 0,
+ "manquants": 0,
+ "statut": "complet"
+}

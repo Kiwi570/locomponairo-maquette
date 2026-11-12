@@ -10,8 +10,8 @@
   d.classList.add('js');
 
   var calme = false;
-  try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
-  if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+  /* Pas de mode calme sur ce site (choix du client, 12 novembre 2026) : un ancien choix mémorisé est effacé. */
+  try { ls && ls.removeItem('socle:calme'); } catch (e) {}
   if (calme) d.classList.add('calme');
 
   var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;

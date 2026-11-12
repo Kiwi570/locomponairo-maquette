@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="2">
+<html lang="fr" data-v="3">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,14 +7,13 @@
 <meta name="description" content="Quatre chambres aux prénoms des grands-mères dans une maison vigneronne de 1850 à Pouzols (Hérault) : terrasses, garage fermé, petit-déjeuner compris en réservation directe.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://locomponairo-maquette.vercel.app/">
-<style>:root{--fond:#f1e9da;--texte:#2b2320;--voile-fond:#4a1c26;--ouverture-fond:#2b2320;--menu-fond:#2b2320}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<style>:root{--fond:#f1e9da;--texte:#2b2320;--voile-fond:#4a1c26;--ouverture-fond:#4a1c26;--menu-fond:#2b2320}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
 <script>(function () {
 var d = document.documentElement, ss = null, ls = null;
 try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
 d.classList.add('js');
 var calme = false;
-try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
-if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+try { ls && ls.removeItem('socle:calme'); } catch (e) {}
 if (calme) d.classList.add('calme');
 var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
 var type = nav ? nav.type : 'navigate';
@@ -41,14 +40,14 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 })();</script>
 <link rel="preload" href="/assets/polices/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/polices/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=2">
-<link rel="stylesheet" href="/assets/css/site.css?v=2">
-<link rel="modulepreload" href="/assets/js/site.js?v=2">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=2">
+<link rel="stylesheet" href="/assets/css/socle.css?v=3">
+<link rel="stylesheet" href="/assets/css/site.css?v=3">
+<link rel="modulepreload" href="/assets/js/site.js?v=3">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=2"></script>
+<script type="module" src="/assets/js/site.js?v=3"></script>
 <meta name="theme-color" content="#f1e9da">
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -66,87 +65,37 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BedAndBreakfast","name":"Lo Componaïro","url":"https://locomponairo-maquette.vercel.app/","telephone":"+33688712601","email":"locomponairo34@gmail.com","address":{"@type":"PostalAddress","streetAddress":"15 rue des Jardins","postalCode":"34230","addressLocality":"Pouzols","addressRegion":"Hérault","addressCountry":"FR"},"checkinTime":"17:00","checkoutTime":"11:00","numberOfRooms":4,"petsAllowed":false,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Petit-déjeuner inclus","value":true},{"@type":"LocationFeatureSpecification","name":"Garage fermé","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Climatisation","value":true}],"description":"Chambre d'hôtes dans une maison vigneronne de 1850 à Pouzols (Hérault) : quatre chambres, terrasses, garage fermé, petit-déjeuner inclus."}</script>
 </head>
 <body id="haut">
+<svg class="defs-laiton" width="0" height="0" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="laiton-tige" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f350f"/><stop offset=".2" stop-color="#9c7027"/><stop offset=".42" stop-color="#f6dd96"/><stop offset=".56" stop-color="#d4ad57"/><stop offset=".8" stop-color="#83601f"/><stop offset="1" stop-color="#46300d"/></linearGradient>
+  <linearGradient id="laiton-plat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7e2a2"/><stop offset=".32" stop-color="#c7963f"/><stop offset=".62" stop-color="#e6c473"/><stop offset="1" stop-color="#6a4914"/></linearGradient>
+  <linearGradient id="laiton-anneau" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe9ad"/><stop offset=".28" stop-color="#c7963f"/><stop offset=".52" stop-color="#6f4c15"/><stop offset=".78" stop-color="#d6ae5b"/><stop offset="1" stop-color="#f1d58a"/></linearGradient>
+</defs></svg>
 <div data-voile data-forme="serrure" aria-hidden="true"><div class="voile-contenu"><svg class="voile-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
   <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-anneau-reflet" cx="0" cy="62" r="19" fill="none" stroke-width="1.6"/>
+  <path class="cle-metal cle-orne" d="M0 37 c4 0 6 3 6 6 c0 2-2 4-6 4 c-4 0-6-2-6-4 c0-3 2-6 6-6 z"/>
   <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <rect class="cle-metal cle-tige" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal cle-bague" x="-9" y="88" width="18" height="7" rx="2.5"/>
+  <rect class="cle-metal cle-bague" x="-8" y="102" width="16" height="4.5" rx="2"/>
+  <path class="cle-metal cle-panneton" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
   <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+  <path class="cle-reflet" d="M-2.2 84 V168"/>
 </g></svg><span data-voile-libelle>Accueil</span></div></div>
 <div class="ouverture-panneau" data-ouverture aria-hidden="true">
   <svg class="ouverture-serrure" viewBox="-60 -60 120 160" aria-hidden="true"><path d="M-24.8 26 A 50 50 0 1 1 24.8 26 L 34 92 L -34 92 Z"/></svg>
-  <div class="ouverture-objet" data-ouverture-objet><svg class="trousseau-svg trousseau-intro" viewBox="0 0 400 400" aria-hidden="true" focusable="false" data-audit-ignorer>
-  <circle class="trousseau-ombre" cx="204" cy="206" r="44"/>
-  <g class="trousseau-cle" style="--i:0" transform="translate(200 200) rotate(0)">
-    <g class="cle" data-cle="isabelle">
+  <div class="ouverture-objet" data-ouverture-objet><svg class="cle-intro cle-laiton" viewBox="-34 30 68 156" aria-hidden="true" focusable="false" data-audit-ignorer><g class="cle">
   <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-anneau-reflet" cx="0" cy="62" r="19" fill="none" stroke-width="1.6"/>
+  <path class="cle-metal cle-orne" d="M0 37 c4 0 6 3 6 6 c0 2-2 4-6 4 c-4 0-6-2-6-4 c0-3 2-6 6-6 z"/>
   <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <rect class="cle-metal cle-tige" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal cle-bague" x="-9" y="88" width="18" height="7" rx="2.5"/>
+  <rect class="cle-metal cle-bague" x="-8" y="102" width="16" height="4.5" rx="2"/>
+  <path class="cle-metal cle-panneton" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
   <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Isabelle</text>
-  </g>
-</g></g><g class="trousseau-cle" style="--i:1" transform="translate(200 200) rotate(90)">
-    <g class="cle" data-cle="denise">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Denise</text>
-  </g>
-</g></g><g class="trousseau-cle" style="--i:2" transform="translate(200 200) rotate(180)">
-    <g class="cle" data-cle="mathilde">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Mathilde</text>
-  </g>
-</g></g><g class="trousseau-cle" style="--i:3" transform="translate(200 200) rotate(270)">
-    <g class="cle" data-cle="suzanne">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Suzanne</text>
-  </g>
-</g></g>
-  <circle class="trousseau-anneau" cx="200" cy="200" r="44" fill="none" stroke-width="8"/>
-  <circle class="trousseau-reflet" cx="200" cy="200" r="44" fill="none" stroke-width="2"/>
-</svg></div>
+  <path class="cle-reflet" d="M-2.2 84 V168"/>
+</g></svg></div>
   <p class="ouverture-nom">Lo Componaïro</p>
   <span class="ouverture-trait"></span>
   <p class="ouverture-ligne">Maison vigneronne · 1850</p>
@@ -157,12 +106,15 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <a class="entete-logo" href="/" data-libelle="Accueil" aria-current="page">
       <svg class="entete-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
   <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-anneau-reflet" cx="0" cy="62" r="19" fill="none" stroke-width="1.6"/>
+  <path class="cle-metal cle-orne" d="M0 37 c4 0 6 3 6 6 c0 2-2 4-6 4 c-4 0-6-2-6-4 c0-3 2-6 6-6 z"/>
   <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <rect class="cle-metal cle-tige" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal cle-bague" x="-9" y="88" width="18" height="7" rx="2.5"/>
+  <rect class="cle-metal cle-bague" x="-8" y="102" width="16" height="4.5" rx="2"/>
+  <path class="cle-metal cle-panneton" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
   <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+  <path class="cle-reflet" d="M-2.2 84 V168"/>
 </g></svg><span>Lo Componaïro</span>
     </a>
     <nav data-nav aria-label="Navigation principale">
@@ -195,424 +147,221 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
   <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil" aria-current="page">Accueil</a></li><li style="--i:1"><a href="/chambres" class="menu-lien" data-libelle="Les chambres">Les chambres</a></li><li style="--i:2"><a href="/votre-sejour" class="menu-lien" data-libelle="Votre séjour">Votre séjour</a></li><li style="--i:3"><a href="/alentours" class="menu-lien" data-libelle="Alentours">Alentours</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li><li style="--i:5"><a href="/reserver" class="menu-lien" data-libelle="Réserver">Réserver</a></li></ul>
   <p><a class="bouton" href="tel:+33688712601">Appeler 06 88 71 26 01</a></p>
-  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
 </div>
 <main id="contenu" tabindex="-1" data-grille="fil" data-sarment>
-<section class="hero" id="debut">
-  <div class="hero-soleil" data-soleil-pointeur data-effet="soleil" data-souris aria-hidden="true" data-audit-ignorer></div>
-  <figure class="media hero-photo" data-fx="parallaxe" data-fx-force="8" style="--cadrage:49% 50%;--cadrage-mobile:46% 50%">
-  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/maison-facade-mobile-640.webp 640w, /assets/images/maison-facade-mobile-1080.webp 1080w" sizes="100vw">
-    <img src="/assets/images/maison-facade-1280.webp" srcset="/assets/images/maison-facade-640.webp 640w, /assets/images/maison-facade-1280.webp 1280w, /assets/images/maison-facade-1920.webp 1920w" sizes="100vw" alt="Façade de la maison vigneronne Lo Componaïro à Pouzols" width="1280" height="720" fetchpriority="high" loading="eager" decoding="async">
-  </picture>
-</figure>
-  <div class="hero-grille conteneur">
-    <div class="hero-texte">
+<section class="hero entree" id="debut">
+  <div class="entree-grille conteneur">
+    <div class="hero-texte entree-texte">
       <p class="surtitre hero-sur masque-ecran-tres-bas" data-anime="gsap">Chambre d’hôtes · Pouzols, Hérault</p>
-      <h1 class="hero-titre"><span class="ligne-masque"><span class="hero-ligne" data-anime="gsap">Quatre chambres,</span></span><span class="ligne-masque"><span class="hero-ligne hero-ligne--b" data-anime="gsap">quatre histoires.</span></span></h1>
-      <p class="hero-intro masque-ecran-bas" data-anime="gsap">Une maison vigneronne de 1850 où chaque chambre porte le prénom d’une de nos grands-mères. Terrasses, garage fermé et petit-déjeuner compris en réservation directe.</p>
+      <h1 class="hero-titre"><span class="ligne-masque"><span class="hero-ligne" data-anime="gsap">Quatre chambres,</span></span> <span class="ligne-masque"><span class="hero-ligne hero-ligne--b" data-anime="gsap">quatre histoires.</span></span></h1>
+      <p class="hero-intro masque-ecran-bas" data-anime="gsap">Une maison vigneronne de 1850 où chaque chambre porte le prénom d’une de nos grands-mères. Petit-déjeuner et garage fermé compris en réservation directe.</p>
       <div class="hero-actions" data-anime="gsap">
         <a href="/reserver" class="bouton bouton--action" data-libelle="Réserver" data-action-principale data-survol="magnetique">Réserver en direct</a>
-        <a href="/chambres" class="bouton bouton--clair" data-libelle="Les chambres">Voir les chambres</a>
+        <a href="/chambres" class="bouton bouton--contour" data-libelle="Les chambres">Voir les chambres</a>
       </div>
       <p class="hero-info" data-info-cle data-anime="gsap"><span>Arrivée</span> de 17 h à 20 h 30 · garage fermé jusqu’à 23 h</p>
+      <ul class="hero-preuves masque-ecran-bas" data-anime="gsap" aria-label="Distinctions de la maison">
+        <li><strong>9,5 / 10</strong> sur Booking.com (2025)</li><li>Recommandé par le Petit Futé 2025 et 2026</li><li>Label Gîtes de France</li>
+      </ul>
     </div>
-    <div class="hero-trousseau">
-      <div class="oat trousseau" data-trousseau data-grille="manipuler" data-effet="trousseau" data-souris data-iris-centre="disque" role="img" aria-label="Trousseau des quatre chambres : faites-le tourner pour voir chaque chambre">
-        <div class="oat__objet"><div class="trousseau-plaque"><svg class="trousseau-svg" viewBox="0 0 400 400" aria-hidden="true" focusable="false" data-audit-ignorer>
-  <circle class="trousseau-ombre" cx="204" cy="206" r="44"/>
-  <g class="trousseau-cle" style="--i:0" transform="translate(200 200) rotate(0)">
-    <g class="cle" data-cle="isabelle">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Isabelle</text>
-  </g>
-</g></g><g class="trousseau-cle" style="--i:1" transform="translate(200 200) rotate(90)">
-    <g class="cle" data-cle="denise">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Denise</text>
-  </g>
-</g></g><g class="trousseau-cle" style="--i:2" transform="translate(200 200) rotate(180)">
-    <g class="cle" data-cle="mathilde">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Mathilde</text>
-  </g>
-</g></g><g class="trousseau-cle" style="--i:3" transform="translate(200 200) rotate(270)">
-    <g class="cle" data-cle="suzanne">
-  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
-  <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
-  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
-</g><g class="etiquette" transform="translate(16 54)">
-  <path class="etiquette-fil" d="M0 0 C 14 10, 30 14, 44 30" fill="none"/>
-  <g transform="translate(44 30) rotate(-14)">
-    <path class="etiquette-papier" d="M0 6 L10 -6 H84 a5 5 0 0 1 5 5 V27 a5 5 0 0 1 -5 5 H10 L0 20 Z"/>
-    <circle class="etiquette-trou" cx="9" cy="7" r="3"/>
-    <text class="etiquette-texte" x="50" y="21" text-anchor="middle">Suzanne</text>
-  </g>
-</g></g>
-  <circle class="trousseau-anneau" cx="200" cy="200" r="44" fill="none" stroke-width="8"/>
-  <circle class="trousseau-reflet" cx="200" cy="200" r="44" fill="none" stroke-width="2"/>
-</svg></div></div>
-        <span class="oat__reflet" aria-hidden="true"></span>
-        <p class="oat__indice" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></svg>Faites tourner</p>
+  </div>
+  <div class="entree-porte" data-porte-entree data-effet="porte-entree" data-grille="manipuler" data-visuel>
+    <div class="entree-scene" role="group" aria-label="La porte de la maison : choisissez une chambre pour l’ouvrir, ou faites glisser la porte">
+      <div class="entree-chambres">
+        <div class="entree-chambre est-visible" data-entree-chambre="isabelle"><figure class="media entree-photo" style="--cadrage:50% 55%">
+  <picture>
+    <img src="/assets/images/porte-isabelle-1200.webp" srcset="/assets/images/porte-isabelle-640.webp 640w, /assets/images/porte-isabelle-960.webp 960w, /assets/images/porte-isabelle-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="" width="1200" height="1500" loading="lazy" decoding="async">
+  </picture>
+</figure></div><div class="entree-chambre" data-entree-chambre="denise"><figure class="media entree-photo" style="--cadrage:50% 55%">
+  <picture>
+    <img src="/assets/images/porte-denise-1200.webp" srcset="/assets/images/porte-denise-640.webp 640w, /assets/images/porte-denise-960.webp 960w, /assets/images/porte-denise-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="" width="1200" height="1500" loading="lazy" decoding="async">
+  </picture>
+</figure></div><div class="entree-chambre" data-entree-chambre="mathilde"><figure class="media entree-photo" style="--cadrage:50% 55%">
+  <picture>
+    <img src="/assets/images/porte-mathilde-1200.webp" srcset="/assets/images/porte-mathilde-640.webp 640w, /assets/images/porte-mathilde-960.webp 960w, /assets/images/porte-mathilde-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="" width="1200" height="1500" loading="lazy" decoding="async">
+  </picture>
+</figure></div><div class="entree-chambre" data-entree-chambre="suzanne"><figure class="media entree-photo" style="--cadrage:50% 55%">
+  <picture>
+    <img src="/assets/images/porte-suzanne-1200.webp" srcset="/assets/images/porte-suzanne-640.webp 640w, /assets/images/porte-suzanne-960.webp 960w, /assets/images/porte-suzanne-1200.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="" width="1200" height="1500" loading="lazy" decoding="async">
+  </picture>
+</figure></div>
       </div>
-      <div class="trousseau-legende" aria-live="polite">
-        <p class="trousseau-nom"><span>Clé de la chambre</span> <strong data-trousseau-nom>Isabelle</strong></p>
-        <p class="trousseau-detail" data-trousseau-detail>1er étage · 24 m² · terrasse · vue village</p>
-      </div>
-      <div class="trousseau-choix" role="group" aria-label="Trousseau des quatre chambres : faites-le tourner pour voir chaque chambre">
-        <button type="button" data-trousseau-choix="0" data-nom="Isabelle" data-detail="1er étage · 24 m² · terrasse · vue village" aria-pressed="true">Isabelle</button><button type="button" data-trousseau-choix="1" data-nom="Denise" data-detail="1er étage · 17 ou 24 m² (à confirmer) · terrasse · vue village" aria-pressed="false">Denise</button><button type="button" data-trousseau-choix="2" data-nom="Mathilde" data-detail="2e étage · 16 m² · vue jardin" aria-pressed="false">Mathilde</button><button type="button" data-trousseau-choix="3" data-nom="Suzanne" data-detail="2e étage · 15 m² · vue jardin" aria-pressed="false">Suzanne</button>
+      <span class="entree-lumiere" aria-hidden="true"></span>
+      <span class="entree-portee" aria-hidden="true"></span>
+      <div class="entree-battant" data-entree-battant data-iris-centre>
+        <div class="entree-souffle">
+          <figure class="media entree-photo" style="--cadrage:62% 42%">
+  <picture>
+    <img src="/assets/images/porte-soir-1280.webp" srcset="/assets/images/porte-soir-640.webp 640w, /assets/images/porte-soir-960.webp 960w, /assets/images/porte-soir-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 50vw" alt="Porte d’entrée de la maison, bois ciré et lumière chaude derrière les vitres" width="1280" height="1600" fetchpriority="high" loading="eager" decoding="async">
+  </picture>
+</figure>
+          <span class="entree-ombre" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<section class="maison" id="maison" data-fil="gauche">
-  <div class="conteneur maison-grille">
-    <div class="maison-texte">
-      <p class="surtitre" data-anime>La maison</p>
-      <h2 class="titre-axes" data-grille="typo" data-effet="axes" data-axes>Une maison de vigneron, depuis 1850.</h2>
-      <p class="manifeste" data-manifeste data-effet="manifeste">À Pouzols, entre vignes et garrigue, le passé rencontre le présent : murs de pierre, carreaux de ciment, poutres, et quatre chambres pour quatre grands-mères.</p>
-      <p class="maison-note" data-anime>Lo Componaïro est une SAS fondée en 2019 par deux passionnés de l’Hérault. La maison est ouverte toute l’année.</p>
-    </div>
-    <div class="maison-photos">
-      <figure class="media maison-allee" data-fx="parallaxe" data-fx-force="10" style="--cadrage:53% 40%">
-  <picture>
-    <img src="/assets/images/maison-allee-1280.webp" srcset="/assets/images/maison-allee-640.webp 640w, /assets/images/maison-allee-1280.webp 1280w, /assets/images/maison-allee-1920.webp 1920w" sizes="(max-width: 760px) 100vw, 40vw" alt="Allée de gravier bordée de céanothes en fleurs jusqu’à la maison" width="1280" height="853" loading="lazy" decoding="async">
-  </picture>
-</figure>
-      <figure class="media maison-escalier" data-fx="parallaxe" data-fx-force="14" style="--cadrage:58% 40%">
-  <picture>
-    <img src="/assets/images/escalier-784.webp" srcset="/assets/images/escalier-480.webp 480w, /assets/images/escalier-640.webp 640w, /assets/images/escalier-784.webp 784w" sizes="(max-width: 760px) 60vw, 22vw" alt="Escalier aux murs rouges et aux carreaux de ciment qui monte aux chambres" width="784" height="1176" loading="lazy" decoding="async">
-  </picture>
-</figure>
+    <div class="entree-choix">
+      <p class="entree-question">Derrière la porte</p>
+      <div class="entree-boutons" role="group" aria-label="Derrière la porte">
+        <button type="button" data-entree-choix="isabelle" data-nom="Isabelle" data-detail="1er étage · 24 m² · terrasse · vue village" data-lien="/chambres#isabelle" aria-pressed="true">Isabelle</button><button type="button" data-entree-choix="denise" data-nom="Denise" data-detail="1er étage · terrasse · vue village" data-lien="/chambres#denise" aria-pressed="false">Denise</button><button type="button" data-entree-choix="mathilde" data-nom="Mathilde" data-detail="2e étage · 16 m² · vue jardin" data-lien="/chambres#mathilde" aria-pressed="false">Mathilde</button><button type="button" data-entree-choix="suzanne" data-nom="Suzanne" data-detail="2e étage · 15 m² · vue jardin" data-lien="/chambres#suzanne" aria-pressed="false">Suzanne</button>
+      </div>
+      <p class="entree-legende" aria-live="polite"><strong data-entree-nom>Isabelle</strong> <span data-entree-detail>1er étage · 24 m² · terrasse · vue village</span> <a href="/chambres#isabelle" data-entree-lien data-libelle="Les chambres">Voir la chambre →</a></p>
     </div>
   </div>
 </section>
-<section class="vignes-bande" id="vignes">
-  <figure class="media vignes-photo" data-grok data-fx="onde" data-fx-force="1.4" style="--cadrage:50% 60%">
-  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/g-vignes-mobile-640.webp 640w" sizes="100vw">
-    <img src="/assets/images/grok/g-vignes-1280.webp" srcset="/assets/images/grok/g-vignes-640.webp 640w, /assets/images/grok/g-vignes-1280.webp 1280w" sizes="100vw" alt="Vignes en terrasses et garrigue dans la lumière du soir" width="1280" height="720" loading="lazy" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+<section class="facade" id="maison" data-grille="scene" data-effet="facade-etages" data-scene data-fil="gauche">
+  <div class="facade-grille conteneur">
+    <div class="facade-visuel" data-facade-visuel data-visuel>
+      <figure class="media facade-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/facade-etages-1280.webp" srcset="/assets/images/facade-etages-640.webp 640w, /assets/images/facade-etages-960.webp 960w, /assets/images/facade-etages-1280.webp 1280w, /assets/images/facade-etages-1600.webp 1600w" sizes="(max-width: 760px) 100vw, 55vw" alt="Façade de la maison vigneronne : garage au rez-de-chaussée, balcon du 1er étage, fenêtres du 2e" width="1280" height="960" loading="lazy" decoding="async">
+  </picture>
 </figure>
-  <p class="vignes-legende conteneur" data-anime="mots">Entre vignes et garrigue, à 7 km de Gignac.</p>
-</section>
-<section class="o3d coupe" id="coupe" data-grille="scene" data-effet="maison-coupe" data-scene aria-labelledby="coupe-titre">
-  <div class="o3d__cadre conteneur">
-    <div class="o3d__texte">
-      <p class="surtitre">Du garage au toit</p>
-      <h2 class="o3d__titre" id="coupe-titre">La maison, étage par étage.</h2>
-      <p class="o3d__intro masque-ecran-bas">Faites défiler : la maison se monte, le toit se lève sur les chambres, puis attrapez-la pour la faire tourner.</p>
+      <span class="facade-lueur" data-facade-lueur aria-hidden="true"></span><span class="facade-nuit facade-nuit--haut" data-nuit-haut aria-hidden="true"></span><span class="facade-nuit facade-nuit--bas" data-nuit-bas aria-hidden="true"></span>
+      <p class="facade-repere" data-facade-repere="rdc" style="--y:74.5%" aria-hidden="true"><span>Rez-de-chaussée · garage</span></p><p class="facade-repere" data-facade-repere="e1" style="--y:48.0%" aria-hidden="true"><span>1er · Isabelle, Denise</span></p><p class="facade-repere" data-facade-repere="e2" style="--y:32.0%" aria-hidden="true"><span>2e · Mathilde, Suzanne</span></p>
     </div>
-    <div class="o3d__scene" data-visuel tabindex="0" role="region" aria-label="Maquette de la maison en 3D : flèches gauche et droite pour la faire tourner">
-      <div class="o3d__objet" aria-hidden="true" data-audit-ignorer>
-  <div class="o3d__sol"></div>
-  <div class="o3d__piece o3d__piece--interieur" data-de=".22" data-a=".42"><div class="o3d__boite o3d__boite--chambre o3d__boite--isabelle" style="--l:206px;--p:200px;--h:96px;--x:-110px;--y:122px"><i class="o3d__f o3d__f--av"><span>Isabelle</span></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div><div class="o3d__boite o3d__boite--chambre o3d__boite--denise" style="--l:206px;--p:200px;--h:96px;--x:110px;--y:122px"><i class="o3d__f o3d__f--av"><span>Denise</span></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div></div>
-  <div class="o3d__piece o3d__piece--interieur" data-de=".46" data-a=".66"><div class="o3d__boite o3d__boite--chambre o3d__boite--mathilde" style="--l:206px;--p:200px;--h:84px;--x:-110px;--y:226px"><i class="o3d__f o3d__f--av"><span>Mathilde</span></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div><div class="o3d__boite o3d__boite--chambre o3d__boite--suzanne" style="--l:206px;--p:200px;--h:84px;--x:110px;--y:226px"><i class="o3d__f o3d__f--av"><span>Suzanne</span></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div></div>
-  <div class="o3d__piece" data-de="-.14" data-a=".14"><div class="o3d__boite o3d__boite--rdc" style="--l:440px;--p:230px;--h:118px;--y:0px"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div></div>
-  <div class="o3d__piece o3d__piece--facade" data-de=".22" data-a=".42"><div class="o3d__boite o3d__boite--etage1" style="--l:440px;--p:230px;--h:104px;--y:118px"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div><div class="o3d__boite o3d__boite--terrasse" style="--l:96px;--p:150px;--h:10px;--x:-268px;--y:118px"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div><div class="o3d__boite o3d__boite--terrasse" style="--l:96px;--p:150px;--h:10px;--x:268px;--y:118px"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div></div>
-  <div class="o3d__piece o3d__piece--facade" data-de=".46" data-a=".66"><div class="o3d__boite o3d__boite--etage2" style="--l:440px;--p:230px;--h:92px;--y:222px"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div></div>
-  <div class="o3d__piece o3d__piece--toit" data-de=".64" data-a=".8" style="--o3d-chute:-360px"><div class="o3d__boite o3d__boite--pignon" style="--l:440px;--p:230px;--h:64px;--y:314px"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div><div class="o3d__boite o3d__boite--toit" style="--l:238px;--p:252px;--h:8px;--x:-111px;--y:342px;--rz:-16deg"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div><div class="o3d__boite o3d__boite--toit" style="--l:238px;--p:252px;--h:8px;--x:111px;--y:342px;--rz:16deg"><i class="o3d__f o3d__f--av"></i><i class="o3d__f o3d__f--ar"></i><i class="o3d__f o3d__f--g"></i><i class="o3d__f o3d__f--d"></i><i class="o3d__f o3d__f--haut"></i></div></div>
-</div>
-      <p class="o3d__indice" aria-hidden="true">Attrapez la maison</p>
-      <p class="schema-mention">Schéma illustratif</p>
+    <div class="facade-texte">
+      <div class="facade-intro" data-facade-etape="tout">
+        <p class="surtitre" data-anime>La maison</p>
+        <h2 class="titre-axes" data-grille="typo" data-effet="axes" data-axes>Une maison de vigneron, depuis 1850.</h2>
+        <p class="manifeste" data-manifeste data-effet="manifeste">À Pouzols, entre vignes et garrigue, le passé rencontre le présent : murs de pierre, carreaux de ciment, poutres, et quatre chambres pour quatre grands-mères.</p>
+      </div>
+      <div class="facade-etage" data-facade-etape="rdc" data-haut="0.56" data-bas="0.93">
+        <p class="facade-niveau">Rez-de-chaussée</p>
+        <figure class="media facade-vue" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/vue-rdc-1280.webp" srcset="/assets/images/vue-rdc-640.webp 640w, /assets/images/vue-rdc-960.webp 960w, /assets/images/vue-rdc-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 36vw" alt="L’allée de gravier et les céanothes bleus jusqu’à la maison" width="1280" height="560" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <p class="facade-phrase">Le garage fermé, accessible jusqu’à 23 h, avec prise de recharge. On vous accueille de 17 h à 20 h 30.</p>
+      </div><div class="facade-etage" data-facade-etape="e1" data-haut="0.395" data-bas="0.565">
+        <p class="facade-niveau">1er étage</p>
+        <figure class="media facade-vue" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/vue-1er-1280.webp" srcset="/assets/images/vue-1er-640.webp 640w, /assets/images/vue-1er-960.webp 960w, /assets/images/vue-1er-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 36vw" alt="Depuis la terrasse du 1er étage : le jardin, les arbres et les toits du village" width="1280" height="560" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <p class="facade-phrase">Isabelle et Denise, chacune avec sa terrasse. Réunies, elles forment la suite familiale.</p>
+        <ul class="facade-chambres"><li>
+          <a href="/chambres#isabelle" data-libelle="Les chambres" class="facade-chambre">
+            <figure class="media facade-chambre-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/isabelle-4-960.webp" srcset="/assets/images/isabelle-4-480.webp 480w, /assets/images/isabelle-4-640.webp 640w, /assets/images/isabelle-4-960.webp 960w" sizes="(max-width: 760px) 44vw, 16vw" alt="" width="960" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+            <span class="facade-chambre-nom">Isabelle</span>
+            <span class="facade-chambre-infos">24 m² · vue village · terrasse</span>
+          </a></li><li>
+          <a href="/chambres#denise" data-libelle="Les chambres" class="facade-chambre">
+            <figure class="media facade-chambre-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/denise-2-960.webp" srcset="/assets/images/denise-2-480.webp 480w, /assets/images/denise-2-640.webp 640w, /assets/images/denise-2-960.webp 960w" sizes="(max-width: 760px) 44vw, 16vw" alt="" width="960" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+            <span class="facade-chambre-nom">Denise</span>
+            <span class="facade-chambre-infos">vue village · terrasse</span>
+          </a></li></ul>
+      </div><div class="facade-etage" data-facade-etape="e2" data-haut="0.235" data-bas="0.405">
+        <p class="facade-niveau">2e étage</p>
+        <figure class="media facade-vue" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/vue-2e-1280.webp" srcset="/assets/images/vue-2e-640.webp 640w, /assets/images/vue-2e-960.webp 960w, /assets/images/vue-2e-1280.webp 1280w" sizes="(max-width: 760px) 92vw, 36vw" alt="Depuis le 2e étage : le jardin vu d’en haut, les cyprès et le portail" width="1280" height="560" loading="lazy" decoding="async">
+  </picture>
+</figure>
+        <p class="facade-phrase">Mathilde et Suzanne, sous les poutres, côté jardin.</p>
+        <ul class="facade-chambres"><li>
+          <a href="/chambres#mathilde" data-libelle="Les chambres" class="facade-chambre">
+            <figure class="media facade-chambre-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/mathilde-1-960.webp" srcset="/assets/images/mathilde-1-480.webp 480w, /assets/images/mathilde-1-640.webp 640w, /assets/images/mathilde-1-960.webp 960w" sizes="(max-width: 760px) 44vw, 16vw" alt="" width="960" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+            <span class="facade-chambre-nom">Mathilde</span>
+            <span class="facade-chambre-infos">16 m² · vue jardin</span>
+          </a></li><li>
+          <a href="/chambres#suzanne" data-libelle="Les chambres" class="facade-chambre">
+            <figure class="media facade-chambre-photo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/suzanne-1-960.webp" srcset="/assets/images/suzanne-1-480.webp 480w, /assets/images/suzanne-1-640.webp 640w, /assets/images/suzanne-1-960.webp 960w" sizes="(max-width: 760px) 44vw, 16vw" alt="" width="960" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+            <span class="facade-chambre-nom">Suzanne</span>
+            <span class="facade-chambre-infos">15 m² · vue jardin</span>
+          </a></li></ul>
+      </div>
     </div>
-    <ol class="o3d__etapes">
-      <li data-de="0"><div><strong>Rez-de-chaussée</strong><span>Arrivée de 17 h à 20 h 30, garage fermé jusqu’à 23 h</span></div></li>
-      <li data-de=".24"><div><strong>1er étage</strong><span>Isabelle et Denise, chacune avec sa terrasse</span></div></li>
-      <li data-de=".48"><div><strong>2e étage</strong><span>Mathilde et Suzanne, sous les poutres, côté jardin</span></div></li>
-      <li data-de=".64"><div><strong>Le toit</strong><span>Une maison de pierre de 1850</span></div></li>
-      <li data-de=".84"><div><strong>Les quatre chambres</strong><span>Le toit se lève : Isabelle et Denise au 1er, Mathilde et Suzanne au 2e</span></div></li>
-    </ol>
   </div>
 </section>
-<section class="chambres-accueil" id="chambres" data-fil="droite">
-  <div class="prenoms-geants" data-fx="mots-geants" aria-hidden="true" data-ruban data-visuel data-audit-ignorer>
-    <p data-fx-rangee>Isabelle · Denise · Mathilde · Suzanne · Isabelle · Denise · Mathilde ·</p>
-    <p data-fx-rangee data-sens="-1">Suzanne · Mathilde · Denise · Isabelle · Suzanne · Mathilde · Denise ·</p>
+<section class="duo" id="suite" data-fil="droite">
+  <div class="duo-photos" data-duo data-effet="duo" data-visuel>
+    <figure class="media duo-photo duo-photo--g" data-duo-g style="--cadrage:50% 55%">
+  <picture>
+    <img src="/assets/images/isabelle-2-960.webp" srcset="/assets/images/isabelle-2-480.webp 480w, /assets/images/isabelle-2-640.webp 640w, /assets/images/isabelle-2-960.webp 960w" sizes="(max-width: 760px) 50vw, 40vw" alt="Chambre Isabelle : lit en fer forgé et murs jaunes" width="960" height="720" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <figure class="media duo-photo duo-photo--d" data-duo-d style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/denise-3-960.webp" srcset="/assets/images/denise-3-480.webp 480w, /assets/images/denise-3-640.webp 640w, /assets/images/denise-3-960.webp 960w" sizes="(max-width: 760px) 50vw, 40vw" alt="Chambre Denise : porte-fenêtre ouverte sur la terrasse" width="960" height="1280" loading="lazy" decoding="async">
+  </picture>
+</figure>
   </div>
-  <div class="conteneur">
-    <div class="tete-section">
-      <p class="surtitre" data-anime>Les chambres</p>
-      <h2 data-anime="lettres">Aux prénoms de nos grands-mères.</h2>
-      <p data-anime>Climatisées, avec Wi-Fi, bureau, machine à expresso, douche et toilettes. Chacune a son caractère.</p>
-    </div>
-    <ul class="cartes-chambres">
-      <li class="carte-chambre" id="carte-isabelle">
-        <a href="/chambres#isabelle" data-libelle="Les chambres" class="carte-chambre-lien" aria-label="Voir la chambre Isabelle">
-          <figure class="media carte-chambre-photo" data-fx="vitesse" data-fx-force="4" style="--cadrage:50% 45%">
-  <picture>
-    <img src="/assets/images/isabelle-1-960.webp" srcset="/assets/images/isabelle-1-480.webp 480w, /assets/images/isabelle-1-640.webp 640w, /assets/images/isabelle-1-960.webp 960w" sizes="(max-width: 760px) 86vw, (max-width: 1100px) 44vw, 23vw" alt="" width="960" height="720" loading="lazy" decoding="async">
-  </picture>
-</figure>
-          <svg class="etiquette-plume" viewBox="0 0 220 64" aria-hidden="true" data-plume data-effet="etiquette-plume" data-grille="typo"><path class="etiquette-plume-papier" d="M2 32 L22 6 H210 a8 8 0 0 1 8 8 V50 a8 8 0 0 1 -8 8 H22 Z"/><circle cx="20" cy="32" r="5" class="etiquette-plume-trou"/><text x="120" y="44" text-anchor="middle">Isabelle</text></svg>
-          <span class="carte-chambre-nom">Isabelle</span>
-          <span class="carte-chambre-infos"><span>1er étage</span><span>24 m²</span><span>Vue village</span></span>
-          <span class="carte-chambre-dit">Murs jaunes, lit en fer forgé et cheminée, avec sa terrasse.</span>
-          <span class="carte-chambre-voir">Voir la chambre →</span>
-        </a>
-      </li><li class="carte-chambre" id="carte-denise">
-        <a href="/chambres#denise" data-libelle="Les chambres" class="carte-chambre-lien" aria-label="Voir la chambre Denise">
-          <figure class="media carte-chambre-photo" data-fx="vitesse" data-fx-force="4" style="--cadrage:50% 45%">
-  <picture>
-    <img src="/assets/images/denise-1-960.webp" srcset="/assets/images/denise-1-480.webp 480w, /assets/images/denise-1-640.webp 640w, /assets/images/denise-1-960.webp 960w" sizes="(max-width: 760px) 86vw, (max-width: 1100px) 44vw, 23vw" alt="" width="960" height="720" loading="lazy" decoding="async">
-  </picture>
-</figure>
-          <svg class="etiquette-plume" viewBox="0 0 220 64" aria-hidden="true" data-plume data-effet="etiquette-plume" data-grille="typo"><path class="etiquette-plume-papier" d="M2 32 L22 6 H210 a8 8 0 0 1 8 8 V50 a8 8 0 0 1 -8 8 H22 Z"/><circle cx="20" cy="32" r="5" class="etiquette-plume-trou"/><text x="120" y="44" text-anchor="middle">Denise</text></svg>
-          <span class="carte-chambre-nom">Denise</span>
-          <span class="carte-chambre-infos"><span>1er étage</span><span>17 ou 24 m² (à confirmer)</span><span>Vue village</span></span>
-          <span class="carte-chambre-dit">Murs orangés et têtes de lit en rotin, en lit double ou en deux lits, avec sa terrasse.</span>
-          <span class="carte-chambre-voir">Voir la chambre →</span>
-        </a>
-      </li><li class="carte-chambre" id="carte-mathilde">
-        <a href="/chambres#mathilde" data-libelle="Les chambres" class="carte-chambre-lien" aria-label="Voir la chambre Mathilde">
-          <figure class="media carte-chambre-photo" data-fx="vitesse" data-fx-force="4" style="--cadrage:50% 45%">
-  <picture>
-    <img src="/assets/images/mathilde-1-960.webp" srcset="/assets/images/mathilde-1-480.webp 480w, /assets/images/mathilde-1-640.webp 640w, /assets/images/mathilde-1-960.webp 960w" sizes="(max-width: 760px) 86vw, (max-width: 1100px) 44vw, 23vw" alt="" width="960" height="720" loading="lazy" decoding="async">
-  </picture>
-</figure>
-          <svg class="etiquette-plume" viewBox="0 0 220 64" aria-hidden="true" data-plume data-effet="etiquette-plume" data-grille="typo"><path class="etiquette-plume-papier" d="M2 32 L22 6 H210 a8 8 0 0 1 8 8 V50 a8 8 0 0 1 -8 8 H22 Z"/><circle cx="20" cy="32" r="5" class="etiquette-plume-trou"/><text x="120" y="44" text-anchor="middle">Mathilde</text></svg>
-          <span class="carte-chambre-nom">Mathilde</span>
-          <span class="carte-chambre-infos"><span>2e étage</span><span>16 m²</span><span>Vue jardin</span></span>
-          <span class="carte-chambre-dit">Murs rouges, parquet et poutres apparentes, côté jardin.</span>
-          <span class="carte-chambre-voir">Voir la chambre →</span>
-        </a>
-      </li><li class="carte-chambre" id="carte-suzanne">
-        <a href="/chambres#suzanne" data-libelle="Les chambres" class="carte-chambre-lien" aria-label="Voir la chambre Suzanne">
-          <figure class="media carte-chambre-photo" data-fx="vitesse" data-fx-force="4" style="--cadrage:50% 45%">
-  <picture>
-    <img src="/assets/images/suzanne-1-960.webp" srcset="/assets/images/suzanne-1-480.webp 480w, /assets/images/suzanne-1-640.webp 640w, /assets/images/suzanne-1-960.webp 960w" sizes="(max-width: 760px) 86vw, (max-width: 1100px) 44vw, 23vw" alt="" width="960" height="720" loading="lazy" decoding="async">
-  </picture>
-</figure>
-          <svg class="etiquette-plume" viewBox="0 0 220 64" aria-hidden="true" data-plume data-effet="etiquette-plume" data-grille="typo"><path class="etiquette-plume-papier" d="M2 32 L22 6 H210 a8 8 0 0 1 8 8 V50 a8 8 0 0 1 -8 8 H22 Z"/><circle cx="20" cy="32" r="5" class="etiquette-plume-trou"/><text x="120" y="44" text-anchor="middle">Suzanne</text></svg>
-          <span class="carte-chambre-nom">Suzanne</span>
-          <span class="carte-chambre-infos"><span>2e étage</span><span>15 m²</span><span>Vue jardin</span></span>
-          <span class="carte-chambre-dit">Parquet, poutres et bureau devant la fenêtre, côté jardin.</span>
-          <span class="carte-chambre-voir">Voir la chambre →</span>
-        </a>
-      </li>
-    </ul>
-    <p class="centre" data-anime><a href="/chambres#comparer" class="bouton bouton--contour" data-libelle="Les chambres">Comparer les quatre chambres</a></p>
+  <p class="duo-mots" aria-hidden="true" data-grille="typo" data-audit-ignorer><span data-duo-mot="g">Isabelle</span><span class="duo-plus" data-duo-plus>+</span><span data-duo-mot="d">Denise</span></p>
+  <div class="duo-texte conteneur">
+    <p class="surtitre" data-anime>Suite familiale</p>
+    <h2 data-anime="lignes">Deux chambres voisines, une terrasse fleurie.</h2>
+    <p data-anime>En réservant ensemble Isabelle et Denise, les deux chambres contiguës du 1er étage, vous avez la terrasse fleurie et son mobilier pour vous.</p>
+    <p data-anime><a href="/reserver?chambre=suite" class="bouton bouton--action" data-libelle="Réserver">Réserver la suite familiale</a></p>
   </div>
 </section>
-<section class="suite" id="suite" data-fx="plein-ecran" style="--fx-longueur:230svh">
-  <div data-collant>
-    <figure class="media suite-photo" style="--cadrage:54% 54%">
-  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/terrasse-etage-mobile-640.webp 640w, /assets/images/terrasse-etage-mobile-1080.webp 1080w" sizes="100vw">
-    <img src="/assets/images/terrasse-etage-1280.webp" srcset="/assets/images/terrasse-etage-640.webp 640w, /assets/images/terrasse-etage-1280.webp 1280w, /assets/images/terrasse-etage-1920.webp 1920w" sizes="100vw" alt="Terrasse d’une chambre du premier étage : canapé, table et chaises au soleil" width="1280" height="720" loading="lazy" decoding="async">
-  </picture>
-</figure>
-    <div class="suite-mots" aria-hidden="true" data-superpose data-audit-ignorer><span data-fx-ecarte="g">Isabelle</span><span data-fx-ecarte="d">+ Denise</span></div>
-    <div class="suite-texte conteneur"><div data-fx-apres>
-      <p class="surtitre">Suite familiale</p>
-      <h2>Deux chambres voisines, une terrasse fleurie.</h2>
-      <p class="masque-ecran-tres-bas">En réservant ensemble Isabelle et Denise, les deux chambres contiguës du 1er étage, vous avez la terrasse fleurie et son mobilier pour vous.</p>
-      <p><a href="/reserver?chambre=suite" class="bouton bouton--action" data-libelle="Réserver">Réserver la suite familiale</a></p>
-    </div></div>
-  </div>
-</section>
-<section class="inclus" id="inclus" data-fil="gauche">
-  <div class="conteneur inclus-grille">
-    <div class="inclus-texte">
+<section class="direct" id="inclus" data-fil="gauche">
+  <div class="conteneur direct-grille">
+    <div class="direct-texte">
       <p class="surtitre" data-anime>Meilleur prix garanti</p>
       <h2 data-anime="lignes">En direct, tout est compris.</h2>
-      <p data-anime>Des tarifs sans intermédiaire ni frais cachés : la nuit, le garage, le petit-déjeuner et la TVA. Seule la taxe de séjour s’ajoute (1,08 € par jour et par adulte).</p>
-      <ul class="inclus-liste" data-tampons data-effet="tampons">
-        <li><span class="inclus-tampon" aria-hidden="true">Inclus</span><strong>Petit-déjeuner</strong><span>servi de 8 h 30 à 10 h</span></li><li><span class="inclus-tampon" aria-hidden="true">Inclus</span><strong>Garage fermé</strong><span>jusqu’à 23 h, prise de recharge, vestiaire motards et cavaliers</span></li><li><span class="inclus-tampon" aria-hidden="true">Inclus</span><strong>Annulation gratuite</strong><span>jusqu’à 7 jours avant</span></li><li><span class="inclus-tampon" aria-hidden="true">Inclus</span><strong>Climatisation et Wi-Fi</strong><span>dans les quatre chambres</span></li>
-      </ul>
+      <p class="direct-chapo" data-anime>Des tarifs sans intermédiaire ni frais cachés : la nuit, le garage, le petit-déjeuner et la TVA. Seule la taxe de séjour s’ajoute (1,08 € par jour et par adulte).</p>
+      <ol class="direct-liste" data-direct data-effet="compris">
+        <li><span class="direct-mot">Petit-déjeuner</span><span class="direct-detail">servi de 8 h 30 à 10 h</span><span class="direct-inclus">Inclus</span></li><li><span class="direct-mot">Garage fermé</span><span class="direct-detail">jusqu’à 23 h, prise de recharge, vestiaire motards et cavaliers</span><span class="direct-inclus">Inclus</span></li><li><span class="direct-mot">Annulation gratuite</span><span class="direct-detail">jusqu’à 7 jours avant</span><span class="direct-inclus">Inclus</span></li><li><span class="direct-mot">Climatisation et Wi-Fi</span><span class="direct-detail">dans les quatre chambres</span><span class="direct-inclus">Inclus</span></li>
+      </ol>
+      <p class="direct-prix">Le prix de la nuit s’affiche avec les disponibilités sur la réservation sécurisée de la maison.</p>
+      <div class="direct-arrivee">
+        <p class="direct-horaires">Arrivée de 17 h à 20 h 30 · clés jusqu’à 22 h · garage jusqu’à 23 h · départ à 11 h</p>
+        <p class="soir-statut" data-statut-arrivee data-ouvert="L’accueil est ouvert : vous pouvez arriver jusqu’à 20 h 30." data-avant="L’accueil ouvre à 17 h aujourd’hui." data-apres="L’accueil est fermé pour ce soir : il rouvre demain à 17 h." aria-live="polite"><span data-heure-pouzols></span></p>
+        <p><a class="bouton bouton--contour" href="tel:+33688712601">Prévenir de mon arrivée · 06 88 71 26 01</a></p>
+      </div>
     </div>
-    <div class="inclus-photos">
-      <figure class="media inclus-photo-a" data-anime="rideau" style="--cadrage:50% 50%">
+    <div class="direct-visuel">
+      <figure class="media direct-photo" data-fx="parallaxe" data-fx-force="8" style="--cadrage:50% 50%">
   <picture>
-    <img src="/assets/images/petit-dejeuner-table-784.webp" srcset="/assets/images/petit-dejeuner-table-480.webp 480w, /assets/images/petit-dejeuner-table-640.webp 640w, /assets/images/petit-dejeuner-table-784.webp 784w" sizes="(max-width: 760px) 80vw, 30vw" alt="Table du petit-déjeuner vue d’en haut, nappe fleurie et coussins verts" width="784" height="980" loading="lazy" decoding="async">
-  </picture>
-</figure>
-      <figure class="media inclus-photo-b" data-fx="parallaxe" data-fx-force="12" style="--cadrage:50% 50%">
-  <picture>
-    <img src="/assets/images/garage-784.webp" srcset="/assets/images/garage-480.webp 480w, /assets/images/garage-640.webp 640w, /assets/images/garage-784.webp 784w" sizes="(max-width: 760px) 50vw, 18vw" alt="Garage voûté et fermé de la maison" width="784" height="980" loading="lazy" decoding="async">
+    <img src="/assets/images/petit-dejeuner-table-784.webp" srcset="/assets/images/petit-dejeuner-table-480.webp 480w, /assets/images/petit-dejeuner-table-640.webp 640w, /assets/images/petit-dejeuner-table-784.webp 784w" sizes="(max-width: 760px) 92vw, 40vw" alt="Table du petit-déjeuner vue d’en haut, nappe fleurie et coussins verts" width="784" height="980" loading="lazy" decoding="async">
   </picture>
 </figure>
     </div>
   </div>
 </section>
-<section class="soir" id="ce-soir" data-fil="droite">
-  <div class="conteneur soir-grille">
-    <div class="soir-cadran" data-cadran data-effet="cadran-journee" role="img" aria-label="Cadran des horaires de la maison, aiguille sur l’heure de Pouzols">
-      <svg class="cadran" viewBox="0 0 360 360" aria-hidden="true" focusable="false" data-audit-ignorer>
-  <circle class="cadran-fond" cx="180" cy="180" r="176"/>
-  <g class="cadran-graduations"><line x1="180.0" y1="24.0" x2="180.0" y2="8.0"/><line x1="220.4" y1="29.3" x2="222.4" y2="21.6"/><line x1="258.0" y1="44.9" x2="262.0" y2="38.0"/><line x1="290.3" y1="69.7" x2="296.0" y2="64.0"/><line x1="315.1" y1="102.0" x2="322.0" y2="98.0"/><line x1="330.7" y1="139.6" x2="338.4" y2="137.6"/><line x1="336.0" y1="180.0" x2="352.0" y2="180.0"/><line x1="330.7" y1="220.4" x2="338.4" y2="222.4"/><line x1="315.1" y1="258.0" x2="322.0" y2="262.0"/><line x1="290.3" y1="290.3" x2="296.0" y2="296.0"/><line x1="258.0" y1="315.1" x2="262.0" y2="322.0"/><line x1="220.4" y1="330.7" x2="222.4" y2="338.4"/><line x1="180.0" y1="336.0" x2="180.0" y2="352.0"/><line x1="139.6" y1="330.7" x2="137.6" y2="338.4"/><line x1="102.0" y1="315.1" x2="98.0" y2="322.0"/><line x1="69.7" y1="290.3" x2="64.0" y2="296.0"/><line x1="44.9" y1="258.0" x2="38.0" y2="262.0"/><line x1="29.3" y1="220.4" x2="21.6" y2="222.4"/><line x1="24.0" y1="180.0" x2="8.0" y2="180.0"/><line x1="29.3" y1="139.6" x2="21.6" y2="137.6"/><line x1="44.9" y1="102.0" x2="38.0" y2="98.0"/><line x1="69.7" y1="69.7" x2="64.0" y2="64.0"/><line x1="102.0" y1="44.9" x2="98.0" y2="38.0"/><line x1="139.6" y1="29.3" x2="137.6" y2="21.6"/></g>
-  <path class="cadran-arc cadran-arc--matin" d="M295.8 268.9 A146 146 0 0 1 253.0 306.4"/>
-  <path class="cadran-arc cadran-arc--option" d="M91.1 295.8 A146 146 0 0 1 45.1 235.9"/>
-  <path class="cadran-arc cadran-arc--arrivee" d="M39.0 217.8 A146 146 0 0 1 64.2 91.1"/>
-  <path class="cadran-arc cadran-arc--cles" d="M64.2 91.1 A146 146 0 0 1 107.0 53.6"/>
-  <path class="cadran-arc cadran-arc--garage" d="M107.0 53.6 A146 146 0 0 1 142.2 39.0"/>
-  <circle class="cadran-depart" cx="217.8" cy="321.0" r="7"/>
-  <g class="cadran-chiffres"><text x="180.0" y="58.0" dy="6" text-anchor="middle">0 h</text><text x="302.0" y="180.0" dy="6" text-anchor="middle">6 h</text><text x="180.0" y="302.0" dy="6" text-anchor="middle">12 h</text><text x="58.0" y="180.0" dy="6" text-anchor="middle">18 h</text></g>
-  <text class="cadran-etiquette" x="248.4" y="235.4" dy="5" text-anchor="middle">Petit-déj.</text><text class="cadran-etiquette" x="195.8" y="254.3" dy="5" text-anchor="middle">Départ</text><text class="cadran-etiquette" x="110.2" y="233.6" dy="5" text-anchor="middle">Option</text><text class="cadran-etiquette" x="93.5" y="164.0" dy="5" text-anchor="middle">Arrivée</text><text class="cadran-etiquette" x="145.8" y="103.3" dy="5" text-anchor="middle">Clés</text>
-  <g data-aiguille-balai><g class="cadran-aiguille" data-aiguille><line x1="180" y1="180" x2="180" y2="48"/><circle cx="180" cy="48" r="6"/></g></g>
-  <circle class="cadran-centre" cx="180" cy="180" r="9"/>
-</svg>
-    </div>
-    <div class="soir-texte">
-      <p class="surtitre" data-anime>Arriver ce soir</p>
-      <h2 data-anime="lignes">On vous attend de 17 h à 20 h 30.</h2>
-      <p class="soir-statut" data-statut-arrivee data-ouvert="L’accueil est ouvert : vous pouvez arriver jusqu’à 20 h 30." data-avant="L’accueil ouvre à 17 h aujourd’hui." data-apres="L’accueil est fermé pour ce soir : il rouvre demain à 17 h." aria-live="polite"><span data-heure-pouzols></span></p>
-      <p data-anime>Les clés peuvent être remises jusqu’à 22 h, et le garage reste ouvert jusqu’à 23 h. En retard ? Prévenez la maison.</p>
-      <p data-anime><a class="bouton bouton--contour" href="tel:+33688712601">Prévenir de mon arrivée · 06 88 71 26 01</a></p>
-    </div>
-  </div>
-</section>
-<section class="distinctions" id="distinctions">
+<section class="horizons" id="alentours" data-fil="droite">
   <div class="conteneur">
-    <h2 class="distinctions-titre" data-anime="mots">Ce qu’en disent les guides et les voyageurs</h2>
-    <ul class="plaques" data-anime="cascade" data-visuel>
-      <li class="plaque"><strong>Petit Futé</strong><span>Établissement recommandé 2025 et 2026</span></li><li class="plaque"><strong>Booking.com</strong><span>Traveller Review Awards 2025 : 9,5 / 10</span></li><li class="plaque"><strong>Gîtes de France</strong><span>Label affiché par la maison</span></li><li class="plaque"><strong>Kayak</strong><span>Travel Awards : lauréat</span></li><li class="plaque"><strong>Team 68°</strong><span>Partenaire des motards</span></li>
-    </ul>
-    <p class="distinctions-avis" data-anime><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" aria-label="Lire les avis sur TripAdvisor (nouvel onglet)">Lire les avis sur TripAdvisor</a></p>
-    <p class="distinctions-avis a-completer" data-anime>Notes Google et TripAdvisor : à compléter</p>
-  </div>
-</section>
-<section class="ronde" id="alentours" data-fil="gauche">
-  <div class="conteneur ronde-tete">
-    <p class="surtitre" data-anime>Autour de Pouzols</p>
-    <h2 data-anime="lettres">Saint-Guilhem, le Salagou, Navacelles…</h2>
-    <p data-anime>Faites tourner la ronde des sites, à la main, aux flèches ou en défilant.</p>
-  </div>
-  <div class="carrousel" data-carrousel data-visuel data-effet="carrousel-sites" tabindex="0" role="region" aria-label="Carrousel des sites autour de la maison : flèches gauche et droite pour le faire tourner">
-    <div class="carrousel-scene">
-      <ul class="carrousel-anneau" data-galerie style="--n:10">
-        <li class="carrousel-carte" style="--i:0">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 92V52l20-16 20 16v40M50 36V18M44 24h12M40 92V70a10 10 0 0 1 20 0v22M10 92h80M14 92V64l16-10M86 92V64L70 54"/></g></svg>
-            <p class="carte-site-type">Village</p>
-            <h3>Saint-Guilhem-le-Désert</h3>
-            <p class="carte-site-texte">Présenté par la maison comme l’un des plus beaux villages de France.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 92V52l20-16 20 16v40M50 36V18M44 24h12M40 92V70a10 10 0 0 1 20 0v22M10 92h80M14 92V64l16-10M86 92V64L70 54"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:1">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 70h88M10 70c8-30 32-30 40 0M50 70c8-30 32-30 40 0M30 70v22M70 70v22M6 92c20-6 30 4 44-2s30 6 44 0"/></g></svg>
-            <p class="carte-site-type">Site classé</p>
-            <h3>Pont du Diable</h3>
-            <p class="carte-site-texte">Cité par la maison, avec les gorges de l’Hérault.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 70h88M10 70c8-30 32-30 40 0M50 70c8-30 32-30 40 0M30 70v22M70 70v22M6 92c20-6 30 4 44-2s30 6 44 0"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:2">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 92c4-40 20-64 42-64s38 24 42 64M30 40l3 14 3-12 3 16 3-10M58 38l3 12 3-14 3 16M40 92l4-14 4 14M60 92l3-10 3 10"/></g></svg>
-            <p class="carte-site-type">Grotte et Spéléopark</p>
-            <h3>Grotte de Clamouse</h3>
-            <p class="carte-site-texte">Visite de 2 à 3 h, avec le Spéléopark.</p>
-            <p class="carte-site-distance">Depuis la maison : <strong>11 km</strong></p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 92c4-40 20-64 42-64s38 24 42 64M30 40l3 14 3-12 3 16 3-10M58 38l3 12 3-14 3 16M40 92l4-14 4 14M60 92l3-10 3 10"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:3">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 60c12-14 22-22 34-18s20 10 30 2 20-8 28 4M6 74c14 4 26-4 44 0s28 4 44-2M12 86c14 2 30-4 46 0s22 2 30 0"/><circle cx="74" cy="24" r="8"/></g></svg>
-            <p class="carte-site-type">Grand Site de France</p>
-            <h3>Lac du Salagou</h3>
-            <p class="carte-site-texte">Labellisé Grand Site de France en juin 2024.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 60c12-14 22-22 34-18s20 10 30 2 20-8 28 4M6 74c14 4 26-4 44 0s28 4 44-2M12 86c14 2 30-4 46 0s22 2 30 0"/><circle cx="74" cy="24" r="8"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:4">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30c12 50 76 50 88 0M18 34c10 34 54 34 64 0M30 40c8 18 32 18 40 0M44 52c4 6 8 6 12 0M50 58v20"/></g></svg>
-            <p class="carte-site-type">Grand paysage</p>
-            <h3>Cirque de Navacelles</h3>
-            <p class="carte-site-texte">Cité par la maison parmi les grands sites des alentours.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30c12 50 76 50 88 0M18 34c10 34 54 34 64 0M30 40c8 18 32 18 40 0M44 52c4 6 8 6 12 0M50 58v20"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:5">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 92V60c0-10 10-14 10-24s10-10 12 0 0 20 6 26v30M44 92V48c0-8 8-12 10-4s6 14 4 22v26M66 92V66c0-8 10-10 12-2s4 12 4 28M4 92h92"/></g></svg>
-            <p class="carte-site-type">Balade</p>
-            <h3>Cirque de Mourèze</h3>
-            <p class="carte-site-texte">Cité par la maison parmi les balades des alentours.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 92V60c0-10 10-14 10-24s10-10 12 0 0 20 6 26v30M44 92V48c0-8 8-12 10-4s6 14 4 22v26M66 92V66c0-8 10-10 12-2s4 12 4 28M4 92h92"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:6">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24c12-6 44-6 56 0 0 34-10 56-28 56S22 58 22 24zM34 42c4-4 10-4 14 0M52 42c4-4 10-4 14 0M38 62c8 6 16 6 24 0"/></g></svg>
-            <p class="carte-site-type">Ville de Molière</p>
-            <h3>Pézenas</h3>
-            <p class="carte-site-texte">Ville classée, ville de Molière, et ses antiquaires.</p>
-            <p class="carte-site-distance">Depuis la maison : <strong>25 min</strong></p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 24c12-6 44-6 56 0 0 34-10 56-28 56S22 58 22 24zM34 42c4-4 10-4 14 0M52 42c4-4 10-4 14 0M38 62c8 6 16 6 24 0"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:7">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 92h60M28 92V80h44v12M50 80V44M36 56c4-10 24-10 28 0M42 44c2-8 14-8 16 0M50 30a6 6 0 1 0 0-12 6 6 0 0 0 0 12M38 80c-6-10-14-12-20-10M62 80c6-10 14-12 20-10"/></g></svg>
-            <p class="carte-site-type">Place de la Comédie</p>
-            <h3>Montpellier</h3>
-            <p class="carte-site-texte">25 min en voiture, ou 20 min de tramway selon la maison.</p>
-            <p class="carte-site-distance">Depuis la maison : <strong>25 min</strong></p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 92h60M28 92V80h44v12M50 80V44M36 56c4-10 24-10 28 0M42 44c2-8 14-8 16 0M50 30a6 6 0 1 0 0-12 6 6 0 0 0 0 12M38 80c-6-10-14-12-20-10M62 80c6-10 14-12 20-10"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:8">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M40 92l4-56h12l4 56M38 36h24M44 36v-10h12v10M50 26V18M30 22l-14-6M70 22l14-6M6 92c14-6 26 4 44-2s28 6 44 0"/></g></svg>
-            <p class="carte-site-type">Ville historique</p>
-            <h3>Sète et l’étang de Thau</h3>
-            <p class="carte-site-texte">Ville historique, et l’étang de Thau, cités par la maison.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M40 92l4-56h12l4 56M38 36h24M44 36v-10h12v10M50 26V18M30 22l-14-6M70 22l14-6M6 92c14-6 26 4 44-2s28 6 44 0"/></g></svg></div>
-        </li><li class="carrousel-carte" style="--i:9">
-          <div class="carte-site">
-            <svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 92V36h64v56M34 92V60a16 16 0 0 1 32 0v32M18 36l32-18 32 18M44 48h12"/></g></svg>
-            <p class="carte-site-type">Village</p>
-            <h3>Villeneuvette</h3>
-            <p class="carte-site-texte">Cité par la maison parmi les sites à voir.</p>
-          </div>
-          <div class="carte-site carte-site--dos" data-face="dos" aria-hidden="true"><svg class="gravure" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 92V36h64v56M34 92V60a16 16 0 0 1 32 0v32M18 36l32-18 32 18M44 48h12"/></g></svg></div>
-        </li>
-      </ul>
-    </div>
-    <div class="carrousel-fleches">
-      <button type="button" class="bouton-rond" data-carrousel-prec aria-label="Site précédent">←</button>
-      <button type="button" class="bouton-rond" data-carrousel-suiv aria-label="Site suivant">→</button>
-    </div>
-  </div>
-  <p class="centre" data-anime><a href="/alentours" class="bouton bouton--contour" data-libelle="Alentours">Tous les alentours</a></p>
-</section>
-<section class="fin" id="fin" data-fil="droite">
-  <div class="conteneur fin-grille">
-    <figure class="media fin-photo" data-anime="rideau" style="--cadrage:49% 50%">
+    <figure class="media horizons-photo" data-fx="parallaxe" data-fx-force="8" style="--cadrage:50% 62%">
   <picture>
-    <img src="/assets/images/maison-porte-784.webp" srcset="/assets/images/maison-porte-480.webp 480w, /assets/images/maison-porte-640.webp 640w, /assets/images/maison-porte-784.webp 784w" sizes="(max-width: 760px) 70vw, 30vw" alt="Porte d’entrée en bois dans le mur de pierre" width="784" height="1045" loading="lazy" decoding="async">
+    <img src="/assets/images/site-pont-diable-1280.webp" srcset="/assets/images/site-pont-diable-640.webp 640w, /assets/images/site-pont-diable-960.webp 960w, /assets/images/site-pont-diable-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 1280px" alt="Le Pont du Diable au-dessus des eaux vertes de l’Hérault" width="1280" height="853" loading="lazy" decoding="async">
+  </picture><figcaption class="media-legende">Le Pont du Diable, sur l’Hérault</figcaption>
+</figure>
+    <div class="horizons-grille">
+      <div class="horizons-tete">
+        <p class="surtitre" data-anime>Autour de Pouzols</p>
+        <h2 data-anime="lettres">Entre gorges et cirques.</h2>
+        <p data-anime>Saint-Guilhem-le-Désert, le lac du Salagou, le cirque de Navacelles, les gorges de l’Hérault : la maison est un camp de base au cœur de l’Hérault.</p>
+        <p data-anime><a href="/alentours" class="bouton bouton--contour" data-libelle="Alentours">Tous les alentours</a></p>
+      </div>
+      <ol class="horizons-trajets" data-direct data-effet="trajets">
+        <li><span class="trajet-lieu">Gignac, sortie de l’A750</span><span class="trajet-temps">7 km</span></li><li><span class="trajet-lieu">Grotte de Clamouse</span><span class="trajet-temps">11 km</span></li><li><span class="trajet-lieu">Pézenas</span><span class="trajet-temps">25 min</span></li><li><span class="trajet-lieu">Montpellier</span><span class="trajet-temps">25 min</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="fin" id="fin" data-fil="gauche">
+  <div class="conteneur fin-grille">
+    <figure class="media fin-photo" data-anime="rideau" style="--cadrage:58% 78%">
+  <picture>
+    <img src="/assets/images/escalier-784.webp" srcset="/assets/images/escalier-480.webp 480w, /assets/images/escalier-640.webp 640w, /assets/images/escalier-784.webp 784w" sizes="(max-width: 760px) 70vw, 30vw" alt="Escalier aux murs rouges et aux carreaux de ciment qui monte aux chambres" width="784" height="1176" loading="lazy" decoding="async">
   </picture>
 </figure>
     <div class="fin-texte">
@@ -622,29 +371,44 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <a href="/reserver" class="bouton bouton--action" data-libelle="Réserver" data-survol="magnetique">Réserver en direct</a>
         <a class="bouton bouton--contour" href="tel:+33688712601">Appeler la maison</a>
       </p>
+      <p class="fin-avis" data-anime><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" aria-label="Lire les avis sur TripAdvisor (nouvel onglet)">Lire les avis sur TripAdvisor →</a></p>
     </div>
   </div>
 </section>
-<template data-fil-objet><g class="grappe"><circle cx="0" cy="0" r="5.5"/><circle cx="-6" cy="-7" r="5"/><circle cx="6" cy="-7" r="5"/><circle cx="0" cy="-14" r="5"/><circle cx="-11" cy="-15" r="4.5"/><circle cx="11" cy="-15" r="4.5"/><circle cx="-5" cy="-22" r="4.5"/><circle cx="5" cy="-22" r="4.5"/><path class="grappe-tige" d="M0 -26 C 2 -32, 6 -35, 12 -36"/><path class="grappe-feuille" d="M6 -30 C 14 -42, 30 -40, 32 -30 C 24 -26, 14 -24, 6 -30 Z"/></g></template>
+<template data-fil-objet><g class="fil-cle" transform="translate(0 -10) scale(.32)"><g class="cle">
+  <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-anneau-reflet" cx="0" cy="62" r="19" fill="none" stroke-width="1.6"/>
+  <path class="cle-metal cle-orne" d="M0 37 c4 0 6 3 6 6 c0 2-2 4-6 4 c-4 0-6-2-6-4 c0-3 2-6 6-6 z"/>
+  <circle class="cle-metal" cx="0" cy="62" r="6"/>
+  <rect class="cle-metal cle-tige" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal cle-bague" x="-9" y="88" width="18" height="7" rx="2.5"/>
+  <rect class="cle-metal cle-bague" x="-8" y="102" width="16" height="4.5" rx="2"/>
+  <path class="cle-metal cle-panneton" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+  <path class="cle-reflet" d="M-2.2 84 V168"/>
+</g></g></template>
 </main>
 <footer class="pied" id="pied">
   <div class="conteneur pied-grille">
     <div class="pied-maison">
       <p class="pied-nom"><svg class="pied-icone" viewBox="-30 30 60 160" aria-hidden="true" focusable="false"><g class="cle">
   <circle class="cle-anneau" cx="0" cy="62" r="19" fill="none" stroke-width="7"/>
+  <circle class="cle-anneau-reflet" cx="0" cy="62" r="19" fill="none" stroke-width="1.6"/>
+  <path class="cle-metal cle-orne" d="M0 37 c4 0 6 3 6 6 c0 2-2 4-6 4 c-4 0-6-2-6-4 c0-3 2-6 6-6 z"/>
   <circle class="cle-metal" cx="0" cy="62" r="6"/>
-  <rect class="cle-metal" x="-4.5" y="80" width="9" height="92" rx="2"/>
-  <rect class="cle-metal" x="-9" y="92" width="18" height="6" rx="2"/>
-  <rect class="cle-metal" x="-8" y="108" width="16" height="4" rx="2"/>
-  <path class="cle-metal" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
+  <rect class="cle-metal cle-tige" x="-4.5" y="80" width="9" height="92" rx="2"/>
+  <rect class="cle-metal cle-bague" x="-9" y="88" width="18" height="7" rx="2.5"/>
+  <rect class="cle-metal cle-bague" x="-8" y="102" width="16" height="4.5" rx="2"/>
+  <path class="cle-metal cle-panneton" d="M3 146 h20 v8 h-7 v6 h7 v9 h-20 z"/>
   <circle class="cle-metal" cx="0" cy="174" r="4.5"/>
+  <path class="cle-reflet" d="M-2.2 84 V168"/>
 </g></svg><strong>Lo Componaïro</strong></p>
       <p>15 rue des Jardins, 34230 Pouzols<br><a href="tel:+33688712601">06 88 71 26 01</a><br><a href="mailto:locomponairo34@gmail.com">locomponairo34@gmail.com</a></p>
       <p class="pied-ouvert">Maison ouverte toute l’année</p>
     </div>
     <nav aria-label="Sommaire">
       <p><strong>Sommaire</strong></p>
-      <ul><li><a href="/" data-libelle="Accueil" aria-current="page">Accueil</a></li><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours">Alentours</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/reserver" data-libelle="Réserver">Réserver</a></li></ul>
+      <ul><li><a href="/" data-libelle="Accueil" aria-current="page">Accueil</a></li><li><a href="/chambres" data-libelle="Les chambres">Les chambres</a></li><li><a href="/votre-sejour" data-libelle="Votre séjour">Votre séjour</a></li><li><a href="/alentours" data-libelle="Alentours">Alentours</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li><li><a href="/reserver" data-libelle="Réserver">Réserver</a></li><li><a href="#haut" data-sans-transition>Retour en haut</a></li></ul>
     </nav>
     <div>
       <p><strong>Suivre la maison</strong></p>
@@ -652,13 +416,6 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
         <li><a href="https://www.instagram.com/lo.componairo/" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)">Instagram</a></li>
         <li><a href="https://www.facebook.com/profile.php?id=61580359389188" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></li>
         <li><a href="https://www.tripadvisor.fr/Hotel_Review-g6706754-d21192859-Reviews-Lo_Componairo-Pouzols_Herault_Occitanie.html" target="_blank" rel="noopener" aria-label="TripAdvisor (nouvel onglet)">TripAdvisor</a></li>
-      </ul>
-    </div>
-    <div>
-      <p><strong>Confort de lecture</strong></p>
-      <ul>
-        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
-        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
       </ul>
     </div>
   </div>

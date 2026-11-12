@@ -1,6 +1,33 @@
 {
   "siteActuel": "locomponairo.com",
-  "pagesTypes": ["/", "/chambres", "/votre-sejour", "/alentours", "/contact", "/reserver"],
-  "effets": ["trousseau", "soleil", "axes", "manifeste", "maison-coupe", "etiquette-plume", "tampons", "cadran-journee", "carrousel-sites", "portes", "couloir", "journee", "carte-route", "route-acces", "numero", "tableau-cles"],
-  "grille": { "dispenses": {} }
+  "pagesTypes": [
+    "/",
+    "/chambres",
+    "/votre-sejour",
+    "/alentours",
+    "/contact",
+    "/reserver"
+  ],
+  "effets": [
+    "porte-entree",
+    "axes",
+    "manifeste",
+    "facade-etages",
+    "duo",
+    "compris",
+    "etiquette-plume",
+    "cadran-journee",
+    "carrousel-sites",
+    "portes",
+    "couloir",
+    "journee",
+    "carte-route",
+    "route-acces",
+    "numero",
+    "tableau-cles"
+  ],
+  "grille": {
+    "dispenses": {}
+  },
+  "sansModeCalme": "Mode calme retiré à la demande du client (12 novembre 2026) : le site joue toujours ses animations, même si l'appareil demande de les réduire."
 }

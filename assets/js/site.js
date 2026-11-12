@@ -1,8 +1,8 @@
 /* Lo Componaïro : effets propres au projet. Le socle gère l'ouverture, le voile (serrure), l'en-tête, le menu,
    le mode calme, les boucles, les mesures et la bibliothèque d'effets posés par attributs dans les pages.
-   Chaque effet propre porte data-effet="nom-du-plan" : trousseau, axes, manifeste, maison-coupe, etiquette-plume,
+   Chaque effet propre porte data-effet="nom-du-plan" : porte-entree, axes, manifeste, facade-etages, duo, compris, etiquette-plume,
    tampons, cadran-journee, carrousel-sites, sarment, portes, couloir, journee, carte-route, route-acces, cle-envol. */
-import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=2';
+import { demarrer, boucle, etat, versObjet, quand, rafraichir } from './socle/index.js?v=3';
 
 const gsap = window.gsap;
 const ST = () => window.ScrollTrigger;
@@ -11,90 +11,104 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const calme = () => etat.calme || document.documentElement.classList.contains('calme');
 const souris = () => matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-/* ---------- Trousseau à faire tourner (module objet-a-faire-tourner, habillé en trousseau) ---------- */
-function trousseau() {
-  const root = $('[data-trousseau]');
+/* ---------- Entrée : la vraie porte de la maison s'ouvre sur la chambre choisie (défilement, clic, glisser) ---------- */
+function entree() {
+  const root = $('[data-porte-entree]');
   if (!root) return;
-  const objet = $('.oat__objet', root), indice = $('.oat__indice', root);
-  const nom = $('[data-trousseau-nom]'), detail = $('[data-trousseau-detail]');
-  const choix = $$('[data-trousseau-choix]');
-  const o = { repos: 0.16, defilement: 0.0016, amorti: 1.6, elanMax: 26 };
-  const etatT = { angle: Math.PI / 4, elan: 0, tenu: false, lumiere: 0.75, lumiereCible: 0.75, eclat: 0, eclatCible: 0, cible: null, choisi: 0 };
-  const poser = () => {
-    root.style.setProperty('--oat-angle', `${(etatT.angle * 180 / Math.PI).toFixed(2)}deg`);
-    root.style.setProperty('--oat-lumiere', `${(90 - etatT.lumiere * 180 / Math.PI).toFixed(1)}deg`);
-    root.style.setProperty('--oat-eclat', etatT.eclat.toFixed(3));
-    /* Clé dont l'étiquette est en bas : la clé i est dessinée à i × 90°, son étiquette 45° plus loin
-       dans le sens inverse des aiguilles ; tournée de θ, l'étiquette est en bas quand i × 90° + θ − 45° ≡ 0. */
-    const deg = etatT.angle * 180 / Math.PI;
-    const i = ((Math.round((45 - deg) / 90) % 4) + 4) % 4;
-    if (i !== etatT.choisi) choisir(i);
+  const sec = root.closest('section');
+  const battant = $('[data-entree-battant]', root), ombre = $('.entree-ombre', root), lumiere = $('.entree-lumiere', root), chambres = $('.entree-chambres', root), portee = $('.entree-portee', root);
+  const vues = $$('[data-entree-chambre]', root), choix = $$('[data-entree-choix]', root);
+  const nom = $('[data-entree-nom]', root), detail = $('[data-entree-detail]', root), lien = $('[data-entree-lien]', root);
+  const e = { defil: 0, main: 0, ouv: -1 };
+  /* Écrit seulement quand l'ouverture change (par pas de 1/500) : transform et opacité, rien qui refasse la mise en page. */
+  const peindre = () => {
+    const q = Math.round(Math.min(1, Math.max(e.defil, e.main)) * 500) / 500;
+    if (q === e.ouv) return;
+    e.ouv = q;
+    battant.style.transform = `rotateY(${(-104 * q).toFixed(2)}deg)`;
+    ombre.style.opacity = (Math.min(1, q * 1.6) * 0.9).toFixed(3);
+    /* La lumière de l'entrée déborde quand la porte s'entrouvre, puis s'apaise ; l'ombre du battant s'étire sur la chambre. */
+    lumiere.style.opacity = (q < 0.01 ? 0 : Math.min(1, q * 4) * (1 - 0.75 * q)).toFixed(3);
+    portee.style.opacity = (Math.min(1, q * 2.2) * (1 - 0.55 * q)).toFixed(3);
+    portee.style.transform = `scaleX(${(0.25 + 0.75 * q).toFixed(3)})`;
+    chambres.style.transform = `scale(${(1.08 - 0.08 * q).toFixed(4)})`;
+    sec.classList.toggle('est-attente', q < 0.01);
   };
-  const choisir = (i) => {
-    etatT.choisi = i;
-    const b = choix[i];
+  const montrer = (cle) => {
+    const b = choix.find((x) => x.dataset.entreeChoix === cle);
     if (!b) return;
-    if (nom) nom.textContent = b.dataset.nom;
-    if (detail) detail.textContent = b.dataset.detail;
-    choix.forEach((x, k) => x.setAttribute('aria-pressed', String(k === i)));
+    vues.forEach((v) => v.classList.toggle('est-visible', v.dataset.entreeChambre === cle));
+    choix.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    nom.textContent = b.dataset.nom; detail.textContent = b.dataset.detail; lien.href = b.dataset.lien;
+    if (calme() || !gsap) { e.main = 1; peindre(); return; }
+    gsap.to(e, { main: 1, duration: 1.2, ease: 'power3.inOut', overwrite: true, onUpdate: peindre });
   };
-  /* Les boutons font tourner le trousseau jusqu'à la clé choisie (clavier compris). */
-  choix.forEach((b, i) => b.addEventListener('click', () => {
-    const deg = etatT.angle * 180 / Math.PI;
-    let but = 45 - i * 90; while (but - deg > 180) but -= 360; while (but - deg < -180) but += 360;
-    if (calme()) { etatT.angle = but * Math.PI / 180; poser(); return; }
-    etatT.cible = but * Math.PI / 180; etatT.elan = 0;
-    indice && indice.classList.add('est-vu');
-  }));
-  poser();
-  if (calme()) return;
-  root.classList.add('est-actif');
-  const def = { y: scrollY, t: performance.now(), cible: 0, v: 0 };
-  addEventListener('scroll', () => { const t = performance.now(), dt = Math.max(1, t - def.t); def.cible = Math.max(-4000, Math.min(4000, (scrollY - def.y) / dt * 1000)); def.y = scrollY; def.t = t; }, { passive: true });
-  let c = null;
-  const mesurer = () => { const r = objet.getBoundingClientRect(); c = { x: r.left + r.width / 2, y: r.top + r.height / 2, r: r.width / 2 }; };
-  let a0 = 0, t0 = 0, w = 0, id = null;
-  const angle = (e) => Math.atan2(e.clientY - c.y, e.clientX - c.x);
-  root.addEventListener('pointerdown', (e) => {
-    if (e.button !== 0) return;
-    mesurer();
-    if (Math.hypot(e.clientX - c.x, e.clientY - c.y) > c.r) return;
-    id = e.pointerId; etatT.tenu = true; etatT.cible = null; a0 = angle(e); t0 = performance.now(); w = 0;
-    root.setPointerCapture?.(id); root.classList.add('est-tenu'); indice && indice.classList.add('est-vu');
-  });
-  root.addEventListener('pointermove', (e) => {
-    if (!etatT.tenu || e.pointerId !== id) return;
-    const a = angle(e), t = performance.now();
-    let d = a - a0; d = Math.atan2(Math.sin(d), Math.cos(d));
-    etatT.angle += d; w += (d / (Math.max(1, t - t0) / 1000) - w) * 0.35; a0 = a; t0 = t;
-  });
-  const lacher = (e) => {
-    if (!etatT.tenu || (e && e.pointerId !== id)) return;
-    etatT.tenu = false; id = null;
-    etatT.elan = performance.now() - t0 > 120 ? 0 : Math.max(-o.elanMax, Math.min(o.elanMax, w - o.repos));
-    root.classList.remove('est-tenu');
+  choix.forEach((b) => b.addEventListener('click', () => montrer(b.dataset.entreeChoix)));
+  peindre();
+  if (calme() || !gsap || !ST()) return;
+  /* Au défilement : la porte s'ouvre pendant que l'entrée quitte l'écran. */
+  const suivre = (s) => { e.defil = Math.min(1, s.progress * 1.6); peindre(); };
+  ST().create({ trigger: sec, start: 'top top', end: 'bottom 30%', onUpdate: suivre, onRefresh: suivre });
+  /* À la main : on attrape la porte et on la tire vers la gauche (vers la droite pour la refermer). */
+  const scene = $('.entree-scene', root);
+  let x0 = null, m0 = 0;
+  scene.addEventListener('pointerdown', (ev) => { if (ev.button) return; x0 = ev.clientX; m0 = e.main; gsap.killTweensOf(e); });
+  addEventListener('pointermove', (ev) => { if (x0 == null) return; const d = (x0 - ev.clientX) / Math.max(1, scene.clientWidth); e.main = Math.min(1, Math.max(0, m0 + d * 1.5)); peindre(); });
+  const lacher = () => { if (x0 == null) return; x0 = null; gsap.to(e, { main: e.main > 0.35 ? 1 : 0, duration: 0.7, ease: 'power2.out', onUpdate: peindre }); };
+  addEventListener('pointerup', lacher);
+  addEventListener('pointercancel', lacher);
+}
+
+/* ---------- La façade, étage par étage : une bande de lumière suit l'étage qu'on lit ---------- */
+function facade() {
+  const sec = $('.facade');
+  if (!sec) return;
+  const vis = $('[data-facade-visuel]', sec), haut = $('[data-nuit-haut]', sec), bas = $('[data-nuit-bas]', sec), lueur = $('[data-facade-lueur]', sec);
+  const etapes = $$('[data-facade-etape]', sec), reperes = $$('[data-facade-repere]', sec);
+  const RATIO = 4 / 3, FONDU = 23;
+  let W = 0, H = 0, dy = 0, hImg = 0, actif = null;
+  const bande = { a: -0.1, b: 1.1 };
+  /* La photo est en « cover » : on retrouve la hauteur rendue de l'image pour placer la bande sur le bon étage. */
+  const mesurer = () => { W = vis.clientWidth; H = vis.clientHeight; if (W / Math.max(1, H) > RATIO) { hImg = W / RATIO; dy = (H - hImg) * 0.5; } else { hImg = H; dy = 0; } };
+  const poser = () => {
+    const ya = Math.round(dy + bande.a * hImg), yb = Math.round(dy + bande.b * hImg);
+    haut.style.transform = `translate3d(0, ${ya + FONDU - H}px, 0)`;
+    bas.style.transform = `translate3d(0, ${yb - FONDU}px, 0)`;
+    if (lueur) { lueur.style.height = `${Math.max(0, yb - ya)}px`; lueur.style.transform = `translate3d(0, ${ya}px, 0)`; }
+    reperes.forEach((r) => { const k = etapes.find((x) => x.dataset.facadeEtape === r.dataset.facadeRepere); if (k) r.style.top = `${Math.round(dy + ((+k.dataset.haut + +k.dataset.bas) / 2) * hImg)}px`; });
   };
-  root.addEventListener('pointerup', lacher); root.addEventListener('pointercancel', lacher);
-  const zone = root.closest('section') || root;
-  zone.addEventListener('pointermove', (e) => { if (e.pointerType !== 'mouse') return; if (!c) mesurer(); etatT.lumiereCible = Math.atan2(-(e.clientY - c.y), e.clientX - c.x); etatT.eclatCible = 1; });
-  zone.addEventListener('pointerleave', () => { etatT.lumiereCible = 0.75; etatT.eclatCible = 0; });
-  addEventListener('resize', () => { c = null; }); addEventListener('scroll', () => { c = null; }, { passive: true });
-  boucle(root, (dt) => {
-    def.cible *= Math.exp(-dt * 6);
-    def.v += (def.cible - def.v) * (1 - Math.exp(-dt * 10));
-    if (etatT.cible != null && !etatT.tenu) {
-      const d = etatT.cible - etatT.angle;
-      etatT.angle += d * (1 - Math.exp(-dt * 6));
-      if (Math.abs(d) < 0.002) { etatT.angle = etatT.cible; etatT.cible = null; }
-    } else if (!etatT.tenu) {
-      etatT.angle += (o.repos + def.v * o.defilement + etatT.elan) * dt;
-      etatT.elan *= Math.exp(-dt * o.amorti);
-    }
-    let dl = etatT.lumiereCible - etatT.lumiere; dl = Math.atan2(Math.sin(dl), Math.cos(dl));
-    etatT.lumiere += dl * (1 - Math.exp(-dt * 6));
-    etatT.eclat += (etatT.eclatCible - etatT.eclat) * (1 - Math.exp(-dt * 5));
-    poser();
-  });
+  const activer = (el) => {
+    if (!el || actif === el) return;
+    actif = el;
+    etapes.forEach((x) => x.classList.toggle('est-active', x === el));
+    const cle = el.dataset.facadeEtape;
+    reperes.forEach((r) => r.classList.toggle('est-active', r.dataset.facadeRepere === cle));
+    if (lueur) lueur.classList.toggle('est-allumee', cle !== 'tout' && innerWidth >= 761);
+    /* Sur téléphone, la photo n'est plus collée : la façade reste entière, chaque étage montre sa part. */
+    const cible = cle === 'tout' || innerWidth < 761 ? { a: -0.1, b: 1.1 } : { a: +el.dataset.haut - 0.01, b: +el.dataset.bas + 0.01 };
+    if (calme() || !gsap) { Object.assign(bande, cible); poser(); return; }
+    gsap.to(bande, { ...cible, duration: 0.9, ease: 'power3.inOut', overwrite: true, onUpdate: poser });
+  };
+  mesurer(); poser(); activer(etapes[0]);
+  /* L'étape active est celle qui croise une ligne à 62 % de l'écran : un IntersectionObserver suffit, sans
+     ScrollTrigger (en mode calme, le socle coupe ScrollTrigger quand aucun effet n'en a besoin : sa boucle s'arrête). */
+  const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) activer(x.target); }), { rootMargin: '-61% 0px -38% 0px' });
+  etapes.forEach((el) => io.observe(el));
+  addEventListener('resize', () => { mesurer(); poser(); });
+  if (document.fonts) document.fonts.ready.then(() => { mesurer(); poser(); });
+}
+
+/* ---------- Suite familiale : les deux chambres voisines se rapprochent, « Isabelle + Denise » se rejoignent ---------- */
+function duo() {
+  const sec = $('[data-duo]');
+  if (!sec || calme() || !gsap || !ST()) return;
+  const g = $('[data-duo-g]', sec), d = $('[data-duo-d]', sec), mg = $('[data-duo-mot="g"]', sec), md = $('[data-duo-mot="d"]', sec), plus = $('[data-duo-plus]', sec);
+  gsap.timeline({ scrollTrigger: { trigger: sec, start: 'top 92%', end: 'center 50%', scrub: 0.6 } })
+    .fromTo(g, { xPercent: -16 }, { xPercent: 0, ease: 'none' }, 0)
+    .fromTo(d, { xPercent: 16 }, { xPercent: 0, ease: 'none' }, 0)
+    .fromTo(mg, { xPercent: -45, opacity: 0.15 }, { xPercent: 0, opacity: 1, ease: 'none' }, 0)
+    .fromTo(md, { xPercent: 45, opacity: 0.15 }, { xPercent: 0, opacity: 1, ease: 'none' }, 0)
+    .fromTo(plus, { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, ease: 'back.out(2)', duration: 0.5 }, 0.5);
 }
 
 /* ---------- Typographie : Fraunces de « sage » à « sauvage » (axes SOFT et WONK, jamais la largeur) ---------- */
@@ -144,7 +158,8 @@ function cadrans() {
     $$('[data-heure-pouzols]').forEach((s) => {
       const st = s.closest('[data-statut-arrivee]');
       if (!st) { s.textContent = s.dataset.modele ? s.dataset.modele.replace('{heure}', t.texte) : t.texte; return; }
-      s.textContent = t.dec < 17 ? st.dataset.avant : t.dec < 20.5 ? st.dataset.ouvert : st.dataset.apres;
+      /* Espace insécable avant « : ; ? ! » (les attributs ne passent pas par la typographie du générateur). */
+      s.textContent = (t.dec < 17 ? st.dataset.avant : t.dec < 20.5 ? st.dataset.ouvert : st.dataset.apres).replace(/ ([:;?!])/g, '\u00a0$1');
     });
   };
   maj();
@@ -153,91 +168,6 @@ function cadrans() {
   /* L'aiguille balaie le cadran jusqu'à l'heure réelle quand il entre dans l'écran. */
   if (!calme() && gsap) $$('[data-cadran] [data-aiguille-balai]').forEach((a) => {
     gsap.fromTo(a, { rotation: -140, svgOrigin: '180 180' }, { rotation: 0, svgOrigin: '180 180', ease: 'power3.out', scrollTrigger: { trigger: a.closest('[data-cadran]'), start: 'top 85%', end: 'center 45%', scrub: 0.6 } });
-  });
-}
-
-/* ---------- Maison en coupe 3D (module objet-3d-qui-se-construit) ---------- */
-function maisonCoupe() {
-  const root = $('.o3d');
-  if (!root) return;
-  const o = { longueur: 2.8, depart: -34, tour: 360, inclinaison: -20, lumiere: -35, largeur: 760, hauteur: 520, largeurMin: 900, hauteurMin: 600 };
-  const scene = $('.o3d__scene', root), objet = $('.o3d__objet', root);
-  const pieces = $$('.o3d__piece', root), etapes = $$('.o3d__etapes [data-de]', root);
-  /* Fluidité : la rotation va directement sur l'objet (pas de variable héritée par toutes les faces), les ombres
-     des faces ne changent que par pas de 0,02, et chaque valeur ne s'écrit que si elle a changé. */
-  let k = 1;
-  const echelle = () => { const r = scene.getBoundingClientRect(); k = Math.min(r.width / o.largeur, r.height / o.hauteur, 1.1); root.style.setProperty('--o3d-k', k.toFixed(3)); if (root.__ry !== undefined) tourner(root.__ry, true); };
-  root.style.setProperty('--o3d-rx', o.inclinaison + 'deg');
-  const e = { p: 1, main: 0, v: 0, tenu: false };
-  const lisse = (a, b, t) => { const x = Math.min(1, Math.max(0, (t - a) / Math.max(0.001, b - a))); return x * x * (3 - 2 * x); };
-  const ombre = (ry, n) => { const d = ((((ry + n - o.lumiere) % 360) + 360) % 360) * Math.PI / 180; return (Math.round(25 * (1 - Math.max(0, Math.cos(d)))) / 50).toFixed(2); };
-  const ecrits = {};
-  const ecrire = (el, nom, v) => { if (ecrits[nom] !== v) { ecrits[nom] = v; el.style.setProperty(nom, v); } };
-  function tourner(ry, force) {
-    const r = ry.toFixed(1);
-    if (!force && r === root.__ryTxt) return;
-    root.__ry = ry; root.__ryTxt = r;
-    objet.style.transform = `scale(${k.toFixed(3)}) rotateX(${o.inclinaison}deg) rotateY(${r}deg)`;
-    /* Les ombres sont héritées par toutes les faces : les changer recalcule toute la maison. Elles ne changent
-       donc que tous les 15 degrés. */
-    const pasOmbre = Math.round(ry / 15) * 15;
-    if (!force && pasOmbre === root.__pasOmbre) return;
-    root.__pasOmbre = pasOmbre;
-    ecrire(objet, '--o3d-o-av', ombre(pasOmbre, 0)); ecrire(objet, '--o3d-o-d', ombre(pasOmbre, 90));
-    ecrire(objet, '--o3d-o-ar', ombre(pasOmbre, 180)); ecrire(objet, '--o3d-o-g', ombre(pasOmbre, 270));
-  }
-  echelle();
-  new ResizeObserver(echelle).observe(scene);
-  let nActive = -2;
-  function poser() {
-    tourner(o.depart + e.p * o.tour + e.main);
-    /* La chute de chaque pièce s'écrit en transformation directe (rien n'est hérité par ses faces) ; la variable --m,
-       qui ne sert plus qu'au fondu des faces, cesse de changer dès qu'elles sont opaques (m = 1/3). */
-    const ouvre = Math.round(lisse(0.84, 0.97, e.p) * 200) / 200;
-    pieces.forEach((pc) => {
-      const m = Math.round(lisse(parseFloat(pc.dataset.de) || 0, parseFloat(pc.dataset.a) || 1, e.p) * 400) / 400;
-      const toit = pc.classList.contains('o3d__piece--toit');
-      if (pc.__chute === undefined) pc.__chute = parseFloat(getComputedStyle(pc).getPropertyValue('--o3d-chute')) || -300;
-      const y = ((1 - m) * pc.__chute - (toit ? ouvre * 105 : 0)).toFixed(1);
-      if (y !== pc.__y) { pc.__y = y; pc.style.transform = `translate3d(0, ${y}px, 0)`; }
-      const mo = Math.min(0.34, Math.round(m * 100) / 100);
-      if (mo !== pc.__mo) { pc.__mo = mo; pc.style.setProperty('--m', mo.toFixed(2)); }
-      const cache = m <= 0.001;
-      if (cache !== pc.__cache) { pc.__cache = cache; pc.style.visibility = cache ? 'hidden' : ''; }
-    });
-    if (ouvre !== root.__ouvre) { root.__ouvre = ouvre; $$('.o3d__piece--facade', root).forEach((pc) => pc.style.setProperty('--ouvre', ouvre.toFixed(3))); }
-    let n = -1; etapes.forEach((x, i) => { if (e.p + 0.001 >= (parseFloat(x.dataset.de) || 0)) n = i; });
-    if (n !== nActive) { nActive = n; etapes.forEach((x, i) => x.classList.toggle('est-active', i === n)); }
-  }
-  if (calme()) { poser(); return; }
-  root.classList.add('est-actif');
-  e.p = 0; poser();
-  let raf = 0, avant = 0;
-  const tour = (t) => {
-    const dt = Math.min(0.05, avant ? (t - avant) / 1000 : 1 / 60); avant = t;
-    if (!e.tenu && Math.abs(e.v) > 4) { e.main += e.v * dt; e.v *= Math.exp(-dt * 2.4); poser(); raf = requestAnimationFrame(tour); } else { raf = 0; avant = 0; }
-  };
-  let id = null, x0 = 0, t0 = 0;
-  scene.addEventListener('pointerdown', (ev) => { if (ev.button !== 0) return; id = ev.pointerId; e.tenu = true; e.v = 0; x0 = ev.clientX; t0 = performance.now(); scene.setPointerCapture(id); root.classList.add('est-touche'); });
-  scene.addEventListener('lostpointercapture', () => { if (!e.tenu) return; e.tenu = false; e.v = 0; });
-  scene.addEventListener('pointermove', (ev) => {
-    if (!e.tenu || ev.pointerId !== id) return;
-    const t = performance.now(), d = (ev.clientX - x0) * 0.45;
-    e.v += (d / Math.max(0.008, (t - t0) / 1000) - e.v) * 0.35; e.main += d; x0 = ev.clientX; t0 = t; poser();
-  });
-  const lacher = (ev) => { if (!e.tenu || (ev && ev.pointerId !== id)) return; e.tenu = false; if (performance.now() - t0 > 120) e.v = 0; e.v = Math.max(-900, Math.min(900, e.v)); if (!raf) raf = requestAnimationFrame(tour); };
-  scene.addEventListener('pointerup', lacher); scene.addEventListener('pointercancel', lacher);
-  scene.addEventListener('keydown', (ev) => { if (ev.key === 'ArrowLeft' || ev.key === 'ArrowRight') { ev.preventDefault(); e.main += ev.key === 'ArrowLeft' ? -20 : 20; poser(); } });
-  const mm = gsap.matchMedia();
-  mm.add(`(min-width: ${o.largeurMin}px) and (min-height: ${o.hauteurMin}px)`, () => {
-    root.classList.add('o3d--epingle'); echelle();
-    const st = ST().create({ trigger: root, start: 'top top', end: () => '+=' + Math.round(innerHeight * o.longueur), pin: true, scrub: 0.8, invalidateOnRefresh: true,
-      onUpdate: (x) => { e.p = x.progress; poser(); }, onRefresh: (x) => { e.p = x.progress; poser(); }, onToggle: (x) => root.classList.toggle('est-epingle', x.isActive) });
-    return () => { st.kill(); root.classList.remove('o3d--epingle', 'est-epingle'); echelle(); };
-  });
-  mm.add(`(max-width: ${o.largeurMin - 1}px), (max-height: ${o.hauteurMin - 1}px)`, () => {
-    const st = ST().create({ trigger: scene, start: 'top 85%', end: 'bottom 35%', scrub: 0.6, onUpdate: (x) => { e.p = x.progress; poser(); }, onRefresh: (x) => { e.p = x.progress; poser(); } });
-    return () => st.kill();
   });
 }
 
@@ -297,7 +227,10 @@ function sarment() {
   root.prepend(svg);
   let L = 0, pas = 1, table = [], ancres = [], haut = 0, maxDefil = 0, vh = innerHeight;
   const st8 = { l: 0 };
-  const feuille = 'M0 0 C 6 -10, 20 -12, 26 -2 C 22 2, 24 8, 18 10 C 12 12, 6 8, 0 0 Z';
+  /* Feuille de vigne à cinq lobes (pétiole en 0, 0), sa nervure, et une vrille. */
+  const feuille = 'M0 0 C 4 -3 9 -6 12 -10 C 11 -17 17 -22 22 -18 C 24 -25 33 -25 33 -17 C 40 -17 43 -9 37 -5 C 43 -1 41 8 34 7 C 34 15 25 16 23 9 C 19 13 12 11 12 5 C 8 4 4 2 0 0 Z';
+  const nervure = 'M0 0 C 10 -3 20 -6 33 -11 M17 -5 C 20 -10 21 -14 22 -18 M20 -6 C 26 -2 30 2 34 7';
+  const vrille = 'M0 0 C 5 4 12 4 13 -2 C 14 -7 8 -9 6 -5 C 5 -2 8 0 9 -2';
   function construire() {
     const W = root.clientWidth, H = root.clientHeight;
     if (!W || !H) return;
@@ -307,10 +240,11 @@ function sarment() {
     vh = innerHeight;
     maxDefil = document.documentElement.scrollHeight - vh;
     const tel = innerWidth < o.largeurTelephone;
-    const boite = (x) => { const h = x.parentElement?.classList.contains('pin-spacer') ? x.parentElement : x; const r = h.getBoundingClientRect(); return { l: r.left - rr.left, t: r.top - rr.top, r: r.right - rr.left, b: r.bottom - rr.top, w: r.width, h: r.height }; };
-    const gouttieres = (x) => { const c = x.matches(o.cadre) ? x : x.querySelector(o.cadre); if (!c) return [16, 16]; const b = boite(c); return [b.l, W - b.r]; };
-    const xCote = (x, cote) => { const [g, d] = gouttieres(x); return cote === 'droite' ? W - Math.max(7, d * o.marge) : Math.max(7, g * o.marge); };
     const visible = (x) => x.getClientRects().length > 0;
+    const boite = (x) => { const h = x.parentElement?.classList.contains('pin-spacer') ? x.parentElement : x; const r = h.getBoundingClientRect(); return { l: r.left - rr.left, t: r.top - rr.top, r: r.right - rr.left, b: r.bottom - rr.top, w: r.width, h: r.height }; };
+    /* Gouttières : celles du cadre le plus large de la section (un en-tête centré et étroit plaçait le fil sur les textes). */
+    const gouttieres = (x) => { const cs = x.matches(o.cadre) ? [x] : $$(o.cadre, x).filter(visible); let g = Infinity, d = Infinity; cs.forEach((c) => { const b = boite(c); if (b.w > 0) { g = Math.min(g, b.l); d = Math.min(d, W - b.r); } }); return isFinite(g) ? [g, d] : [16, 16]; };
+    const xCote = (x, cote) => { const [g, d] = gouttieres(x); return cote === 'droite' ? W - Math.max(7, d * o.marge) : Math.max(7, g * o.marge); };
     let pts = [];
     const accroches = $$('[data-fil], [data-fil-point]', root).filter(visible);
     for (const x of accroches) {
@@ -367,10 +301,14 @@ function sarment() {
     pts.filter((p) => p.debut || (!p.fin && !p.debut)).forEach((p, k) => {
       const l = longueur(p.y);
       const q = table[Math.min(table.length - 1, Math.round(l / pas))];
-      const g = el('path', 'fic__feuille', gF);
-      g.setAttribute('d', feuille);
+      /* La position va sur un groupe : une transformation CSS sur la feuille remplaçait l'attribut transform
+         (toutes les feuilles s'empilaient dans le coin de la page, invisibles). */
       const cote = q[1] < W / 2 ? 1 : -1;
-      g.setAttribute('transform', `translate(${f(q[1])} ${f(q[2])}) scale(${cote} 1) rotate(${k % 2 ? -30 : 20})`);
+      const g = el('g', 'fic__pousse', gF);
+      g.setAttribute('transform', `translate(${f(q[1])} ${f(q[2])}) scale(${cote} 1) rotate(${k % 2 ? -34 : 18})`);
+      const fe = el('path', 'fic__feuille', g); fe.setAttribute('d', feuille);
+      const ne = el('path', 'fic__nervure', g); ne.setAttribute('d', nervure);
+      if (k % 2 === 0) { const v = el('path', 'fic__vrille', g); v.setAttribute('d', vrille); v.setAttribute('transform', 'rotate(150) translate(2 0)'); }
       ancres.push({ l, g });
     });
     gsap.killTweensOf(st8);
@@ -430,12 +368,15 @@ function portes() {
   });
   const filtres = $('[data-filtres]');
   if (filtres) {
-    const lignes = $$('[data-comparatif] > li'), vide = $('[data-comparatif-vide]');
+    const lignes = $$('[data-comparatif] > li'), vide = $('[data-comparatif-vide]'), compte = $('[data-comparatif-compte]');
     const garder = (li, f) => f === 'tout' || (f === 'terrasse' && li.dataset.terrasse === 'oui') || (f === 'jardin' && li.dataset.vue === 'jardin') || (f === 'jumeaux' && li.dataset.jumeaux === 'oui');
     const appliquer = (f) => {
       $$('button', filtres).forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.filtre === f)));
-      let n = 0; lignes.forEach((li) => { const ok = garder(li, f); li.classList.toggle('est-ecartee', !ok); if (ok) n++; });
+      /* Les lignes écartées sont retirées (hidden) : une simple opacité était annulée par l'apparition en cascade. */
+      let n = 0; lignes.forEach((li) => { const ok = garder(li, f); li.hidden = !ok; if (ok) n++; });
       vide.hidden = n > 0;
+      if (compte) compte.textContent = n ? `${n} chambre${n > 1 ? 's' : ''}` : '';
+      if (window.ScrollTrigger) requestAnimationFrame(() => ScrollTrigger.refresh());
       try { const u = new URL(location.href); if (f === 'tout') u.searchParams.delete('filtre'); else u.searchParams.set('filtre', f); history.replaceState(history.state, '', u); } catch {}
     };
     $$('button', filtres).forEach((x) => x.addEventListener('click', () => appliquer(x.dataset.filtre)));
@@ -580,6 +521,8 @@ function reservation() {
   }));
   radios.forEach((r) => r.addEventListener('change', () => { maj(); envol(r.value); }));
   [arr, dep, adu, enf, ant].forEach((x) => x.addEventListener('change', () => { if (x === arr && arr.value) dep.min = iso(new Date(new Date(arr.value).getTime() + 864e5)); maj(); }));
+  /* Les deux dates choisies : le bouton d'envoi vient à l'écran s'il est dessous (un geste de moins). */
+  dep.addEventListener('change', () => { const b = $('button[type="submit"]', form), r = b.getBoundingClientRect(); if (arr.value && dep.value && r.bottom > innerHeight - 16) b.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'center' }); });
   const erreur = (k, on) => { const e = $(`[data-erreur="${k}"]`, form); if (e) e.hidden = !on; };
   let envoye = false;
   form.addEventListener('submit', (ev) => {
@@ -599,7 +542,8 @@ function reservation() {
     recap.classList.add('recu');
     if (!calme() && gsap) gsap.fromTo($('.tampon-recu', pret), { scale: 2.6, rotation: -10, opacity: 0 }, { scale: 1, rotation: -10, opacity: 1, duration: 0.5, ease: 'back.out(2.2)' });
     pret.querySelector('a').focus({ preventScroll: true });
-    if (innerWidth < 901) recap.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'start' });
+    /* Le tampon « Demande prête » et le lien vers la réservation sécurisée, en entier dans l'écran. */
+    pret.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'center' });
   });
   $('[data-recommencer]')?.addEventListener('click', () => { envoye = false; pret.hidden = true; recap.classList.remove('recu'); $('button[type="submit"]', form).disabled = false; radios[0].focus(); });
   /* Les clés se balancent sur leurs crochets selon la vitesse du défilement, puis s'immobilisent. */
@@ -620,36 +564,30 @@ function reservation() {
   maj();
 }
 
-/* ---------- Intro : les quatre clés tombent sur l'anneau, le nom s'écrit, puis l'anneau rejoint la page ---------- */
+/* ---------- Intro : la clé de laiton descend dans la serrure et tourne, puis la page s'ouvre en trou de serrure ---------- */
 function intro() {
   if (!gsap) return null;
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  const cles = $$('.trousseau-intro .trousseau-cle');
-  tl.fromTo('.trousseau-intro .trousseau-anneau, .trousseau-intro .trousseau-reflet, .trousseau-intro .trousseau-ombre', { scale: 0.4, opacity: 0, transformOrigin: '50% 50%' }, { scale: 1, opacity: 1, duration: 0.35 }, 0);
-  cles.forEach((k, i) => {
-    tl.fromTo(k.querySelector('.cle'), { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.32, ease: 'back.out(2.4)' }, 0.12 + i * 0.1);
-    const et = k.querySelector('.etiquette');
-    if (et) tl.fromTo(et, { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0.3 + i * 0.1);
-  });
-  tl.fromTo('.ouverture-nom', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45 }, 0.25)
-    .fromTo('.ouverture-trait', { scaleX: 0 }, { scaleX: 1, duration: 0.5 }, 0.35)
-    .fromTo('.ouverture-ligne', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.5)
-    .to('.ouverture-nom, .ouverture-ligne, .ouverture-trait', { opacity: 0, duration: 0.25 }, 0.9)
-    .to('.trousseau-intro .etiquette', { opacity: 0, duration: 0.2 }, 0.9)
-    .fromTo('.ouverture-serrure', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'power2.out' }, 0.3)
-    .to('.trousseau-intro', { rotation: 90, svgOrigin: '200 200', duration: 0.35, ease: 'back.inOut(2)' }, 0.62)
-    .to('.ouverture-serrure', { opacity: 0, duration: 0.3 }, 1.05);
-  versObjet(tl, { a: 1.0, duree: 0.5, ouverture: 0.8 });
-  /* La page s'ouvre en trou de serrure depuis le trousseau (même motif que le voile). */
+  tl.fromTo('.ouverture-serrure', { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.45, ease: 'power2.out' }, 0)
+    .fromTo('.cle-intro', { y: -70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.42, ease: 'power3.out' }, 0.03)
+    /* La clé fait un demi-tour dans la serrure, puis rejoint la porte de la page. */
+    .to('.cle-intro', { rotationY: 180, duration: 0.4, ease: 'power2.inOut' }, 0.36)
+    .fromTo('.ouverture-nom', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 }, 0.12)
+    .fromTo('.ouverture-trait', { scaleX: 0 }, { scaleX: 1, duration: 0.5 }, 0.28)
+    .fromTo('.ouverture-ligne', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.4)
+    .to('.ouverture-nom, .ouverture-ligne, .ouverture-trait', { opacity: 0, duration: 0.2 }, 0.72)
+    .to('.ouverture-serrure', { opacity: 0, duration: 0.3 }, 0.74);
+  versObjet(tl, { a: 0.72, duree: 0.38, ouverture: 0.62 });
+  /* La page s'ouvre en trou de serrure sur la porte de la maison (même motif que le voile). */
   const panneau = $('[data-ouverture]');
   if (panneau) {
     const proxy = { s: 0 };
-    tl.to(proxy, { s: 1, duration: 0.8, ease: 'power3.in', onUpdate: () => {
+    tl.to(proxy, { s: 1, duration: 0.75, ease: 'power3.in', onUpdate: () => {
       const cx = parseFloat(panneau.style.getPropertyValue('--cx')), cy = parseFloat(panneau.style.getPropertyValue('--cy')), t = parseFloat(panneau.style.getPropertyValue('--trou'));
       if (t > 0 && isFinite(cx)) panneau.style.clipPath = trouSerrure(cx, cy, 2 * t);
-    } }, 1.51);
+    } }, 1.11);
   }
-  arriveePage(tl, 1.45);
+  arriveePage(tl, 1.02);
   return tl;
 }
 
@@ -673,15 +611,16 @@ export const surPage = (fn) => PAGES.push(fn);
 demarrer({
   preparer() {
     if (!gsap || !ST()) return;
-    trousseau();
+    entree();
     soleil();
     axes();
     manifeste();
-    maisonCoupe();
+    facade();
+    duo();
     carrousel();
     cadrans();
     auPassage('[data-plume]', 'ecrit', { seuil: 0.5 });
-    auPassage('[data-tampons]', 'tamponne', { seuil: 0.4, avant: (ul) => $$('.inclus-tampon', ul).forEach((t, i) => t.style.setProperty('--i', i)) });
+    auPassage('[data-direct]', 'est-trace', { seuil: 0.3, avant: (ol) => $$('li', ol).forEach((li, i) => li.style.setProperty('--i', i)) });
     portes();
     journee();
     contact();

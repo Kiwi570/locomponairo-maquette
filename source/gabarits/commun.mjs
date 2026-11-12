@@ -1,7 +1,7 @@
 /* Gabarit commun : head, en-tête, menu, pied de page, barre fixe du téléphone, voile.
    Les conventions data-* sont celles que lisent le socle JavaScript et l'audit (voir le README). */
 import { html, brut } from '../../outils/gabarit.mjs';
-import { trousseau, icone } from './objets.mjs';
+import { icone, cleIntro, defsLaiton, cle } from './objets.mjs';
 
 const navigation = (c) => c.site.navigation.filter((cle) => c.pages[cle] && (c.pages[cle].langues || c.langues).includes(c.l));
 
@@ -87,7 +87,6 @@ function entete(c) {
   <ul>${navigation(c).map((k, i) => html`<li style="--i:${i}">${c.lien(k, { classe: 'menu-lien' })}</li>`)}</ul>
   <p><a class="bouton" href="tel:${c.site.contact.telephoneLien}">${c.t('commun.appeler')} ${c.site.contact.telephone}</a></p>
   ${autreLangue.map((a) => html`<p><a class="entete-langue" href="${a.url}" hreflang="${a.l}" lang="${a.l}" data-langue="${a.l}">${c.s('commun.langueAutre')}</a></p>`)}
-  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="${c.s('commun.calmeReduire')}" data-libelle-retablir="${c.s('commun.calmeRetablir')}" data-libelle-systeme="${c.s('commun.calmeSysteme')}"><span data-libelle-bouton>${c.t('commun.calmeReduire')}</span></button></p>
 </div>`;
 }
 
@@ -102,7 +101,7 @@ function pied(c) {
     </div>
     <nav aria-label="${c.s('commun.sommaire')}">
       <p><strong>${c.t('commun.sommaire')}</strong></p>
-      <ul>${navigation(c).map((k) => html`<li>${c.lien(k)}</li>`)}</ul>
+      <ul>${navigation(c).map((k) => html`<li>${c.lien(k)}</li>`)}<li><a href="#haut" data-sans-transition>${c.t('commun.retourHaut')}</a></li></ul>
     </nav>
     <div>
       <p><strong>${c.t('commun.suivre')}</strong></p>
@@ -110,13 +109,6 @@ function pied(c) {
         <li><a href="${l.instagram}" target="_blank" rel="noopener" aria-label="Instagram ${c.s('commun.nouvelOnglet')}">Instagram</a></li>
         <li><a href="${l.facebook}" target="_blank" rel="noopener" aria-label="Facebook ${c.s('commun.nouvelOnglet')}">Facebook</a></li>
         <li><a href="${l.tripadvisor}" target="_blank" rel="noopener" aria-label="TripAdvisor ${c.s('commun.nouvelOnglet')}">TripAdvisor</a></li>
-      </ul>
-    </div>
-    <div>
-      <p><strong>${c.t('commun.confort')}</strong></p>
-      <ul>
-        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="${c.s('commun.calmeReduire')}" data-libelle-retablir="${c.s('commun.calmeRetablir')}" data-libelle-systeme="${c.s('commun.calmeSysteme')}"><span data-libelle-bouton>${c.t('commun.calmeReduire')}</span></button></li>
-        <li><a href="#haut" data-sans-transition>${c.t('commun.retourHaut')}</a></li>
       </ul>
     </div>
   </div>
@@ -147,10 +139,11 @@ export function page(c, contenu) {
 <html lang="${c.l}" data-v="${c.v}"${c.site.curseur ? brut(' data-curseur') : ''}>
 ${tete(c)}
 <body id="haut">
+${defsLaiton}
 ${voile(c)}
 <div class="ouverture-panneau" data-ouverture aria-hidden="true">
   <svg class="ouverture-serrure" viewBox="-60 -60 120 160" aria-hidden="true"><path d="M-24.8 26 A 50 50 0 1 1 24.8 26 L 34 92 L -34 92 Z"/></svg>
-  <div class="ouverture-objet" data-ouverture-objet>${trousseau(c.donnees.chambres, { classe: 'trousseau-svg trousseau-intro' })}</div>
+  <div class="ouverture-objet" data-ouverture-objet>${cleIntro}</div>
   <p class="ouverture-nom">${c.t('commun.introNom')}</p>
   <span class="ouverture-trait"></span>
   <p class="ouverture-ligne">${c.t('commun.introLigne')}</p>
@@ -159,7 +152,7 @@ ${voile(c)}
 ${entete(c)}
 <main id="contenu" tabindex="-1"${c.page.sansAction ? brut(' data-sans-action') : ''}${c.page.sansEffet ? brut(' data-sans-effet') : ''}${c.page.sansFil ? '' : brut(' data-grille="fil" data-sarment')}>
 ${contenu}
-${c.page.sansFil ? '' : brut(`<template data-fil-objet><g class="grappe"><circle cx="0" cy="0" r="5.5"/><circle cx="-6" cy="-7" r="5"/><circle cx="6" cy="-7" r="5"/><circle cx="0" cy="-14" r="5"/><circle cx="-11" cy="-15" r="4.5"/><circle cx="11" cy="-15" r="4.5"/><circle cx="-5" cy="-22" r="4.5"/><circle cx="5" cy="-22" r="4.5"/><path class="grappe-tige" d="M0 -26 C 2 -32, 6 -35, 12 -36"/><path class="grappe-feuille" d="M6 -30 C 14 -42, 30 -40, 32 -30 C 24 -26, 14 -24, 6 -30 Z"/></g></template>`)}
+${c.page.sansFil ? '' : brut(`<template data-fil-objet><g class="fil-cle" transform="translate(0 -10) scale(.32)">${cle()}</g></template>`)}
 </main>
 ${pied(c)}
 ${barre(c)}
